@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f7f9fc;
+    line-height: 1.6;
+}
+
+header {
+    background: #0b1f3a;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #55b8ff;
+}
+
+.lang-btn {
+    border: 1px solid #55b8ff;
+    background: transparent;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 80px 7%;
+    background: linear-gradient(135deg, #0b1f3a, #123f68);
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin-bottom: 30px;
+    color: #dce9f5;
+}
+
+.btn {
+    display: inline-block;
+    background: #1b9be0;
+    color: white;
+    padding: 13px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.services {
+    background: #f7f9fc;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    text-align: center;
+}
+
+.card h3 {
+    color: #0b1f3a;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #64748b;
+}
+
+.hse {
+    background: #0b1f3a;
+    color: white;
+    text-align: center;
+}
+
+.hse h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.hse p {
+    max-width: 850px;
+    margin: auto;
+    color: #dce9f5;
+    font-size: 18px;
+}
+
+.contact {
+    background: white;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-box p {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+footer {
+    background: #071426;
+    color: #b9c6d5;
+    text-align: center;
+    padding: 25px;
+}
+
+.ar {
+    display: none;
+}
+
+body.rtl {
+    direction: rtl;
+}
+
+body.rtl nav a {
+    margin-left: 0;
+    margin-right: 22px;
+}
+
+body.rtl .lang-btn {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KAMRA ENERGY</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#hse">HSE</a>
+        <a href="#contact">Contact</a>
+        <button class="lang-btn" onclick="toggleLanguage()">العربية</button>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="en">
+            <h1>KAMRA FOR ENERGY CONTRACTING L.L.C.</h1>
+            <p>
+                Professional Energy, Well Services and Contracting Solutions
+                with a strong commitment to safety, quality and operational excellence.
+            </p>
+            <a class="btn" href="#contact">Contact Us</a>
+        </div>
+
+        <div class="ar">
+            <h1>كامرا للمقاولات في مجال الطاقة ذ.م.م</h1>
+            <p>
+                حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
+                مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
+            </p>
+            <a class="btn" href="#contact">اتصل بنا</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <div class="section-title en">
+        <h2>About Us</h2>
+        <p>Professional experience. Reliable solutions.</p>
+    </div>
+
+    <div class="section-title ar">
+        <h2>من نحن</h2>
+        <p>خبرة مهنية وحلول موثوقة.</p>
+    </div>
+
+    <div class="about-content">
+
+        <div class="en">
+            <p>
+                KAMRA FOR ENERGY CONTRACTING L.L.C. provides energy,
+                well services and contracting solutions. Our approach is
+                based on professional execution, experienced personnel,
+                safety awareness and commitment to quality.
+            </p>
+        </div>
+
+        <div class="ar">
+            <p>
+                تقدم شركة كامرا للمقاولات في مجال الطاقة ذ.م.م خدمات وحلولًا
+                في مجال الطاقة وخدمات الآبار والمقاولات. يعتمد نهجنا على
+                التنفيذ المهني والكوادر ذات الخبرة والالتزام بالسلامة والجودة.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="services" id="services">
+
+    <div class="section-title en">
+        <h2>Our Services</h2>
+        <p>Integrated solutions for energy and well service operations.</p>
+    </div>
+
+    <div class="section-title ar">
+        <h2>خدماتنا</h2>
+        <p>حلول متكاملة لعمليات الطاقة وخدمات الآبار.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Well Services</h3>
+            <p>Professional support and services for well operations.</p>
+        </div>
+
+        <div class="card">
+            <h3>Energy Contracting</h3>
+            <p>Contracting solutions designed around operational requirements.</p>
+        </div>
+
+        <div class="card">
+            <h3>Technical Services</h3>
+            <p>Experienced technical personnel and operational support.</p>
+        </div>
+
+        <div class="card">
+            <h3>Inspection</h3>
+            <p>Inspection and quality-focused technical services.</p>
+        </div>
+
+        <div class="card">
+            <h3>HSE</h3>
+            <p>Health, Safety and Environmental commitment in every operation.</p>
+        </div>
+
+        <div class="card">
+            <h3>Quality</h3>
+            <p>Structured processes focused on quality and continuous improvement.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="hse" id="hse">
+
+    <div class="en">
+        <h2>Health, Safety & Environment</h2>
+        <p>
+            Safety is a fundamental part of our operations.
+            We are committed to responsible work practices,
+            risk awareness, environmental protection and continuous improvement.
+        </p>
+    </div>
+
+    <div class="ar">
+        <h2>الصحة والسلامة والبيئة</h2>
+        <p>
+            السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل
+            الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+        </p>
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <div class="section-title en">
+        <h2>Contact Us</h2>
+        <p>We would be pleased to discuss your requirements.</p>
+    </div>
+
+    <div class="section-title ar">
+        <h2>اتصل بنا</h2>
+        <p>يسعدنا مناقشة متطلباتكم واحتياجاتكم.</p>
+    </div>
+
+    <div class="contact-box">
+
+        <div class="en">
+            <p><strong>Company:</strong> KAMRA FOR ENERGY CONTRACTING L.L.C.</p>
+            <p><strong>Email:</strong> ahmadsrqr@hotmail.com</p>
+        </div>
+
+        <div class="ar">
+            <p><strong>الشركة:</strong> كامرا للمقاولات في مجال الطاقة ذ.م.م</p>
+            <p><strong>البريد الإلكتروني:</strong> ahmadsrqr@hotmail.com</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C. — All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleLanguage() {
+
+    const body = document.body;
+    const english = document.querySelectorAll(".en");
+    const arabic = document.querySelectorAll(".ar");
+    const button = document.querySelector(".lang-btn");
+
+    if (body.classList.contains("rtl")) {
+
+        body.classList.remove("rtl");
+
+        english.forEach(el => el.style.display = "");
+        arabic.forEach(el => el.style.display = "none");
+
+        button.textContent = "العربية";
+
+    } else {
+
+        body.classList.add("rtl");
+
+        english.forEach(el => el.style.display = "none");
+        arabic.forEach(el => el.style.display = "");
+
+        button.textContent = "English";
+    }
+}
+</script>
+
+</body>
+</html>
