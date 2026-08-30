@@ -10,9 +10,7 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
 >
 
-<title>
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</title>
+<title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
 
 <style>
 
@@ -104,52 +102,14 @@ nav a:hover {
 
 .lang-btn:hover {
     background: #55b8ff;
-   color: #fff8dc;
+    color: white;
 }
 
 
 /* =========================================================
    HERO
 ========================================================= */
-/* =========================================================
-   QURAN VERSE BOX
-========================================================= */
 
-.quran-box {
-    position: absolute;
-    top: 95px;
-    right: 7%;
-    width: 320px;
-    padding: 18px 20px;
-
-    .quran-box {
-    border-radius: 10px;
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.18);
-
-    text-align: center;
-    direction: rtl;
-
-    z-index: 10;
-
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
-}
-
-.quran-box .verse {
-    color: #0b1f3a;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.8;
-}
-
-.quran-box .source {
-    margin-top: 8px;
-   color: #d4af37;
-    font-size: 12px;
-}
 .hero {
     min-height: 620px;
     display: flex;
@@ -162,10 +122,13 @@ nav a:hover {
             #123f68
         );
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 850px;
+    width: 100%;
 }
 
 .hero h1 {
@@ -193,6 +156,48 @@ nav a:hover {
 
 .btn:hover {
     background: #55b8ff;
+}
+
+
+/* =========================================================
+   QURAN VERSE BOX
+========================================================= */
+
+.quran-box {
+    position: absolute;
+    top: 95px;
+    right: 7%;
+    width: 320px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+    direction: rtl;
+
+    z-index: 10;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.quran-box .verse {
+    color: #0b1f3a;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+    transition: opacity 0.5s ease;
+}
+
+.quran-box .source {
+    margin-top: 8px;
+    color: #d4af37;
+    font-size: 12px;
+    transition: opacity 0.5s ease;
 }
 
 
@@ -960,6 +965,11 @@ body.rtl .lang-btn {
     margin-right: 20px;
 }
 
+body.rtl .quran-box {
+    right: auto;
+    left: 7%;
+}
+
 
 /* =========================================================
    TABLET
@@ -972,6 +982,11 @@ body.rtl .lang-btn {
             calc(
                 (100% - 36px) / 3
             );
+    }
+
+    .quran-box {
+        width: 280px;
+        right: 5%;
     }
 
 }
@@ -988,12 +1003,44 @@ body.rtl .lang-btn {
         gap: 15px;
     }
 
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     nav a {
         margin: 0 6px;
     }
 
+    .hero {
+        min-height: 620px;
+        padding: 60px 5%;
+        align-items: flex-end;
+    }
+
     .hero h1 {
         font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .quran-box {
+        top: 25px;
+        left: 5% !important;
+        right: 5% !important;
+        width: auto;
+        max-width: none;
+        padding: 14px 12px;
+    }
+
+    .quran-box .verse {
+        font-size: 15px;
+    }
+
+    .quran-box .source {
+        font-size: 11px;
     }
 
     .cards {
@@ -1081,8 +1128,7 @@ body.rtl .lang-btn {
 
 
     /* =====================================================
-       PDF VIEWER - MOBILE ONLY
-       هذا هو التعديل الأساسي
+       PDF VIEWER - MOBILE
     ===================================================== */
 
     .company-viewer {
@@ -1136,12 +1182,6 @@ body.rtl .lang-btn {
     }
 
 
-    /*
-       مهم جداً:
-       منطقة الـPDF تأخذ العرض الحقيقي المتاح
-       ولا تسمح للصفحة بالخروج خارج الشاشة
-    */
-
     .pdf-scroll {
         width: 100%;
         max-width: 100%;
@@ -1159,10 +1199,6 @@ body.rtl .lang-btn {
         min-width: 0;
     }
 
-
-    /*
-       الصفحة دائماً تتناسب مع عرض الموبايل
-    */
 
     .pdf-page {
         display: block;
@@ -1217,7 +1253,7 @@ body.rtl .lang-btn {
     }
 
     .hero {
-        min-height: 560px;
+        min-height: 580px;
         padding: 60px 5%;
     }
 
@@ -1270,6 +1306,8 @@ body.rtl .lang-btn {
     }
 
 }
+
+
 /* =========================================================
    FIX LANGUAGE DISPLAY
 ========================================================= */
@@ -1285,6 +1323,7 @@ body.rtl .en {
 body.rtl .ar {
     display: block;
 }
+
 </style>
 
 </head>
@@ -1299,51 +1338,51 @@ body.rtl .ar {
 
 <header>
 
-<div class="logo">
+    <div class="logo">
 
-<img
-    src="kamra-energy.svg"
-    alt="KAMRA ENERGY"
->
+        <img
+            src="kamra-energy.svg"
+            alt="KAMRA ENERGY"
+        >
 
-<div class="logo-text">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+        <div class="logo-text">
+            KAMRA FOR ENERGY CONTRACTING L.L.C.
+        </div>
 
-</div>
+    </div>
 
 
-<nav>
+    <nav>
 
-<a href="#home">
-Home
-</a>
+        <a href="#home">
+            Home
+        </a>
 
-<a href="#about">
-About Us
-</a>
+        <a href="#about">
+            About Us
+        </a>
 
-<a href="#services">
-Services
-</a>
+        <a href="#services">
+            Services
+        </a>
 
-<a href="#hse">
-HSE
-</a>
+        <a href="#hse">
+            HSE
+        </a>
 
-<a href="#contact">
-Contact
-</a>
+        <a href="#contact">
+            Contact
+        </a>
 
-<button
-    class="lang-btn"
-    type="button"
-    onclick="toggleLanguage()"
->
-العربية
-</button>
+        <button
+            class="lang-btn"
+            type="button"
+            onclick="toggleLanguage()"
+        >
+            العربية
+        </button>
 
-</nav>
+    </nav>
 
 </header>
 
@@ -1357,62 +1396,77 @@ Contact
     id="home"
 >
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="quran-box">
 
-    <div class="verse" id="quranVerse">
-        ﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾
+        <!-- QURAN -->
+
+        <div class="quran-box">
+
+            <div
+                class="verse"
+                id="quranVerse"
+            >
+                ﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾
+            </div>
+
+            <div
+                class="source"
+                id="quranSource"
+            >
+                سورة طه — الآية 114
+            </div>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div class="en">
+
+            <h1>
+                KAMRA FOR ENERGY CONTRACTING L.L.C.
+            </h1>
+
+            <p>
+                Professional Energy, Well Services and Contracting Solutions
+                with a strong commitment to safety, quality and operational excellence.
+            </p>
+
+            <a
+                class="btn"
+                href="#contact"
+            >
+                Contact Us
+            </a>
+
+        </div>
+
+
+        <!-- ARABIC -->
+
+        <div class="ar">
+
+            <h1>
+                كامرا للمقاولات في مجال الطاقة ذ.م.م
+            </h1>
+
+            <p>
+                حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
+                مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
+            </p>
+
+            <a
+                class="btn"
+                href="#contact"
+            >
+                اتصل بنا
+            </a>
+
+        </div>
+
+
     </div>
-
-    <div class="source" id="quranSource">
-        سورة طه — الآية 114
-    </div>
-
-</div>
-<div class="en">
-
-<h1>
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</h1>
-
-<p>
-Professional Energy, Well Services and Contracting Solutions
-with a strong commitment to safety, quality and operational excellence.
-</p>
-
-<a
-    class="btn"
-    href="#contact"
->
-Contact Us
-</a>
-
-</div>
-
-
-<div class="ar">
-
-<h1>
-كامرا للمقاولات في مجال الطاقة ذ.م.م
-</h1>
-
-<p>
-حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
-مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
-</p>
-
-<a
-    class="btn"
-    href="#contact"
->
-اتصل بنا
-</a>
-
-</div>
-
-
-</div>
 
 </section>
 
@@ -1426,475 +1480,473 @@ Contact Us
     id="about"
 >
 
+    <div class="section-title en">
 
-<div class="section-title en">
+        <h2>
+            About Us
+        </h2>
 
-<h2>
-About Us
-</h2>
+        <p>
+            Professional experience. Reliable solutions.
+        </p>
 
-<p>
-Professional experience. Reliable solutions.
-</p>
+    </div>
 
-</div>
 
+    <div class="section-title ar">
 
-<div class="section-title ar">
+        <h2>
+            من نحن
+        </h2>
 
-<h2>
-من نحن
-</h2>
+        <p>
+            خبرة مهنية وحلول موثوقة.
+        </p>
 
-<p>
-خبرة مهنية وحلول موثوقة.
-</p>
+    </div>
 
-</div>
 
+    <!-- =====================================================
+         SLIDER
+    ===================================================== -->
 
-<!-- =========================================================
-     SLIDER
-========================================================= -->
+    <div class="company-slider">
 
-<div class="company-slider">
 
+        <button
+            type="button"
+            class="slider-btn"
+            id="prevBtn"
+            aria-label="Previous cards"
+        >
+            ‹
+        </button>
 
-<button
-    type="button"
-    class="slider-btn"
-    id="prevBtn"
-    aria-label="Previous cards"
->
-‹
-</button>
 
+        <div
+            class="company-slider-window"
+            id="sliderWindow"
+        >
 
-<div
-    class="company-slider-window"
-    id="sliderWindow"
->
+            <div
+                class="company-track"
+                id="companyTrack"
+            >
 
 
-<div
-    class="company-track"
-    id="companyTrack"
->
+                <!-- CARD 01 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="01-logo.pdf"
+                >
 
-<!-- CARD 01 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="01-logo.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        01
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Company Logo
+                    </h3>
 
-<div class="card-number">
-01
-</div>
+                    <p>
+                        شعار الشركة
+                    </p>
 
-<h3>
-Company Logo
-</h3>
+                </div>
 
-<p>
-شعار الشركة
-</p>
 
-</div>
+                <!-- CARD 02 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="02-about-us.pdf"
+                >
 
-<!-- CARD 02 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="02-about-us.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        02
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        About Us
+                    </h3>
 
-<div class="card-number">
-02
-</div>
+                    <p>
+                        من نحن
+                    </p>
 
-<h3>
-About Us
-</h3>
+                </div>
 
-<p>
-من نحن
-</p>
 
-</div>
+                <!-- CARD 03 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="03-vision.pdf"
+                >
 
-<!-- CARD 03 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="03-vision.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        03
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Vision
+                    </h3>
 
-<div class="card-number">
-03
-</div>
+                    <p>
+                        الرؤية
+                    </p>
 
-<h3>
-Vision
-</h3>
+                </div>
 
-<p>
-الرؤية
-</p>
 
-</div>
+                <!-- CARD 04 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="04-mission.pdf"
+                >
 
-<!-- CARD 04 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="04-mission.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        04
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Mission
+                    </h3>
 
-<div class="card-number">
-04
-</div>
+                    <p>
+                        الرسالة
+                    </p>
 
-<h3>
-Mission
-</h3>
+                </div>
 
-<p>
-الرسالة
-</p>
 
-</div>
+                <!-- CARD 05 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="05-comprehensive-safety.pdf"
+                >
 
-<!-- CARD 05 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="05-comprehensive-safety.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        05
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Comprehensive Safety
+                    </h3>
 
-<div class="card-number">
-05
-</div>
+                    <p>
+                        السلامة الشاملة
+                    </p>
 
-<h3>
-Comprehensive Safety
-</h3>
+                </div>
 
-<p>
-السلامة الشاملة
-</p>
 
-</div>
+                <!-- CARD 06 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="06-core-values.pdf"
+                >
 
-<!-- CARD 06 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="06-core-values.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        06
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Core Values
+                    </h3>
 
-<div class="card-number">
-06
-</div>
+                    <p>
+                        القيم الجوهرية
+                    </p>
 
-<h3>
-Core Values
-</h3>
+                </div>
 
-<p>
-القيم الجوهرية
-</p>
 
-</div>
+                <!-- CARD 07 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="07-operational-efficiency.pdf"
+                >
 
-<!-- CARD 07 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="07-operational-efficiency.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        07
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Operational Efficiency
+                    </h3>
 
-<div class="card-number">
-07
-</div>
+                    <p>
+                        الكفاءة التشغيلية
+                    </p>
 
-<h3>
-Operational Efficiency
-</h3>
+                </div>
 
-<p>
-الكفاءة التشغيلية
-</p>
 
-</div>
+                <!-- CARD 08 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="08-continuous-innovation.pdf"
+                >
 
-<!-- CARD 08 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="08-continuous-innovation.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        08
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Continuous Innovation
+                    </h3>
 
-<div class="card-number">
-08
-</div>
+                    <p>
+                        الابتكار المستمر
+                    </p>
 
-<h3>
-Continuous Innovation
-</h3>
+                </div>
 
-<p>
-الابتكار المستمر
-</p>
 
-</div>
+                <!-- CARD 09 -->
 
+                <div
+                    class="company-card"
+                    data-pdf="09-company-perspective.pdf"
+                >
 
-<!-- CARD 09 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    data-pdf="09-company-perspective.pdf"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        09
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <h3>
+                        Company Perspective
+                    </h3>
 
-<div class="card-number">
-09
-</div>
+                    <p>
+                        منظور الشركة
+                    </p>
 
-<h3>
-Company Perspective
-</h3>
+                </div>
 
-<p>
-منظور الشركة
-</p>
 
-</div>
+                <!-- CARD 10 -->
 
+                <div
+                    class="company-card"
+                    id="videoCard"
+                >
 
-<!-- CARD 10 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card"
-    id="videoCard"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        10
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <div class="video-icon">
+                        ▶
+                    </div>
 
-<div class="card-number">
-10
-</div>
+                    <h3>
+                        Company Video
+                    </h3>
 
-<div class="video-icon">
-▶
-</div>
+                    <p>
+                        فيديو الشركة
+                    </p>
 
-<h3>
-Company Video
-</h3>
+                </div>
 
-<p>
-فيديو الشركة
-</p>
 
-</div>
+                <!-- CARD 11 -->
 
+                <div
+                    class="company-card update-card"
+                >
 
-<!-- CARD 11 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card update-card"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        11
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <div class="update-text">
+                        UPDATE
+                    </div>
 
-<div class="card-number">
-11
-</div>
+                </div>
 
-<div class="update-text">
-UPDATE
-</div>
 
-</div>
+                <!-- CARD 12 -->
 
+                <div
+                    class="company-card update-card"
+                >
 
-<!-- CARD 12 -->
+                    <img
+                        src="kamra-energy.svg"
+                        class="card-logo"
+                        alt="KAMRA ENERGY"
+                    >
 
-<div
-    class="company-card update-card"
->
+                    <div class="card-company-name">
+                        KAMRA FOR ENERGY CONTRACTING L.L.C.
+                    </div>
 
-<img
-    src="kamra-energy.svg"
-    class="card-logo"
-    alt="KAMRA ENERGY"
->
+                    <div class="card-number">
+                        12
+                    </div>
 
-<div class="card-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
+                    <div class="update-text">
+                        UPDATE
+                    </div>
 
-<div class="card-number">
-12
-</div>
+                </div>
 
-<div class="update-text">
-UPDATE
-</div>
 
-</div>
+            </div>
 
+        </div>
 
-</div>
 
-</div>
+        <button
+            type="button"
+            class="slider-btn"
+            id="nextBtn"
+            aria-label="Next cards"
+        >
+            ›
+        </button>
 
 
-<button
-    type="button"
-    class="slider-btn"
-    id="nextBtn"
-    aria-label="Next cards"
->
-›
-</button>
+    </div>
 
 
-</div>
+    <!-- =====================================================
+         PDF VIEWER
+    ===================================================== -->
 
+    <div
+        id="companyViewer"
+        class="company-viewer"
+        aria-hidden="true"
+    >
 
-<!-- =========================================================
-     PDF VIEWER
-========================================================= -->
+        <div
+            class="viewer-content"
+            id="viewerContent"
+        >
+        </div>
 
-<div
-    id="companyViewer"
-    class="company-viewer"
-    aria-hidden="true"
->
-
-<div
-    class="viewer-content"
-    id="viewerContent"
->
-</div>
-
-</div>
+    </div>
 
 
 </section>
@@ -1909,114 +1961,114 @@ UPDATE
     id="services"
 >
 
-<div class="section-title en">
+    <div class="section-title en">
 
-<h2>
-Our Services
-</h2>
+        <h2>
+            Our Services
+        </h2>
 
-<p>
-Integrated solutions for energy and well service operations.
-</p>
+        <p>
+            Integrated solutions for energy and well service operations.
+        </p>
 
-</div>
-
-
-<div class="section-title ar">
-
-<h2>
-خدماتنا
-</h2>
-
-<p>
-حلول متكاملة لعمليات الطاقة وخدمات الآبار.
-</p>
-
-</div>
+    </div>
 
 
-<div class="cards">
+    <div class="section-title ar">
+
+        <h2>
+            خدماتنا
+        </h2>
+
+        <p>
+            حلول متكاملة لعمليات الطاقة وخدمات الآبار.
+        </p>
+
+    </div>
 
 
-<div class="card">
-
-<h3>
-Well Services
-</h3>
-
-<p>
-Professional support and services for well operations.
-</p>
-
-</div>
+    <div class="cards">
 
 
-<div class="card">
+        <div class="card">
 
-<h3>
-Energy Contracting
-</h3>
+            <h3>
+                Well Services
+            </h3>
 
-<p>
-Contracting solutions designed around operational requirements.
-</p>
+            <p>
+                Professional support and services for well operations.
+            </p>
 
-</div>
-
-
-<div class="card">
-
-<h3>
-Technical Services
-</h3>
-
-<p>
-Experienced technical personnel and operational support.
-</p>
-
-</div>
+        </div>
 
 
-<div class="card">
+        <div class="card">
 
-<h3>
-Inspection
-</h3>
+            <h3>
+                Energy Contracting
+            </h3>
 
-<p>
-Inspection and quality-focused technical services.
-</p>
+            <p>
+                Contracting solutions designed around operational requirements.
+            </p>
 
-</div>
-
-
-<div class="card">
-
-<h3>
-HSE
-</h3>
-
-<p>
-Health, Safety and Environmental commitment in every operation.
-</p>
-
-</div>
+        </div>
 
 
-<div class="card">
+        <div class="card">
 
-<h3>
-Quality
-</h3>
+            <h3>
+                Technical Services
+            </h3>
 
-<p>
-Structured processes focused on quality and continuous improvement.
-</p>
+            <p>
+                Experienced technical personnel and operational support.
+            </p>
 
-</div>
+        </div>
 
 
-</div>
+        <div class="card">
+
+            <h3>
+                Inspection
+            </h3>
+
+            <p>
+                Inspection and quality-focused technical services.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                HSE
+            </h3>
+
+            <p>
+                Health, Safety and Environmental commitment in every operation.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Quality
+            </h3>
+
+            <p>
+                Structured processes focused on quality and continuous improvement.
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -2030,34 +2082,34 @@ Structured processes focused on quality and continuous improvement.
     id="hse"
 >
 
-<div class="en">
+    <div class="en">
 
-<h2>
-Health, Safety & Environment
-</h2>
+        <h2>
+            Health, Safety & Environment
+        </h2>
 
-<p>
-Safety is a fundamental part of our operations.
-We are committed to responsible work practices,
-risk awareness, environmental protection and continuous improvement.
-</p>
+        <p>
+            Safety is a fundamental part of our operations.
+            We are committed to responsible work practices,
+            risk awareness, environmental protection and continuous improvement.
+        </p>
 
-</div>
+    </div>
 
 
-<div class="ar">
+    <div class="ar">
 
-<h2>
-الصحة والسلامة والبيئة
-</h2>
+        <h2>
+            الصحة والسلامة والبيئة
+        </h2>
 
-<p>
-السلامة جزء أساسي من عملياتنا.
-نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
-وتقييم المخاطر وحماية البيئة والتحسين المستمر.
-</p>
+        <p>
+            السلامة جزء أساسي من عملياتنا.
+            نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
+            وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+        </p>
 
-</div>
+    </div>
 
 </section>
 
@@ -2071,88 +2123,92 @@ risk awareness, environmental protection and continuous improvement.
     class="contact"
 >
 
-<div class="section-title en">
+    <div class="section-title en">
 
-<h2>
-Contact Us
-</h2>
+        <h2>
+            Contact Us
+        </h2>
 
-<p>
-We would be pleased to discuss your requirements.
-</p>
+        <p>
+            We would be pleased to discuss your requirements.
+        </p>
 
-</div>
-
-
-<div class="section-title ar">
-
-<h2>
-اتصل بنا
-</h2>
-
-<p>
-يسعدنا مناقشة متطلباتكم واحتياجاتكم.
-</p>
-
-</div>
+    </div>
 
 
-<div class="contact-box">
+    <div class="section-title ar">
+
+        <h2>
+            اتصل بنا
+        </h2>
+
+        <p>
+            يسعدنا مناقشة متطلباتكم واحتياجاتكم.
+        </p>
+
+    </div>
 
 
-<div class="en">
-
-<p>
-
-<strong>
-Company:
-</strong>
-
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-
-</p>
+    <div class="contact-box">
 
 
-<p>
+        <div class="en">
 
-<strong>
-Email:
-</strong>
+            <p>
 
-info@kamra-energy.com
+                <strong>
+                    Company:
+                </strong>
 
-</p>
+                KAMRA FOR ENERGY CONTRACTING L.L.C.
 
-</div>
-
-
-<div class="ar">
-
-<p>
-
-<strong>
-الشركة:
-</strong>
-
-كامرا للمقاولات في مجال الطاقة ذ.م.م
-
-</p>
+            </p>
 
 
-<p>
+            <p>
 
-<strong>
-البريد الإلكتروني:
-</strong>
+                <strong>
+                    Email:
+                </strong>
 
-info@kamra-energy.com
+                <a href="mailto:info@kamra-energy.com">
+                    info@kamra-energy.com
+                </a>
 
-</p>
+            </p>
 
-</div>
+        </div>
 
 
-</div>
+        <div class="ar">
+
+            <p>
+
+                <strong>
+                    الشركة:
+                </strong>
+
+                كامرا للمقاولات في مجال الطاقة ذ.م.م
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    البريد الإلكتروني:
+                </strong>
+
+                <a href="mailto:info@kamra-energy.com">
+                    info@kamra-energy.com
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -2163,10 +2219,10 @@ info@kamra-energy.com
 
 <footer>
 
-<p>
-© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C.
-— All Rights Reserved.
-</p>
+    <p>
+        © 2026 KAMRA FOR ENERGY CONTRACTING L.L.C.
+        — All Rights Reserved.
+    </p>
 
 </footer>
 
@@ -2177,8 +2233,13 @@ info@kamra-energy.com
 
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
-    /* =========================================================
-   QURAN VERSE ROTATION
+></script>
+
+
+<script>
+
+/* =========================================================
+   QURAN VERSES
 ========================================================= */
 
 const quranVerses = [
@@ -2215,9 +2276,12 @@ const quranVerses = [
 
 ];
 
-
 let quranIndex = 0;
 
+
+/* =========================================================
+   QURAN ROTATION
+========================================================= */
 
 function changeQuranVerse() {
 
@@ -2241,7 +2305,10 @@ function changeQuranVerse() {
 
         quranIndex++;
 
-        if (quranIndex >= quranVerses.length) {
+        if (
+            quranIndex >=
+            quranVerses.length
+        ) {
             quranIndex = 0;
         }
 
@@ -2261,16 +2328,11 @@ function changeQuranVerse() {
 }
 
 
-/* تغيير الآية كل 7 ثوانٍ */
-
 setInterval(
     changeQuranVerse,
     7000
 );
-></script>
 
-
-<script>
 
 /* =========================================================
    LANGUAGE
@@ -2297,17 +2359,20 @@ function toggleLanguage() {
 
         body.classList.remove("rtl");
 
+
         english.forEach(
             function(el) {
                 el.style.display = "";
             }
         );
 
+
         arabic.forEach(
             function(el) {
                 el.style.display = "none";
             }
         );
+
 
         button.textContent =
             "العربية";
@@ -2318,17 +2383,20 @@ function toggleLanguage() {
 
         body.classList.add("rtl");
 
+
         english.forEach(
             function(el) {
                 el.style.display = "none";
             }
         );
 
+
         arabic.forEach(
             function(el) {
                 el.style.display = "";
             }
         );
+
 
         button.textContent =
             "English";
@@ -2345,7 +2413,7 @@ function toggleLanguage() {
 
 
 /* =========================================================
-   SLIDER
+   SLIDER ELEMENTS
 ========================================================= */
 
 const track =
@@ -2371,7 +2439,6 @@ const sliderWindow =
 
 let currentSlide = 0;
 
-
 const totalCards =
     track.children.length;
 
@@ -2385,18 +2452,14 @@ function getVisibleCards() {
     if (
         window.innerWidth <= 700
     ) {
-
         return 2;
-
     }
 
 
     if (
         window.innerWidth <= 1000
     ) {
-
         return 3;
-
     }
 
 
@@ -2444,8 +2507,8 @@ function updateSlider() {
 
     const cardWidth =
         firstCard
-        .getBoundingClientRect()
-        .width;
+            .getBoundingClientRect()
+            .width;
 
 
     const gap =
@@ -2465,8 +2528,7 @@ function updateSlider() {
 
 
     if (
-        document.body.classList
-        .contains("rtl")
+        document.body.classList.contains("rtl")
     ) {
 
         track.style.transform =
@@ -2488,7 +2550,6 @@ function updateSlider() {
 
     prevBtn.disabled =
         currentSlide === 0;
-
 
     nextBtn.disabled =
         currentSlide === maxSlide;
@@ -2568,7 +2629,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   PDF VIEWER ELEMENTS
+   PDF VIEWER
 ========================================================= */
 
 const viewer =
@@ -2610,14 +2671,18 @@ async function openPDF(file) {
         "active"
     );
 
+
     viewer.setAttribute(
         "aria-hidden",
         "false"
     );
 
 
-    viewerContent.innerHTML = "";
+    viewerContent.innerHTML =
+        "";
 
+
+    /* TOOLBAR */
 
     const toolbar =
         document.createElement(
@@ -2627,6 +2692,8 @@ async function openPDF(file) {
     toolbar.className =
         "pdf-toolbar";
 
+
+    /* TITLE */
 
     const title =
         document.createElement(
@@ -2640,6 +2707,8 @@ async function openPDF(file) {
         "KAMRA Company Document";
 
 
+    /* PAGE INFO */
+
     const pageInfo =
         document.createElement(
             "div"
@@ -2651,6 +2720,8 @@ async function openPDF(file) {
     pageInfo.textContent =
         "Loading...";
 
+
+    /* CLOSE */
 
     const closeButton =
         document.createElement(
@@ -2686,18 +2757,14 @@ async function openPDF(file) {
     );
 
 
-    toolbar.appendChild(
-        title
-    );
+    toolbar.appendChild(title);
 
-    toolbar.appendChild(
-        pageInfo
-    );
+    toolbar.appendChild(pageInfo);
 
-    toolbar.appendChild(
-        closeButton
-    );
+    toolbar.appendChild(closeButton);
 
+
+    /* SCROLL AREA */
 
     const scrollArea =
         document.createElement(
@@ -2707,6 +2774,8 @@ async function openPDF(file) {
     scrollArea.className =
         "pdf-scroll";
 
+
+    /* LOADING */
 
     const loading =
         document.createElement(
@@ -2735,28 +2804,19 @@ async function openPDF(file) {
         "Opening document...";
 
 
-    loading.appendChild(
-        spinner
-    );
+    loading.appendChild(spinner);
 
-    loading.appendChild(
-        loadingText
-    );
+    loading.appendChild(loadingText);
+
+    scrollArea.appendChild(loading);
 
 
-    scrollArea.appendChild(
-        loading
-    );
+    viewerContent.appendChild(toolbar);
+
+    viewerContent.appendChild(scrollArea);
 
 
-    viewerContent.appendChild(
-        toolbar
-    );
-
-    viewerContent.appendChild(
-        scrollArea
-    );
-
+    /* CHECK PDF.JS */
 
     if (
         typeof pdfjsLib === "undefined"
@@ -2797,13 +2857,6 @@ async function openPDF(file) {
             "";
 
 
-        /*
-           =====================================================
-           التعديل الأساسي:
-           أخذ العرض الحقيقي لمنطقة الـPDF بعد ظهورها
-           =====================================================
-        */
-
         const isMobile =
             window.innerWidth <= 700;
 
@@ -2827,10 +2880,6 @@ async function openPDF(file) {
 
         }
 
-
-        /*
-           حماية إضافية إذا كان المتصفح لم يحسب العرض بعد
-        */
 
         if (
             availableWidth <= 0
@@ -2922,43 +2971,16 @@ async function renderPDFPage(
         });
 
 
-    /*
-       حساب الحجم بناءً على العرض المتاح فعلياً
-    */
-
     let scale =
         availableWidth /
         originalViewport.width;
 
-
-    /*
-       لا نسمح بتكبير الصفحة بشكل مبالغ فيه
-    */
 
     if (
         scale > 2
     ) {
 
         scale = 2;
-
-    }
-
-
-    /*
-       في الموبايل نضمن أن الصفحة لا تتجاوز
-       عرض الشاشة
-    */
-
-    if (
-        window.innerWidth <= 700 &&
-        scale >
-        availableWidth /
-        originalViewport.width
-    ) {
-
-        scale =
-            availableWidth /
-            originalViewport.width;
 
     }
 
@@ -3004,12 +3026,6 @@ async function renderPDFPage(
         );
 
 
-    /*
-       مهم:
-       العرض المرئي يبقى مطابقاً لعرض الـPDF
-       وليس أكبر من شاشة الموبايل
-    */
-
     const finalWidth =
         Math.min(
             viewport.width,
@@ -3046,11 +3062,13 @@ async function renderPDFPage(
 
 
     await page.render({
+
         canvasContext:
             context,
 
         viewport:
             viewport
+
     }).promise;
 
 }
@@ -3065,7 +3083,8 @@ function showPDFError(
     message
 ) {
 
-    container.innerHTML = "";
+    container.innerHTML =
+        "";
 
 
     const error =
@@ -3169,16 +3188,26 @@ videoCard.addEventListener(
 );
 
 
+/* =========================================================
+   OPEN VIDEO
+========================================================= */
+
 function openVideo() {
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
-    viewer.classList.add("active");
+
+    viewer.classList.add(
+        "active"
+    );
+
 
     viewer.setAttribute(
         "aria-hidden",
         "false"
     );
+
 
     viewerContent.innerHTML = `
 
@@ -3196,6 +3225,7 @@ function openVideo() {
                 type="button"
                 class="viewer-close"
                 id="videoCloseButton"
+                aria-label="Close video"
                 style="
                     position:absolute;
                     top:12px;
@@ -3243,10 +3273,12 @@ function openVideo() {
 
     `;
 
+
     const videoCloseButton =
         document.getElementById(
             "videoCloseButton"
         );
+
 
     videoCloseButton.addEventListener(
         "click",
@@ -3262,6 +3294,7 @@ function openVideo() {
     );
 
 }
+
 
 /* =========================================================
    CLOSE VIEWER
@@ -3319,17 +3352,11 @@ document.addEventListener(
     function(e) {
 
         if (
-            e.key === "Escape"
+            e.key === "Escape" &&
+            viewer.classList.contains("active")
         ) {
 
-            if (
-                viewer.classList
-                .contains("active")
-            ) {
-
-                closeViewer();
-
-            }
+            closeViewer();
 
         }
 
@@ -3351,8 +3378,7 @@ sliderWindow.addEventListener(
     function(e) {
 
         touchStartX =
-            e.changedTouches[0]
-            .screenX;
+            e.changedTouches[0].screenX;
 
     },
     {
@@ -3366,8 +3392,7 @@ sliderWindow.addEventListener(
     function(e) {
 
         touchEndX =
-            e.changedTouches[0]
-            .screenX;
+            e.changedTouches[0].screenX;
 
 
         const difference =
@@ -3400,60 +3425,9 @@ sliderWindow.addEventListener(
 
 
 /* =========================================================
-   PREVENT SLIDER CLICK AFTER SWIPE
-========================================================= */
-
-let sliderMoved = false;
-
-
-sliderWindow.addEventListener(
-    "touchstart",
-    function() {
-
-        sliderMoved = false;
-
-    },
-    {
-        passive: true
-    }
-);
-
-
-sliderWindow.addEventListener(
-    "touchmove",
-    function() {
-
-        sliderMoved = true;
-
-    },
-    {
-        passive: true
-    }
-);
-
-
-/* =========================================================
    INITIALIZE
 ========================================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        updateSlider();
-
-    }
-);
-
-
-window.addEventListener(
-    "load",
-    function() {
-
-        updateSlider();
-
-    }
-);
 window.addEventListener(
     "load",
     function() {
@@ -3463,57 +3437,7 @@ window.addEventListener(
     }
 );
 
-
-/* =========================================================
-   QURAN VERSE ROTATION
-========================================================= */
-
-const quranVerses = [
-    {
-        verse: "﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",
-        source: "سورة طه — الآية 114"
-    },
-    {
-        verse: "﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾",
-        source: "سورة البقرة — الآية 153"
-    },
-    {
-        verse: "﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾",
-        source: "سورة الطلاق — الآية 3"
-    },
-    {
-        verse: "﴿وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ﴾",
-        source: "سورة التوبة — الآية 105"
-    }
-];
-
-let quranIndex = 0;
-
-setInterval(function() {
-
-    const verse =
-        document.getElementById("quranVerse");
-
-    const source =
-        document.getElementById("quranSource");
-
-    if (!verse || !source) return;
-
-    quranIndex++;
-
-    if (quranIndex >= quranVerses.length) {
-        quranIndex = 0;
-    }
-
-    verse.textContent =
-        quranVerses[quranIndex].verse;
-
-    source.textContent =
-        quranVerses[quranIndex].source;
-
-}, 7000);
 </script>
-
 
 </body>
 
