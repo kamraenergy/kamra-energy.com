@@ -36,8 +36,6 @@ header {
     width: auto;
     display: block;
 }
-   
-
 
 nav a {
     color: white;
@@ -119,12 +117,196 @@ section {
     background: white;
 }
 
-.about-content {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    font-size: 18px;
+/* ==============================
+   12 COMPANY CARDS
+============================== */
+
+.company-grid {
+    max-width: 1100px;
+    margin: 35px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
 }
+
+.company-card {
+    min-height: 185px;
+
+    background: white;
+
+    border: 1px solid #e3e9f0;
+
+    border-radius: 14px;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+
+    transition: all 0.3s ease;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.company-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 14px 35px rgba(0,0,0,0.13);
+}
+
+.card-number {
+    color: #1b9be0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.company-card h3 {
+    color: #0b1f3a;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.company-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+/* VIDEO */
+
+.video-icon {
+    color: #1b9be0;
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+/* UPDATE */
+
+.update-card {
+    cursor: default;
+
+    opacity: 0.65;
+}
+
+.update-card:hover {
+    transform: none;
+}
+
+.update-text {
+    color: #64748b;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+/* ==============================
+   PDF VIEWER
+============================== */
+
+.company-viewer {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(7,20,38,0.94);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+}
+
+.company-viewer.active {
+    display: flex;
+}
+
+.viewer-content {
+    width: min(1000px, 94vw);
+
+    height: 86vh;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.viewer-content iframe,
+.viewer-content video {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+}
+
+/* CLOSE */
+
+.viewer-close {
+    position: absolute;
+
+    top: 15px;
+
+    right: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #0b1f3a;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+.viewer-close:hover {
+    background: #1b9be0;
+
+    color: white;
+}
+
+/* ==============================
+   SERVICES
+============================== */
 
 .services {
     background: #f7f9fc;
@@ -132,20 +314,27 @@ section {
 
 .cards {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .card {
     background: white;
+
     padding: 30px;
+
     border-radius: 10px;
+
     box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+
     text-align: center;
 }
 
 .card h3 {
     color: #0b1f3a;
+
     margin-bottom: 12px;
 }
 
@@ -153,45 +342,73 @@ section {
     color: #64748b;
 }
 
+/* ==============================
+   HSE
+============================== */
+
 .hse {
     background: #0b1f3a;
+
     color: white;
+
     text-align: center;
 }
 
 .hse h2 {
     font-size: 34px;
+
     margin-bottom: 20px;
 }
 
 .hse p {
     max-width: 850px;
+
     margin: auto;
+
     color: #dce9f5;
+
     font-size: 18px;
 }
 
+/* ==============================
+   CONTACT
+============================== */
+
 .contact {
     background: white;
+
     text-align: center;
 }
 
 .contact-box {
     max-width: 700px;
+
     margin: auto;
 }
 
 .contact-box p {
     margin: 12px 0;
+
     font-size: 18px;
 }
 
+/* ==============================
+   FOOTER
+============================== */
+
 footer {
     background: #071426;
+
     color: #b9c6d5;
+
     text-align: center;
+
     padding: 25px;
 }
+
+/* ==============================
+   LANGUAGE
+============================== */
 
 .ar {
     display: none;
@@ -203,17 +420,32 @@ body.rtl {
 
 body.rtl nav a {
     margin-left: 0;
+
     margin-right: 22px;
 }
 
 body.rtl .lang-btn {
     margin-left: 0;
+
     margin-right: 20px;
 }
 
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 900px) {
+
+    .company-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 800px) {
+
     header {
         flex-direction: column;
+
         gap: 15px;
     }
 
@@ -229,224 +461,835 @@ body.rtl .lang-btn {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 600px) {
+
+    .company-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .company-card {
+        min-height: 150px;
+
+        padding: 18px 10px;
+    }
+
+    .company-card h3 {
+        font-size: 15px;
+    }
+
+    .company-card p {
+        font-size: 13px;
+    }
+
+    .company-viewer {
+        padding: 15px;
+    }
+
+    .viewer-content {
+        width: 100%;
+
+        height: 85vh;
+    }
+
+    .viewer-close {
+        right: 15px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
 <div class="logo">
-    <img src="kamra-energy.svg" alt="KAMRA ENERGY">
-    <div class="logo-text">
-        <strong>KAMRA ENERGY</strong>
-    
-    </div>
+
+<img src="kamra-energy.svg" alt="KAMRA ENERGY">
+
+<div class="logo-text">
+<strong>KAMRA ENERGY</strong>
 </div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#hse">HSE</a>
-        <a href="#contact">Contact</a>
-        <button class="lang-btn" onclick="toggleLanguage()">العربية</button>
-    </nav>
+</div>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About Us</a>
+
+<a href="#services">Services</a>
+
+<a href="#hse">HSE</a>
+
+<a href="#contact">Contact</a>
+
+<button
+class="lang-btn"
+onclick="toggleLanguage()">
+العربية
+</button>
+
+</nav>
+
 </header>
+
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="en">
-            <h1>KAMRA FOR ENERGY CONTRACTING L.L.C.</h1>
-            <p>
-                Professional Energy, Well Services and Contracting Solutions
-                with a strong commitment to safety, quality and operational excellence.
-            </p>
-            <a class="btn" href="#contact">Contact Us</a>
-        </div>
+<div class="en">
 
-        <div class="ar">
-            <h1>كامرا للمقاولات في مجال الطاقة ذ.م.م</h1>
-            <p>
-                حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
-                مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
-            </p>
-            <a class="btn" href="#contact">اتصل بنا</a>
-        </div>
+<h1>
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</h1>
 
-    </div>
+<p>
+Professional Energy, Well Services and Contracting Solutions
+with a strong commitment to safety, quality and operational excellence.
+</p>
+
+<a class="btn" href="#contact">
+Contact Us
+</a>
+
+</div>
+
+<div class="ar">
+
+<h1>
+كامرا للمقاولات في مجال الطاقة ذ.م.م
+</h1>
+
+<p>
+حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
+مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
+</p>
+
+<a class="btn" href="#contact">
+اتصل بنا
+</a>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
-    <div class="section-title en">
-        <h2>About Us</h2>
-        <p>Professional experience. Reliable solutions.</p>
-    </div>
+<div class="section-title en">
 
-    <div class="section-title ar">
-        <h2>من نحن</h2>
-        <p>خبرة مهنية وحلول موثوقة.</p>
-    </div>
+<h2>About Us</h2>
 
-    <div class="about-content">
+<p>
+Professional experience. Reliable solutions.
+</p>
 
-        <div class="en">
-            <p>
-                KAMRA FOR ENERGY CONTRACTING L.L.C. provides energy,
-                well services and contracting solutions. Our approach is
-                based on professional execution, experienced personnel,
-                safety awareness and commitment to quality.
-            </p>
-        </div>
-<div class="company-file">
-    <iframe
-        src="company-profile.pdf.pdf#toolbar=0&navpanes=0&scrollbar=1"
-        width="100%"
-        height="700px"
-        style="border:1px solid #ddd; border-radius:8px;">
-    </iframe>
 </div>
-        <div class="ar">
-            <p>
-                تقدم شركة كامرا للمقاولات في مجال الطاقة ذ.م.م خدمات وحلولًا
-                في مجال الطاقة وخدمات الآبار والمقاولات. يعتمد نهجنا على
-                التنفيذ المهني والكوادر ذات الخبرة والالتزام بالسلامة والجودة.
-            </p>
-        </div>
 
-    </div>
+<div class="section-title ar">
+
+<h2>من نحن</h2>
+
+<p>
+خبرة مهنية وحلول موثوقة.
+</p>
+
+</div>
+
+
+<!-- 12 CARDS -->
+
+<div class="company-grid">
+
+
+<!-- 01 -->
+
+<div
+class="company-card"
+onclick="openPDF('01-logo.pdf')">
+
+<div class="card-number">
+01
+</div>
+
+<h3>
+Company Logo
+</h3>
+
+<p>
+شعار الشركة
+</p>
+
+</div>
+
+
+<!-- 02 -->
+
+<div
+class="company-card"
+onclick="openPDF('02-about-us.pdf')">
+
+<div class="card-number">
+02
+</div>
+
+<h3>
+About Us
+</h3>
+
+<p>
+من نحن
+</p>
+
+</div>
+
+
+<!-- 03 -->
+
+<div
+class="company-card"
+onclick="openPDF('03-vision.pdf')">
+
+<div class="card-number">
+03
+</div>
+
+<h3>
+Vision
+</h3>
+
+<p>
+الرؤية
+</p>
+
+</div>
+
+
+<!-- 04 -->
+
+<div
+class="company-card"
+onclick="openPDF('04-mission.pdf')">
+
+<div class="card-number">
+04
+</div>
+
+<h3>
+Mission
+</h3>
+
+<p>
+الرسالة
+</p>
+
+</div>
+
+
+<!-- 05 -->
+
+<div
+class="company-card"
+onclick="openPDF('05-comprehensive-safety.pdf')">
+
+<div class="card-number">
+05
+</div>
+
+<h3>
+Comprehensive Safety
+</h3>
+
+<p>
+السلامة الشاملة
+</p>
+
+</div>
+
+
+<!-- 06 -->
+
+<div
+class="company-card"
+onclick="openPDF('06-core-values.pdf')">
+
+<div class="card-number">
+06
+</div>
+
+<h3>
+Core Values
+</h3>
+
+<p>
+القيم الجوهرية
+</p>
+
+</div>
+
+
+<!-- 07 -->
+
+<div
+class="company-card"
+onclick="openPDF('07-operational-efficiency.pdf')">
+
+<div class="card-number">
+07
+</div>
+
+<h3>
+Operational Efficiency
+</h3>
+
+<p>
+الكفاءة التشغيلية
+</p>
+
+</div>
+
+
+<!-- 08 -->
+
+<div
+class="company-card"
+onclick="openPDF('08-continuous-innovation.pdf')">
+
+<div class="card-number">
+08
+</div>
+
+<h3>
+Continuous Innovation
+</h3>
+
+<p>
+الابتكار المستمر
+</p>
+
+</div>
+
+
+<!-- 09 -->
+
+<div
+class="company-card"
+onclick="openPDF('09-company-perspective.pdf')">
+
+<div class="card-number">
+09
+</div>
+
+<h3>
+Company Perspective
+</h3>
+
+<p>
+منظور الشركة
+</p>
+
+</div>
+
+
+<!-- 10 VIDEO -->
+
+<div
+class="company-card"
+onclick="openVideo()">
+
+<div class="card-number">
+10
+</div>
+
+<div class="video-icon">
+▶
+</div>
+
+<h3>
+Company Video
+</h3>
+
+<p>
+فيديو الشركة
+</p>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="company-card update-card">
+
+<div class="card-number">
+11
+</div>
+
+<div class="update-text">
+UPDATE
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="company-card update-card">
+
+<div class="card-number">
+12
+</div>
+
+<div class="update-text">
+UPDATE
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- VIEWER -->
+
+<div
+id="companyViewer"
+class="company-viewer">
+
+<button
+class="viewer-close"
+onclick="closeViewer()">
+×
+</button>
+
+<div
+class="viewer-content"
+id="viewerContent">
+</div>
+
+</div>
+
 </section>
+
+
+<!-- SERVICES -->
 
 <section class="services" id="services">
 
-    <div class="section-title en">
-        <h2>Our Services</h2>
-        <p>Integrated solutions for energy and well service operations.</p>
-    </div>
+<div class="section-title en">
 
-    <div class="section-title ar">
-        <h2>خدماتنا</h2>
-        <p>حلول متكاملة لعمليات الطاقة وخدمات الآبار.</p>
-    </div>
+<h2>
+Our Services
+</h2>
 
-    <div class="cards">
+<p>
+Integrated solutions for energy and well service operations.
+</p>
 
-        <div class="card">
-            <h3>Well Services</h3>
-            <p>Professional support and services for well operations.</p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>Energy Contracting</h3>
-            <p>Contracting solutions designed around operational requirements.</p>
-        </div>
+<div class="section-title ar">
 
-        <div class="card">
-            <h3>Technical Services</h3>
-            <p>Experienced technical personnel and operational support.</p>
-        </div>
+<h2>
+خدماتنا
+</h2>
 
-        <div class="card">
-            <h3>Inspection</h3>
-            <p>Inspection and quality-focused technical services.</p>
-        </div>
+<p>
+حلول متكاملة لعمليات الطاقة وخدمات الآبار.
+</p>
 
-        <div class="card">
-            <h3>HSE</h3>
-            <p>Health, Safety and Environmental commitment in every operation.</p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>Quality</h3>
-            <p>Structured processes focused on quality and continuous improvement.</p>
-        </div>
 
-    </div>
+<div class="cards">
+
+<div class="card">
+
+<h3>
+Well Services
+</h3>
+
+<p>
+Professional support and services for well operations.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Energy Contracting
+</h3>
+
+<p>
+Contracting solutions designed around operational requirements.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Technical Services
+</h3>
+
+<p>
+Experienced technical personnel and operational support.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Inspection
+</h3>
+
+<p>
+Inspection and quality-focused technical services.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+HSE
+</h3>
+
+<p>
+Health, Safety and Environmental commitment in every operation.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Quality
+</h3>
+
+<p>
+Structured processes focused on quality and continuous improvement.
+</p>
+
+</div>
+
+</div>
 
 </section>
+
+
+<!-- HSE -->
 
 <section class="hse" id="hse">
 
-    <div class="en">
-        <h2>Health, Safety & Environment</h2>
-        <p>
-            Safety is a fundamental part of our operations.
-            We are committed to responsible work practices,
-            risk awareness, environmental protection and continuous improvement.
-        </p>
-    </div>
+<div class="en">
 
-    <div class="ar">
-        <h2>الصحة والسلامة والبيئة</h2>
-        <p>
-            السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل
-            الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.
-        </p>
-    </div>
+<h2>
+Health, Safety & Environment
+</h2>
+
+<p>
+Safety is a fundamental part of our operations.
+We are committed to responsible work practices,
+risk awareness, environmental protection and continuous improvement.
+</p>
+
+</div>
+
+<div class="ar">
+
+<h2>
+الصحة والسلامة والبيئة
+</h2>
+
+<p>
+السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل
+الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+</p>
+
+</div>
 
 </section>
+
+
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
-    <div class="section-title en">
-        <h2>Contact Us</h2>
-        <p>We would be pleased to discuss your requirements.</p>
-    </div>
+<div class="section-title en">
 
-    <div class="section-title ar">
-        <h2>اتصل بنا</h2>
-        <p>يسعدنا مناقشة متطلباتكم واحتياجاتكم.</p>
-    </div>
+<h2>
+Contact Us
+</h2>
 
-    <div class="contact-box">
+<p>
+We would be pleased to discuss your requirements.
+</p>
 
-        <div class="en">
-            <p><strong>Company:</strong> KAMRA FOR ENERGY CONTRACTING L.L.C.</p>
-            <p><strong>Email:</strong> info@kamra-energy.com</p>
-        </div>
+</div>
 
-        <div class="ar">
-            <p><strong>الشركة:</strong> كامرا للمقاولات في مجال الطاقة ذ.م.م</p>
-            <p><strong>البريد الإلكتروني:</strong> info@kamra-energy.com</p>
-        </div>
+<div class="section-title ar">
 
-    </div>
+<h2>
+اتصل بنا
+</h2>
+
+<p>
+يسعدنا مناقشة متطلباتكم واحتياجاتكم.
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<div class="en">
+
+<p>
+<strong>Company:</strong>
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</p>
+
+<p>
+<strong>Email:</strong>
+info@kamra-energy.com
+</p>
+
+</div>
+
+
+<div class="ar">
+
+<p>
+<strong>الشركة:</strong>
+كامرا للمقاولات في مجال الطاقة ذ.م.م
+</p>
+
+<p>
+<strong>البريد الإلكتروني:</strong>
+info@kamra-energy.com
+</p>
+
+</div>
+
+</div>
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C. — All Rights Reserved.</p>
+
+<p>
+© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C.
+— All Rights Reserved.
+</p>
+
 </footer>
 
+
 <script>
+
+/* LANGUAGE */
+
 function toggleLanguage() {
 
-    const body = document.body;
-    const english = document.querySelectorAll(".en");
-    const arabic = document.querySelectorAll(".ar");
-    const button = document.querySelector(".lang-btn");
+const body = document.body;
 
-    if (body.classList.contains("rtl")) {
+const english =
+document.querySelectorAll(".en");
 
-        body.classList.remove("rtl");
+const arabic =
+document.querySelectorAll(".ar");
 
-        english.forEach(el => el.style.display = "");
-        arabic.forEach(el => el.style.display = "none");
+const button =
+document.querySelector(".lang-btn");
 
-        button.textContent = "العربية";
 
-    } else {
+if (body.classList.contains("rtl")) {
 
-        body.classList.add("rtl");
+body.classList.remove("rtl");
 
-        english.forEach(el => el.style.display = "none");
-        arabic.forEach(el => el.style.display = "");
+english.forEach(function(el) {
+el.style.display = "";
+});
 
-        button.textContent = "English";
-    }
+arabic.forEach(function(el) {
+el.style.display = "none";
+});
+
+button.textContent = "العربية";
+
 }
+
+else {
+
+body.classList.add("rtl");
+
+english.forEach(function(el) {
+el.style.display = "none";
+});
+
+arabic.forEach(function(el) {
+el.style.display = "";
+});
+
+button.textContent = "English";
+
+}
+
+}
+
+
+/* OPEN PDF */
+
+function openPDF(file) {
+
+const viewer =
+document.getElementById("companyViewer");
+
+const content =
+document.getElementById("viewerContent");
+
+
+content.innerHTML = `
+
+<iframe
+src="${file}#toolbar=0&navpanes=0&scrollbar=1"
+title="Company Profile">
+</iframe>
+
+`;
+
+
+viewer.classList.add("active");
+
+}
+
+
+/* OPEN VIDEO */
+
+function openVideo() {
+
+const viewer =
+document.getElementById("companyViewer");
+
+const content =
+document.getElementById("viewerContent");
+
+
+content.innerHTML = `
+
+<div style="
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#071426;
+color:white;
+text-align:center;
+font-size:22px;
+">
+
+<div>
+
+<div style="
+font-size:50px;
+margin-bottom:15px;
+">
+▶
+</div>
+
+<div>
+Company Video
+</div>
+
+<div style="
+font-size:14px;
+opacity:.7;
+margin-top:8px;
+">
+Video will be added soon
+</div>
+
+</div>
+
+</div>
+
+`;
+
+
+viewer.classList.add("active");
+
+}
+
+
+/* CLOSE */
+
+function closeViewer() {
+
+const viewer =
+document.getElementById("companyViewer");
+
+const content =
+document.getElementById("viewerContent");
+
+
+viewer.classList.remove("active");
+
+content.innerHTML = "";
+
+}
+
+
+/* CLICK OUTSIDE */
+
+document
+.getElementById("companyViewer")
+.addEventListener("click", function(e) {
+
+if (e.target === this) {
+
+closeViewer();
+
+}
+
+});
+
+
+/* ESC */
+
+document.addEventListener("keydown", function(e) {
+
+if (e.key === "Escape") {
+
+closeViewer();
+
+}
+
+});
+
 </script>
 
 </body>
