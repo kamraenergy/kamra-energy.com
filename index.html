@@ -3441,7 +3441,64 @@ window.addEventListener(
 
     }
 );
+window.addEventListener(
+    "load",
+    function() {
 
+        updateSlider();
+
+    }
+);
+
+
+/* =========================================================
+   QURAN VERSE ROTATION
+========================================================= */
+
+const quranVerses = [
+    {
+        verse: "﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",
+        source: "سورة طه — الآية 114"
+    },
+    {
+        verse: "﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾",
+        source: "سورة البقرة — الآية 153"
+    },
+    {
+        verse: "﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾",
+        source: "سورة الطلاق — الآية 3"
+    },
+    {
+        verse: "﴿وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ﴾",
+        source: "سورة التوبة — الآية 105"
+    }
+];
+
+let quranIndex = 0;
+
+setInterval(function() {
+
+    const verse =
+        document.getElementById("quranVerse");
+
+    const source =
+        document.getElementById("quranSource");
+
+    if (!verse || !source) return;
+
+    quranIndex++;
+
+    if (quranIndex >= quranVerses.length) {
+        quranIndex = 0;
+    }
+
+    verse.textContent =
+        quranVerses[quranIndex].verse;
+
+    source.textContent =
+        quranVerses[quranIndex].source;
+
+}, 7000);
 </script>
 
 
