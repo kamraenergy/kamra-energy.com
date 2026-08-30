@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
 >
 
 <title>
@@ -679,8 +680,6 @@ section {
     padding: 20px;
 
     overscroll-behavior: contain;
-
-    -webkit-overflow-scrolling: touch;
 }
 
 .company-viewer.active {
@@ -689,7 +688,7 @@ section {
 
 
 /* =========================================================
-   VIEWER CONTENT
+   PDF VIEWER CONTENT
 ========================================================= */
 
 .viewer-content {
@@ -698,9 +697,9 @@ section {
         94vw
     );
 
-    height: 88vh;
+    height: 90vh;
 
-    background: white;
+    background: #e9eef4;
 
     border-radius: 12px;
 
@@ -716,27 +715,192 @@ section {
         );
 
     position: relative;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
 
 /* =========================================================
-   PDF FRAME
+   PDF TOOLBAR
 ========================================================= */
 
-.viewer-content iframe {
+.pdf-toolbar {
+    flex: 0 0 50px;
+
+    min-height: 50px;
+
+    background: #0b1f3a;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 12px 0 18px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+.pdf-title {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    padding-right: 10px;
+}
+
+.pdf-page-info {
+    font-size: 12px;
+
+    color: #dce9f5;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PDF SCROLL AREA
+========================================================= */
+
+.pdf-scroll {
+    flex: 1;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    background:
+        #dfe5eb;
+
+    padding: 18px;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior:
+        contain;
+}
+
+
+/* =========================================================
+   PDF PAGE
+========================================================= */
+
+.pdf-page {
+    display: block;
+
     width: 100%;
 
-    height: 100%;
+    height: auto;
 
-    border: none;
-
-    display: block;
+    margin: 0 auto 18px auto;
 
     background: white;
 
-    overflow: auto;
+    box-shadow:
+        0 4px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+}
 
-    -webkit-overflow-scrolling: touch;
+
+/* =========================================================
+   PDF LOADING
+========================================================= */
+
+.pdf-loading {
+    min-height: 250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: #0b1f3a;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.pdf-spinner {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 4px solid
+        #cbd5e1;
+
+    border-top-color:
+        #1b9be0;
+
+    animation:
+        pdfSpin 0.8s
+        linear infinite;
+
+    margin-bottom: 15px;
+}
+
+@keyframes pdfSpin {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   PDF ERROR
+========================================================= */
+
+.pdf-error {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #0b1f3a;
+
+    font-weight: bold;
+}
+
+.pdf-error small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #64748b;
+
+    font-weight: normal;
 }
 
 
@@ -745,15 +909,9 @@ section {
 ========================================================= */
 
 .viewer-close {
-    position: absolute;
+    width: 38px;
 
-    top: 12px;
-
-    right: 18px;
-
-    width: 45px;
-
-    height: 45px;
+    height: 38px;
 
     border: none;
 
@@ -763,11 +921,11 @@ section {
 
     color: #0b1f3a;
 
-    font-size: 32px;
+    font-size: 28px;
+
+    line-height: 1;
 
     cursor: pointer;
-
-    z-index: 100000;
 
     display: flex;
 
@@ -775,14 +933,10 @@ section {
 
     justify-content: center;
 
-    box-shadow:
-        0 4px 15px
-        rgba(
-            0,
-            0,
-            0,
-            0.2
-        );
+    flex-shrink: 0;
+
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 .viewer-close:hover {
@@ -1067,10 +1221,14 @@ body.rtl .lang-btn {
     }
 
 
-    /* VIEWER */
+    /* PDF VIEWER */
 
     .company-viewer {
-        padding: 6px;
+        padding: 5px;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
     .viewer-content {
@@ -1081,34 +1239,49 @@ body.rtl .lang-btn {
         max-height: 94vh;
 
         border-radius: 8px;
-
-        overflow: hidden;
     }
 
-    .viewer-content iframe {
-        width: 100%;
+    .pdf-toolbar {
+        flex-basis: 48px;
 
-        height: 100%;
+        min-height: 48px;
 
-        min-width: 100%;
+        padding-left: 12px;
+    }
 
-        min-height: 100%;
+    .pdf-title {
+        font-size: 11px;
 
-        display: block;
+        max-width: 55%;
+    }
 
-        border: 0;
+    .pdf-page-info {
+        font-size: 10px;
     }
 
     .viewer-close {
-        top: 7px;
+        width: 36px;
 
-        right: 8px;
+        height: 36px;
 
-        width: 40px;
+        font-size: 26px;
+    }
 
-        height: 40px;
+    .pdf-scroll {
+        padding: 8px;
+    }
 
-        font-size: 27px;
+    .pdf-page {
+        margin-bottom: 10px;
+
+        box-shadow:
+            0 2px 10px
+            rgba(
+                0,
+                0,
+                0,
+                0.15
+            );
     }
 
 }
@@ -1189,89 +1362,35 @@ body.rtl .lang-btn {
 .company-card,
 .slider-btn {
     -webkit-user-select: none;
+
     user-select: none;
 }
 
 
 /* =========================================================
-   MOBILE PDF FIX
+   MOBILE PDF
 ========================================================= */
 
 @media (max-width: 700px) {
 
-    /*
-       نترك المتصفح يحدد حجم صفحة PDF
-       بدل إجباره على FitH
-    */
-
-    .viewer-content {
+    .pdf-scroll {
         -webkit-overflow-scrolling: touch;
 
-        touch-action: pan-x pan-y;
-    }
-
-    .viewer-content iframe {
-        -webkit-overflow-scrolling: touch;
-
-        touch-action: pan-x pan-y;
-
-        min-height: 100%;
+        touch-action:
+            pan-y pinch-zoom;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE PORTRAIT PDF
+   PRINT
 ========================================================= */
 
-@media (max-width: 700px) and (orientation: portrait) {
+@media print {
 
     .company-viewer {
-        padding: 4px;
-    }
-
-    .viewer-content {
-        width: 100vw;
-
-        max-width: 100vw;
-
-        height: 96vh;
-
-        max-height: 96vh;
-
-        border-radius: 6px;
-    }
-
-    .viewer-content iframe {
-        width: 100%;
-
-        height: 100%;
-
-        min-width: 100%;
-
-        min-height: 100%;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE LANDSCAPE
-========================================================= */
-
-@media (max-width: 900px) and (orientation: landscape) {
-
-    .company-viewer {
-        padding: 4px;
-    }
-
-    .viewer-content {
-        width: 98vw;
-
-        height: 96vh;
-
-        max-height: 96vh;
+        display: none !important;
     }
 
 }
@@ -1441,6 +1560,8 @@ Professional experience. Reliable solutions.
 <div class="company-slider">
 
 
+<!-- PREVIOUS -->
+
 <button
     type="button"
     class="slider-btn"
@@ -1450,6 +1571,8 @@ Professional experience. Reliable solutions.
 ‹
 </button>
 
+
+<!-- WINDOW -->
 
 <div
     class="company-slider-window"
@@ -1870,6 +1993,8 @@ UPDATE
 </div>
 
 
+<!-- NEXT -->
+
 <button
     type="button"
     class="slider-btn"
@@ -1884,7 +2009,7 @@ UPDATE
 
 
 <!-- =========================================================
-     VIEWER
+     PDF VIEWER
 ========================================================= -->
 
 <div
@@ -1894,20 +2019,14 @@ UPDATE
 >
 
 
-<button
-    type="button"
-    class="viewer-close"
-    id="viewerClose"
-    aria-label="Close"
->
-×
-</button>
-
-
 <div
     class="viewer-content"
     id="viewerContent"
 >
+
+
+<!-- سيتم إنشاء محتوى PDF هنا بواسطة PDF.js -->
+
 
 </div>
 
@@ -2193,6 +2312,15 @@ info@kamra-energy.com
 </footer>
 
 
+<!-- =========================================================
+     PDF.JS
+========================================================= -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+></script>
+
+
 <script>
 
 /* =========================================================
@@ -2380,7 +2508,8 @@ function updateSlider() {
 
 
     const cardWidth =
-        firstCard.getBoundingClientRect()
+        firstCard
+        .getBoundingClientRect()
         .width;
 
 
@@ -2504,7 +2633,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   PDF VIEWER
+   PDF VIEWER ELEMENTS
 ========================================================= */
 
 const viewer =
@@ -2517,20 +2646,29 @@ const viewerContent =
         "viewerContent"
     );
 
-const viewerClose =
-    document.getElementById(
-        "viewerClose"
-    );
+
+/* =========================================================
+   PDF.JS SETUP
+========================================================= */
+
+if (
+    typeof pdfjsLib !== "undefined"
+) {
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+}
 
 
 /* =========================================================
    OPEN PDF
 ========================================================= */
 
-function openPDF(file) {
+async function openPDF(file) {
 
     /*
-       منع الصفحة الرئيسية من التحرك
+       منع الصفحة الرئيسية من الحركة
     */
 
     document.body.style.overflow =
@@ -2538,90 +2676,519 @@ function openPDF(file) {
 
 
     /*
-       تنظيف المحتوى السابق
-    */
-
-    viewerContent.innerHTML =
-        "";
-
-
-    /*
-       إنشاء iframe
-    */
-
-    const iframe =
-        document.createElement(
-            "iframe"
-        );
-
-
-    /*
-       =====================================================
-       IMPORTANT MOBILE FIX
-       =====================================================
-
-       لا نستخدم:
-
-       #view=FitH
-
-       لأن بعض متصفحات الموبايل تقوم
-       بتكبير صفحة PDF وقص جزء منها
-       في الوضع العمودي.
-
-       نترك عارض PDF الأصلي للمتصفح
-       يحدد الحجم المناسب.
-    */
-
-    iframe.src =
-        file +
-        "#toolbar=0" +
-        "&navpanes=0" +
-        "&scrollbar=1";
-
-
-    iframe.title =
-        "KAMRA Company Document";
-
-
-    iframe.setAttribute(
-        "frameborder",
-        "0"
-    );
-
-
-    iframe.setAttribute(
-        "allowfullscreen",
-        ""
-    );
-
-
-    iframe.setAttribute(
-        "loading",
-        "eager"
-    );
-
-
-    /*
-       إضافة iframe
-    */
-
-    viewerContent.appendChild(
-        iframe
-    );
-
-
-    /*
-       إظهار النافذة
+       إظهار النافذة مباشرة
     */
 
     viewer.classList.add(
         "active"
     );
 
-
     viewer.setAttribute(
         "aria-hidden",
         "false"
+    );
+
+
+    /*
+       تنظيف المحتوى السابق
+    */
+
+    viewerContent.innerHTML = "";
+
+
+    /*
+       إنشاء شريط الأدوات
+    */
+
+    const toolbar =
+        document.createElement(
+            "div"
+        );
+
+    toolbar.className =
+        "pdf-toolbar";
+
+
+    /*
+       عنوان الملف
+    */
+
+    const title =
+        document.createElement(
+            "div"
+        );
+
+    title.className =
+        "pdf-title";
+
+    title.textContent =
+        "KAMRA Company Document";
+
+
+    /*
+       معلومات الصفحات
+    */
+
+    const pageInfo =
+        document.createElement(
+            "div"
+        );
+
+    pageInfo.className =
+        "pdf-page-info";
+
+    pageInfo.textContent =
+        "Loading...";
+
+
+    /*
+       زر الإغلاق
+    */
+
+    const closeButton =
+        document.createElement(
+            "button"
+        );
+
+    closeButton.type =
+        "button";
+
+    closeButton.className =
+        "viewer-close";
+
+    closeButton.setAttribute(
+        "aria-label",
+        "Close"
+    );
+
+    closeButton.innerHTML =
+        "×";
+
+
+    closeButton.addEventListener(
+        "click",
+        function(e) {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+            closeViewer();
+
+        }
+    );
+
+
+    toolbar.appendChild(
+        title
+    );
+
+    toolbar.appendChild(
+        pageInfo
+    );
+
+    toolbar.appendChild(
+        closeButton
+    );
+
+
+    /*
+       منطقة عرض الصفحات
+    */
+
+    const scrollArea =
+        document.createElement(
+            "div"
+        );
+
+    scrollArea.className =
+        "pdf-scroll";
+
+
+    /*
+       شاشة التحميل
+    */
+
+    const loading =
+        document.createElement(
+            "div"
+        );
+
+    loading.className =
+        "pdf-loading";
+
+
+    const spinner =
+        document.createElement(
+            "div"
+        );
+
+    spinner.className =
+        "pdf-spinner";
+
+
+    const loadingText =
+        document.createElement(
+            "div"
+        );
+
+    loadingText.textContent =
+        "Opening document...";
+
+
+    loading.appendChild(
+        spinner
+    );
+
+    loading.appendChild(
+        loadingText
+    );
+
+
+    scrollArea.appendChild(
+        loading
+    );
+
+
+    /*
+       إضافة العناصر
+    */
+
+    viewerContent.appendChild(
+        toolbar
+    );
+
+    viewerContent.appendChild(
+        scrollArea
+    );
+
+
+    /*
+       التأكد من تحميل PDF.js
+    */
+
+    if (
+        typeof pdfjsLib === "undefined"
+    ) {
+
+        showPDFError(
+            scrollArea,
+            "PDF viewer library could not be loaded."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        /*
+           تحميل ملف PDF
+        */
+
+        const loadingTask =
+            pdfjsLib.getDocument({
+                url: file
+            });
+
+
+        const pdf =
+            await loadingTask.promise;
+
+
+        /*
+           تحديث عدد الصفحات
+        */
+
+        pageInfo.textContent =
+            pdf.numPages +
+            (
+                pdf.numPages === 1
+                    ? " page"
+                    : " pages"
+            );
+
+
+        /*
+           إزالة شاشة التحميل
+        */
+
+        scrollArea.innerHTML =
+            "";
+
+
+        /*
+           تحديد عرض الصفحة
+        */
+
+        const availableWidth =
+            scrollArea.clientWidth -
+            (
+                window.innerWidth <= 700
+                    ? 16
+                    : 36
+            );
+
+
+        /*
+           رسم كل الصفحات
+        */
+
+        for (
+            let pageNumber = 1;
+            pageNumber <= pdf.numPages;
+            pageNumber++
+        ) {
+
+            try {
+
+                await renderPDFPage(
+                    pdf,
+                    pageNumber,
+                    scrollArea,
+                    availableWidth
+                );
+
+            }
+
+            catch (
+                pageError
+            ) {
+
+                console.error(
+                    "PDF page error:",
+                    pageError
+                );
+
+            }
+
+        }
+
+    }
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "PDF loading error:",
+            error
+        );
+
+
+        showPDFError(
+            scrollArea,
+            "Unable to display this PDF."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER PDF PAGE
+========================================================= */
+
+async function renderPDFPage(
+    pdf,
+    pageNumber,
+    container,
+    availableWidth
+) {
+
+    const page =
+        await pdf.getPage(
+            pageNumber
+        );
+
+
+    /*
+       الحجم الأصلي للصفحة
+    */
+
+    const originalViewport =
+        page.getViewport({
+            scale: 1
+        });
+
+
+    /*
+       حساب التكبير
+    */
+
+    let scale =
+        availableWidth /
+        originalViewport.width;
+
+
+    /*
+       حماية من التكبير الزائد
+    */
+
+    if (
+        scale < 0.5
+    ) {
+
+        scale = 0.5;
+
+    }
+
+
+    if (
+        scale > 2
+    ) {
+
+        scale = 2;
+
+    }
+
+
+    const viewport =
+        page.getViewport({
+            scale: scale
+        });
+
+
+    /*
+       إنشاء Canvas
+    */
+
+    const canvas =
+        document.createElement(
+            "canvas"
+        );
+
+
+    canvas.className =
+        "pdf-page";
+
+
+    const context =
+        canvas.getContext(
+            "2d"
+        );
+
+
+    /*
+       دعم الشاشات عالية الدقة
+    */
+
+    const devicePixelRatio =
+        window.devicePixelRatio ||
+        1;
+
+
+    canvas.width =
+        Math.floor(
+            viewport.width *
+            devicePixelRatio
+        );
+
+
+    canvas.height =
+        Math.floor(
+            viewport.height *
+            devicePixelRatio
+        );
+
+
+    canvas.style.width =
+        Math.floor(
+            viewport.width
+        ) +
+        "px";
+
+
+    canvas.style.height =
+        Math.floor(
+            viewport.height
+        ) +
+        "px";
+
+
+    /*
+       ضبط الـContext
+    */
+
+    context.setTransform(
+        devicePixelRatio,
+        0,
+        0,
+        devicePixelRatio,
+        0,
+        0
+    );
+
+
+    /*
+       إضافة الصفحة
+    */
+
+    container.appendChild(
+        canvas
+    );
+
+
+    /*
+       رسم الصفحة
+    */
+
+    await page.render({
+        canvasContext:
+            context,
+
+        viewport:
+            viewport
+    }).promise;
+
+}
+
+
+/* =========================================================
+   PDF ERROR
+========================================================= */
+
+function showPDFError(
+    container,
+    message
+) {
+
+    container.innerHTML = "";
+
+
+    const error =
+        document.createElement(
+            "div"
+        );
+
+
+    error.className =
+        "pdf-error";
+
+
+    error.textContent =
+        message;
+
+
+    const small =
+        document.createElement(
+            "small"
+        );
+
+
+    small.textContent =
+        "Please check that the PDF file exists on the server.";
+
+
+    error.appendChild(
+        small
+    );
+
+
+    container.appendChild(
+        error
     );
 
 }
@@ -2642,7 +3209,12 @@ pdfCards.forEach(
 
         card.addEventListener(
             "click",
-            function() {
+            function(e) {
+
+                e.preventDefault();
+
+                e.stopPropagation();
+
 
                 const file =
                     card.getAttribute(
@@ -2675,7 +3247,11 @@ const videoCard =
 
 videoCard.addEventListener(
     "click",
-    function() {
+    function(e) {
+
+        e.preventDefault();
+
+        e.stopPropagation();
 
         openVideo();
 
@@ -2689,6 +3265,17 @@ function openVideo() {
         "hidden";
 
 
+    viewer.classList.add(
+        "active"
+    );
+
+
+    viewer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
     viewerContent.innerHTML = `
 
         <div style="
@@ -2696,6 +3283,8 @@ function openVideo() {
             height:100%;
 
             display:flex;
+
+            flex-direction:column;
 
             align-items:center;
 
@@ -2707,6 +3296,19 @@ function openVideo() {
 
             text-align:center;
         ">
+
+            <button
+                type="button"
+                class="viewer-close"
+                id="videoCloseButton"
+                style="
+                    position:absolute;
+                    top:12px;
+                    right:12px;
+                "
+            >
+                ×
+            </button>
 
             <div>
 
@@ -2740,14 +3342,23 @@ function openVideo() {
     `;
 
 
-    viewer.classList.add(
-        "active"
-    );
+    const videoCloseButton =
+        document.getElementById(
+            "videoCloseButton"
+        );
 
 
-    viewer.setAttribute(
-        "aria-hidden",
-        "false"
+    videoCloseButton.addEventListener(
+        "click",
+        function(e) {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+            closeViewer();
+
+        }
     );
 
 }
@@ -2771,36 +3382,22 @@ function closeViewer() {
 
 
     /*
-       حذف iframe بالكامل
-       لمنع استمرار الملف بالعمل
+       حذف كل صفحات PDF
+       وإيقاف أي عملية عرض
     */
 
     viewerContent.innerHTML =
         "";
 
 
+    /*
+       إعادة حركة الصفحة
+    */
+
     document.body.style.overflow =
         "";
 
 }
-
-
-/* =========================================================
-   CLOSE BUTTON
-========================================================= */
-
-viewerClose.addEventListener(
-    "click",
-    function(e) {
-
-        e.preventDefault();
-
-        e.stopPropagation();
-
-        closeViewer();
-
-    }
-);
 
 
 /* =========================================================
@@ -2913,6 +3510,39 @@ sliderWindow.addEventListener(
 
 
 /* =========================================================
+   PREVENT SLIDER CLICK AFTER SWIPE
+========================================================= */
+
+let sliderMoved = false;
+
+
+sliderWindow.addEventListener(
+    "touchstart",
+    function() {
+
+        sliderMoved = false;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+sliderWindow.addEventListener(
+    "touchmove",
+    function() {
+
+        sliderMoved = true;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+/* =========================================================
    INITIALIZE
 ========================================================= */
 
@@ -2937,5 +3567,7 @@ window.addEventListener(
 
 </script>
 
+
 </body>
+
 </html>
