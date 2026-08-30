@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
 
 <style>
 
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -22,60 +19,58 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-
     font-family: Arial, sans-serif;
-
     color: #172033;
-
     background: #f7f9fc;
-
     line-height: 1.6;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
 
-/* =====================================================
+
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 header {
-
     background: #0b1f3a;
-
     color: white;
 
     padding: 15px 7%;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     position: sticky;
-
     top: 0;
 
     z-index: 100;
 }
 
-
 .logo img {
-
     height: 55px;
-
     width: auto;
+    max-width: 190px;
 
     display: block;
-
     object-fit: contain;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
 
 nav a {
-
     color: white;
-
     text-decoration: none;
 
     margin-left: 22px;
@@ -85,19 +80,14 @@ nav a {
     transition: color 0.3s ease;
 }
 
-
 nav a:hover {
-
     color: #55b8ff;
 }
 
-
 .lang-btn {
-
     border: 1px solid #55b8ff;
 
     background: transparent;
-
     color: white;
 
     padding: 7px 12px;
@@ -113,28 +103,23 @@ nav a:hover {
         color 0.3s ease;
 }
 
-
 .lang-btn:hover {
-
     background: #55b8ff;
-
     color: #0b1f3a;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero {
-
-    min-height: 620px;
+    min-height: 600px;
 
     display: flex;
-
     align-items: center;
 
-    padding: 80px 7%;
+    padding: 75px 7%;
 
     background:
         linear-gradient(
@@ -146,15 +131,11 @@ nav a:hover {
     color: white;
 }
 
-
 .hero-content {
-
     max-width: 850px;
 }
 
-
 .hero h1 {
-
     font-size: 52px;
 
     margin-bottom: 20px;
@@ -162,9 +143,7 @@ nav a:hover {
     line-height: 1.15;
 }
 
-
 .hero p {
-
     font-size: 20px;
 
     max-width: 700px;
@@ -174,9 +153,7 @@ nav a:hover {
     color: #dce9f5;
 }
 
-
 .btn {
-
     display: inline-block;
 
     background: #1b9be0;
@@ -196,35 +173,28 @@ nav a:hover {
         transform 0.3s ease;
 }
 
-
 .btn:hover {
-
     background: #55b8ff;
 
     transform: translateY(-2px);
 }
 
 
-/* =====================================================
+/* =========================================================
    SECTIONS
-===================================================== */
+========================================================= */
 
 section {
-
     padding: 70px 7%;
 }
 
-
 .section-title {
-
     text-align: center;
 
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
-
 .section-title h2 {
-
     font-size: 34px;
 
     color: #0b1f3a;
@@ -232,145 +202,71 @@ section {
     margin-bottom: 10px;
 }
 
-
 .section-title p {
-
     color: #64748b;
 }
 
-
 .about {
-
     background: white;
 }
 
 
-/* =====================================================
-   COMPANY CARDS CAROUSEL
-===================================================== */
+/* =========================================================
+   COMPANY SLIDER
+========================================================= */
 
-.company-carousel {
+.company-slider {
+    max-width: 1150px;
 
-    max-width: 1180px;
-
-    margin: 30px auto 0;
+    margin: 0 auto;
 
     position: relative;
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
+    padding:
+        0 52px;
 }
 
 
-/* =====================================================
-   ARROWS
-===================================================== */
-
-.carousel-arrow {
-
-    flex: 0 0 45px;
-
-    width: 45px;
-
-    height: 45px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(85,184,255,0.45);
-
-    background: #0b1f3a;
-
-    color: white;
-
-    font-size: 26px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    cursor: pointer;
-
-    z-index: 10;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease,
-        border-color 0.3s ease;
-}
-
-
-.carousel-arrow:hover {
-
-    background: #1b9be0;
-
-    border-color: #55b8ff;
-
-    transform: scale(1.08);
-}
-
-
-.carousel-arrow:active {
-
-    transform: scale(0.95);
-}
-
-
-/* =====================================================
-   VIEWPORT
-===================================================== */
+/* VIEWPORT */
 
 .company-viewport {
+    overflow: hidden;
 
     width: 100%;
-
-    overflow: hidden;
 
     border-radius: 18px;
 }
 
 
-/* =====================================================
-   TRACK
-===================================================== */
+/* TRACK */
 
 .company-track {
-
     display: flex;
 
-    gap: 16px;
+    gap: 18px;
 
     transition:
-        transform 0.5s cubic-bezier(
-            0.22,
-            0.61,
-            0.36,
-            1
-        );
+        transform 0.45s ease;
 
     will-change: transform;
 }
 
 
-/* =====================================================
+/* =========================================================
    CARD
-===================================================== */
+========================================================= */
 
 .company-card {
+    flex:
+        0 0 calc(
+            (100% - 54px) / 4
+        );
+
+    min-height: 175px;
 
     position: relative;
 
     overflow: hidden;
-
-    flex: 0 0 calc(
-        (100% - 48px) / 4
-    );
-
-    min-height: 175px;
 
     background:
         linear-gradient(
@@ -380,7 +276,8 @@ section {
             #155b86 100%
         );
 
-    border: 1px solid
+    border:
+        1px solid
         rgba(85,184,255,0.25);
 
     border-radius: 15px;
@@ -412,9 +309,7 @@ section {
 }
 
 
-/* =====================================================
-   DECORATIVE CIRCLE
-===================================================== */
+/* LIGHT CIRCLE */
 
 .company-card::after {
 
@@ -422,12 +317,10 @@ section {
 
     position: absolute;
 
-    width: 135px;
-
-    height: 135px;
+    width: 140px;
+    height: 140px;
 
     top: -75px;
-
     right: -75px;
 
     background:
@@ -441,9 +334,7 @@ section {
 }
 
 
-/* =====================================================
-   HOVER EFFECT
-===================================================== */
+/* HOVER */
 
 .company-card:hover {
 
@@ -458,18 +349,14 @@ section {
         rgba(11,31,58,0.27);
 }
 
-
 .company-card:hover::after {
 
-    width: 185px;
-
-    height: 185px;
+    width: 190px;
+    height: 190px;
 }
 
 
-/* =====================================================
-   TOP LINE
-===================================================== */
+/* TOP LINE */
 
 .company-card::before {
 
@@ -478,11 +365,9 @@ section {
     position: absolute;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
-
     height: 4px;
 
     background: #55b8ff;
@@ -497,7 +382,6 @@ section {
         transform 0.35s ease;
 }
 
-
 .company-card:hover::before {
 
     transform:
@@ -505,14 +389,13 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    LOGO
-===================================================== */
+========================================================= */
 
 .card-logo {
 
     width: 42px;
-
     height: 42px;
 
     object-fit: contain;
@@ -523,13 +406,18 @@ section {
 
     z-index: 2;
 
+    /*
+       مهم جداً:
+       لا يوجد filter هنا.
+       لذلك الشعار لن يتحول إلى دائرة بيضاء.
+    */
+
     opacity: 0.95;
 
     transition:
         transform 0.35s ease,
         opacity 0.35s ease;
 }
-
 
 .company-card:hover .card-logo {
 
@@ -540,15 +428,15 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    NUMBER
-===================================================== */
+========================================================= */
 
 .card-number {
 
     color: #55b8ff;
 
-    font-size: 11px;
+    font-size: 12px;
 
     font-weight: bold;
 
@@ -562,9 +450,9 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    TITLE
-===================================================== */
+========================================================= */
 
 .company-card h3 {
 
@@ -582,9 +470,9 @@ section {
 }
 
 
-/* =====================================================
-   ARABIC TEXT
-===================================================== */
+/* =========================================================
+   ARABIC
+========================================================= */
 
 .company-card p {
 
@@ -600,15 +488,15 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    VIDEO
-===================================================== */
+========================================================= */
 
 .video-icon {
 
     color: #55b8ff;
 
-    font-size: 27px;
+    font-size: 28px;
 
     margin-bottom: 3px;
 
@@ -618,9 +506,9 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    UPDATE CARDS
-===================================================== */
+========================================================= */
 
 .update-card {
 
@@ -636,7 +524,6 @@ section {
         );
 }
 
-
 .update-card:hover {
 
     transform: none;
@@ -649,21 +536,17 @@ section {
         rgba(11,31,58,0.14);
 }
 
-
 .update-card:hover::before {
 
     transform:
         scaleX(0);
 }
 
-
 .update-card:hover::after {
 
-    width: 135px;
-
-    height: 135px;
+    width: 140px;
+    height: 140px;
 }
-
 
 .update-text {
 
@@ -681,53 +564,84 @@ section {
 }
 
 
-/* =====================================================
-   CAROUSEL DOTS
-===================================================== */
+/* =========================================================
+   SLIDER ARROWS
+========================================================= */
 
-.carousel-dots {
+.slider-arrow {
 
-    display: flex;
+    position: absolute;
 
-    justify-content: center;
+    top: 50%;
 
-    align-items: center;
+    transform:
+        translateY(-50%);
 
-    gap: 7px;
+    width: 42px;
+    height: 42px;
 
-    margin-top: 18px;
-}
-
-
-.carousel-dot {
-
-    width: 7px;
-
-    height: 7px;
+    border: none;
 
     border-radius: 50%;
 
-    background: #cbd5e1;
+    background: #0b1f3a;
+
+    color: white;
+
+    font-size: 26px;
+
+    line-height: 1;
 
     cursor: pointer;
 
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 6px 18px
+        rgba(11,31,58,0.25);
+
     transition:
         background 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
-
-.carousel-dot.active {
+.slider-arrow:hover {
 
     background: #1b9be0;
 
-    transform: scale(1.35);
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.slider-arrow.prev {
+
+    left: 0;
+}
+
+.slider-arrow.next {
+
+    right: 0;
+}
+
+.slider-arrow:disabled {
+
+    opacity: 0.3;
+
+    cursor: default;
 }
 
 
-/* =====================================================
+/* =========================================================
    PDF / VIDEO VIEWER
-===================================================== */
+========================================================= */
 
 .company-viewer {
 
@@ -746,9 +660,8 @@ section {
 
     justify-content: center;
 
-    padding: 30px;
+    padding: 25px;
 }
-
 
 .company-viewer.active {
 
@@ -756,13 +669,15 @@ section {
 }
 
 
+/* VIEWER CONTENT */
+
 .viewer-content {
 
     width:
         min(950px, 94vw);
 
     height:
-        86vh;
+        88vh;
 
     background: white;
 
@@ -776,6 +691,8 @@ section {
 }
 
 
+/* IFRAME */
+
 .viewer-content iframe {
 
     width: 100%;
@@ -788,9 +705,9 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    CLOSE BUTTON
-===================================================== */
+========================================================= */
 
 .viewer-close {
 
@@ -823,7 +740,6 @@ section {
         color 0.3s ease;
 }
 
-
 .viewer-close:hover {
 
     background: #1b9be0;
@@ -832,15 +748,13 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    SERVICES
-===================================================== */
+========================================================= */
 
 .services {
-
     background: #f7f9fc;
 }
-
 
 .cards {
 
@@ -851,7 +765,6 @@ section {
 
     gap: 22px;
 }
-
 
 .card {
 
@@ -872,7 +785,6 @@ section {
         box-shadow 0.3s ease;
 }
 
-
 .card:hover {
 
     transform:
@@ -883,7 +795,6 @@ section {
         rgba(11,31,58,0.12);
 }
 
-
 .card h3 {
 
     color: #0b1f3a;
@@ -891,16 +802,14 @@ section {
     margin-bottom: 10px;
 }
 
-
 .card p {
-
     color: #64748b;
 }
 
 
-/* =====================================================
+/* =========================================================
    HSE
-===================================================== */
+========================================================= */
 
 .hse {
 
@@ -911,14 +820,12 @@ section {
     text-align: center;
 }
 
-
 .hse h2 {
 
     font-size: 34px;
 
     margin-bottom: 20px;
 }
-
 
 .hse p {
 
@@ -932,9 +839,9 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTACT
-===================================================== */
+========================================================= */
 
 .contact {
 
@@ -943,14 +850,12 @@ section {
     text-align: center;
 }
 
-
 .contact-box {
 
     max-width: 700px;
 
     margin: auto;
 }
-
 
 .contact-box p {
 
@@ -960,9 +865,9 @@ section {
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
 
@@ -976,21 +881,17 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    LANGUAGE
-===================================================== */
+========================================================= */
 
 .ar {
-
     display: none;
 }
 
-
 body.rtl {
-
     direction: rtl;
 }
-
 
 body.rtl nav a {
 
@@ -998,7 +899,6 @@ body.rtl nav a {
 
     margin-right: 22px;
 }
-
 
 body.rtl .lang-btn {
 
@@ -1008,31 +908,26 @@ body.rtl .lang-btn {
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 1000px) {
 
     .company-card {
 
-        flex-basis:
-            calc(
-                (100% - 32px) / 3
+        flex:
+            0 0 calc(
+                (100% - 36px) / 3
             );
     }
 
-    .company-grid {
-
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE / TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -1043,68 +938,28 @@ body.rtl .lang-btn {
         gap: 15px;
     }
 
-
     nav a {
 
         margin:
             0 6px;
     }
 
-
     .hero h1 {
 
         font-size: 38px;
     }
 
-
     .cards {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
-
-    .company-card {
-
-        flex-basis:
-            calc(
-                (100% - 16px) / 2
-            );
-
-        min-height: 155px;
-
-        padding: 15px 8px;
-    }
-
-
-    .company-carousel {
-
-        gap: 7px;
-    }
-
-
-    .carousel-arrow {
-
-        flex-basis: 38px;
-
-        width: 38px;
-
-        height: 38px;
-
-        font-size: 21px;
-    }
-
-
-    .company-viewport {
-
-        border-radius: 14px;
-    }
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1115,207 +970,254 @@ body.rtl .lang-btn {
     }
 
 
+    /* HEADER */
+
     header {
 
         padding:
             13px 5%;
     }
 
-
     .logo img {
 
         height: 50px;
 
         max-width: 180px;
-
-        object-fit: contain;
     }
 
+
+    /* NAV */
 
     nav {
 
         width: 100%;
 
-        text-align: center;
-    }
+        justify-content: center;
 
+        flex-wrap: wrap;
+
+        gap: 4px;
+    }
 
     nav a {
 
         font-size: 13px;
 
-        margin: 0 3px;
+        margin:
+            0 3px;
     }
-
 
     .lang-btn {
 
         font-size: 12px;
 
-        padding: 6px 9px;
+        padding:
+            6px 9px;
 
-        margin-left: 7px;
+        margin-left:
+            6px;
     }
 
 
+    /* HERO */
+
     .hero {
 
-        min-height: 560px;
+        min-height:
+            550px;
 
         padding:
             60px 5%;
     }
 
-
     .hero h1 {
 
-        font-size: 34px;
+        font-size:
+            34px;
     }
-
 
     .hero p {
 
-        font-size: 17px;
+        font-size:
+            17px;
     }
 
 
-    /* =========================================
-       MOBILE CAROUSEL
-    ========================================= */
+    /* SLIDER */
 
-    .company-carousel {
+    .company-slider {
 
-        gap: 5px;
+        padding:
+            0 42px;
     }
-
-
-    .carousel-arrow {
-
-        flex-basis: 34px;
-
-        width: 34px;
-
-        height: 34px;
-
-        font-size: 19px;
-    }
-
 
     .company-track {
 
-        gap: 10px;
+        gap:
+            10px;
     }
 
 
+    /* TWO CARDS ON MOBILE */
+
     .company-card {
 
-        flex-basis:
-            calc(
+        flex:
+            0 0 calc(
                 (100% - 10px) / 2
             );
 
-        min-height: 150px;
+        min-height:
+            150px;
 
         padding:
             14px 6px;
 
-        border-radius: 12px;
+        border-radius:
+            13px;
     }
 
+
+    /* CARD LOGO */
 
     .card-logo {
 
-        width: 34px;
+        width:
+            34px;
 
-        height: 34px;
+        height:
+            34px;
 
-        margin-bottom: 6px;
+        margin-bottom:
+            6px;
     }
 
+
+    /* NUMBER */
 
     .card-number {
 
-        font-size: 10px;
+        font-size:
+            10px;
 
-        letter-spacing: 2px;
+        letter-spacing:
+            2px;
 
-        margin-bottom: 4px;
+        margin-bottom:
+            4px;
     }
 
+
+    /* TITLE */
 
     .company-card h3 {
 
-        font-size: 12px;
+        font-size:
+            12px;
 
-        line-height: 1.25;
+        line-height:
+            1.25;
 
-        margin-bottom: 3px;
+        margin-bottom:
+            3px;
     }
 
+
+    /* ARABIC */
 
     .company-card p {
 
-        font-size: 10px;
+        font-size:
+            10px;
     }
 
+
+    /* VIDEO */
 
     .video-icon {
 
-        font-size: 24px;
+        font-size:
+            23px;
     }
 
 
-    .update-text {
+    /* ARROWS */
 
-        font-size: 14px;
+    .slider-arrow {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+        font-size:
+            22px;
+    }
+
+    .slider-arrow.prev {
+
+        left:
+            0;
+    }
+
+    .slider-arrow.next {
+
+        right:
+            0;
     }
 
 
-    /* =========================================
-       VIEWER MOBILE
-    ========================================= */
+    /* VIEWER */
 
     .company-viewer {
 
-        padding: 10px;
+        padding:
+            10px;
     }
-
 
     .viewer-content {
 
-        width: 100%;
+        width:
+            100%;
 
-        height: 88vh;
+        height:
+            88vh;
 
-        border-radius: 8px;
+        border-radius:
+            8px;
     }
-
 
     .viewer-close {
 
-        top: 8px;
+        top:
+            8px;
 
-        right: 10px;
+        right:
+            10px;
 
-        width: 40px;
+        width:
+            40px;
 
-        height: 40px;
+        height:
+            40px;
 
-        font-size: 27px;
+        font-size:
+            27px;
     }
+
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
 <header>
 
@@ -1363,15 +1265,16 @@ onclick="toggleLanguage()">
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section
 class="hero"
 id="home">
 
 <div class="hero-content">
+
 
 <div class="en">
 
@@ -1416,14 +1319,15 @@ href="#contact">
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-===================================================== -->
+========================================================= -->
 
 <section
 class="about"
@@ -1456,27 +1360,23 @@ Professional experience. Reliable solutions.
 </div>
 
 
-<!-- =====================================================
-     COMPANY CAROUSEL
-===================================================== -->
+<!-- =========================================================
+     12 CARDS SLIDER
+========================================================= -->
 
-<div class="company-carousel">
+<div class="company-slider">
 
-
-<!-- LEFT -->
 
 <button
-class="carousel-arrow"
+class="slider-arrow prev"
 id="prevBtn"
-onclick="moveCarousel(-1)"
+type="button"
 aria-label="Previous">
 
-‹
+&#10094;
 
 </button>
 
-
-<!-- VIEWPORT -->
 
 <div class="company-viewport">
 
@@ -1796,32 +1696,23 @@ UPDATE
 </div>
 
 
-<!-- RIGHT -->
-
 <button
-class="carousel-arrow"
+class="slider-arrow next"
 id="nextBtn"
-onclick="moveCarousel(1)"
+type="button"
 aria-label="Next">
 
-›
+&#10095;
 
 </button>
 
+
 </div>
 
 
-<!-- DOTS -->
-
-<div
-class="carousel-dots"
-id="carouselDots">
-</div>
-
-
-<!-- =====================================================
+<!-- =========================================================
      PDF / VIDEO VIEWER
-===================================================== -->
+========================================================= -->
 
 <div
 id="companyViewer"
@@ -1830,7 +1721,8 @@ class="company-viewer">
 
 <button
 class="viewer-close"
-onclick="closeViewer()">
+onclick="closeViewer()"
+type="button">
 
 ×
 
@@ -1840,6 +1732,7 @@ onclick="closeViewer()">
 <div
 class="viewer-content"
 id="viewerContent">
+
 </div>
 
 
@@ -1849,9 +1742,9 @@ id="viewerContent">
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SERVICES
-===================================================== -->
+========================================================= -->
 
 <section
 class="services"
@@ -1970,9 +1863,9 @@ Structured processes focused on quality and continuous improvement.
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HSE
-===================================================== -->
+========================================================= -->
 
 <section
 class="hse"
@@ -2008,12 +1901,13 @@ risk awareness, environmental protection and continuous improvement.
 
 </div>
 
+
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CONTACT
-===================================================== -->
+========================================================= -->
 
 <section
 id="contact"
@@ -2106,9 +2000,9 @@ info@kamra-energy.com
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
 <footer>
 
@@ -2124,9 +2018,9 @@ info@kamra-energy.com
 
 <script>
 
-/* =====================================================
+/* =========================================================
    LANGUAGE
-===================================================== */
+========================================================= */
 
 function toggleLanguage() {
 
@@ -2190,58 +2084,60 @@ function toggleLanguage() {
 
         button.textContent =
             "English";
+
     }
+
 }
 
 
-/* =====================================================
-   CAROUSEL
-===================================================== */
+/* =========================================================
+   SLIDER
+========================================================= */
 
 const track =
     document.getElementById(
         "companyTrack"
     );
 
-
-const cards =
-    document.querySelectorAll(
-        ".company-card"
-    );
-
-
-const dotsContainer =
-    document.getElementById(
-        "carouselDots"
-    );
-
-
 const prevBtn =
     document.getElementById(
         "prevBtn"
     );
-
 
 const nextBtn =
     document.getElementById(
         "nextBtn"
     );
 
+let currentSlide = 0;
 
-let currentPosition = 0;
+
+/*
+   عدد البطاقات
+*/
+
+const totalCards =
+    track.children.length;
 
 
-/* عدد البطاقات الظاهرة */
+/*
+   تحديد عدد البطاقات
+   الظاهرة حسب الشاشة
+*/
 
 function getVisibleCards() {
 
-    if (window.innerWidth <= 600) {
+    if (
+        window.innerWidth <= 600
+    ) {
 
         return 2;
 
     }
 
-    if (window.innerWidth <= 1000) {
+    if (
+        window.innerWidth <= 1000
+    ) {
 
         return 3;
 
@@ -2251,260 +2147,161 @@ function getVisibleCards() {
 }
 
 
-/* عدد الحركات الممكنة */
+/*
+   عدد الحركات الممكنة
+*/
 
-function getMaxPosition() {
+function getMaxSlide() {
 
     return Math.max(
         0,
-        cards.length -
+        totalCards -
         getVisibleCards()
     );
 }
 
 
-/* إنشاء النقاط */
+/*
+   تحريك البطاقات
+*/
 
-function createDots() {
-
-    dotsContainer.innerHTML = "";
-
-    const max =
-        getMaxPosition();
-
-    for (
-        let i = 0;
-        i <= max;
-        i++
-    ) {
-
-        const dot =
-            document.createElement(
-                "span"
-            );
-
-        dot.className =
-            "carousel-dot";
-
-
-        if (
-            i === currentPosition
-        ) {
-
-            dot.classList.add(
-                "active"
-            );
-        }
-
-
-        dot.addEventListener(
-            "click",
-            function() {
-
-                currentPosition = i;
-
-                updateCarousel();
-
-            }
-        );
-
-
-        dotsContainer.appendChild(
-            dot
-        );
-    }
-}
-
-
-/* تحريك الكاروسيل */
-
-function updateCarousel() {
+function updateSlider() {
 
     const visible =
         getVisibleCards();
 
-    const max =
-        getMaxPosition();
-
-
-    if (
-        currentPosition > max
-    ) {
-
-        currentPosition = max;
-
-    }
-
-
-    if (
-        currentPosition < 0
-    ) {
-
-        currentPosition = 0;
-
-    }
+    const gap =
+        window.innerWidth <= 600
+            ? 10
+            : 18;
 
 
     const cardWidth =
-        cards[0].getBoundingClientRect().width;
-
-
-    const gap =
-        parseFloat(
-            getComputedStyle(track).gap
-        ) || 0;
+        track.children[0]
+        .getBoundingClientRect()
+        .width;
 
 
     const move =
-        (cardWidth + gap) *
-        currentPosition;
+        currentSlide *
+        (cardWidth + gap);
 
 
     track.style.transform =
         `translateX(-${move}px)`;
 
 
-    prevBtn.disabled =
-        currentPosition === 0;
+    /*
+       تحديث الأسهم
+    */
 
+    prevBtn.disabled =
+        currentSlide <= 0;
 
     nextBtn.disabled =
-        currentPosition === max;
+        currentSlide >=
+        getMaxSlide();
+}
 
 
-    prevBtn.style.opacity =
-        currentPosition === 0
-            ? "0.45"
-            : "1";
+/*
+   NEXT
+*/
 
+nextBtn.addEventListener(
+    "click",
+    function(e) {
 
-    nextBtn.style.opacity =
-        currentPosition === max
-            ? "0.45"
-            : "1";
+        e.preventDefault();
 
+        e.stopPropagation();
 
-    const dots =
-        document.querySelectorAll(
-            ".carousel-dot"
-        );
+        const max =
+            getMaxSlide();
 
+        if (
+            currentSlide < max
+        ) {
 
-    dots.forEach(
-        function(dot, index) {
+            currentSlide++;
 
-            dot.classList.toggle(
-                "active",
-                index === currentPosition
-            );
+            updateSlider();
 
         }
-    );
-}
-
-
-/* الضغط على الأسهم */
-
-function moveCarousel(direction) {
-
-    currentPosition += direction;
-
-    updateCarousel();
-}
-
-
-/* عند تغيير حجم الشاشة */
-
-window.addEventListener(
-    "resize",
-    function() {
-
-        createDots();
-
-        updateCarousel();
 
     }
 );
 
 
-/* =====================================================
-   TOUCH SWIPE
-===================================================== */
+/*
+   PREVIOUS
+*/
 
-let touchStartX = 0;
-
-let touchEndX = 0;
-
-
-const viewport =
-    document.querySelector(
-        ".company-viewport"
-    );
-
-
-viewport.addEventListener(
-    "touchstart",
+prevBtn.addEventListener(
+    "click",
     function(e) {
 
-        touchStartX =
-            e.changedTouches[0].screenX;
+        e.preventDefault();
 
-    },
-    { passive: true }
-);
-
-
-viewport.addEventListener(
-    "touchend",
-    function(e) {
-
-        touchEndX =
-            e.changedTouches[0].screenX;
-
-
-        const difference =
-            touchStartX -
-            touchEndX;
-
+        e.stopPropagation();
 
         if (
-            Math.abs(difference) < 40
+            currentSlide > 0
         ) {
 
-            return;
+            currentSlide--;
+
+            updateSlider();
 
         }
 
-
-        if (difference > 0) {
-
-            moveCarousel(1);
-
-        }
-
-        else {
-
-            moveCarousel(-1);
-
-        }
-
-    },
-    { passive: true }
+    }
 );
 
 
-/* =====================================================
-   INITIALIZE CAROUSEL
-===================================================== */
+/*
+   إعادة الحساب عند تغيير
+   حجم الشاشة
+*/
 
-createDots();
+window.addEventListener(
+    "resize",
+    function() {
 
-updateCarousel();
+        const max =
+            getMaxSlide();
+
+        if (
+            currentSlide > max
+        ) {
+
+            currentSlide = max;
+
+        }
+
+        updateSlider();
+
+    }
+);
 
 
-/* =====================================================
+/*
+   تشغيل أولي
+*/
+
+window.addEventListener(
+    "load",
+    function() {
+
+        updateSlider();
+
+    }
+);
+
+
+/* =========================================================
    OPEN PDF
-===================================================== */
+========================================================= */
 
 function openPDF(file) {
 
@@ -2513,7 +2310,6 @@ function openPDF(file) {
             "companyViewer"
         );
 
-
     const content =
         document.getElementById(
             "viewerContent"
@@ -2521,20 +2317,16 @@ function openPDF(file) {
 
 
     /*
-       فتح PDF داخل النافذة
-       وليس في صفحة جديدة.
+       فتح PDF داخل نفس النافذة
+       وليس window.open()
     */
 
     content.innerHTML = `
 
         <iframe
-
-            src="${file}#toolbar=1&navpanes=0&scrollbar=1&view=Fit"
-
+            src="${encodeURI(file)}#toolbar=1&navpanes=0&scrollbar=1&view=Fit"
             title="Company Profile"
-
             loading="eager">
-
         </iframe>
 
     `;
@@ -2545,14 +2337,16 @@ function openPDF(file) {
     );
 
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.classList.add(
+        "no-scroll"
+    );
+
 }
 
 
-/* =====================================================
+/* =========================================================
    OPEN VIDEO
-===================================================== */
+========================================================= */
 
 function openVideo() {
 
@@ -2560,7 +2354,6 @@ function openVideo() {
         document.getElementById(
             "companyViewer"
         );
-
 
     const content =
         document.getElementById(
@@ -2605,13 +2398,11 @@ function openVideo() {
 
                 </div>
 
-
                 <div>
 
                     Company Video
 
                 </div>
-
 
                 <div style="
 
@@ -2639,16 +2430,89 @@ function openVideo() {
     );
 
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.classList.add(
+        "no-scroll"
+    );
+
 }
 
 
-/* =====================================================
+/* =========================================================
    CLOSE VIEWER
-===================================================== */
+========================================================= */
 
 function closeViewer() {
 
     const viewer =
-       
+        document.getElementById(
+            "companyViewer"
+        );
+
+    const content =
+        document.getElementById(
+            "viewerContent"
+        );
+
+
+    viewer.classList.remove(
+        "active"
+    );
+
+
+    content.innerHTML = "";
+
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
+
+/* =========================================================
+   CLICK OUTSIDE VIEWER
+========================================================= */
+
+document
+    .getElementById(
+        "companyViewer"
+    )
+    .addEventListener(
+        "click",
+        function(e) {
+
+            if (
+                e.target === this
+            ) {
+
+                closeViewer();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e) {
+
+        if (
+            e.key === "Escape"
+        ) {
+
+            closeViewer();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
