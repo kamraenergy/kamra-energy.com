@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -33,6 +34,7 @@ body {
 header {
     background: #0b1f3a;
     color: white;
+
     padding: 15px 7%;
 
     display: flex;
@@ -41,6 +43,7 @@ header {
 
     position: sticky;
     top: 0;
+
     z-index: 100;
 }
 
@@ -57,8 +60,12 @@ header {
 nav a {
     color: white;
     text-decoration: none;
+
     margin-left: 22px;
+
     font-size: 15px;
+
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -66,8 +73,11 @@ nav a:hover {
 }
 
 .lang-btn {
+
     border: 1px solid #55b8ff;
+
     background: transparent;
+
     color: white;
 
     padding: 7px 12px;
@@ -77,10 +87,16 @@ nav a:hover {
     cursor: pointer;
 
     margin-left: 20px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .lang-btn:hover {
+
     background: #55b8ff;
+
     color: #0b1f3a;
 }
 
@@ -90,9 +106,11 @@ nav a:hover {
 ============================== */
 
 .hero {
+
     min-height: 620px;
 
     display: flex;
+
     align-items: center;
 
     padding: 80px 7%;
@@ -112,22 +130,31 @@ nav a:hover {
 }
 
 .hero h1 {
+
     font-size: 52px;
+
     margin-bottom: 20px;
+
     line-height: 1.15;
 }
 
 .hero p {
+
     font-size: 20px;
+
     max-width: 700px;
+
     margin-bottom: 30px;
+
     color: #dce9f5;
 }
 
 .btn {
+
     display: inline-block;
 
     background: #1b9be0;
+
     color: white;
 
     padding: 13px 25px;
@@ -144,7 +171,9 @@ nav a:hover {
 }
 
 .btn:hover {
+
     background: #55b8ff;
+
     transform: translateY(-2px);
 }
 
@@ -158,13 +187,18 @@ section {
 }
 
 .section-title {
+
     text-align: center;
+
     margin-bottom: 40px;
 }
 
 .section-title h2 {
+
     font-size: 34px;
+
     color: #0b1f3a;
+
     margin-bottom: 10px;
 }
 
@@ -182,6 +216,7 @@ section {
 ============================== */
 
 .company-grid {
+
     max-width: 1100px;
 
     margin: 30px auto 0;
@@ -198,9 +233,11 @@ section {
 /* CARD */
 
 .company-card {
+
     min-height: 185px;
 
     position: relative;
+
     overflow: hidden;
 
     background:
@@ -246,6 +283,7 @@ section {
 /* LIGHT CIRCLE */
 
 .company-card::after {
+
     content: "";
 
     position: absolute;
@@ -285,6 +323,7 @@ section {
 .company-card:hover::after {
 
     width: 190px;
+
     height: 190px;
 }
 
@@ -316,7 +355,9 @@ section {
 }
 
 .company-card:hover::before {
-    transform: scaleX(1);
+
+    transform:
+        scaleX(1);
 }
 
 
@@ -334,13 +375,13 @@ section {
     margin-bottom: 8px;
 
     position: relative;
+
     z-index: 2;
 
     /*
        مهم:
-       لا نستخدم filter هنا
-       حتى لا يتحول الشعار إلى
-       دائرة بيضاء.
+       لا يوجد filter هنا.
+       الشعار يظهر بألوانه الأصلية.
     */
 
     opacity: 0.95;
@@ -376,6 +417,7 @@ section {
     margin-bottom: 6px;
 
     position: relative;
+
     z-index: 2;
 }
 
@@ -395,6 +437,7 @@ section {
     margin-bottom: 5px;
 
     position: relative;
+
     z-index: 2;
 }
 
@@ -412,6 +455,7 @@ section {
     line-height: 1.4;
 
     position: relative;
+
     z-index: 2;
 }
 
@@ -473,6 +517,7 @@ section {
 .update-card:hover::after {
 
     width: 140px;
+
     height: 140px;
 }
 
@@ -487,6 +532,7 @@ section {
     letter-spacing: 2px;
 
     position: relative;
+
     z-index: 2;
 }
 
@@ -516,6 +562,7 @@ section {
 }
 
 .company-viewer.active {
+
     display: flex;
 }
 
@@ -547,6 +594,7 @@ section {
 .viewer-content iframe {
 
     width: 100%;
+
     height: 100%;
 
     border: none;
@@ -564,9 +612,11 @@ section {
     position: absolute;
 
     top: 15px;
+
     right: 25px;
 
     width: 45px;
+
     height: 45px;
 
     border: none;
@@ -823,1254 +873,10 @@ body.rtl .lang-btn {
     }
 
 
-    /* HEADER LOGO */
+    /* HEADER */
 
     header {
 
         padding:
             13px 5%;
-    }
-
-    .logo img {
-
-        height:
-            50px;
-
-        max-width:
-            180px;
-
-        object-fit:
-            contain;
-    }
-
-
-    /* NAV */
-
-    nav {
-
-        width:
-            100%;
-
-        text-align:
-            center;
-    }
-
-    nav a {
-
-        font-size:
-            13px;
-
-        margin:
-            0 4px;
-    }
-
-    .lang-btn {
-
-        font-size:
-            12px;
-
-        padding:
-            6px 9px;
-
-        margin-left:
-            8px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-
-        min-height:
-            560px;
-
-        padding:
-            60px 5%;
-    }
-
-    .hero h1 {
-
-        font-size:
-            34px;
-    }
-
-    .hero p {
-
-        font-size:
-            17px;
-    }
-
-
-    /* CARDS */
-
-    .company-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap:
-            11px;
-
-        margin-top:
-            25px;
-    }
-
-    .company-card {
-
-        min-height:
-            155px;
-
-        padding:
-            15px 7px;
-
-        border-radius:
-            13px;
-    }
-
-
-    /* CARD LOGO */
-
-    .card-logo {
-
-        width:
-            35px;
-
-        height:
-            35px;
-
-        margin-bottom:
-            7px;
-    }
-
-
-    /* NUMBER */
-
-    .card-number {
-
-        font-size:
-            10px;
-
-        letter-spacing:
-            2px;
-
-        margin-bottom:
-            5px;
-    }
-
-
-    /* TITLE */
-
-    .company-card h3 {
-
-        font-size:
-            13px;
-
-        line-height:
-            1.25;
-
-        margin-bottom:
-            4px;
-    }
-
-
-    /* ARABIC */
-
-    .company-card p {
-
-        font-size:
-            11px;
-    }
-
-
-    /* VIDEO */
-
-    .video-icon {
-
-        font-size:
-            25px;
-    }
-
-
-    /* UPDATE */
-
-    .update-text {
-
-        font-size:
-            15px;
-    }
-
-
-    /* VIEWER */
-
-    .company-viewer {
-
-        padding:
-            10px;
-    }
-
-    .viewer-content {
-
-        width:
-            100%;
-
-        height:
-            88vh;
-
-        border-radius:
-            8px;
-    }
-
-    .viewer-close {
-
-        top:
-            8px;
-
-        right:
-            10px;
-
-        width:
-            40px;
-
-        height:
-            40px;
-
-        font-size:
-            27px;
-    }
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- ==============================
-     HEADER
-============================== -->
-
-<header>
-
-<div class="logo">
-
-<img
-src="kamra-energy.svg"
-alt="KAMRA ENERGY">
-
-</div>
-
-<nav>
-
-<a href="#home">
-Home
-</a>
-
-<a href="#about">
-About Us
-</a>
-
-<a href="#services">
-Services
-</a>
-
-<a href="#hse">
-HSE
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
-<button
-class="lang-btn"
-onclick="toggleLanguage()">
-
-العربية
-
-</button>
-
-</nav>
-
-</header>
-
-
-<!-- ==============================
-     HERO
-============================== -->
-
-<section
-class="hero"
-id="home">
-
-<div class="hero-content">
-
-<div class="en">
-
-<h1>
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</h1>
-
-<p>
-Professional Energy, Well Services and Contracting Solutions
-with a strong commitment to safety, quality and operational excellence.
-</p>
-
-<a
-class="btn"
-href="#contact">
-
-Contact Us
-
-</a>
-
-</div>
-
-
-<div class="ar">
-
-<h1>
-كامرا للمقاولات في مجال الطاقة ذ.م.م
-</h1>
-
-<p>
-حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
-مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
-</p>
-
-<a
-class="btn"
-href="#contact">
-
-اتصل بنا
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ==============================
-     ABOUT
-============================== -->
-
-<section
-class="about"
-id="about">
-
-
-<div class="section-title en">
-
-<h2>
-About Us
-</h2>
-
-<p>
-Professional experience. Reliable solutions.
-</p>
-
-</div>
-
-
-<div class="section-title ar">
-
-<h2>
-من نحن
-</h2>
-
-<p>
-خبرة مهنية وحلول موثوقة.
-</p>
-
-</div>
-
-
-<!-- ==============================
-     COMPANY CARDS
-============================== -->
-
-<div class="company-grid">
-
-
-<!-- 01 -->
-
-<div
-class="company-card"
-onclick="openPDF('01-logo.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-01
-</div>
-
-<h3>
-Company Logo
-</h3>
-
-<p>
-شعار الشركة
-</p>
-
-</div>
-
-
-<!-- 02 -->
-
-<div
-class="company-card"
-onclick="openPDF('02-about-us.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-02
-</div>
-
-<h3>
-About Us
-</h3>
-
-<p>
-من نحن
-</p>
-
-</div>
-
-
-<!-- 03 -->
-
-<div
-class="company-card"
-onclick="openPDF('03-vision.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-03
-</div>
-
-<h3>
-Vision
-</h3>
-
-<p>
-الرؤية
-</p>
-
-</div>
-
-
-<!-- 04 -->
-
-<div
-class="company-card"
-onclick="openPDF('04-mission.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-04
-</div>
-
-<h3>
-Mission
-</h3>
-
-<p>
-الرسالة
-</p>
-
-</div>
-
-
-<!-- 05 -->
-
-<div
-class="company-card"
-onclick="openPDF('05-comprehensive-safety.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-05
-</div>
-
-<h3>
-Comprehensive Safety
-</h3>
-
-<p>
-السلامة الشاملة
-</p>
-
-</div>
-
-
-<!-- 06 -->
-
-<div
-class="company-card"
-onclick="openPDF('06-core-values.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-06
-</div>
-
-<h3>
-Core Values
-</h3>
-
-<p>
-القيم الجوهرية
-</p>
-
-</div>
-
-
-<!-- 07 -->
-
-<div
-class="company-card"
-onclick="openPDF('07-operational-efficiency.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-07
-</div>
-
-<h3>
-Operational Efficiency
-</h3>
-
-<p>
-الكفاءة التشغيلية
-</p>
-
-</div>
-
-
-<!-- 08 -->
-
-<div
-class="company-card"
-onclick="openPDF('08-continuous-innovation.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-08
-</div>
-
-<h3>
-Continuous Innovation
-</h3>
-
-<p>
-الابتكار المستمر
-</p>
-
-</div>
-
-
-<!-- 09 -->
-
-<div
-class="company-card"
-onclick="openPDF('09-company-perspective.pdf')">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-09
-</div>
-
-<h3>
-Company Perspective
-</h3>
-
-<p>
-منظور الشركة
-</p>
-
-</div>
-
-
-<!-- 10 VIDEO -->
-
-<div
-class="company-card"
-onclick="openVideo()">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-10
-</div>
-
-<div class="video-icon">
-▶
-</div>
-
-<h3>
-Company Video
-</h3>
-
-<p>
-فيديو الشركة
-</p>
-
-</div>
-
-
-<!-- 11 -->
-
-<div
-class="company-card update-card">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-11
-</div>
-
-<div class="update-text">
-UPDATE
-</div>
-
-</div>
-
-
-<!-- 12 -->
-
-<div
-class="company-card update-card">
-
-<img
-src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
-
-<div class="card-number">
-12
-</div>
-
-<div class="update-text">
-UPDATE
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- ==============================
-     PDF / VIDEO VIEWER
-============================== -->
-
-<div
-id="companyViewer"
-class="company-viewer">
-
-<button
-class="viewer-close"
-onclick="closeViewer()">
-
-×
-
-</button>
-
-<div
-class="viewer-content"
-id="viewerContent">
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- ==============================
-     SERVICES
-============================== -->
-
-<section
-class="services"
-id="services">
-
-
-<div class="section-title en">
-
-<h2>
-Our Services
-</h2>
-
-<p>
-Integrated solutions for energy and well service operations.
-</p>
-
-</div>
-
-
-<div class="section-title ar">
-
-<h2>
-خدماتنا
-</h2>
-
-<p>
-حلول متكاملة لعمليات الطاقة وخدمات الآبار.
-</p>
-
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-Well Services
-</h3>
-
-<p>
-Professional support and services for well operations.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Energy Contracting
-</h3>
-
-<p>
-Contracting solutions designed around operational requirements.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Technical Services
-</h3>
-
-<p>
-Experienced technical personnel and operational support.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Inspection
-</h3>
-
-<p>
-Inspection and quality-focused technical services.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-HSE
-</h3>
-
-<p>
-Health, Safety and Environmental commitment in every operation.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Quality
-</h3>
-
-<p>
-Structured processes focused on quality and continuous improvement.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ==============================
-     HSE
-============================== -->
-
-<section
-class="hse"
-id="hse">
-
-
-<div class="en">
-
-<h2>
-Health, Safety & Environment
-</h2>
-
-<p>
-Safety is a fundamental part of our operations.
-We are committed to responsible work practices,
-risk awareness, environmental protection and continuous improvement.
-</p>
-
-</div>
-
-
-<div class="ar">
-
-<h2>
-الصحة والسلامة والبيئة
-</h2>
-
-<p>
-السلامة جزء أساسي من عملياتنا.
-نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
-وتقييم المخاطر وحماية البيئة والتحسين المستمر.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ==============================
-     CONTACT
-============================== -->
-
-<section
-id="contact"
-class="contact">
-
-
-<div class="section-title en">
-
-<h2>
-Contact Us
-</h2>
-
-<p>
-We would be pleased to discuss your requirements.
-</p>
-
-</div>
-
-
-<div class="section-title ar">
-
-<h2>
-اتصل بنا
-</h2>
-
-<p>
-يسعدنا مناقشة متطلباتكم واحتياجاتكم.
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-
-<div class="en">
-
-<p>
-<strong>
-Company:
-</strong>
-
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-
-</p>
-
-<p>
-
-<strong>
-Email:
-</strong>
-
-info@kamra-energy.com
-
-</p>
-
-</div>
-
-
-<div class="ar">
-
-<p>
-
-<strong>
-الشركة:
-</strong>
-
-كامرا للمقاولات في مجال الطاقة ذ.م.م
-
-</p>
-
-<p>
-
-<strong>
-البريد الإلكتروني:
-</strong>
-
-info@kamra-energy.com
-
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ==============================
-     FOOTER
-============================== -->
-
-<footer>
-
-<p>
-
-© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C.
-— All Rights Reserved.
-
-</p>
-
-</footer>
-
-
-<script>
-
-/* ==============================
-   LANGUAGE
-============================== */
-
-function toggleLanguage() {
-
-    const body =
-        document.body;
-
-    const english =
-        document.querySelectorAll(".en");
-
-    const arabic =
-        document.querySelectorAll(".ar");
-
-    const button =
-        document.querySelector(".lang-btn");
-
-
-    if (
-        body.classList.contains("rtl")
-    ) {
-
-        body.classList.remove("rtl");
-
-
-        english.forEach(
-            function(el) {
-
-                el.style.display = "";
-
-            }
-        );
-
-
-        arabic.forEach(
-            function(el) {
-
-                el.style.display =
-                    "none";
-
-            }
-        );
-
-
-        button.textContent =
-            "العربية";
-
-    }
-
-    else {
-
-        body.classList.add("rtl");
-
-
-        english.forEach(
-            function(el) {
-
-                el.style.display =
-                    "none";
-
-            }
-        );
-
-
-        arabic.forEach(
-            function(el) {
-
-                el.style.display =
-                    "";
-
-            }
-        );
-
-
-        button.textContent =
-            "English";
-    }
-}
-
-
-/* ==============================
-   OPEN PDF
-============================== */
-
-function openPDF(file) {
-    window.open(file, "_blank");
-}
-
-
-/* ==============================
-   OPEN VIDEO
-============================== */
-
-function openVideo() {
-
-    document.body.style.overflow =
-        "hidden";
-}
-
-
-/* ==============================
-   OPEN VIDEO
-============================== */
-
-function openVideo() {
-
-    const viewer =
-        document.getElementById(
-            "companyViewer"
-        );
-
-    const content =
-        document.getElementById(
-            "viewerContent"
-        );
-
-
-    content.innerHTML = `
-
-        <div style="
-
-            width:100%;
-            height:100%;
-
-            display:flex;
-
-            align-items:center;
-
-            justify-content:center;
-
-            background:#071426;
-
-            color:white;
-
-            text-align:center;
-
-            font-size:22px;
-
-        ">
-
-            <div>
-
-                <div style="
-
-                    font-size:50px;
-
-                    margin-bottom:15px;
-
-                ">
-
-                    ▶
-
-                </div>
-
-
-                <div>
-
-                    Company Video
-
-                </div>
-
-
-                <div style="
-
-                    font-size:14px;
-
-                    opacity:.7;
-
-                    margin-top:8px;
-
-                ">
-
-                    Video will be added soon
-
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-
-    viewer.classList.add(
-        "active"
-    );
-
-
-    document.body.style.overflow =
-        "hidden";
-}
-
-
-/* ==============================
-   CLOSE VIEWER
-============================== */
-
-function closeViewer() {
-
-    const viewer =
-        document.getElementById(
-            "companyViewer"
-        );
-
-    const content =
-        document.getElementById(
-            "viewerContent"
-        );
-
-
-    viewer.classList.remove(
-        "active"
-    );
-
-
-    content.innerHTML = "";
-
-
-    document.body.style.overflow =
-        "";
-}
-
-
-/* ==============================
-   CLICK OUTSIDE
-============================== */
-
-document
-    .getElementById(
-        "companyViewer"
-    )
-    .addEventListener(
-        "click",
-        function(e) {
-
-            if (
-                e.target === this
-            ) {
-
-                closeViewer();
-
-            }
-
-        }
-    );
-
-
-/* ==============================
-   ESC KEY
-============================== */
-
-document.addEventListener(
-    "keydown",
-    function(e) {
-
-        if (
-            e.key === "Escape"
-        ) {
-
-            closeViewer();
-
-        }
-
-    }
-);
-
-</script>
-
-</body>
-</html>
+   
