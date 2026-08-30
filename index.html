@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta
@@ -9,16 +10,13 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
 >
 
+<meta
+    name="description"
+    content="KAMRA FOR ENERGY CONTRACTING L.L.C."
+>
+
 <title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
 
-<!-- Arabic / English fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap"
-    rel="stylesheet"
->
 
 <style>
 
@@ -37,24 +35,24 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Tahoma, sans-serif;
     color: #172033;
     background: #f7f9fc;
     line-height: 1.6;
-    direction: ltr;
-}
-
-body.rtl {
-    direction: rtl;
+    overflow-x: hidden;
 }
 
 
 /* =========================================================
-   LANGUAGE VISIBILITY
+   LANGUAGE SYSTEM
 ========================================================= */
 
 .ar {
     display: none;
+}
+
+body.rtl {
+    direction: rtl;
 }
 
 body.rtl .en {
@@ -65,6 +63,40 @@ body.rtl .ar {
     display: block;
 }
 
+body.rtl .inline-ar {
+    display: inline;
+}
+
+.inline-ar {
+    display: none;
+}
+
+
+/* =========================================================
+   ARABIC TYPOGRAPHY
+========================================================= */
+
+.ar,
+.ar *,
+body.rtl {
+    font-family:
+        Tahoma,
+        Arial,
+        "Noto Sans Arabic",
+        sans-serif;
+}
+
+body.rtl .hero-content,
+body.rtl .section-title,
+body.rtl .contact-box,
+body.rtl .card {
+    direction: rtl;
+}
+
+body.rtl .company-card {
+    direction: rtl;
+}
+
 
 /* =========================================================
    HEADER
@@ -73,6 +105,7 @@ body.rtl .ar {
 header {
     background: #0b1f3a;
     color: white;
+
     padding: 15px 7%;
 
     display: flex;
@@ -81,7 +114,8 @@ header {
 
     position: sticky;
     top: 0;
-    z-index: 100;
+
+    z-index: 1000;
 }
 
 .logo {
@@ -112,6 +146,7 @@ header {
 nav {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -143,18 +178,13 @@ nav a:hover {
 
     margin-left: 20px;
 
-    font-family: Arial, sans-serif;
+    font-family: inherit;
 }
 
 .lang-btn:hover {
     background: #55b8ff;
     color: white;
 }
-
-
-/* =========================================================
-   RTL HEADER
-========================================================= */
 
 body.rtl nav a {
     margin-left: 0;
@@ -192,8 +222,87 @@ body.rtl .lang-btn {
 }
 
 .hero-content {
+    width: 100%;
     max-width: 850px;
 }
+
+
+/* =========================================================
+   QURAN BOX
+========================================================= */
+
+.quran-box {
+    position: absolute;
+
+    top: 35px;
+    right: 7%;
+
+    width: 320px;
+
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(212, 175, 55, 0.5);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+
+    direction: rtl;
+
+    z-index: 10;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.quran-box .verse {
+    color: #0b1f3a;
+
+    font-family:
+        Tahoma,
+        Arial,
+        "Noto Sans Arabic",
+        sans-serif;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.9;
+
+    direction: rtl;
+
+    unicode-bidi: plaintext;
+
+    transition: opacity 0.5s ease;
+}
+
+.quran-box .source {
+    margin-top: 8px;
+
+    color: #b28b00;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    direction: rtl;
+
+    transition: opacity 0.5s ease;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero h1 {
     font-size: 52px;
@@ -217,6 +326,7 @@ body.rtl .lang-btn {
     display: inline-block;
 
     background: #1b9be0;
+
     color: white;
 
     padding: 13px 25px;
@@ -226,117 +336,13 @@ body.rtl .lang-btn {
     border-radius: 5px;
 
     font-weight: bold;
+
+    transition:
+        background 0.3s ease;
 }
 
 .btn:hover {
     background: #55b8ff;
-}
-
-
-/* =========================================================
-   QURAN BOX
-========================================================= */
-
-.quran-box {
-    position: absolute;
-
-    top: 95px;
-    right: 7%;
-
-    width: 320px;
-
-    padding: 18px 20px;
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.96
-        );
-
-    border: 1px solid
-        rgba(
-            212,
-            175,
-            55,
-            0.45
-        );
-
-    border-radius: 10px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(
-            0,
-            0,
-            0,
-            0.18
-        );
-
-    text-align: center;
-
-    direction: rtl;
-
-    z-index: 10;
-
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
-}
-
-.quran-box .verse {
-    color: #0b1f3a;
-
-    font-family:
-        "Amiri",
-        "Cairo",
-        serif;
-
-    font-size: 20px;
-
-    font-weight: 700;
-
-    line-height: 1.9;
-
-    transition:
-        opacity 0.5s ease;
-}
-
-.quran-box .source {
-    margin-top: 8px;
-
-    color: #b58a00;
-
-    font-family:
-        "Cairo",
-        Arial,
-        sans-serif;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    transition:
-        opacity 0.5s ease;
-}
-
-
-/* =========================================================
-   ARABIC HERO
-========================================================= */
-
-body.rtl .hero {
-    direction: rtl;
-}
-
-body.rtl .hero-content {
-    text-align: right;
-}
-
-body.rtl .quran-box {
-    right: auto;
-    left: 7%;
 }
 
 
@@ -367,33 +373,6 @@ section {
 
 .about {
     background: white;
-}
-
-
-/* =========================================================
-   ARABIC TYPOGRAPHY
-========================================================= */
-
-body.rtl .ar {
-    font-family:
-        "Cairo",
-        Arial,
-        sans-serif;
-}
-
-body.rtl .ar h1,
-body.rtl .ar h2,
-body.rtl .ar h3,
-body.rtl .ar p {
-    direction: rtl;
-}
-
-body.rtl .ar h1 {
-    line-height: 1.5;
-}
-
-body.rtl .ar p {
-    line-height: 2;
 }
 
 
@@ -450,10 +429,9 @@ body.rtl .ar p {
     position: relative;
     overflow: hidden;
 
-    flex: 0 0
-        calc(
-            (100% - 54px) / 4
-        );
+    flex: 0 0 calc(
+        (100% - 54px) / 4
+    );
 
     min-height: 190px;
 
@@ -654,7 +632,7 @@ body.rtl .ar p {
 
 
 /* =========================================================
-   CARD TITLE
+   TITLE
 ========================================================= */
 
 .company-card h3 {
@@ -675,7 +653,7 @@ body.rtl .ar p {
 
     font-size: 13px;
 
-    line-height: 1.4;
+    line-height: 1.5;
 
     position: relative;
     z-index: 2;
@@ -760,7 +738,7 @@ body.rtl .ar p {
 
 
 /* =========================================================
-   SLIDER ARROWS
+   SLIDER BUTTONS
 ========================================================= */
 
 .slider-btn {
@@ -788,7 +766,6 @@ body.rtl .ar p {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     cursor: pointer;
@@ -832,7 +809,6 @@ body.rtl .ar p {
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -843,11 +819,6 @@ body.rtl .ar p {
 .company-viewer.active {
     display: flex;
 }
-
-
-/* =========================================================
-   VIEWER CONTENT
-========================================================= */
 
 .viewer-content {
     width: min(
@@ -959,11 +930,13 @@ body.rtl .ar p {
 .pdf-page {
     display: block;
 
+    width: 100%;
+
     max-width: 100%;
 
     height: auto;
 
-    margin: 0 auto 18px auto;
+    margin: 0 auto 18px;
 
     background: white;
 
@@ -988,7 +961,6 @@ body.rtl .ar p {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
@@ -1082,13 +1054,9 @@ body.rtl .ar p {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-shrink: 0;
-
-    -webkit-tap-highlight-color:
-        transparent;
 }
 
 .viewer-close:hover {
@@ -1241,15 +1209,12 @@ footer {
 
         gap: 15px;
 
-        padding: 12px 5%;
+        padding:
+            12px 4%;
     }
 
     nav {
-        width: 100%;
-
         justify-content: center;
-
-        flex-wrap: wrap;
     }
 
     nav a {
@@ -1258,16 +1223,15 @@ footer {
         font-size: 13px;
     }
 
-    .lang-btn {
-        margin-left: 8px;
-    }
-
     body.rtl nav a {
-        margin: 0 6px;
+        margin:
+            0 6px;
     }
 
+    .lang-btn,
     body.rtl .lang-btn {
-        margin-right: 8px;
+        margin:
+            0 0 0 8px;
     }
 
 
@@ -1276,9 +1240,10 @@ footer {
     .hero {
         min-height: 600px;
 
-        padding: 70px 5%;
+        padding:
+            210px 5% 60px;
 
-        align-items: flex-end;
+        align-items: flex-start;
     }
 
     .hero h1 {
@@ -1290,44 +1255,34 @@ footer {
     }
 
 
-    /*
-       Quran box:
-       في الوضع العمودي يبقى بعيداً عن الشعار
-       ولا يدخل فوق محتوى الـHero
-    */
+    /* QURAN */
 
     .quran-box {
-        top: 25px;
+        top: 18px;
+        right: 5%;
+        left: 5%;
 
-        left: 50% !important;
-        right: auto !important;
+        width: auto;
 
-        transform:
-            translateX(-50%);
-
-        width:
-            min(
-                90%,
-                340px
-            );
-
-        padding: 13px 15px;
+        padding:
+            13px 14px;
     }
 
     .quran-box .verse {
-        font-size: 17px;
+        font-size: 16px;
 
         line-height: 1.8;
     }
 
     .quran-box .source {
-        font-size: 10px;
+        font-size: 11px;
     }
 
-    body.rtl .quran-box {
-        left: 50%;
 
-        right: auto;
+    /* SERVICES */
+
+    .cards {
+        grid-template-columns: 1fr;
     }
 
 
@@ -1345,7 +1300,8 @@ footer {
 
         min-height: 165px;
 
-        padding: 15px 7px;
+        padding:
+            15px 7px;
     }
 
     .company-track {
@@ -1353,7 +1309,8 @@ footer {
     }
 
     .slider-btn {
-        flex: 0 0 38px;
+        flex:
+            0 0 38px;
 
         width: 38px;
         height: 38px;
@@ -1362,7 +1319,7 @@ footer {
     }
 
 
-    /* LOGO */
+    /* CARD LOGO */
 
     .card-logo {
         width: 35px;
@@ -1379,7 +1336,7 @@ footer {
 
         margin-bottom: 6px;
 
-        line-height: 1.15;
+        line-height: 1.2;
     }
 
 
@@ -1399,13 +1356,10 @@ footer {
     .company-card h3 {
         font-size: 13px;
 
-        line-height: 1.25;
+        line-height: 1.35;
 
         margin-bottom: 3px;
     }
-
-
-    /* CARD ARABIC */
 
     .company-card p {
         font-size: 11px;
@@ -1414,61 +1368,43 @@ footer {
     }
 
 
-    /* VIDEO */
-
-    .video-icon {
-        font-size: 25px;
-    }
-
-
-    /* PDF VIEWER */
+    /* PDF */
 
     .company-viewer {
         padding: 5px;
 
-        align-items: center;
-
-        justify-content: center;
-
         width: 100vw;
-
         height: 100dvh;
     }
 
     .viewer-content {
         width: 100%;
 
-        max-width: 100%;
-
         height:
-            calc(
-                100dvh - 10px
-            );
+            calc(100dvh - 10px);
 
         max-height:
-            calc(
-                100dvh - 10px
-            );
+            calc(100dvh - 10px);
 
         border-radius: 8px;
-
-        min-width: 0;
-
-        min-height: 0;
     }
 
     .pdf-toolbar {
-        flex: 0 0 48px;
+        flex:
+            0 0 48px;
 
         min-height: 48px;
 
-        padding-left: 12px;
+        padding:
+            0 8px 0 12px;
+
+        gap: 8px;
     }
 
     .pdf-title {
         font-size: 11px;
 
-        max-width: 55%;
+        max-width: 45%;
     }
 
     .pdf-page-info {
@@ -1493,44 +1429,19 @@ footer {
 
         overflow-x: hidden;
 
-        -webkit-overflow-scrolling: touch;
-
         touch-action:
             pan-y pinch-zoom;
-
-        min-width: 0;
     }
 
     .pdf-page {
-        display: block;
-
         width: 100% !important;
 
         max-width: 100% !important;
 
         height: auto !important;
 
-        margin-left: auto;
-
-        margin-right: auto;
-
-        margin-bottom: 10px;
-
-        box-shadow:
-            0 2px 10px
-            rgba(
-                0,
-                0,
-                0,
-                0.15
-            );
-    }
-
-
-    /* SERVICES */
-
-    .cards {
-        grid-template-columns: 1fr;
+        margin:
+            0 auto 10px;
     }
 
 }
@@ -1543,7 +1454,8 @@ footer {
 @media (max-width: 450px) {
 
     section {
-        padding: 50px 4%;
+        padding:
+            50px 4%;
     }
 
     .logo img {
@@ -1555,34 +1467,29 @@ footer {
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 11px;
 
-        margin: 0 3px;
+        margin:
+            0 3px;
     }
 
     body.rtl nav a {
-        margin: 0 3px;
+        margin:
+            0 3px;
     }
 
     .lang-btn {
-        font-size: 12px;
+        font-size: 11px;
 
-        padding: 6px 8px;
-
-        margin-left: 6px;
-    }
-
-    body.rtl .lang-btn {
-        margin-left: 0;
-
-        margin-right: 6px;
+        padding:
+            6px 8px;
     }
 
     .hero {
-        min-height: 590px;
+        min-height: 600px;
 
         padding:
-            70px 5% 55px;
+            200px 5% 50px;
     }
 
     .hero h1 {
@@ -1591,6 +1498,17 @@ footer {
 
     .hero p {
         font-size: 16px;
+    }
+
+    .quran-box {
+        top: 14px;
+
+        padding:
+            11px 10px;
+    }
+
+    .quran-box .verse {
+        font-size: 14px;
     }
 
     .company-card {
@@ -1602,7 +1520,8 @@ footer {
     }
 
     .slider-btn {
-        flex: 0 0 34px;
+        flex:
+            0 0 34px;
 
         width: 34px;
         height: 34px;
@@ -1610,56 +1529,6 @@ footer {
         font-size: 19px;
     }
 
-}
-
-
-/* =========================================================
-   LANDSCAPE MOBILE
-========================================================= */
-
-@media (max-width: 900px) and (orientation: landscape) {
-
-    .hero {
-        min-height: 520px;
-
-        padding-top: 80px;
-    }
-
-    .quran-box {
-        top: 18px;
-
-        width:
-            min(
-                330px,
-                45vw
-            );
-
-        padding: 10px 12px;
-    }
-
-    .quran-box .verse {
-        font-size: 15px;
-
-        line-height: 1.6;
-    }
-
-    .quran-box .source {
-        font-size: 9px;
-    }
-
-}
-
-
-/* =========================================================
-   PREVENT SELECTION
-========================================================= */
-
-.company-slider,
-.company-card,
-.slider-btn {
-    -webkit-user-select: none;
-
-    user-select: none;
 }
 
 
@@ -1727,8 +1596,8 @@ footer {
 
         <button
             class="lang-btn"
-            id="languageButton"
             type="button"
+            id="languageButton"
         >
             العربية
         </button>
@@ -1747,28 +1616,29 @@ footer {
     id="home"
 >
 
-    <div class="hero-content">
 
+    <!-- QURAN -->
 
-        <!-- QURAN -->
+    <div class="quran-box">
 
-        <div class="quran-box">
-
-            <div
-                class="verse"
-                id="quranVerse"
-            >
-                ﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾
-            </div>
-
-            <div
-                class="source"
-                id="quranSource"
-            >
-                سورة طه — الآية 114
-            </div>
-
+        <div
+            class="verse"
+            id="quranVerse"
+        >
+            ﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾
         </div>
+
+        <div
+            class="source"
+            id="quranSource"
+        >
+            سورة طه — الآية 114
+        </div>
+
+    </div>
+
+
+    <div class="hero-content">
 
 
         <!-- ENGLISH -->
@@ -1780,8 +1650,9 @@ footer {
             </h1>
 
             <p>
-                Professional Energy, Well Services and Contracting Solutions
-                with a strong commitment to safety, quality and operational excellence.
+                Professional Energy, Well Services and
+                Contracting Solutions with a strong commitment
+                to safety, quality and operational excellence.
             </p>
 
             <a
@@ -1796,18 +1667,16 @@ footer {
 
         <!-- ARABIC -->
 
-        <div
-            class="ar"
-            dir="rtl"
-        >
+        <div class="ar">
 
             <h1>
                 كامرا للمقاولات في مجال الطاقة ذ.م.م
             </h1>
 
             <p>
-                حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
-                مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
+                حلول احترافية في مجال الطاقة وخدمات الآبار
+                والمقاولات، مع التزام قوي بالسلامة والجودة
+                والتميز التشغيلي.
             </p>
 
             <a
@@ -1833,6 +1702,7 @@ footer {
     class="about"
     id="about"
 >
+
 
     <div class="section-title en">
 
@@ -1862,7 +1732,7 @@ footer {
 
     <!-- =====================================================
          SLIDER
-    ====================================================== -->
+    ===================================================== -->
 
     <div class="company-slider">
 
@@ -1909,13 +1779,15 @@ footer {
                         01
                     </div>
 
-                    <h3>
-                        Company Logo
-                    </h3>
+                    <div class="en">
+                        <h3>Company Logo</h3>
+                        <p>Company Logo</p>
+                    </div>
 
-                    <p>
-                        شعار الشركة
-                    </p>
+                    <div class="ar">
+                        <h3>شعار الشركة</h3>
+                        <p>شعار الشركة</p>
+                    </div>
 
                 </div>
 
@@ -1941,13 +1813,15 @@ footer {
                         02
                     </div>
 
-                    <h3>
-                        About Us
-                    </h3>
+                    <div class="en">
+                        <h3>About Us</h3>
+                        <p>Who We Are</p>
+                    </div>
 
-                    <p>
-                        من نحن
-                    </p>
+                    <div class="ar">
+                        <h3>من نحن</h3>
+                        <p>نبذة عن الشركة</p>
+                    </div>
 
                 </div>
 
@@ -1973,13 +1847,15 @@ footer {
                         03
                     </div>
 
-                    <h3>
-                        Vision
-                    </h3>
+                    <div class="en">
+                        <h3>Vision</h3>
+                        <p>Our Vision</p>
+                    </div>
 
-                    <p>
-                        الرؤية
-                    </p>
+                    <div class="ar">
+                        <h3>الرؤية</h3>
+                        <p>رؤيتنا</p>
+                    </div>
 
                 </div>
 
@@ -2005,13 +1881,15 @@ footer {
                         04
                     </div>
 
-                    <h3>
-                        Mission
-                    </h3>
+                    <div class="en">
+                        <h3>Mission</h3>
+                        <p>Our Mission</p>
+                    </div>
 
-                    <p>
-                        الرسالة
-                    </p>
+                    <div class="ar">
+                        <h3>الرسالة</h3>
+                        <p>رسالتنا</p>
+                    </div>
 
                 </div>
 
@@ -2037,13 +1915,15 @@ footer {
                         05
                     </div>
 
-                    <h3>
-                        Comprehensive Safety
-                    </h3>
+                    <div class="en">
+                        <h3>Comprehensive Safety</h3>
+                        <p>Safety First</p>
+                    </div>
 
-                    <p>
-                        السلامة الشاملة
-                    </p>
+                    <div class="ar">
+                        <h3>السلامة الشاملة</h3>
+                        <p>السلامة أولاً</p>
+                    </div>
 
                 </div>
 
@@ -2069,13 +1949,15 @@ footer {
                         06
                     </div>
 
-                    <h3>
-                        Core Values
-                    </h3>
+                    <div class="en">
+                        <h3>Core Values</h3>
+                        <p>What We Stand For</p>
+                    </div>
 
-                    <p>
-                        القيم الجوهرية
-                    </p>
+                    <div class="ar">
+                        <h3>القيم الجوهرية</h3>
+                        <p>قيمنا الأساسية</p>
+                    </div>
 
                 </div>
 
@@ -2101,13 +1983,15 @@ footer {
                         07
                     </div>
 
-                    <h3>
-                        Operational Efficiency
-                    </h3>
+                    <div class="en">
+                        <h3>Operational Efficiency</h3>
+                        <p>Efficient Operations</p>
+                    </div>
 
-                    <p>
-                        الكفاءة التشغيلية
-                    </p>
+                    <div class="ar">
+                        <h3>الكفاءة التشغيلية</h3>
+                        <p>عمليات فعالة</p>
+                    </div>
 
                 </div>
 
@@ -2133,13 +2017,15 @@ footer {
                         08
                     </div>
 
-                    <h3>
-                        Continuous Innovation
-                    </h3>
+                    <div class="en">
+                        <h3>Continuous Innovation</h3>
+                        <p>Continuous Improvement</p>
+                    </div>
 
-                    <p>
-                        الابتكار المستمر
-                    </p>
+                    <div class="ar">
+                        <h3>الابتكار المستمر</h3>
+                        <p>التحسين المستمر</p>
+                    </div>
 
                 </div>
 
@@ -2165,18 +2051,20 @@ footer {
                         09
                     </div>
 
-                    <h3>
-                        Company Perspective
-                    </h3>
+                    <div class="en">
+                        <h3>Company Perspective</h3>
+                        <p>Our Perspective</p>
+                    </div>
 
-                    <p>
-                        منظور الشركة
-                    </p>
+                    <div class="ar">
+                        <h3>منظور الشركة</h3>
+                        <p>رؤيتنا المستقبلية</p>
+                    </div>
 
                 </div>
 
 
-                <!-- CARD 10 -->
+                <!-- CARD 10 VIDEO -->
 
                 <div
                     class="company-card"
@@ -2201,13 +2089,15 @@ footer {
                         ▶
                     </div>
 
-                    <h3>
-                        Company Video
-                    </h3>
+                    <div class="en">
+                        <h3>Company Video</h3>
+                        <p>Watch Company Video</p>
+                    </div>
 
-                    <p>
-                        فيديو الشركة
-                    </p>
+                    <div class="ar">
+                        <h3>فيديو الشركة</h3>
+                        <p>شاهد فيديو الشركة</p>
+                    </div>
 
                 </div>
 
@@ -2281,8 +2171,8 @@ footer {
 
 
     <!-- =====================================================
-         PDF / VIDEO VIEWER
-    ====================================================== -->
+         VIEWER
+    ===================================================== -->
 
     <div
         id="companyViewer"
@@ -2309,6 +2199,7 @@ footer {
     class="services"
     id="services"
 >
+
 
     <div class="section-title en">
 
@@ -2341,78 +2232,133 @@ footer {
 
         <div class="card">
 
-            <h3>
-                Well Services
-            </h3>
+            <div class="en">
+                <h3>Well Services</h3>
 
-            <p>
-                Professional support and services for well operations.
-            </p>
+                <p>
+                    Professional support and services
+                    for well operations.
+                </p>
+            </div>
 
-        </div>
+            <div class="ar">
+                <h3>خدمات الآبار</h3>
 
-
-        <div class="card">
-
-            <h3>
-                Energy Contracting
-            </h3>
-
-            <p>
-                Contracting solutions designed around operational requirements.
-            </p>
+                <p>
+                    خدمات ودعم احترافي لعمليات الآبار.
+                </p>
+            </div>
 
         </div>
 
 
         <div class="card">
 
-            <h3>
-                Technical Services
-            </h3>
+            <div class="en">
+                <h3>Energy Contracting</h3>
 
-            <p>
-                Experienced technical personnel and operational support.
-            </p>
+                <p>
+                    Contracting solutions designed
+                    around operational requirements.
+                </p>
+            </div>
 
-        </div>
+            <div class="ar">
+                <h3>مقاولات الطاقة</h3>
 
-
-        <div class="card">
-
-            <h3>
-                Inspection
-            </h3>
-
-            <p>
-                Inspection and quality-focused technical services.
-            </p>
+                <p>
+                    حلول مقاولات مصممة وفقاً للمتطلبات التشغيلية.
+                </p>
+            </div>
 
         </div>
 
 
         <div class="card">
 
-            <h3>
-                HSE
-            </h3>
+            <div class="en">
+                <h3>Technical Services</h3>
 
-            <p>
-                Health, Safety and Environmental commitment in every operation.
-            </p>
+                <p>
+                    Experienced technical personnel
+                    and operational support.
+                </p>
+            </div>
+
+            <div class="ar">
+                <h3>الخدمات الفنية</h3>
+
+                <p>
+                    كوادر فنية ذات خبرة ودعم تشغيلي متخصص.
+                </p>
+            </div>
 
         </div>
 
 
         <div class="card">
 
-            <h3>
-                Quality
-            </h3>
+            <div class="en">
+                <h3>Inspection</h3>
 
-            <p>
-                Structured processes focused on quality and continuous improvement.
-            </p>
+                <p>
+                    Inspection and quality-focused
+                    technical services.
+                </p>
+            </div>
+
+            <div class="ar">
+                <h3>الفحص والتفتيش</h3>
+
+                <p>
+                    خدمات فنية متخصصة في الفحص وضمان الجودة.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="en">
+                <h3>HSE</h3>
+
+                <p>
+                    Health, Safety and Environmental
+                    commitment in every operation.
+                </p>
+            </div>
+
+            <div class="ar">
+                <h3>الصحة والسلامة والبيئة</h3>
+
+                <p>
+                    التزام بالصحة والسلامة وحماية البيئة
+                    في جميع عملياتنا.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="en">
+                <h3>Quality</h3>
+
+                <p>
+                    Structured processes focused on
+                    quality and continuous improvement.
+                </p>
+            </div>
+
+            <div class="ar">
+                <h3>الجودة</h3>
+
+                <p>
+                    عمليات منظمة تركز على الجودة والتحسين المستمر.
+                </p>
+            </div>
 
         </div>
 
@@ -2431,6 +2377,7 @@ footer {
     id="hse"
 >
 
+
     <div class="en">
 
         <h2>
@@ -2440,7 +2387,8 @@ footer {
         <p>
             Safety is a fundamental part of our operations.
             We are committed to responsible work practices,
-            risk awareness, environmental protection and continuous improvement.
+            risk awareness, environmental protection and
+            continuous improvement.
         </p>
 
     </div>
@@ -2454,11 +2402,12 @@ footer {
 
         <p>
             السلامة جزء أساسي من عملياتنا.
-            نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
-            وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+            نحن ملتزمون بممارسات العمل الآمنة والمسؤولة،
+            وتقييم المخاطر، وحماية البيئة والتحسين المستمر.
         </p>
 
     </div>
+
 
 </section>
 
@@ -2471,6 +2420,7 @@ footer {
     id="contact"
     class="contact"
 >
+
 
     <div class="section-title en">
 
@@ -2504,24 +2454,13 @@ footer {
         <div class="en">
 
             <p>
-
-                <strong>
-                    Company:
-                </strong>
-
+                <strong>Company:</strong>
                 KAMRA FOR ENERGY CONTRACTING L.L.C.
-
             </p>
 
-
             <p>
-
-                <strong>
-                    Email:
-                </strong>
-
+                <strong>Email:</strong>
                 info@kamra-energy.com
-
             </p>
 
         </div>
@@ -2530,24 +2469,13 @@ footer {
         <div class="ar">
 
             <p>
-
-                <strong>
-                    الشركة:
-                </strong>
-
+                <strong>الشركة:</strong>
                 كامرا للمقاولات في مجال الطاقة ذ.م.م
-
             </p>
 
-
             <p>
-
-                <strong>
-                    البريد الإلكتروني:
-                </strong>
-
+                <strong>البريد الإلكتروني:</strong>
                 info@kamra-energy.com
-
             </p>
 
         </div>
@@ -2564,9 +2492,14 @@ footer {
 
 <footer>
 
-    <p>
+    <p class="en">
         © 2026 KAMRA FOR ENERGY CONTRACTING L.L.C.
         — All Rights Reserved.
+    </p>
+
+    <p class="ar">
+        © 2026 كامرا للمقاولات في مجال الطاقة ذ.م.م
+        — جميع الحقوق محفوظة.
     </p>
 
 </footer>
@@ -2584,31 +2517,65 @@ footer {
 <script>
 
 /* =========================================================
+   ELEMENTS
+========================================================= */
+
+const body =
+    document.body;
+
+const languageButton =
+    document.getElementById(
+        "languageButton"
+    );
+
+const track =
+    document.getElementById(
+        "companyTrack"
+    );
+
+const prevBtn =
+    document.getElementById(
+        "prevBtn"
+    );
+
+const nextBtn =
+    document.getElementById(
+        "nextBtn"
+    );
+
+const sliderWindow =
+    document.getElementById(
+        "sliderWindow"
+    );
+
+const viewer =
+    document.getElementById(
+        "companyViewer"
+    );
+
+const viewerContent =
+    document.getElementById(
+        "viewerContent"
+    );
+
+
+/* =========================================================
    LANGUAGE
 ========================================================= */
 
-const languageButton =
-    document.getElementById("languageButton");
-
-function setLanguage(language) {
+function toggleLanguage() {
 
     const isArabic =
-        language === "ar";
+        body.classList.toggle(
+            "rtl"
+        );
 
-    document.body.classList.toggle(
-        "rtl",
-        isArabic
-    );
-
-    document.documentElement.lang =
+    body.setAttribute(
+        "lang",
         isArabic
             ? "ar"
-            : "en";
-
-    document.documentElement.dir =
-        isArabic
-            ? "rtl"
-            : "ltr";
+            : "en"
+    );
 
     languageButton.textContent =
         isArabic
@@ -2616,22 +2583,13 @@ function setLanguage(language) {
             : "العربية";
 
     updateSlider();
-}
-
-
-function toggleLanguage() {
-
-    const isArabic =
-        document.body.classList.contains("rtl");
-
-    setLanguage(
-        isArabic
-            ? "en"
-            : "ar"
-    );
 
 }
 
+
+/* =========================================================
+   LANGUAGE BUTTON
+========================================================= */
 
 languageButton.addEventListener(
     "click",
@@ -2700,27 +2658,25 @@ let quranIndex = 0;
 
 function changeQuranVerse() {
 
-    const verseElement =
+    const verse =
         document.getElementById(
             "quranVerse"
         );
 
-    const sourceElement =
+    const source =
         document.getElementById(
             "quranSource"
         );
 
     if (
-        !verseElement ||
-        !sourceElement
+        !verse ||
+        !source
     ) {
         return;
     }
 
-    verseElement.style.opacity = "0";
-
-    sourceElement.style.opacity = "0";
-
+    verse.style.opacity = "0";
+    source.style.opacity = "0";
 
     setTimeout(
         function() {
@@ -2734,24 +2690,22 @@ function changeQuranVerse() {
                 quranIndex = 0;
             }
 
-            verseElement.textContent =
+            verse.textContent =
                 quranVerses[
                     quranIndex
                 ].verse;
 
-            sourceElement.textContent =
+            source.textContent =
                 quranVerses[
                     quranIndex
                 ].source;
 
-            verseElement.style.opacity = "1";
-
-            sourceElement.style.opacity = "1";
+            verse.style.opacity = "1";
+            source.style.opacity = "1";
 
         },
         500
     );
-
 }
 
 
@@ -2765,35 +2719,11 @@ setInterval(
    SLIDER
 ========================================================= */
 
-const track =
-    document.getElementById(
-        "companyTrack"
-    );
-
-const prevBtn =
-    document.getElementById(
-        "prevBtn"
-    );
-
-const nextBtn =
-    document.getElementById(
-        "nextBtn"
-    );
-
-const sliderWindow =
-    document.getElementById(
-        "sliderWindow"
-    );
-
 let currentSlide = 0;
 
 const totalCards =
     track.children.length;
 
-
-/* =========================================================
-   VISIBLE CARDS
-========================================================= */
 
 function getVisibleCards() {
 
@@ -2813,10 +2743,6 @@ function getVisibleCards() {
 }
 
 
-/* =========================================================
-   UPDATE SLIDER
-========================================================= */
-
 function updateSlider() {
 
     const visibleCards =
@@ -2829,7 +2755,6 @@ function updateSlider() {
             visibleCards
         );
 
-
     if (
         currentSlide >
         maxSlide
@@ -2838,7 +2763,6 @@ function updateSlider() {
             maxSlide;
     }
 
-
     const firstCard =
         track.children[0];
 
@@ -2846,9 +2770,9 @@ function updateSlider() {
         return;
     }
 
-
     const cardWidth =
-        firstCard.getBoundingClientRect().width;
+        firstCard.getBoundingClientRect()
+            .width;
 
     const gap =
         parseFloat(
@@ -2857,7 +2781,6 @@ function updateSlider() {
             ).gap
         ) || 0;
 
-
     const move =
         (
             cardWidth +
@@ -2865,27 +2788,21 @@ function updateSlider() {
         ) *
         currentSlide;
 
-
     if (
-        document.body.classList.contains(
+        body.classList.contains(
             "rtl"
         )
     ) {
 
         track.style.transform =
-            "translateX(" +
-            move +
-            "px)";
+            `translateX(${move}px)`;
 
     } else {
 
         track.style.transform =
-            "translateX(-" +
-            move +
-            "px)";
+            `translateX(-${move}px)`;
 
     }
-
 
     prevBtn.disabled =
         currentSlide === 0;
@@ -2903,14 +2820,11 @@ nextBtn.addEventListener(
     "click",
     function() {
 
-        const visibleCards =
-            getVisibleCards();
-
         const maxSlide =
             Math.max(
                 0,
                 totalCards -
-                visibleCards
+                getVisibleCards()
             );
 
         if (
@@ -2961,22 +2875,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   PDF VIEWER
-========================================================= */
-
-const viewer =
-    document.getElementById(
-        "companyViewer"
-    );
-
-const viewerContent =
-    document.getElementById(
-        "viewerContent"
-    );
-
-
-/* =========================================================
-   PDF.JS SETUP
+   PDF.JS
 ========================================================= */
 
 if (
@@ -3067,15 +2966,7 @@ async function openPDF(file) {
 
     closeButton.addEventListener(
         "click",
-        function(event) {
-
-            event.preventDefault();
-
-            event.stopPropagation();
-
-            closeViewer();
-
-        }
+        closeViewer
     );
 
 
@@ -3143,7 +3034,6 @@ async function openPDF(file) {
         loading
     );
 
-
     viewerContent.appendChild(
         toolbar
     );
@@ -3152,6 +3042,8 @@ async function openPDF(file) {
         scrollArea
     );
 
+
+    /* PDF.JS CHECK */
 
     if (
         typeof pdfjsLib === "undefined"
@@ -3163,6 +3055,7 @@ async function openPDF(file) {
         );
 
         return;
+
     }
 
 
@@ -3178,12 +3071,9 @@ async function openPDF(file) {
 
 
         pageInfo.textContent =
-            pdf.numPages +
-            (
-                pdf.numPages === 1
-                    ? " page"
-                    : " pages"
-            );
+            pdf.numPages === 1
+                ? "1 page"
+                : `${pdf.numPages} pages`;
 
 
         scrollArea.innerHTML =
@@ -3194,27 +3084,18 @@ async function openPDF(file) {
             window.innerWidth <= 700;
 
 
-        let availableWidth =
-            scrollArea.clientWidth -
-            (
-                isMobile
-                    ? 16
-                    : 36
+        const padding =
+            isMobile
+                ? 16
+                : 36;
+
+
+        const availableWidth =
+            Math.max(
+                100,
+                scrollArea.clientWidth -
+                padding
             );
-
-
-        if (
-            availableWidth <= 0
-        ) {
-
-            availableWidth =
-                window.innerWidth -
-                (
-                    isMobile
-                        ? 16
-                        : 36
-                );
-        }
 
 
         for (
@@ -3223,31 +3104,18 @@ async function openPDF(file) {
             pageNumber++
         ) {
 
-            try {
-
-                await renderPDFPage(
-                    pdf,
-                    pageNumber,
-                    scrollArea,
-                    availableWidth
-                );
-
-            } catch (
-                pageError
-            ) {
-
-                console.error(
-                    "PDF page error:",
-                    pageError
-                );
-
-            }
+            await renderPDFPage(
+                pdf,
+                pageNumber,
+                scrollArea,
+                availableWidth
+            );
 
         }
 
-    } catch (
-        error
-    ) {
+    }
+
+    catch (error) {
 
         console.error(
             "PDF loading error:",
@@ -3292,16 +3160,16 @@ async function renderPDFPage(
         originalViewport.width;
 
 
-    if (
-        scale > 2
-    ) {
-        scale = 2;
-    }
+    scale =
+        Math.min(
+            scale,
+            2
+        );
 
 
     const viewport =
         page.getViewport({
-            scale: scale
+            scale
         });
 
 
@@ -3309,6 +3177,7 @@ async function renderPDFPage(
         document.createElement(
             "canvas"
         );
+
 
     canvas.className =
         "pdf-page";
@@ -3320,7 +3189,7 @@ async function renderPDFPage(
         );
 
 
-    const devicePixelRatio =
+    const dpr =
         window.devicePixelRatio ||
         1;
 
@@ -3328,38 +3197,36 @@ async function renderPDFPage(
     canvas.width =
         Math.floor(
             viewport.width *
-            devicePixelRatio
+            dpr
         );
 
     canvas.height =
         Math.floor(
             viewport.height *
-            devicePixelRatio
-        );
-
-
-    const finalWidth =
-        Math.min(
-            viewport.width,
-            availableWidth
+            dpr
         );
 
 
     canvas.style.width =
-        finalWidth + "px";
+        Math.min(
+            viewport.width,
+            availableWidth
+        ) + "px";
+
 
     canvas.style.height =
         "auto";
+
 
     canvas.style.maxWidth =
         "100%";
 
 
     context.setTransform(
-        devicePixelRatio,
+        dpr,
         0,
         0,
-        devicePixelRatio,
+        dpr,
         0,
         0
     );
@@ -3392,8 +3259,7 @@ function showPDFError(
     message
 ) {
 
-    container.innerHTML =
-        "";
+    container.innerHTML = "";
 
 
     const error =
@@ -3429,7 +3295,7 @@ function showPDFError(
 
 
 /* =========================================================
-   PDF CARD CLICK
+   PDF CARDS
 ========================================================= */
 
 document
@@ -3441,18 +3307,15 @@ document
 
             card.addEventListener(
                 "click",
-                function(event) {
+                function(e) {
 
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
+                    e.preventDefault();
+                    e.stopPropagation();
 
                     const file =
                         card.getAttribute(
                             "data-pdf"
                         );
-
 
                     if (file) {
                         openPDF(file);
@@ -3477,11 +3340,10 @@ const videoCard =
 
 videoCard.addEventListener(
     "click",
-    function(event) {
+    function(e) {
 
-        event.preventDefault();
-
-        event.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
 
         openVideo();
 
@@ -3494,11 +3356,9 @@ function openVideo() {
     document.body.style.overflow =
         "hidden";
 
-
     viewer.classList.add(
         "active"
     );
-
 
     viewer.setAttribute(
         "aria-hidden",
@@ -3532,7 +3392,6 @@ function openVideo() {
                 ×
             </button>
 
-
             <div style="
                 width:92%;
                 max-width:900px;
@@ -3540,7 +3399,9 @@ function openVideo() {
                 background:#000;
                 border-radius:10px;
                 overflow:hidden;
-                box-shadow:0 15px 50px rgba(0,0,0,.5);
+                box-shadow:
+                    0 15px 50px
+                    rgba(0,0,0,.5);
             ">
 
                 <iframe
@@ -3571,24 +3432,14 @@ function openVideo() {
     `;
 
 
-    const videoCloseButton =
-        document.getElementById(
+    document
+        .getElementById(
             "videoCloseButton"
+        )
+        .addEventListener(
+            "click",
+            closeViewer
         );
-
-
-    videoCloseButton.addEventListener(
-        "click",
-        function(event) {
-
-            event.preventDefault();
-
-            event.stopPropagation();
-
-            closeViewer();
-
-        }
-    );
 
 }
 
@@ -3617,15 +3468,15 @@ function closeViewer() {
 
 
 /* =========================================================
-   CLICK OUTSIDE
+   CLICK OUTSIDE VIEWER
 ========================================================= */
 
 viewer.addEventListener(
     "click",
-    function(event) {
+    function(e) {
 
         if (
-            event.target === viewer
+            e.target === viewer
         ) {
 
             closeViewer();
@@ -3637,15 +3488,15 @@ viewer.addEventListener(
 
 
 /* =========================================================
-   ESC KEY
+   ESC
 ========================================================= */
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function(e) {
 
         if (
-            event.key === "Escape" &&
+            e.key === "Escape" &&
             viewer.classList.contains(
                 "active"
             )
@@ -3665,13 +3516,14 @@ document.addEventListener(
 
 let touchStartX = 0;
 
+
 sliderWindow.addEventListener(
     "touchstart",
-    function(event) {
+    function(e) {
 
         touchStartX =
-            event.changedTouches[0]
-            .screenX;
+            e.changedTouches[0]
+                .screenX;
 
     },
     {
@@ -3682,12 +3534,11 @@ sliderWindow.addEventListener(
 
 sliderWindow.addEventListener(
     "touchend",
-    function(event) {
+    function(e) {
 
         const touchEndX =
-            event.changedTouches[0]
-            .screenX;
-
+            e.changedTouches[0]
+                .screenX;
 
         const difference =
             touchStartX -
@@ -3702,8 +3553,7 @@ sliderWindow.addEventListener(
 
         }
 
-
-        if (
+        else if (
             difference < -50
         ) {
 
@@ -3721,6 +3571,16 @@ sliderWindow.addEventListener(
 /* =========================================================
    INITIALIZE
 ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateSlider();
+
+    }
+);
+
 
 window.addEventListener(
     "load",
