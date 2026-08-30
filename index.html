@@ -45,16 +45,12 @@ body {
 header {
     background: #0b1f3a;
     color: white;
-
     padding: 15px 7%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     position: sticky;
     top: 0;
-
     z-index: 100;
 }
 
@@ -65,25 +61,17 @@ header {
 .logo img {
     height: 55px;
     width: auto;
-
     display: block;
 }
 
 .logo-text {
     display: block;
-
     margin-top: 4px;
-
     text-align: center;
-
     color: white;
-
     font-size: 11px;
-
     font-weight: bold;
-
     letter-spacing: 0.5px;
-
     line-height: 1.2;
 }
 
@@ -94,13 +82,9 @@ nav {
 
 nav a {
     color: white;
-
     text-decoration: none;
-
     margin-left: 22px;
-
     font-size: 15px;
-
     transition: color 0.3s ease;
 }
 
@@ -110,17 +94,11 @@ nav a:hover {
 
 .lang-btn {
     border: 1px solid #55b8ff;
-
     background: transparent;
-
     color: white;
-
     padding: 7px 12px;
-
     border-radius: 5px;
-
     cursor: pointer;
-
     margin-left: 20px;
 }
 
@@ -136,20 +114,15 @@ nav a:hover {
 
 .hero {
     min-height: 620px;
-
     display: flex;
-
     align-items: center;
-
     padding: 80px 7%;
-
     background:
         linear-gradient(
             135deg,
             #0b1f3a,
             #123f68
         );
-
     color: white;
 }
 
@@ -159,35 +132,24 @@ nav a:hover {
 
 .hero h1 {
     font-size: 52px;
-
     margin-bottom: 20px;
-
     line-height: 1.15;
 }
 
 .hero p {
     font-size: 20px;
-
     max-width: 700px;
-
     margin-bottom: 30px;
-
     color: #dce9f5;
 }
 
 .btn {
     display: inline-block;
-
     background: #1b9be0;
-
     color: white;
-
     padding: 13px 25px;
-
     text-decoration: none;
-
     border-radius: 5px;
-
     font-weight: bold;
 }
 
@@ -206,15 +168,12 @@ section {
 
 .section-title {
     text-align: center;
-
     margin-bottom: 40px;
 }
 
 .section-title h2 {
     font-size: 34px;
-
     color: #0b1f3a;
-
     margin-bottom: 10px;
 }
 
@@ -233,33 +192,23 @@ section {
 
 .company-slider {
     max-width: 1180px;
-
     margin: 30px auto 0;
-
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     gap: 12px;
 }
 
 .company-slider-window {
     overflow: hidden;
-
     width: 100%;
-
     border-radius: 18px;
-
     touch-action: pan-y;
 }
 
 .company-track {
     display: flex;
-
     gap: 18px;
-
     transition:
         transform 0.55s
         cubic-bezier(
@@ -268,7 +217,6 @@ section {
             0.36,
             1
         );
-
     will-change: transform;
 }
 
@@ -279,7 +227,6 @@ section {
 
 .company-card {
     position: relative;
-
     overflow: hidden;
 
     flex: 0 0
@@ -306,21 +253,14 @@ section {
         );
 
     border-radius: 15px;
-
     padding: 20px 15px;
-
     text-align: center;
-
     cursor: pointer;
-
     color: white;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
     box-shadow:
@@ -345,12 +285,9 @@ section {
 
 .company-card::after {
     content: "";
-
     position: absolute;
-
     width: 140px;
     height: 140px;
-
     top: -75px;
     right: -75px;
 
@@ -371,15 +308,11 @@ section {
 
 .company-card::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 4px;
-
     background: #55b8ff;
 
     transform: scaleX(0);
@@ -390,7 +323,6 @@ section {
 
 .company-card:hover {
     transform: translateY(-7px);
-
     border-color: #55b8ff;
 
     box-shadow:
@@ -420,15 +352,10 @@ section {
 .card-logo {
     width: 42px;
     height: 42px;
-
     object-fit: contain;
-
     margin-bottom: 7px;
-
     position: relative;
-
     z-index: 2;
-
     opacity: 0.95;
 
     transition:
@@ -438,7 +365,6 @@ section {
 
 .company-card:hover .card-logo {
     transform: scale(1.08);
-
     opacity: 1;
 }
 
@@ -449,21 +375,13 @@ section {
 
 .card-company-name {
     color: white;
-
     font-size: 9px;
-
     font-weight: bold;
-
     line-height: 1.2;
-
     margin-bottom: 8px;
-
     position: relative;
-
     z-index: 2;
-
     text-align: center;
-
     width: 100%;
 }
 
@@ -474,17 +392,11 @@ section {
 
 .card-number {
     color: #55b8ff;
-
     font-size: 12px;
-
     font-weight: bold;
-
     letter-spacing: 3px;
-
     margin-bottom: 6px;
-
     position: relative;
-
     z-index: 2;
 }
 
@@ -495,27 +407,18 @@ section {
 
 .company-card h3 {
     color: white;
-
     font-size: 17px;
-
     line-height: 1.3;
-
     margin-bottom: 5px;
-
     position: relative;
-
     z-index: 2;
 }
 
 .company-card p {
     color: #dce9f5;
-
     font-size: 13px;
-
     line-height: 1.4;
-
     position: relative;
-
     z-index: 2;
 }
 
@@ -526,13 +429,9 @@ section {
 
 .video-icon {
     color: #55b8ff;
-
     font-size: 30px;
-
     margin-bottom: 4px;
-
     position: relative;
-
     z-index: 2;
 }
 
@@ -543,7 +442,6 @@ section {
 
 .update-card {
     cursor: default;
-
     opacity: 0.45;
 
     background:
@@ -586,15 +484,10 @@ section {
 
 .update-text {
     color: #b9cfe0;
-
     font-size: 18px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
-
     position: relative;
-
     z-index: 2;
 }
 
@@ -620,19 +513,14 @@ section {
     border-radius: 50%;
 
     background: #0b1f3a;
-
     color: white;
-
     font-size: 25px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     cursor: pointer;
-
     z-index: 5;
 
     -webkit-tap-highlight-color:
@@ -641,13 +529,11 @@ section {
 
 .slider-btn:hover {
     background: #55b8ff;
-
     color: #0b1f3a;
 }
 
 .slider-btn:disabled {
     opacity: 0.35;
-
     cursor: default;
 }
 
@@ -658,7 +544,6 @@ section {
 
 .company-viewer {
     position: fixed;
-
     inset: 0;
 
     z-index: 99999;
@@ -674,7 +559,6 @@ section {
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -717,7 +601,6 @@ section {
     position: relative;
 
     display: flex;
-
     flex-direction: column;
 }
 
@@ -728,35 +611,27 @@ section {
 
 .pdf-toolbar {
     flex: 0 0 50px;
-
     min-height: 50px;
 
     background: #0b1f3a;
-
     color: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 12px 0 18px;
 
     position: relative;
-
     z-index: 20;
 }
 
 .pdf-title {
     font-size: 13px;
-
     font-weight: bold;
 
     overflow: hidden;
-
     white-space: nowrap;
-
     text-overflow: ellipsis;
 
     padding-right: 10px;
@@ -764,9 +639,7 @@ section {
 
 .pdf-page-info {
     font-size: 12px;
-
     color: #dce9f5;
-
     white-space: nowrap;
 }
 
@@ -779,18 +652,15 @@ section {
     flex: 1;
 
     overflow-y: auto;
-
     overflow-x: hidden;
 
-    background:
-        #dfe5eb;
+    background: #dfe5eb;
 
     padding: 18px;
 
     -webkit-overflow-scrolling: touch;
 
-    overscroll-behavior:
-        contain;
+    overscroll-behavior: contain;
 }
 
 
@@ -802,6 +672,7 @@ section {
     display: block;
 
     width: 100%;
+    max-width: 100%;
 
     height: auto;
 
@@ -828,9 +699,7 @@ section {
     min-height: 250px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
@@ -838,7 +707,6 @@ section {
     color: #0b1f3a;
 
     font-size: 16px;
-
     font-weight: bold;
 
     text-align: center;
@@ -846,16 +714,13 @@ section {
 
 .pdf-spinner {
     width: 42px;
-
     height: 42px;
 
     border-radius: 50%;
 
-    border: 4px solid
-        #cbd5e1;
+    border: 4px solid #cbd5e1;
 
-    border-top-color:
-        #1b9be0;
+    border-top-color: #1b9be0;
 
     animation:
         pdfSpin 0.8s
@@ -867,13 +732,11 @@ section {
 @keyframes pdfSpin {
 
     from {
-        transform:
-            rotate(0deg);
+        transform: rotate(0deg);
     }
 
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
 
 }
@@ -885,21 +748,15 @@ section {
 
 .pdf-error {
     padding: 40px 20px;
-
     text-align: center;
-
     color: #0b1f3a;
-
     font-weight: bold;
 }
 
 .pdf-error small {
     display: block;
-
     margin-top: 10px;
-
     color: #64748b;
-
     font-weight: normal;
 }
 
@@ -910,27 +767,21 @@ section {
 
 .viewer-close {
     width: 38px;
-
     height: 38px;
 
     border: none;
-
     border-radius: 50%;
 
     background: white;
-
     color: #0b1f3a;
 
     font-size: 28px;
-
     line-height: 1;
 
     cursor: pointer;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     flex-shrink: 0;
@@ -941,7 +792,6 @@ section {
 
 .viewer-close:hover {
     background: #1b9be0;
-
     color: white;
 }
 
@@ -987,7 +837,6 @@ section {
 
 .card h3 {
     color: #0b1f3a;
-
     margin-bottom: 10px;
 }
 
@@ -1002,25 +851,19 @@ section {
 
 .hse {
     background: #0b1f3a;
-
     color: white;
-
     text-align: center;
 }
 
 .hse h2 {
     font-size: 34px;
-
     margin-bottom: 20px;
 }
 
 .hse p {
     max-width: 850px;
-
     margin: auto;
-
     color: #dce9f5;
-
     font-size: 18px;
 }
 
@@ -1031,19 +874,16 @@ section {
 
 .contact {
     background: white;
-
     text-align: center;
 }
 
 .contact-box {
     max-width: 700px;
-
     margin: auto;
 }
 
 .contact-box p {
     margin: 12px 0;
-
     font-size: 18px;
 }
 
@@ -1054,11 +894,8 @@ section {
 
 footer {
     background: #071426;
-
     color: #b9c6d5;
-
     text-align: center;
-
     padding: 25px;
 }
 
@@ -1077,13 +914,11 @@ body.rtl {
 
 body.rtl nav a {
     margin-left: 0;
-
     margin-right: 22px;
 }
 
 body.rtl .lang-btn {
     margin-left: 0;
-
     margin-right: 20px;
 }
 
@@ -1112,7 +947,6 @@ body.rtl .lang-btn {
 
     header {
         flex-direction: column;
-
         gap: 15px;
     }
 
@@ -1142,7 +976,6 @@ body.rtl .lang-btn {
             );
 
         min-height: 165px;
-
         padding: 15px 7px;
     }
 
@@ -1152,11 +985,8 @@ body.rtl .lang-btn {
 
     .slider-btn {
         flex: 0 0 38px;
-
         width: 38px;
-
         height: 38px;
-
         font-size: 21px;
     }
 
@@ -1165,9 +995,7 @@ body.rtl .lang-btn {
 
     .card-logo {
         width: 35px;
-
         height: 35px;
-
         margin-bottom: 6px;
     }
 
@@ -1176,9 +1004,7 @@ body.rtl .lang-btn {
 
     .card-company-name {
         font-size: 8px;
-
         margin-bottom: 6px;
-
         line-height: 1.15;
     }
 
@@ -1187,9 +1013,7 @@ body.rtl .lang-btn {
 
     .card-number {
         font-size: 10px;
-
         letter-spacing: 2px;
-
         margin-bottom: 4px;
     }
 
@@ -1198,9 +1022,7 @@ body.rtl .lang-btn {
 
     .company-card h3 {
         font-size: 13px;
-
         line-height: 1.25;
-
         margin-bottom: 3px;
     }
 
@@ -1209,7 +1031,6 @@ body.rtl .lang-btn {
 
     .company-card p {
         font-size: 11px;
-
         line-height: 1.3;
     }
 
@@ -1221,57 +1042,100 @@ body.rtl .lang-btn {
     }
 
 
-    /* PDF VIEWER */
+    /* =====================================================
+       PDF VIEWER - MOBILE ONLY
+       هذا هو التعديل الأساسي
+    ===================================================== */
 
     .company-viewer {
         padding: 5px;
 
         align-items: center;
-
         justify-content: center;
+
+        width: 100vw;
+        height: 100dvh;
     }
+
 
     .viewer-content {
         width: 100%;
+        max-width: 100%;
 
-        height: 94vh;
-
-        max-height: 94vh;
+        height: calc(100dvh - 10px);
+        max-height: calc(100dvh - 10px);
 
         border-radius: 8px;
+
+        min-width: 0;
+        min-height: 0;
     }
 
-    .pdf-toolbar {
-        flex-basis: 48px;
 
+    .pdf-toolbar {
+        flex: 0 0 48px;
         min-height: 48px;
 
         padding-left: 12px;
     }
 
+
     .pdf-title {
         font-size: 11px;
-
         max-width: 55%;
     }
+
 
     .pdf-page-info {
         font-size: 10px;
     }
 
+
     .viewer-close {
         width: 36px;
-
         height: 36px;
-
         font-size: 26px;
     }
 
+
+    /*
+       مهم جداً:
+       منطقة الـPDF تأخذ العرض الحقيقي المتاح
+       ولا تسمح للصفحة بالخروج خارج الشاشة
+    */
+
     .pdf-scroll {
+        width: 100%;
+        max-width: 100%;
+
         padding: 8px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        -webkit-overflow-scrolling: touch;
+
+        touch-action:
+            pan-y pinch-zoom;
+
+        min-width: 0;
     }
 
+
+    /*
+       الصفحة دائماً تتناسب مع عرض الموبايل
+    */
+
     .pdf-page {
+        display: block;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 10px;
 
         box-shadow:
@@ -1299,29 +1163,23 @@ body.rtl .lang-btn {
 
     .logo img {
         height: 50px;
-
         max-width: 180px;
-
         object-fit: contain;
     }
 
     nav a {
         font-size: 12px;
-
         margin: 0 3px;
     }
 
     .lang-btn {
         font-size: 12px;
-
         padding: 6px 8px;
-
         margin-left: 6px;
     }
 
     .hero {
         min-height: 560px;
-
         padding: 60px 5%;
     }
 
@@ -1343,11 +1201,8 @@ body.rtl .lang-btn {
 
     .slider-btn {
         flex: 0 0 34px;
-
         width: 34px;
-
         height: 34px;
-
         font-size: 19px;
     }
 
@@ -1362,24 +1217,7 @@ body.rtl .lang-btn {
 .company-card,
 .slider-btn {
     -webkit-user-select: none;
-
     user-select: none;
-}
-
-
-/* =========================================================
-   MOBILE PDF
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .pdf-scroll {
-        -webkit-overflow-scrolling: touch;
-
-        touch-action:
-            pan-y pinch-zoom;
-    }
-
 }
 
 
@@ -1560,8 +1398,6 @@ Professional experience. Reliable solutions.
 <div class="company-slider">
 
 
-<!-- PREVIOUS -->
-
 <button
     type="button"
     class="slider-btn"
@@ -1571,8 +1407,6 @@ Professional experience. Reliable solutions.
 ‹
 </button>
 
-
-<!-- WINDOW -->
 
 <div
     class="company-slider-window"
@@ -1586,9 +1420,7 @@ Professional experience. Reliable solutions.
 >
 
 
-<!-- =====================================================
-     CARD 01
-===================================================== -->
+<!-- CARD 01 -->
 
 <div
     class="company-card"
@@ -1620,9 +1452,7 @@ Company Logo
 </div>
 
 
-<!-- =====================================================
-     CARD 02
-===================================================== -->
+<!-- CARD 02 -->
 
 <div
     class="company-card"
@@ -1654,9 +1484,7 @@ About Us
 </div>
 
 
-<!-- =====================================================
-     CARD 03
-===================================================== -->
+<!-- CARD 03 -->
 
 <div
     class="company-card"
@@ -1688,9 +1516,7 @@ Vision
 </div>
 
 
-<!-- =====================================================
-     CARD 04
-===================================================== -->
+<!-- CARD 04 -->
 
 <div
     class="company-card"
@@ -1722,9 +1548,7 @@ Mission
 </div>
 
 
-<!-- =====================================================
-     CARD 05
-===================================================== -->
+<!-- CARD 05 -->
 
 <div
     class="company-card"
@@ -1756,9 +1580,7 @@ Comprehensive Safety
 </div>
 
 
-<!-- =====================================================
-     CARD 06
-===================================================== -->
+<!-- CARD 06 -->
 
 <div
     class="company-card"
@@ -1790,9 +1612,7 @@ Core Values
 </div>
 
 
-<!-- =====================================================
-     CARD 07
-===================================================== -->
+<!-- CARD 07 -->
 
 <div
     class="company-card"
@@ -1824,9 +1644,7 @@ Operational Efficiency
 </div>
 
 
-<!-- =====================================================
-     CARD 08
-===================================================== -->
+<!-- CARD 08 -->
 
 <div
     class="company-card"
@@ -1858,9 +1676,7 @@ Continuous Innovation
 </div>
 
 
-<!-- =====================================================
-     CARD 09
-===================================================== -->
+<!-- CARD 09 -->
 
 <div
     class="company-card"
@@ -1892,9 +1708,7 @@ Company Perspective
 </div>
 
 
-<!-- =====================================================
-     CARD 10 VIDEO
-===================================================== -->
+<!-- CARD 10 -->
 
 <div
     class="company-card"
@@ -1930,9 +1744,7 @@ Company Video
 </div>
 
 
-<!-- =====================================================
-     CARD 11
-===================================================== -->
+<!-- CARD 11 -->
 
 <div
     class="company-card update-card"
@@ -1959,9 +1771,7 @@ UPDATE
 </div>
 
 
-<!-- =====================================================
-     CARD 12
-===================================================== -->
+<!-- CARD 12 -->
 
 <div
     class="company-card update-card"
@@ -1993,8 +1803,6 @@ UPDATE
 </div>
 
 
-<!-- NEXT -->
-
 <button
     type="button"
     class="slider-btn"
@@ -2018,18 +1826,11 @@ UPDATE
     aria-hidden="true"
 >
 
-
 <div
     class="viewer-content"
     id="viewerContent"
 >
-
-
-<!-- سيتم إنشاء محتوى PDF هنا بواسطة PDF.js -->
-
-
 </div>
-
 
 </div>
 
@@ -2045,7 +1846,6 @@ UPDATE
     class="services"
     id="services"
 >
-
 
 <div class="section-title en">
 
@@ -2168,7 +1968,6 @@ Structured processes focused on quality and continuous improvement.
     id="hse"
 >
 
-
 <div class="en">
 
 <h2>
@@ -2198,7 +1997,6 @@ risk awareness, environmental protection and continuous improvement.
 
 </div>
 
-
 </section>
 
 
@@ -2210,7 +2008,6 @@ risk awareness, environmental protection and continuous improvement.
     id="contact"
     class="contact"
 >
-
 
 <div class="section-title en">
 
@@ -2348,24 +2145,17 @@ function toggleLanguage() {
 
         body.classList.remove("rtl");
 
-
         english.forEach(
             function(el) {
-
                 el.style.display = "";
-
             }
         );
-
 
         arabic.forEach(
             function(el) {
-
                 el.style.display = "none";
-
             }
         );
-
 
         button.textContent =
             "العربية";
@@ -2376,24 +2166,17 @@ function toggleLanguage() {
 
         body.classList.add("rtl");
 
-
         english.forEach(
             function(el) {
-
                 el.style.display = "none";
-
             }
         );
-
 
         arabic.forEach(
             function(el) {
-
                 el.style.display = "";
-
             }
         );
-
 
         button.textContent =
             "English";
@@ -2667,17 +2450,9 @@ if (
 
 async function openPDF(file) {
 
-    /*
-       منع الصفحة الرئيسية من الحركة
-    */
-
     document.body.style.overflow =
         "hidden";
 
-
-    /*
-       إظهار النافذة مباشرة
-    */
 
     viewer.classList.add(
         "active"
@@ -2689,16 +2464,8 @@ async function openPDF(file) {
     );
 
 
-    /*
-       تنظيف المحتوى السابق
-    */
-
     viewerContent.innerHTML = "";
 
-
-    /*
-       إنشاء شريط الأدوات
-    */
 
     const toolbar =
         document.createElement(
@@ -2708,10 +2475,6 @@ async function openPDF(file) {
     toolbar.className =
         "pdf-toolbar";
 
-
-    /*
-       عنوان الملف
-    */
 
     const title =
         document.createElement(
@@ -2725,10 +2488,6 @@ async function openPDF(file) {
         "KAMRA Company Document";
 
 
-    /*
-       معلومات الصفحات
-    */
-
     const pageInfo =
         document.createElement(
             "div"
@@ -2740,10 +2499,6 @@ async function openPDF(file) {
     pageInfo.textContent =
         "Loading...";
 
-
-    /*
-       زر الإغلاق
-    */
 
     const closeButton =
         document.createElement(
@@ -2792,10 +2547,6 @@ async function openPDF(file) {
     );
 
 
-    /*
-       منطقة عرض الصفحات
-    */
-
     const scrollArea =
         document.createElement(
             "div"
@@ -2804,10 +2555,6 @@ async function openPDF(file) {
     scrollArea.className =
         "pdf-scroll";
 
-
-    /*
-       شاشة التحميل
-    */
 
     const loading =
         document.createElement(
@@ -2850,10 +2597,6 @@ async function openPDF(file) {
     );
 
 
-    /*
-       إضافة العناصر
-    */
-
     viewerContent.appendChild(
         toolbar
     );
@@ -2862,10 +2605,6 @@ async function openPDF(file) {
         scrollArea
     );
 
-
-    /*
-       التأكد من تحميل PDF.js
-    */
 
     if (
         typeof pdfjsLib === "undefined"
@@ -2883,10 +2622,6 @@ async function openPDF(file) {
 
     try {
 
-        /*
-           تحميل ملف PDF
-        */
-
         const loadingTask =
             pdfjsLib.getDocument({
                 url: file
@@ -2897,10 +2632,6 @@ async function openPDF(file) {
             await loadingTask.promise;
 
 
-        /*
-           تحديث عدد الصفحات
-        */
-
         pageInfo.textContent =
             pdf.numPages +
             (
@@ -2910,30 +2641,59 @@ async function openPDF(file) {
             );
 
 
-        /*
-           إزالة شاشة التحميل
-        */
-
         scrollArea.innerHTML =
             "";
 
 
         /*
-           تحديد عرض الصفحة
+           =====================================================
+           التعديل الأساسي:
+           أخذ العرض الحقيقي لمنطقة الـPDF بعد ظهورها
+           =====================================================
         */
 
-        const availableWidth =
-            scrollArea.clientWidth -
-            (
-                window.innerWidth <= 700
-                    ? 16
-                    : 36
-            );
+        const isMobile =
+            window.innerWidth <= 700;
+
+
+        let availableWidth;
+
+
+        if (isMobile) {
+
+            availableWidth =
+                scrollArea.clientWidth -
+                16;
+
+        }
+
+        else {
+
+            availableWidth =
+                scrollArea.clientWidth -
+                36;
+
+        }
 
 
         /*
-           رسم كل الصفحات
+           حماية إضافية إذا كان المتصفح لم يحسب العرض بعد
         */
+
+        if (
+            availableWidth <= 0
+        ) {
+
+            availableWidth =
+                window.innerWidth -
+                (
+                    isMobile
+                        ? 16
+                        : 36
+                );
+
+        }
+
 
         for (
             let pageNumber = 1;
@@ -3004,10 +2764,6 @@ async function renderPDFPage(
         );
 
 
-    /*
-       الحجم الأصلي للصفحة
-    */
-
     const originalViewport =
         page.getViewport({
             scale: 1
@@ -3015,7 +2771,7 @@ async function renderPDFPage(
 
 
     /*
-       حساب التكبير
+       حساب الحجم بناءً على العرض المتاح فعلياً
     */
 
     let scale =
@@ -3024,17 +2780,8 @@ async function renderPDFPage(
 
 
     /*
-       حماية من التكبير الزائد
+       لا نسمح بتكبير الصفحة بشكل مبالغ فيه
     */
-
-    if (
-        scale < 0.5
-    ) {
-
-        scale = 0.5;
-
-    }
-
 
     if (
         scale > 2
@@ -3045,15 +2792,30 @@ async function renderPDFPage(
     }
 
 
+    /*
+       في الموبايل نضمن أن الصفحة لا تتجاوز
+       عرض الشاشة
+    */
+
+    if (
+        window.innerWidth <= 700 &&
+        scale >
+        availableWidth /
+        originalViewport.width
+    ) {
+
+        scale =
+            availableWidth /
+            originalViewport.width;
+
+    }
+
+
     const viewport =
         page.getViewport({
             scale: scale
         });
 
-
-    /*
-       إنشاء Canvas
-    */
 
     const canvas =
         document.createElement(
@@ -3070,10 +2832,6 @@ async function renderPDFPage(
             "2d"
         );
 
-
-    /*
-       دعم الشاشات عالية الدقة
-    */
 
     const devicePixelRatio =
         window.devicePixelRatio ||
@@ -3094,23 +2852,31 @@ async function renderPDFPage(
         );
 
 
+    /*
+       مهم:
+       العرض المرئي يبقى مطابقاً لعرض الـPDF
+       وليس أكبر من شاشة الموبايل
+    */
+
+    const finalWidth =
+        Math.min(
+            viewport.width,
+            availableWidth
+        );
+
+
     canvas.style.width =
-        Math.floor(
-            viewport.width
-        ) +
+        finalWidth +
         "px";
 
 
     canvas.style.height =
-        Math.floor(
-            viewport.height
-        ) +
-        "px";
+        "auto";
 
 
-    /*
-       ضبط الـContext
-    */
+    canvas.style.maxWidth =
+        "100%";
+
 
     context.setTransform(
         devicePixelRatio,
@@ -3122,18 +2888,10 @@ async function renderPDFPage(
     );
 
 
-    /*
-       إضافة الصفحة
-    */
-
     container.appendChild(
         canvas
     );
 
-
-    /*
-       رسم الصفحة
-    */
 
     await page.render({
         canvasContext:
@@ -3381,18 +3139,9 @@ function closeViewer() {
     );
 
 
-    /*
-       حذف كل صفحات PDF
-       وإيقاف أي عملية عرض
-    */
-
     viewerContent.innerHTML =
         "";
 
-
-    /*
-       إعادة حركة الصفحة
-    */
 
     document.body.style.overflow =
         "";
