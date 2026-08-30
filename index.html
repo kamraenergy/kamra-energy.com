@@ -1889,43 +1889,15 @@ function toggleLanguage() {
 ============================== */
 
 function openPDF(file) {
-
-    const viewer =
-        document.getElementById(
-            "companyViewer"
-        );
-
-    const content =
-        document.getElementById(
-            "viewerContent"
-        );
+    window.open(file, "_blank");
+}
 
 
-    /*
-       PDF داخل النافذة.
-       view=Fit يجعل الصفحة
-       تتناسب مع مساحة العرض.
-    */
+/* ==============================
+   OPEN VIDEO
+============================== */
 
-    content.innerHTML = `
-
-        <iframe
-
-            src="${file}#toolbar=0&navpanes=0&scrollbar=1&view=Fit"
-
-            title="Company Profile"
-
-            loading="eager">
-
-        </iframe>
-
-    `;
-
-
-    viewer.classList.add(
-        "active"
-    );
-
+function openVideo() {
 
     document.body.style.overflow =
         "hidden";
