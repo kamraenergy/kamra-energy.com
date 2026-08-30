@@ -111,7 +111,46 @@ nav a:hover {
 /* =========================================================
    HERO
 ========================================================= */
+/* =========================================================
+   QURAN VERSE BOX
+========================================================= */
 
+.quran-box {
+    position: absolute;
+    top: 95px;
+    right: 7%;
+    width: 320px;
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-right: 4px solid #1b9be0;
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+    direction: rtl;
+
+    z-index: 10;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.quran-box .verse {
+    color: #0b1f3a;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.quran-box .source {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 12px;
+}
 .hero {
     min-height: 620px;
     display: flex;
