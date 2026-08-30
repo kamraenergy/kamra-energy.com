@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +8,9 @@
 
 <style>
 
-/* =========================================================
+/* ==============================
    RESET
-========================================================= */
+============================== */
 
 * {
     box-sizing: border-box;
@@ -30,19 +29,14 @@ body {
     line-height: 1.6;
 }
 
-body.no-scroll {
-    overflow: hidden;
-}
 
-
-/* =========================================================
+/* ==============================
    HEADER
-========================================================= */
+============================== */
 
 header {
     background: #0b1f3a;
     color: white;
-
     padding: 15px 7%;
 
     display: flex;
@@ -51,17 +45,17 @@ header {
 
     position: sticky;
     top: 0;
-
     z-index: 100;
 }
 
 .logo img {
     height: 55px;
     width: auto;
-    max-width: 190px;
-
     display: block;
-    object-fit: contain;
+}
+
+.logo-text {
+    display: none;
 }
 
 nav {
@@ -72,11 +66,8 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-
     margin-left: 22px;
-
     font-size: 15px;
-
     transition: color 0.3s ease;
 }
 
@@ -86,7 +77,6 @@ nav a:hover {
 
 .lang-btn {
     border: 1px solid #55b8ff;
-
     background: transparent;
     color: white;
 
@@ -109,17 +99,17 @@ nav a:hover {
 }
 
 
-/* =========================================================
+/* ==============================
    HERO
-========================================================= */
+============================== */
 
 .hero {
-    min-height: 600px;
+    min-height: 620px;
 
     display: flex;
     align-items: center;
 
-    padding: 75px 7%;
+    padding: 80px 7%;
 
     background:
         linear-gradient(
@@ -137,19 +127,14 @@ nav a:hover {
 
 .hero h1 {
     font-size: 52px;
-
     margin-bottom: 20px;
-
     line-height: 1.15;
 }
 
 .hero p {
     font-size: 20px;
-
     max-width: 700px;
-
     margin-bottom: 30px;
-
     color: #dce9f5;
 }
 
@@ -157,7 +142,6 @@ nav a:hover {
     display: inline-block;
 
     background: #1b9be0;
-
     color: white;
 
     padding: 13px 25px;
@@ -175,14 +159,13 @@ nav a:hover {
 
 .btn:hover {
     background: #55b8ff;
-
     transform: translateY(-2px);
 }
 
 
-/* =========================================================
+/* ==============================
    SECTIONS
-========================================================= */
+============================== */
 
 section {
     padding: 70px 7%;
@@ -190,15 +173,12 @@ section {
 
 .section-title {
     text-align: center;
-
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
     font-size: 34px;
-
     color: #0b1f3a;
-
     margin-bottom: 10px;
 }
 
@@ -212,33 +192,31 @@ section {
 
 
 /* =========================================================
-   COMPANY SLIDER
+   COMPANY CARDS SLIDER
 ========================================================= */
 
 .company-slider {
-    max-width: 1150px;
-
-    margin: 0 auto;
+    max-width: 1180px;
+    margin: 30px auto 0;
 
     position: relative;
 
-    padding:
-        0 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 
 /* VIEWPORT */
 
-.company-viewport {
+.company-slider-window {
     overflow: hidden;
-
     width: 100%;
-
     border-radius: 18px;
 }
 
 
-/* TRACK */
+/* MOVING TRACK */
 
 .company-track {
     display: flex;
@@ -246,27 +224,21 @@ section {
     gap: 18px;
 
     transition:
-        transform 0.45s ease;
+        transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
 
     will-change: transform;
 }
 
 
-/* =========================================================
-   CARD
-========================================================= */
+/* EACH CARD */
 
 .company-card {
-    flex:
-        0 0 calc(
-            (100% - 54px) / 4
-        );
-
-    min-height: 175px;
-
     position: relative;
-
     overflow: hidden;
+
+    flex: 0 0 calc((100% - 54px) / 4);
+
+    min-height: 180px;
 
     background:
         linear-gradient(
@@ -276,13 +248,12 @@ section {
             #155b86 100%
         );
 
-    border:
-        1px solid
+    border: 1px solid
         rgba(85,184,255,0.25);
 
     border-radius: 15px;
 
-    padding: 18px 12px;
+    padding: 20px 15px;
 
     text-align: center;
 
@@ -312,7 +283,6 @@ section {
 /* LIGHT CIRCLE */
 
 .company-card::after {
-
     content: "";
 
     position: absolute;
@@ -337,12 +307,9 @@ section {
 /* HOVER */
 
 .company-card:hover {
+    transform: translateY(-7px);
 
-    transform:
-        translateY(-7px);
-
-    border-color:
-        #55b8ff;
+    border-color: #55b8ff;
 
     box-shadow:
         0 16px 38px
@@ -350,7 +317,6 @@ section {
 }
 
 .company-card:hover::after {
-
     width: 190px;
     height: 190px;
 }
@@ -359,7 +325,6 @@ section {
 /* TOP LINE */
 
 .company-card::before {
-
     content: "";
 
     position: absolute;
@@ -372,45 +337,33 @@ section {
 
     background: #55b8ff;
 
-    transform:
-        scaleX(0);
+    transform: scaleX(0);
 
-    transform-origin:
-        center;
+    transform-origin: center;
 
     transition:
         transform 0.35s ease;
 }
 
 .company-card:hover::before {
-
-    transform:
-        scaleX(1);
+    transform: scaleX(1);
 }
 
 
-/* =========================================================
-   LOGO
-========================================================= */
+/* ==============================
+   CARD LOGO
+============================== */
 
 .card-logo {
-
     width: 42px;
     height: 42px;
 
     object-fit: contain;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
     position: relative;
-
     z-index: 2;
-
-    /*
-       مهم جداً:
-       لا يوجد filter هنا.
-       لذلك الشعار لن يتحول إلى دائرة بيضاء.
-    */
 
     opacity: 0.95;
 
@@ -420,20 +373,16 @@ section {
 }
 
 .company-card:hover .card-logo {
-
-    transform:
-        scale(1.08);
-
+    transform: scale(1.08);
     opacity: 1;
 }
 
 
-/* =========================================================
+/* ==============================
    NUMBER
-========================================================= */
+============================== */
 
 .card-number {
-
     color: #55b8ff;
 
     font-size: 12px;
@@ -442,76 +391,68 @@ section {
 
     letter-spacing: 3px;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 
     position: relative;
-
     z-index: 2;
 }
 
 
-/* =========================================================
+/* ==============================
    TITLE
-========================================================= */
+============================== */
 
 .company-card h3 {
-
     color: white;
 
-    font-size: 16px;
+    font-size: 17px;
 
     line-height: 1.3;
 
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 
     position: relative;
-
     z-index: 2;
 }
 
 
-/* =========================================================
+/* ==============================
    ARABIC
-========================================================= */
+============================== */
 
 .company-card p {
-
     color: #dce9f5;
 
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.4;
 
     position: relative;
-
     z-index: 2;
 }
 
 
-/* =========================================================
+/* ==============================
    VIDEO
-========================================================= */
+============================== */
 
 .video-icon {
-
     color: #55b8ff;
 
-    font-size: 28px;
+    font-size: 30px;
 
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 
     position: relative;
-
     z-index: 2;
 }
 
 
-/* =========================================================
+/* ==============================
    UPDATE CARDS
-========================================================= */
+============================== */
 
 .update-card {
-
     cursor: default;
 
     opacity: 0.45;
@@ -525,7 +466,6 @@ section {
 }
 
 .update-card:hover {
-
     transform: none;
 
     border-color:
@@ -537,29 +477,24 @@ section {
 }
 
 .update-card:hover::before {
-
-    transform:
-        scaleX(0);
+    transform: scaleX(0);
 }
 
 .update-card:hover::after {
-
     width: 140px;
     height: 140px;
 }
 
 .update-text {
-
     color: #b9cfe0;
 
-    font-size: 17px;
+    font-size: 18px;
 
     font-weight: bold;
 
     letter-spacing: 2px;
 
     position: relative;
-
     z-index: 2;
 }
 
@@ -568,19 +503,14 @@ section {
    SLIDER ARROWS
 ========================================================= */
 
-.slider-arrow {
+.slider-btn {
+    flex: 0 0 44px;
 
-    position: absolute;
+    width: 44px;
+    height: 44px;
 
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
+    border: 1px solid
+        rgba(85,184,255,0.35);
 
     border-radius: 50%;
 
@@ -588,54 +518,40 @@ section {
 
     color: white;
 
-    font-size: 26px;
+    font-size: 25px;
 
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
 
-    z-index: 20;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    box-shadow:
-        0 6px 18px
-        rgba(11,31,58,0.25);
+    z-index: 5;
 
     transition:
         background 0.3s ease,
+        color 0.3s ease,
         transform 0.3s ease,
-        opacity 0.3s ease;
+        box-shadow 0.3s ease;
 }
 
-.slider-arrow:hover {
+.slider-btn:hover {
+    background: #55b8ff;
 
-    background: #1b9be0;
+    color: #0b1f3a;
 
-    transform:
-        translateY(-50%)
-        scale(1.08);
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 20px
+        rgba(11,31,58,0.20);
 }
 
-.slider-arrow.prev {
-
-    left: 0;
-}
-
-.slider-arrow.next {
-
-    right: 0;
-}
-
-.slider-arrow:disabled {
-
-    opacity: 0.3;
-
+.slider-btn:disabled {
+    opacity: 0.35;
     cursor: default;
+    transform: none;
+    box-shadow: none;
 }
 
 
@@ -644,7 +560,6 @@ section {
 ========================================================= */
 
 .company-viewer {
-
     position: fixed;
 
     inset: 0;
@@ -664,20 +579,16 @@ section {
 }
 
 .company-viewer.active {
-
     display: flex;
 }
 
 
-/* VIEWER CONTENT */
+/* VIEWER */
 
 .viewer-content {
+    width: min(950px, 94vw);
 
-    width:
-        min(950px, 94vw);
-
-    height:
-        88vh;
+    height: 88vh;
 
     background: white;
 
@@ -691,12 +602,10 @@ section {
 }
 
 
-/* IFRAME */
+/* PDF */
 
 .viewer-content iframe {
-
     width: 100%;
-
     height: 100%;
 
     border: none;
@@ -705,20 +614,17 @@ section {
 }
 
 
-/* =========================================================
+/* ==============================
    CLOSE BUTTON
-========================================================= */
+============================== */
 
 .viewer-close {
-
     position: absolute;
 
     top: 15px;
-
     right: 25px;
 
     width: 45px;
-
     height: 45px;
 
     border: none;
@@ -741,23 +647,20 @@ section {
 }
 
 .viewer-close:hover {
-
     background: #1b9be0;
-
     color: white;
 }
 
 
-/* =========================================================
+/* ==============================
    SERVICES
-========================================================= */
+============================== */
 
 .services {
     background: #f7f9fc;
 }
 
 .cards {
-
     display: grid;
 
     grid-template-columns:
@@ -767,7 +670,6 @@ section {
 }
 
 .card {
-
     background: white;
 
     padding: 27px;
@@ -786,7 +688,6 @@ section {
 }
 
 .card:hover {
-
     transform:
         translateY(-5px);
 
@@ -796,9 +697,7 @@ section {
 }
 
 .card h3 {
-
     color: #0b1f3a;
-
     margin-bottom: 10px;
 }
 
@@ -807,12 +706,11 @@ section {
 }
 
 
-/* =========================================================
+/* ==============================
    HSE
-========================================================= */
+============================== */
 
 .hse {
-
     background: #0b1f3a;
 
     color: white;
@@ -821,14 +719,11 @@ section {
 }
 
 .hse h2 {
-
     font-size: 34px;
-
     margin-bottom: 20px;
 }
 
 .hse p {
-
     max-width: 850px;
 
     margin: auto;
@@ -839,38 +734,31 @@ section {
 }
 
 
-/* =========================================================
+/* ==============================
    CONTACT
-========================================================= */
+============================== */
 
 .contact {
-
     background: white;
-
     text-align: center;
 }
 
 .contact-box {
-
     max-width: 700px;
-
     margin: auto;
 }
 
 .contact-box p {
-
     margin: 12px 0;
-
     font-size: 18px;
 }
 
 
-/* =========================================================
+/* ==============================
    FOOTER
-========================================================= */
+============================== */
 
 footer {
-
     background: #071426;
 
     color: #b9c6d5;
@@ -881,9 +769,9 @@ footer {
 }
 
 
-/* =========================================================
+/* ==============================
    LANGUAGE
-========================================================= */
+============================== */
 
 .ar {
     display: none;
@@ -894,16 +782,12 @@ body.rtl {
 }
 
 body.rtl nav a {
-
     margin-left: 0;
-
     margin-right: 22px;
 }
 
 body.rtl .lang-btn {
-
     margin-left: 0;
-
     margin-right: 20px;
 }
 
@@ -915,45 +799,9 @@ body.rtl .lang-btn {
 @media (max-width: 1000px) {
 
     .company-card {
-
-        flex:
-            0 0 calc(
-                (100% - 36px) / 3
-            );
+        flex-basis:
+            calc((100% - 36px) / 3);
     }
-
-}
-
-
-/* =========================================================
-   MOBILE / TABLET
-========================================================= */
-
-@media (max-width: 800px) {
-
-    header {
-
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    nav a {
-
-        margin:
-            0 6px;
-    }
-
-    .hero h1 {
-
-        font-size: 38px;
-    }
-
-    .cards {
-
-        grid-template-columns: 1fr;
-    }
-
 }
 
 
@@ -961,251 +809,187 @@ body.rtl .lang-btn {
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
-
-    section {
-
-        padding:
-            50px 5%;
-    }
-
-
-    /* HEADER */
+@media (max-width: 700px) {
 
     header {
-
-        padding:
-            13px 5%;
-    }
-
-    .logo img {
-
-        height: 50px;
-
-        max-width: 180px;
-    }
-
-
-    /* NAV */
-
-    nav {
-
-        width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        gap: 4px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     nav a {
-
-        font-size: 13px;
-
-        margin:
-            0 3px;
-    }
-
-    .lang-btn {
-
-        font-size: 12px;
-
-        padding:
-            6px 9px;
-
-        margin-left:
-            6px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-
-        min-height:
-            550px;
-
-        padding:
-            60px 5%;
+        margin: 0 6px;
     }
 
     .hero h1 {
-
-        font-size:
-            34px;
+        font-size: 38px;
     }
 
-    .hero p {
-
-        font-size:
-            17px;
+    .cards {
+        grid-template-columns: 1fr;
     }
 
 
     /* SLIDER */
 
     .company-slider {
+        gap: 7px;
+    }
 
-        padding:
-            0 42px;
+    .company-card {
+        flex-basis:
+            calc((100% - 11px) / 2);
+
+        min-height: 155px;
+
+        padding: 15px 7px;
+
+        border-radius: 13px;
     }
 
     .company-track {
+        gap: 11px;
+    }
 
-        gap:
-            10px;
+    .slider-btn {
+        flex: 0 0 38px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 21px;
     }
 
 
-    /* TWO CARDS ON MOBILE */
-
-    .company-card {
-
-        flex:
-            0 0 calc(
-                (100% - 10px) / 2
-            );
-
-        min-height:
-            150px;
-
-        padding:
-            14px 6px;
-
-        border-radius:
-            13px;
-    }
-
-
-    /* CARD LOGO */
+    /* LOGO */
 
     .card-logo {
+        width: 35px;
+        height: 35px;
 
-        width:
-            34px;
-
-        height:
-            34px;
-
-        margin-bottom:
-            6px;
+        margin-bottom: 7px;
     }
 
 
     /* NUMBER */
 
     .card-number {
+        font-size: 10px;
 
-        font-size:
-            10px;
+        letter-spacing: 2px;
 
-        letter-spacing:
-            2px;
-
-        margin-bottom:
-            4px;
+        margin-bottom: 5px;
     }
 
 
     /* TITLE */
 
     .company-card h3 {
+        font-size: 13px;
 
-        font-size:
-            12px;
+        line-height: 1.25;
 
-        line-height:
-            1.25;
-
-        margin-bottom:
-            3px;
+        margin-bottom: 4px;
     }
 
 
     /* ARABIC */
 
     .company-card p {
-
-        font-size:
-            10px;
+        font-size: 11px;
     }
 
 
     /* VIDEO */
 
     .video-icon {
-
-        font-size:
-            23px;
+        font-size: 25px;
     }
 
 
-    /* ARROWS */
+    /* UPDATE */
 
-    .slider-arrow {
-
-        width:
-            36px;
-
-        height:
-            36px;
-
-        font-size:
-            22px;
-    }
-
-    .slider-arrow.prev {
-
-        left:
-            0;
-    }
-
-    .slider-arrow.next {
-
-        right:
-            0;
+    .update-text {
+        font-size: 15px;
     }
 
 
     /* VIEWER */
 
     .company-viewer {
-
-        padding:
-            10px;
+        padding: 10px;
     }
 
     .viewer-content {
-
-        width:
-            100%;
-
-        height:
-            88vh;
-
-        border-radius:
-            8px;
+        width: 100%;
+        height: 88vh;
+        border-radius: 8px;
     }
 
     .viewer-close {
+        top: 8px;
+        right: 10px;
 
-        top:
-            8px;
+        width: 40px;
+        height: 40px;
 
-        right:
-            10px;
+        font-size: 27px;
+    }
+}
 
-        width:
-            40px;
 
-        height:
-            40px;
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-        font-size:
-            27px;
+@media (max-width: 450px) {
+
+    section {
+        padding:
+            50px 4%;
     }
 
+    .logo img {
+        height: 50px;
+        max-width: 180px;
+        object-fit: contain;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 0 3px;
+    }
+
+    .lang-btn {
+        font-size: 12px;
+        padding: 6px 8px;
+        margin-left: 6px;
+    }
+
+    .hero {
+        min-height: 560px;
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .company-card {
+        min-height: 150px;
+    }
+
+    .slider-btn {
+        flex: 0 0 34px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 19px;
+    }
 }
 
 </style>
@@ -1275,7 +1059,6 @@ id="home">
 
 <div class="hero-content">
 
-
 <div class="en">
 
 <h1>
@@ -1319,7 +1102,6 @@ href="#contact">
 
 </div>
 
-
 </div>
 
 </section>
@@ -1361,24 +1143,28 @@ Professional experience. Reliable solutions.
 
 
 <!-- =========================================================
-     12 CARDS SLIDER
+     COMPANY CARDS SLIDER
 ========================================================= -->
 
 <div class="company-slider">
 
 
-<button
-class="slider-arrow prev"
-id="prevBtn"
-type="button"
-aria-label="Previous">
+<!-- LEFT ARROW -->
 
-&#10094;
+<button
+type="button"
+class="slider-btn"
+id="prevBtn"
+aria-label="Previous cards">
+
+‹
 
 </button>
 
 
-<div class="company-viewport">
+<!-- VIEWPORT -->
+
+<div class="company-slider-window">
 
 <div
 class="company-track"
@@ -1619,7 +1405,7 @@ Company Perspective
 </div>
 
 
-<!-- 10 -->
+<!-- 10 VIDEO -->
 
 <div
 class="company-card"
@@ -1692,20 +1478,20 @@ UPDATE
 
 
 </div>
-
 </div>
 
 
-<button
-class="slider-arrow next"
-id="nextBtn"
-type="button"
-aria-label="Next">
+<!-- RIGHT ARROW -->
 
-&#10095;
+<button
+type="button"
+class="slider-btn"
+id="nextBtn"
+aria-label="Next cards">
+
+›
 
 </button>
-
 
 </div>
 
@@ -1720,9 +1506,9 @@ class="company-viewer">
 
 
 <button
+type="button"
 class="viewer-close"
-onclick="closeViewer()"
-type="button">
+onclick="closeViewer()">
 
 ×
 
@@ -1737,7 +1523,6 @@ id="viewerContent">
 
 
 </div>
-
 
 </section>
 
@@ -1901,7 +1686,6 @@ risk awareness, environmental protection and continuous improvement.
 
 </div>
 
-
 </section>
 
 
@@ -1946,7 +1730,6 @@ We would be pleased to discuss your requirements.
 <div class="en">
 
 <p>
-
 <strong>
 Company:
 </strong>
@@ -1954,7 +1737,6 @@ Company:
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 </p>
-
 
 <p>
 
@@ -1980,7 +1762,6 @@ info@kamra-energy.com
 كامرا للمقاولات في مجال الطاقة ذ.م.م
 
 </p>
-
 
 <p>
 
@@ -2091,29 +1872,24 @@ function toggleLanguage() {
 
 
 /* =========================================================
-   SLIDER
+   COMPANY SLIDER
 ========================================================= */
 
 const track =
-    document.getElementById(
-        "companyTrack"
-    );
+    document.getElementById("companyTrack");
 
 const prevBtn =
-    document.getElementById(
-        "prevBtn"
-    );
+    document.getElementById("prevBtn");
 
 const nextBtn =
-    document.getElementById(
-        "nextBtn"
-    );
+    document.getElementById("nextBtn");
+
 
 let currentSlide = 0;
 
 
 /*
-   عدد البطاقات
+   عدد البطاقات الكلي
 */
 
 const totalCards =
@@ -2121,86 +1897,110 @@ const totalCards =
 
 
 /*
-   تحديد عدد البطاقات
-   الظاهرة حسب الشاشة
+   نحدد عدد البطاقات الظاهرة
+   حسب حجم الشاشة
 */
 
 function getVisibleCards() {
 
-    if (
-        window.innerWidth <= 600
-    ) {
+    if (window.innerWidth <= 700) {
 
         return 2;
 
     }
 
-    if (
-        window.innerWidth <= 1000
-    ) {
+    if (window.innerWidth <= 1000) {
 
         return 3;
 
     }
 
     return 4;
+
 }
 
 
 /*
-   عدد الحركات الممكنة
-*/
-
-function getMaxSlide() {
-
-    return Math.max(
-        0,
-        totalCards -
-        getVisibleCards()
-    );
-}
-
-
-/*
-   تحريك البطاقات
+   تحديث السلايدر
 */
 
 function updateSlider() {
 
-    const visible =
+    const visibleCards =
         getVisibleCards();
 
-    const gap =
-        window.innerWidth <= 600
-            ? 10
-            : 18;
+
+    const maxSlide =
+        Math.max(
+            0,
+            totalCards - visibleCards
+        );
 
 
-    const cardWidth =
-        track.children[0]
-        .getBoundingClientRect()
-        .width;
+    if (currentSlide > maxSlide) {
 
+        currentSlide =
+            maxSlide;
 
-    const move =
-        currentSlide *
-        (cardWidth + gap);
-
-
-    track.style.transform =
-        `translateX(-${move}px)`;
+    }
 
 
     /*
-       تحديث الأسهم
+       حساب عرض البطاقة
+       مع المسافات بينها
     */
 
+    const firstCard =
+        track.children[0];
+
+
+    if (!firstCard) {
+        return;
+    }
+
+
+    const cardWidth =
+        firstCard.getBoundingClientRect().width;
+
+
+    const gap =
+        parseFloat(
+            getComputedStyle(track).gap
+        ) || 0;
+
+
+    const move =
+        (cardWidth + gap) *
+        currentSlide;
+
+
+    /*
+       RTL يحتاج اتجاه مختلف
+    */
+
+    if (
+        document.body.classList.contains("rtl")
+    ) {
+
+        track.style.transform =
+            `translateX(${move}px)`;
+
+    }
+
+    else {
+
+        track.style.transform =
+            `translateX(-${move}px)`;
+
+    }
+
+
     prevBtn.disabled =
-        currentSlide <= 0;
+        currentSlide === 0;
 
     nextBtn.disabled =
-        currentSlide >=
-        getMaxSlide();
+        currentSlide === maxSlide;
+
 }
 
 
@@ -2210,17 +2010,20 @@ function updateSlider() {
 
 nextBtn.addEventListener(
     "click",
-    function(e) {
+    function() {
 
-        e.preventDefault();
+        const visibleCards =
+            getVisibleCards();
 
-        e.stopPropagation();
+        const maxSlide =
+            Math.max(
+                0,
+                totalCards - visibleCards
+            );
 
-        const max =
-            getMaxSlide();
 
         if (
-            currentSlide < max
+            currentSlide < maxSlide
         ) {
 
             currentSlide++;
@@ -2239,11 +2042,7 @@ nextBtn.addEventListener(
 
 prevBtn.addEventListener(
     "click",
-    function(e) {
-
-        e.preventDefault();
-
-        e.stopPropagation();
+    function() {
 
         if (
             currentSlide > 0
@@ -2260,24 +2059,12 @@ prevBtn.addEventListener(
 
 
 /*
-   إعادة الحساب عند تغيير
-   حجم الشاشة
+   تحديث عند تغيير حجم الشاشة
 */
 
 window.addEventListener(
     "resize",
     function() {
-
-        const max =
-            getMaxSlide();
-
-        if (
-            currentSlide > max
-        ) {
-
-            currentSlide = max;
-
-        }
 
         updateSlider();
 
@@ -2286,7 +2073,7 @@ window.addEventListener(
 
 
 /*
-   تشغيل أولي
+   تحديث أولي
 */
 
 window.addEventListener(
@@ -2294,6 +2081,40 @@ window.addEventListener(
     function() {
 
         updateSlider();
+
+    }
+);
+
+
+/*
+   بعد تغيير اللغة
+   نعيد حساب الاتجاه
+*/
+
+const originalToggleLanguage =
+    toggleLanguage;
+
+
+/*
+   نراقب تغيير RTL
+*/
+
+document.addEventListener(
+    "click",
+    function(e) {
+
+        if (
+            e.target.classList.contains(
+                "lang-btn"
+            )
+        ) {
+
+            setTimeout(
+                updateSlider,
+                50
+            );
+
+        }
 
     }
 );
@@ -2317,28 +2138,63 @@ function openPDF(file) {
 
 
     /*
-       فتح PDF داخل نفس النافذة
-       وليس window.open()
+       منع الصفحة من التحرك
     */
 
-    content.innerHTML = `
-
-        <iframe
-            src="${encodeURI(file)}#toolbar=1&navpanes=0&scrollbar=1&view=Fit"
-            title="Company Profile"
-            loading="eager">
-        </iframe>
-
-    `;
+    document.body.style.overflow =
+        "hidden";
 
 
-    viewer.classList.add(
-        "active"
+    /*
+       تنظيف المحتوى السابق
+    */
+
+    content.innerHTML = "";
+
+
+    /*
+       فتح PDF داخل النافذة
+       وليس في صفحة جديدة
+    */
+
+    const iframe =
+        document.createElement(
+            "iframe"
+        );
+
+
+    iframe.src =
+        file +
+        "#toolbar=0&navpanes=0&scrollbar=1&view=Fit";
+
+
+    iframe.title =
+        "Company Profile";
+
+
+    iframe.setAttribute(
+        "loading",
+        "eager"
     );
 
 
-    document.body.classList.add(
-        "no-scroll"
+    iframe.setAttribute(
+        "allow",
+        "fullscreen"
+    );
+
+
+    content.appendChild(
+        iframe
+    );
+
+
+    /*
+       إظهار النافذة
+    */
+
+    viewer.classList.add(
+        "active"
     );
 
 }
@@ -2364,14 +2220,11 @@ function openVideo() {
     content.innerHTML = `
 
         <div style="
-
             width:100%;
             height:100%;
 
             display:flex;
-
             align-items:center;
-
             justify-content:center;
 
             background:#071426;
@@ -2381,41 +2234,27 @@ function openVideo() {
             text-align:center;
 
             font-size:22px;
-
         ">
 
             <div>
 
                 <div style="
-
                     font-size:50px;
-
                     margin-bottom:15px;
-
                 ">
-
                     ▶
-
                 </div>
 
                 <div>
-
                     Company Video
-
                 </div>
 
                 <div style="
-
                     font-size:14px;
-
                     opacity:.7;
-
                     margin-top:8px;
-
                 ">
-
                     Video will be added soon
-
                 </div>
 
             </div>
@@ -2430,9 +2269,8 @@ function openVideo() {
     );
 
 
-    document.body.classList.add(
-        "no-scroll"
-    );
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -2462,15 +2300,14 @@ function closeViewer() {
     content.innerHTML = "";
 
 
-    document.body.classList.remove(
-        "no-scroll"
-    );
+    document.body.style.overflow =
+        "";
 
 }
 
 
 /* =========================================================
-   CLICK OUTSIDE VIEWER
+   CLICK OUTSIDE
 ========================================================= */
 
 document
@@ -2494,7 +2331,7 @@ document
 
 
 /* =========================================================
-   ESC
+   ESC KEY
 ========================================================= */
 
 document.addEventListener(
@@ -2510,6 +2347,74 @@ document.addEventListener(
         }
 
     }
+);
+
+
+/* =========================================================
+   SWIPE SUPPORT FOR MOBILE
+========================================================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+const sliderWindow =
+    document.querySelector(
+        ".company-slider-window"
+    );
+
+
+sliderWindow.addEventListener(
+    "touchstart",
+    function(e) {
+
+        touchStartX =
+            e.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+sliderWindow.addEventListener(
+    "touchend",
+    function(e) {
+
+        touchEndX =
+            e.changedTouches[0].screenX;
+
+
+        const difference =
+            touchStartX - touchEndX;
+
+
+        /*
+           سحب لليسار
+        */
+
+        if (
+            difference > 50
+        ) {
+
+            nextBtn.click();
+
+        }
+
+
+        /*
+           سحب لليمين
+        */
+
+        if (
+            difference < -50
+        ) {
+
+            prevBtn.click();
+
+        }
+
+    },
+    { passive: true }
 );
 
 </script>
