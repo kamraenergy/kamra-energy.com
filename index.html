@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
 
 <style>
+
+/* ==============================
+   RESET
+============================== */
 
 * {
     box-sizing: border-box;
@@ -20,6 +25,7 @@ body {
     line-height: 1.6;
 }
 
+
 /* ==============================
    HEADER
 ============================== */
@@ -27,10 +33,12 @@ body {
 header {
     background: #0b1f3a;
     color: white;
-    padding: 18px 7%;
+    padding: 15px 7%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     position: sticky;
     top: 0;
     z-index: 100;
@@ -61,11 +69,21 @@ nav a:hover {
     border: 1px solid #55b8ff;
     background: transparent;
     color: white;
+
     padding: 7px 12px;
+
     border-radius: 5px;
+
     cursor: pointer;
+
     margin-left: 20px;
 }
+
+.lang-btn:hover {
+    background: #55b8ff;
+    color: #0b1f3a;
+}
+
 
 /* ==============================
    HERO
@@ -73,10 +91,19 @@ nav a:hover {
 
 .hero {
     min-height: 620px;
+
     display: flex;
     align-items: center;
+
     padding: 80px 7%;
-    background: linear-gradient(135deg, #0b1f3a, #123f68);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b1f3a,
+            #123f68
+        );
+
     color: white;
 }
 
@@ -99,25 +126,40 @@ nav a:hover {
 
 .btn {
     display: inline-block;
+
     background: #1b9be0;
     color: white;
+
     padding: 13px 25px;
+
     text-decoration: none;
+
     border-radius: 5px;
+
     font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
+
+.btn:hover {
+    background: #55b8ff;
+    transform: translateY(-2px);
+}
+
 
 /* ==============================
    SECTIONS
 ============================== */
 
 section {
-    padding: 75px 7%;
+    padding: 70px 7%;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
@@ -134,20 +176,29 @@ section {
     background: white;
 }
 
+
 /* ==============================
    COMPANY CARDS
 ============================== */
 
 .company-grid {
-    max-width: 1150px;
-    margin: 35px auto 0;
+    max-width: 1100px;
+
+    margin: 30px auto 0;
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
 }
 
+
+/* CARD */
+
 .company-card {
-    min-height: 190px;
+    min-height: 185px;
 
     position: relative;
     overflow: hidden;
@@ -160,11 +211,12 @@ section {
             #155b86 100%
         );
 
-    border: 1px solid rgba(85,184,255,0.25);
+    border: 1px solid
+        rgba(85,184,255,0.25);
 
-    border-radius: 16px;
+    border-radius: 15px;
 
-    padding: 22px 18px;
+    padding: 20px 15px;
 
     text-align: center;
 
@@ -173,12 +225,16 @@ section {
     color: white;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     box-shadow:
-        0 8px 25px rgba(11,31,58,0.15);
+        0 7px 22px
+        rgba(11,31,58,0.14);
 
     transition:
         transform 0.35s ease,
@@ -186,20 +242,22 @@ section {
         border-color 0.35s ease;
 }
 
-/* Decorative light */
+
+/* LIGHT CIRCLE */
 
 .company-card::after {
     content: "";
 
     position: absolute;
 
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 
-    top: -80px;
-    right: -80px;
+    top: -75px;
+    right: -75px;
 
-    background: rgba(85,184,255,0.13);
+    background:
+        rgba(85,184,255,0.12);
 
     border-radius: 50%;
 
@@ -208,23 +266,33 @@ section {
         height 0.4s ease;
 }
 
-.company-card:hover {
-    transform: translateY(-8px);
 
-    border-color: #55b8ff;
+/* HOVER */
+
+.company-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        #55b8ff;
 
     box-shadow:
-        0 18px 42px rgba(11,31,58,0.28);
+        0 16px 38px
+        rgba(11,31,58,0.27);
 }
 
 .company-card:hover::after {
-    width: 200px;
-    height: 200px;
+
+    width: 190px;
+    height: 190px;
 }
 
-/* Top line */
+
+/* TOP LINE */
 
 .company-card::before {
+
     content: "";
 
     position: absolute;
@@ -237,33 +305,43 @@ section {
 
     background: #55b8ff;
 
-    transform: scaleX(0);
+    transform:
+        scaleX(0);
 
-    transform-origin: center;
+    transform-origin:
+        center;
 
-    transition: transform 0.35s ease;
+    transition:
+        transform 0.35s ease;
 }
 
 .company-card:hover::before {
     transform: scaleX(1);
 }
 
+
 /* ==============================
    CARD LOGO
 ============================== */
 
 .card-logo {
+
     width: 48px;
     height: 48px;
 
     object-fit: contain;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
     position: relative;
     z-index: 2;
 
-    filter: brightness(0) invert(1);
+    /*
+       مهم:
+       لا نستخدم filter هنا
+       حتى لا يتحول الشعار إلى
+       دائرة بيضاء.
+    */
 
     opacity: 0.95;
 
@@ -273,65 +351,46 @@ section {
 }
 
 .company-card:hover .card-logo {
-    transform: scale(1.08);
+
+    transform:
+        scale(1.08);
+
     opacity: 1;
 }
 
+
 /* ==============================
-   CARD NUMBER
+   NUMBER
 ============================== */
 
 .card-number {
+
     color: #55b8ff;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: bold;
 
     letter-spacing: 3px;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 
     position: relative;
     z-index: 2;
 }
 
+
 /* ==============================
-   CARD TITLE
+   TITLE
 ============================== */
 
 .company-card h3 {
+
     color: white;
 
     font-size: 17px;
 
-    line-height: 1.35;
-
-    margin-bottom: 7px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.company-card p {
-    color: #dce9f5;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    position: relative;
-    z-index: 2;
-}
-
-/* ==============================
-   VIDEO
-============================== */
-
-.video-icon {
-    color: #55b8ff;
-
-    font-size: 32px;
+    line-height: 1.3;
 
     margin-bottom: 5px;
 
@@ -339,14 +398,51 @@ section {
     z-index: 2;
 }
 
+
 /* ==============================
-   UPDATE CARDS
+   ARABIC
+============================== */
+
+.company-card p {
+
+    color: #dce9f5;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ==============================
+   VIDEO
+============================== */
+
+.video-icon {
+
+    color: #55b8ff;
+
+    font-size: 30px;
+
+    margin-bottom: 4px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==============================
+   UPDATE
 ============================== */
 
 .update-card {
+
     cursor: default;
 
-    opacity: 0.48;
+    opacity: 0.45;
 
     background:
         linear-gradient(
@@ -357,27 +453,34 @@ section {
 }
 
 .update-card:hover {
+
     transform: none;
 
-    border-color: rgba(85,184,255,0.25);
+    border-color:
+        rgba(85,184,255,0.25);
 
     box-shadow:
-        0 8px 25px rgba(11,31,58,0.15);
+        0 7px 22px
+        rgba(11,31,58,0.14);
 }
 
 .update-card:hover::before {
-    transform: scaleX(0);
+
+    transform:
+        scaleX(0);
 }
 
 .update-card:hover::after {
-    width: 150px;
-    height: 150px;
+
+    width: 140px;
+    height: 140px;
 }
 
 .update-text {
+
     color: #b9cfe0;
 
-    font-size: 20px;
+    font-size: 18px;
 
     font-weight: bold;
 
@@ -387,18 +490,21 @@ section {
     z-index: 2;
 }
 
+
 /* ==============================
    PDF / VIDEO VIEWER
 ============================== */
 
 .company-viewer {
+
     position: fixed;
 
     inset: 0;
 
     z-index: 9999;
 
-    background: rgba(7,20,38,0.94);
+    background:
+        rgba(7,20,38,0.94);
 
     display: none;
 
@@ -413,10 +519,16 @@ section {
     display: flex;
 }
 
-.viewer-content {
-    width: min(950px, 94vw);
 
-    height: 84vh;
+/* VIEWER */
+
+.viewer-content {
+
+    width:
+        min(950px, 94vw);
+
+    height:
+        86vh;
 
     background: white;
 
@@ -425,13 +537,16 @@ section {
     overflow: hidden;
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.45);
+        0 20px 60px
+        rgba(0,0,0,0.45);
 }
 
-.viewer-content iframe,
-.viewer-content video {
-    width: 100%;
 
+/* IFRAME */
+
+.viewer-content iframe {
+
+    width: 100%;
     height: 100%;
 
     border: none;
@@ -439,17 +554,19 @@ section {
     display: block;
 }
 
-/* CLOSE */
+
+/* ==============================
+   CLOSE BUTTON
+============================== */
 
 .viewer-close {
+
     position: absolute;
 
     top: 15px;
-
     right: 25px;
 
     width: 45px;
-
     height: 45px;
 
     border: none;
@@ -465,13 +582,20 @@ section {
     cursor: pointer;
 
     z-index: 10000;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .viewer-close:hover {
-    background: #1b9be0;
+
+    background:
+        #1b9be0;
 
     color: white;
 }
+
 
 /* ==============================
    SERVICES
@@ -482,42 +606,64 @@ section {
 }
 
 .cards {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    gap: 25px;
+    gap: 22px;
 }
 
 .card {
+
     background: white;
 
-    padding: 30px;
+    padding: 27px;
 
     border-radius: 10px;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.07);
+        0 5px 20px
+        rgba(0,0,0,0.07);
 
     text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(11,31,58,0.12);
 }
 
 .card h3 {
+
     color: #0b1f3a;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .card p {
     color: #64748b;
 }
 
+
 /* ==============================
    HSE
 ============================== */
 
 .hse {
-    background: #0b1f3a;
+
+    background:
+        #0b1f3a;
 
     color: white;
 
@@ -525,12 +671,14 @@ section {
 }
 
 .hse h2 {
+
     font-size: 34px;
 
     margin-bottom: 20px;
 }
 
 .hse p {
+
     max-width: 850px;
 
     margin: auto;
@@ -540,41 +688,52 @@ section {
     font-size: 18px;
 }
 
+
 /* ==============================
    CONTACT
 ============================== */
 
 .contact {
+
     background: white;
 
     text-align: center;
 }
 
 .contact-box {
+
     max-width: 700px;
 
     margin: auto;
 }
 
 .contact-box p {
+
     margin: 12px 0;
 
     font-size: 18px;
 }
+
 
 /* ==============================
    FOOTER
 ============================== */
 
 footer {
-    background: #071426;
 
-    color: #b9c6d5;
+    background:
+        #071426;
 
-    text-align: center;
+    color:
+        #b9c6d5;
 
-    padding: 25px;
+    text-align:
+        center;
+
+    padding:
+        25px;
 }
+
 
 /* ==============================
    LANGUAGE
@@ -589,138 +748,303 @@ body.rtl {
 }
 
 body.rtl nav a {
+
     margin-left: 0;
+
     margin-right: 22px;
 }
 
 body.rtl .lang-btn {
+
     margin-left: 0;
+
     margin-right: 20px;
 }
+
 
 /* ==============================
    TABLET
 ============================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .company-grid {
-        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 }
 
+
 /* ==============================
-   MOBILE
+   MOBILE / TABLET
 ============================== */
 
 @media (max-width: 800px) {
 
     header {
-        flex-direction: column;
+
+        flex-direction:
+            column;
+
         gap: 15px;
     }
 
     nav a {
-        margin: 0 7px;
+
+        margin:
+            0 6px;
     }
 
     .hero h1 {
-        font-size: 38px;
+
+        font-size:
+            38px;
     }
 
     .cards {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 }
+
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media (max-width: 600px) {
 
     section {
-        padding: 55px 5%;
+
+        padding:
+            50px 5%;
     }
 
+
+    /* HEADER LOGO */
+
+    header {
+
+        padding:
+            13px 5%;
+    }
+
+    .logo img {
+
+        height:
+            50px;
+
+        max-width:
+            180px;
+
+        object-fit:
+            contain;
+    }
+
+
+    /* NAV */
+
+    nav {
+
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+    nav a {
+
+        font-size:
+            13px;
+
+        margin:
+            0 4px;
+    }
+
+    .lang-btn {
+
+        font-size:
+            12px;
+
+        padding:
+            6px 9px;
+
+        margin-left:
+            8px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height:
+            560px;
+
+        padding:
+            60px 5%;
+    }
+
+    .hero h1 {
+
+        font-size:
+            34px;
+    }
+
+    .hero p {
+
+        font-size:
+            17px;
+    }
+
+
+    /* CARDS */
+
     .company-grid {
-        grid-template-columns: repeat(2, 1fr);
 
-        gap: 12px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-        margin-top: 25px;
+        gap:
+            11px;
+
+        margin-top:
+            25px;
     }
 
     .company-card {
-        min-height: 160px;
 
-        padding: 16px 8px;
+        min-height:
+            155px;
 
-        border-radius: 14px;
+        padding:
+            15px 7px;
+
+        border-radius:
+            13px;
     }
+
+
+    /* CARD LOGO */
 
     .card-logo {
-        width: 38px;
-        height: 38px;
 
-        margin-bottom: 8px;
+        width:
+            35px;
+
+        height:
+            35px;
+
+        margin-bottom:
+            7px;
     }
+
+
+    /* NUMBER */
 
     .card-number {
-        font-size: 11px;
 
-        letter-spacing: 2px;
+        font-size:
+            10px;
 
-        margin-bottom: 6px;
+        letter-spacing:
+            2px;
+
+        margin-bottom:
+            5px;
     }
+
+
+    /* TITLE */
 
     .company-card h3 {
-        font-size: 14px;
 
-        line-height: 1.3;
+        font-size:
+            13px;
 
-        margin-bottom: 5px;
+        line-height:
+            1.25;
+
+        margin-bottom:
+            4px;
     }
+
+
+    /* ARABIC */
 
     .company-card p {
-        font-size: 12px;
+
+        font-size:
+            11px;
     }
+
+
+    /* VIDEO */
 
     .video-icon {
-        font-size: 27px;
 
-        margin-bottom: 4px;
+        font-size:
+            25px;
     }
 
+
+    /* UPDATE */
+
     .update-text {
-        font-size: 17px;
+
+        font-size:
+            15px;
+    }
+
+
+    /* VIEWER */
+
+    .company-viewer {
+
+        padding:
+            10px;
     }
 
     .viewer-content {
-        width: 100%;
 
-        height: 85vh;
+        width:
+            100%;
 
-        border-radius: 8px;
-    }
+        height:
+            88vh;
 
-    .company-viewer {
-        padding: 15px;
+        border-radius:
+            8px;
     }
 
     .viewer-close {
-        top: 10px;
 
-        right: 15px;
+        top:
+            8px;
 
-        width: 40px;
+        right:
+            10px;
 
-        height: 40px;
+        width:
+            40px;
 
-        font-size: 28px;
+        height:
+            40px;
+
+        font-size:
+            27px;
     }
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ==============================
      HEADER
@@ -734,28 +1058,36 @@ body.rtl .lang-btn {
 src="kamra-energy.svg"
 alt="KAMRA ENERGY">
 
-<div class="logo-text">
-<strong>KAMRA ENERGY</strong>
-</div>
-
 </div>
 
 <nav>
 
-<a href="#home">Home</a>
+<a href="#home">
+Home
+</a>
 
-<a href="#about">About Us</a>
+<a href="#about">
+About Us
+</a>
 
-<a href="#services">Services</a>
+<a href="#services">
+Services
+</a>
 
-<a href="#hse">HSE</a>
+<a href="#hse">
+HSE
+</a>
 
-<a href="#contact">Contact</a>
+<a href="#contact">
+Contact
+</a>
 
 <button
 class="lang-btn"
 onclick="toggleLanguage()">
+
 العربية
+
 </button>
 
 </nav>
@@ -787,10 +1119,13 @@ with a strong commitment to safety, quality and operational excellence.
 <a
 class="btn"
 href="#contact">
+
 Contact Us
+
 </a>
 
 </div>
+
 
 <div class="ar">
 
@@ -806,7 +1141,9 @@ Contact Us
 <a
 class="btn"
 href="#contact">
+
 اتصل بنا
+
 </a>
 
 </div>
@@ -824,6 +1161,7 @@ href="#contact">
 class="about"
 id="about">
 
+
 <div class="section-title en">
 
 <h2>
@@ -835,6 +1173,7 @@ Professional experience. Reliable solutions.
 </p>
 
 </div>
+
 
 <div class="section-title ar">
 
@@ -860,7 +1199,7 @@ Professional experience. Reliable solutions.
 
 <div
 class="company-card"
-onclick="openPDF('01-logo.pdf.pdf')">
+onclick="openPDF('01-logo.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -886,7 +1225,7 @@ Company Logo
 
 <div
 class="company-card"
-onclick="openPDF('02-about-us.pdf.pdf')">
+onclick="openPDF('02-about-us.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -912,7 +1251,7 @@ About Us
 
 <div
 class="company-card"
-onclick="openPDF('03-vision.pdf.pdf')">
+onclick="openPDF('03-vision.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -938,7 +1277,7 @@ Vision
 
 <div
 class="company-card"
-onclick="openPDF('04-mission.pdf.pdf')">
+onclick="openPDF('04-mission.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -964,7 +1303,7 @@ Mission
 
 <div
 class="company-card"
-onclick="openPDF('05-comprehensive-safety.pdf.pdf')">
+onclick="openPDF('05-comprehensive-safety.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -990,7 +1329,7 @@ Comprehensive Safety
 
 <div
 class="company-card"
-onclick="openPDF('06-core-values.pdf.pdf')">
+onclick="openPDF('06-core-values.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -1016,7 +1355,7 @@ Core Values
 
 <div
 class="company-card"
-onclick="openPDF('07-operational-efficiency.pdf.pdf')">
+onclick="openPDF('07-operational-efficiency.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -1042,7 +1381,7 @@ Operational Efficiency
 
 <div
 class="company-card"
-onclick="openPDF('08-continuous-innovation.pdf.pdf')">
+onclick="openPDF('08-continuous-innovation.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -1068,7 +1407,7 @@ Continuous Innovation
 
 <div
 class="company-card"
-onclick="openPDF('09-company-perspective.pdf.pdf')">
+onclick="openPDF('09-company-perspective.pdf')">
 
 <img
 src="kamra-energy.svg"
@@ -1176,7 +1515,9 @@ class="company-viewer">
 <button
 class="viewer-close"
 onclick="closeViewer()">
+
 ×
+
 </button>
 
 <div
@@ -1185,6 +1526,7 @@ id="viewerContent">
 </div>
 
 </div>
+
 
 </section>
 
@@ -1197,6 +1539,7 @@ id="viewerContent">
 class="services"
 id="services">
 
+
 <div class="section-title en">
 
 <h2>
@@ -1208,6 +1551,7 @@ Integrated solutions for energy and well service operations.
 </p>
 
 </div>
+
 
 <div class="section-title ar">
 
@@ -1223,6 +1567,7 @@ Integrated solutions for energy and well service operations.
 
 
 <div class="cards">
+
 
 <div class="card">
 
@@ -1301,6 +1646,7 @@ Structured processes focused on quality and continuous improvement.
 
 </div>
 
+
 </div>
 
 </section>
@@ -1313,6 +1659,7 @@ Structured processes focused on quality and continuous improvement.
 <section
 class="hse"
 id="hse">
+
 
 <div class="en">
 
@@ -1328,6 +1675,7 @@ risk awareness, environmental protection and continuous improvement.
 
 </div>
 
+
 <div class="ar">
 
 <h2>
@@ -1335,8 +1683,9 @@ risk awareness, environmental protection and continuous improvement.
 </h2>
 
 <p>
-السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل
-الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+السلامة جزء أساسي من عملياتنا.
+نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
+وتقييم المخاطر وحماية البيئة والتحسين المستمر.
 </p>
 
 </div>
@@ -1352,6 +1701,7 @@ risk awareness, environmental protection and continuous improvement.
 id="contact"
 class="contact">
 
+
 <div class="section-title en">
 
 <h2>
@@ -1363,6 +1713,7 @@ We would be pleased to discuss your requirements.
 </p>
 
 </div>
+
 
 <div class="section-title ar">
 
@@ -1379,16 +1730,26 @@ We would be pleased to discuss your requirements.
 
 <div class="contact-box">
 
+
 <div class="en">
 
 <p>
-<strong>Company:</strong>
+<strong>
+Company:
+</strong>
+
 KAMRA FOR ENERGY CONTRACTING L.L.C.
+
 </p>
 
 <p>
-<strong>Email:</strong>
+
+<strong>
+Email:
+</strong>
+
 info@kamra-energy.com
+
 </p>
 
 </div>
@@ -1397,16 +1758,27 @@ info@kamra-energy.com
 <div class="ar">
 
 <p>
-<strong>الشركة:</strong>
+
+<strong>
+الشركة:
+</strong>
+
 كامرا للمقاولات في مجال الطاقة ذ.م.م
+
 </p>
 
 <p>
-<strong>البريد الإلكتروني:</strong>
+
+<strong>
+البريد الإلكتروني:
+</strong>
+
 info@kamra-energy.com
+
 </p>
 
 </div>
+
 
 </div>
 
@@ -1420,8 +1792,10 @@ info@kamra-energy.com
 <footer>
 
 <p>
+
 © 2026 KAMRA FOR ENERGY CONTRACTING L.L.C.
 — All Rights Reserved.
+
 </p>
 
 </footer>
@@ -1448,85 +1822,113 @@ function toggleLanguage() {
         document.querySelector(".lang-btn");
 
 
-    if (body.classList.contains("rtl")) {
+    if (
+        body.classList.contains("rtl")
+    ) {
 
         body.classList.remove("rtl");
 
-        english.forEach(function(el) {
-            el.style.display = "";
-        });
 
-        arabic.forEach(function(el) {
-            el.style.display = "none";
-        });
+        english.forEach(
+            function(el) {
 
-        button.textContent = "العربية";
+                el.style.display = "";
 
-    } else {
+            }
+        );
+
+
+        arabic.forEach(
+            function(el) {
+
+                el.style.display =
+                    "none";
+
+            }
+        );
+
+
+        button.textContent =
+            "العربية";
+
+    }
+
+    else {
 
         body.classList.add("rtl");
 
-        english.forEach(function(el) {
-            el.style.display = "none";
-        });
 
-        arabic.forEach(function(el) {
-            el.style.display = "";
-        });
+        english.forEach(
+            function(el) {
 
-        button.textContent = "English";
+                el.style.display =
+                    "none";
+
+            }
+        );
+
+
+        arabic.forEach(
+            function(el) {
+
+                el.style.display =
+                    "";
+
+            }
+        );
+
+
+        button.textContent =
+            "English";
     }
 }
 
 
 /* ==============================
    OPEN PDF
-   MOBILE FIX
 ============================== */
 
 function openPDF(file) {
 
-    const isMobile =
-        /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-
-    /*
-       على الموبايل:
-       نفتح ملف PDF مباشرة في تبويب جديد
-       بدل iframe حتى لا يحدث تنزيل/مشكلة عرض.
-    */
-
-    if (isMobile) {
-
-        window.open(file, "_blank");
-
-        return;
-    }
-
-
-    /*
-       على اللابتوب:
-       يبقى العرض داخل النافذة الاحترافية.
-    */
-
     const viewer =
-        document.getElementById("companyViewer");
+        document.getElementById(
+            "companyViewer"
+        );
 
     const content =
-        document.getElementById("viewerContent");
+        document.getElementById(
+            "viewerContent"
+        );
 
+
+    /*
+       PDF داخل النافذة.
+       view=Fit يجعل الصفحة
+       تتناسب مع مساحة العرض.
+    */
 
     content.innerHTML = `
 
         <iframe
-            src="${file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit"
-            title="Company Profile">
+
+            src="${file}#toolbar=0&navpanes=0&scrollbar=1&view=Fit"
+
+            title="Company Profile"
+
+            loading="eager">
+
         </iframe>
 
     `;
 
 
-    viewer.classList.add("active");
+    viewer.classList.add(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
 }
 
 
@@ -1537,45 +1939,73 @@ function openPDF(file) {
 function openVideo() {
 
     const viewer =
-        document.getElementById("companyViewer");
+        document.getElementById(
+            "companyViewer"
+        );
 
     const content =
-        document.getElementById("viewerContent");
+        document.getElementById(
+            "viewerContent"
+        );
 
 
     content.innerHTML = `
 
         <div style="
+
             width:100%;
             height:100%;
+
             display:flex;
+
             align-items:center;
+
             justify-content:center;
+
             background:#071426;
+
             color:white;
+
             text-align:center;
+
             font-size:22px;
+
         ">
 
             <div>
 
                 <div style="
+
                     font-size:50px;
+
                     margin-bottom:15px;
+
                 ">
+
                     ▶
+
                 </div>
+
 
                 <div>
+
                     Company Video
+
                 </div>
 
+
                 <div style="
+
                     font-size:14px;
+
                     opacity:.7;
+
                     margin-top:8px;
+
                 ">
+
                     Video will be added soon
+
                 </div>
 
             </div>
@@ -1585,7 +2015,13 @@ function openVideo() {
     `;
 
 
-    viewer.classList.add("active");
+    viewer.classList.add(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
 }
 
 
@@ -1596,15 +2032,26 @@ function openVideo() {
 function closeViewer() {
 
     const viewer =
-        document.getElementById("companyViewer");
+        document.getElementById(
+            "companyViewer"
+        );
 
     const content =
-        document.getElementById("viewerContent");
+        document.getElementById(
+            "viewerContent"
+        );
 
 
-    viewer.classList.remove("active");
+    viewer.classList.remove(
+        "active"
+    );
+
 
     content.innerHTML = "";
+
+
+    document.body.style.overflow =
+        "";
 }
 
 
@@ -1613,31 +2060,43 @@ function closeViewer() {
 ============================== */
 
 document
-    .getElementById("companyViewer")
-    .addEventListener("click", function(e) {
+    .getElementById(
+        "companyViewer"
+    )
+    .addEventListener(
+        "click",
+        function(e) {
 
-        if (e.target === this) {
+            if (
+                e.target === this
+            ) {
+
+                closeViewer();
+
+            }
+
+        }
+    );
+
+
+/* ==============================
+   ESC KEY
+============================== */
+
+document.addEventListener(
+    "keydown",
+    function(e) {
+
+        if (
+            e.key === "Escape"
+        ) {
 
             closeViewer();
 
         }
 
-    });
-
-
-/* ==============================
-   ESC
-============================== */
-
-document.addEventListener("keydown", function(e) {
-
-    if (e.key === "Escape") {
-
-        closeViewer();
-
     }
-
-});
+);
 
 </script>
 
