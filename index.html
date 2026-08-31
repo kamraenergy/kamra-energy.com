@@ -3696,30 +3696,35 @@ employeePassword.focus();
    ========================================= */
 
 document
-.querySelectorAll(
-".library-card[data-library-pdf]"
-)
+.querySelectorAll(".library-card[data-library-pdf]")
 .forEach(function(card){
 
-card.addEventListener(
-"click",
-function(event){
+  card.addEventListener("click", function(event){
 
-event.preventDefault();
+    event.preventDefault();
+    event.stopPropagation();
 
-event.stopPropagation();
+    const file = card.getAttribute("data-library-pdf");
 
+    if(!file) return;
 
-const file =
-card.getAttribute(
-"data-library-pdf"
-);
+    /*
+      ملفات PDF موجودة في المجلد الرئيسي للموقع.
+      encodeURIComponent يحافظ على أسماء الملفات بشكل صحيح.
+    */
 
+    const pdfPath = "./" + file
+      .split("/")
+      .map(function(part){
+        return encodeURIComponent(part);
+      })
+      .join("/");
 
-if(file)
-openPDF(file);
+    console.log("Opening employee PDF:", pdfPath);
 
-});
+    openPDF(pdfPath);
+
+  });
 
 });
 
