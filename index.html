@@ -3,1621 +3,1464 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
 <title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
-
-body{
-font-family:Arial,sans-serif;
-color:#172033;
-background:#f7f9fc;
-line-height:1.6;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
 }
 
-.ar{display:none;direction:rtl}
-.en{display:block;direction:ltr}
+html{
+  scroll-behavior:smooth
+}
 
-body.rtl .en{display:none}
-body.rtl .ar{display:block}
+body{
+  font-family:Arial,sans-serif;
+  color:#172033;
+  background:#f7f9fc;
+  line-height:1.6
+}
+
+.ar{
+  display:none;
+  direction:rtl
+}
+
+.en{
+  display:block;
+  direction:ltr
+}
+
+body.rtl .en{
+  display:none
+}
+
+body.rtl .ar{
+  display:block
+}
+
+/* =========================
+   HEADER
+   ========================= */
 
 header{
-background:#0b1f3a;
-color:white;
-padding:15px 7%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
+  background:#0b1f3a;
+  color:white;
+  padding:15px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100
 }
 
 .logo{
-text-align:center;
-flex-shrink:0;
+  text-align:center;
+  flex-shrink:0
 }
 
 .logo img{
-height:55px;
-width:auto;
-display:block;
+  height:55px;
+  width:auto;
+  display:block
 }
 
 .logo-text{
-display:block;
-margin-top:4px;
-text-align:center;
-color:white;
-font-size:11px;
-font-weight:bold;
-letter-spacing:.5px;
-line-height:1.2;
-direction:ltr;
+  display:block;
+  margin-top:4px;
+  text-align:center;
+  color:white;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.5px;
+  line-height:1.2;
+  direction:ltr
 }
 
 nav{
-display:flex;
-align-items:center;
-flex-wrap:wrap;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:22px;
-font-size:15px;
-transition:color .3s ease;
-direction:ltr;
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:15px;
+  transition:color .3s ease;
+  direction:ltr
 }
 
 nav a:hover{
-color:#55b8ff;
+  color:#55b8ff
 }
 
 .lang-btn,
-.login-btn{
-border:1px solid #55b8ff;
-background:transparent;
-color:white;
-padding:7px 12px;
-border-radius:5px;
-cursor:pointer;
-margin-left:15px;
-font-family:Arial,sans-serif;
-transition:background .3s ease,color .3s ease;
+.employee-login-btn{
+  border:1px solid #55b8ff;
+  background:transparent;
+  color:white;
+  padding:7px 12px;
+  border-radius:5px;
+  cursor:pointer;
+  font-family:Arial,sans-serif;
+  transition:background .3s ease,color .3s ease
+}
+
+.lang-btn{
+  margin-left:20px
+}
+
+.employee-login-btn{
+  margin-left:12px;
+  font-size:14px;
+  font-weight:bold
 }
 
 .lang-btn:hover,
-.login-btn:hover{
-background:#55b8ff;
-color:white;
+.employee-login-btn:hover{
+  background:#55b8ff;
+  color:#0b1f3a
 }
 
-.login-btn{
-font-weight:bold;
-}
-
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 
 .hero{
-min-height:620px;
-display:flex;
-align-items:center;
-padding:80px 7%;
-background:linear-gradient(135deg,#0b1f3a,#123f68);
-color:white;
-position:relative;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  padding:80px 7%;
+  background:linear-gradient(135deg,#0b1f3a,#123f68);
+  color:white;
+  position:relative
 }
 
 .hero-content{
-max-width:850px;
-width:100%;
+  max-width:850px;
+  width:100%
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:20px;
-line-height:1.15;
+  font-size:52px;
+  margin-bottom:20px;
+  line-height:1.15
 }
 
 .hero p{
-font-size:20px;
-max-width:700px;
-margin-bottom:30px;
-color:#dce9f5;
+  font-size:20px;
+  max-width:700px;
+  margin-bottom:30px;
+  color:#dce9f5
 }
 
 .btn{
-display:inline-block;
-background:#1b9be0;
-color:white;
-padding:13px 25px;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-transition:background .3s ease;
+  display:inline-block;
+  background:#1b9be0;
+  color:white;
+  padding:13px 25px;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+  transition:background .3s ease
 }
 
 .btn:hover{
-background:#55b8ff;
+  background:#55b8ff
 }
 
-/* QURAN */
+/* =========================
+   QURAN BOX
+   ========================= */
 
 .quran-box{
-position:absolute;
-top:95px;
-right:7%;
-width:320px;
-padding:18px 20px;
-border-radius:10px;
-background:linear-gradient(145deg,#0b1f3a,#123f68);
-border:1px solid rgba(85,184,255,.35);
-box-shadow:0 8px 25px rgba(0,0,0,.25);
-text-align:center;
-direction:rtl;
-z-index:10;
-transition:opacity .5s ease,transform .5s ease;
+  position:absolute;
+  top:95px;
+  right:7%;
+  width:320px;
+  padding:18px 20px;
+  border-radius:10px;
+  background:linear-gradient(145deg,#0b1f3a,#123f68);
+  border:1px solid rgba(85,184,255,.35);
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  text-align:center;
+  direction:rtl;
+  z-index:10;
+  transition:opacity .5s ease,transform .5s ease
 }
 
 .quran-box .verse{
-color:white;
-font-size:18px;
-font-weight:bold;
-line-height:1.8;
-direction:rtl;
-transition:opacity .5s ease;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  line-height:1.8;
+  direction:rtl;
+  transition:opacity .5s ease
 }
 
 .quran-box .source{
-margin-top:8px;
-color:#55b8ff;
-font-size:12px;
-direction:rtl;
-transition:opacity .5s ease;
+  margin-top:8px;
+  color:#55b8ff;
+  font-size:12px;
+  direction:rtl;
+  transition:opacity .5s ease
 }
 
-/* GENERAL SECTIONS */
+/* =========================
+   SECTIONS
+   ========================= */
 
 section{
-padding:70px 7%;
+  padding:70px 7%
 }
 
 .section-title{
-text-align:center;
-margin-bottom:40px;
+  text-align:center;
+  margin-bottom:40px
 }
 
 .section-title h2{
-font-size:34px;
-color:#0b1f3a;
-margin-bottom:10px;
+  font-size:34px;
+  color:#0b1f3a;
+  margin-bottom:10px
 }
 
 .section-title p{
-color:#64748b;
+  color:#64748b
 }
-
-/* NEW FEATURE WINDOWS */
-
-.feature-section{
-background:#f7f9fc;
-padding-top:55px;
-padding-bottom:35px;
-}
-
-.feature-grid{
-max-width:1180px;
-margin:0 auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-.feature-card{
-position:relative;
-overflow:hidden;
-background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
-border:1px solid rgba(85,184,255,.25);
-border-radius:15px;
-padding:27px 22px;
-min-height:205px;
-color:white;
-text-align:center;
-box-shadow:0 7px 22px rgba(11,31,58,.14);
-transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
-}
-
-.feature-card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:#55b8ff;
-transform:scaleX(0);
-transition:transform .35s ease;
-}
-
-.feature-card::after{
-content:"";
-position:absolute;
-width:150px;
-height:150px;
-top:-80px;
-right:-80px;
-background:rgba(85,184,255,.12);
-border-radius:50%;
-transition:width .4s ease,height .4s ease;
-}
-
-.feature-card:hover{
-transform:translateY(-7px);
-border-color:#55b8ff;
-box-shadow:0 16px 38px rgba(11,31,58,.27);
-}
-
-.feature-card:hover::before{
-transform:scaleX(1);
-}
-
-.feature-card:hover::after{
-width:200px;
-height:200px;
-}
-
-.feature-number{
-color:#55b8ff;
-font-size:12px;
-font-weight:bold;
-letter-spacing:3px;
-margin-bottom:9px;
-position:relative;
-z-index:2;
-direction:ltr;
-}
-
-.feature-icon{
-font-size:32px;
-margin-bottom:8px;
-position:relative;
-z-index:2;
-}
-
-.feature-card h3{
-font-size:20px;
-margin-bottom:10px;
-position:relative;
-z-index:2;
-}
-
-.feature-card p{
-color:#dce9f5;
-font-size:14px;
-line-height:1.55;
-position:relative;
-z-index:2;
-}
-
-.feature-card .small-note{
-color:#55b8ff;
-font-size:12px;
-margin-top:10px;
-font-weight:bold;
-position:relative;
-z-index:2;
-}
-
-/* ABOUT */
 
 .about{
-background:white;
+  background:white
 }
 
-/* COMPANY SLIDER */
+/* =========================
+   COMPANY SLIDER
+   ========================= */
 
 .company-slider{
-max-width:1180px;
-margin:30px auto 0;
-position:relative;
-display:flex;
-align-items:center;
-gap:12px;
+  max-width:1180px;
+  margin:30px auto 0;
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:12px
 }
 
 .company-slider-window{
-overflow:hidden;
-width:100%;
-border-radius:18px;
-touch-action:pan-y;
+  overflow:hidden;
+  width:100%;
+  border-radius:18px;
+  touch-action:pan-y
 }
 
 .company-track{
-display:flex;
-gap:18px;
-transition:transform .55s cubic-bezier(.22,.61,.36,1);
-will-change:transform;
+  display:flex;
+  gap:18px;
+  transition:transform .55s cubic-bezier(.22,.61,.36,1);
+  will-change:transform
 }
 
 .company-card{
-position:relative;
-overflow:hidden;
-flex:0 0 calc((100% - 54px)/4);
-min-height:190px;
-background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
-border:1px solid rgba(85,184,255,.25);
-border-radius:15px;
-padding:20px 15px;
-text-align:center;
-cursor:pointer;
-color:white;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-box-shadow:0 7px 22px rgba(11,31,58,.14);
-transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
-user-select:none;
--webkit-tap-highlight-color:transparent;
+  position:relative;
+  overflow:hidden;
+  flex:0 0 calc((100% - 54px)/4);
+  min-height:190px;
+  background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
+  border:1px solid rgba(85,184,255,.25);
+  border-radius:15px;
+  padding:20px 15px;
+  text-align:center;
+  cursor:pointer;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 7px 22px rgba(11,31,58,.14);
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent
 }
 
 .company-card::after{
-content:"";
-position:absolute;
-width:140px;
-height:140px;
-top:-75px;
-right:-75px;
-background:rgba(85,184,255,.12);
-border-radius:50%;
-transition:width .4s ease,height .4s ease;
+  content:"";
+  position:absolute;
+  width:140px;
+  height:140px;
+  top:-75px;
+  right:-75px;
+  background:rgba(85,184,255,.12);
+  border-radius:50%;
+  transition:width .4s ease,height .4s ease
 }
 
 .company-card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:#55b8ff;
-transform:scaleX(0);
-transition:transform .35s ease;
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:#55b8ff;
+  transform:scaleX(0);
+  transition:transform .35s ease
 }
 
 .company-card:hover{
-transform:translateY(-7px);
-border-color:#55b8ff;
-box-shadow:0 16px 38px rgba(11,31,58,.27);
+  transform:translateY(-7px);
+  border-color:#55b8ff;
+  box-shadow:0 16px 38px rgba(11,31,58,.27)
 }
 
 .company-card:hover::before{
-transform:scaleX(1);
+  transform:scaleX(1)
 }
 
 .company-card:hover::after{
-width:190px;
-height:190px;
+  width:190px;
+  height:190px
 }
 
 .card-logo{
-width:42px;
-height:42px;
-object-fit:contain;
-margin-bottom:7px;
-position:relative;
-z-index:2;
-opacity:.95;
-transition:transform .35s ease,opacity .35s ease;
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  margin-bottom:7px;
+  position:relative;
+  z-index:2;
+  opacity:.95;
+  transition:transform .35s ease,opacity .35s ease
 }
 
 .company-card:hover .card-logo{
-transform:scale(1.08);
-opacity:1;
+  transform:scale(1.08);
+  opacity:1
 }
 
 .card-company-name{
-color:white;
-font-size:9px;
-font-weight:bold;
-line-height:1.2;
-margin-bottom:8px;
-position:relative;
-z-index:2;
-text-align:center;
-width:100%;
-direction:ltr;
+  color:white;
+  font-size:9px;
+  font-weight:bold;
+  line-height:1.2;
+  margin-bottom:8px;
+  position:relative;
+  z-index:2;
+  text-align:center;
+  width:100%;
+  direction:ltr
 }
 
 .card-number{
-color:#55b8ff;
-font-size:12px;
-font-weight:bold;
-letter-spacing:3px;
-margin-bottom:6px;
-position:relative;
-z-index:2;
-direction:ltr;
+  color:#55b8ff;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:3px;
+  margin-bottom:6px;
+  position:relative;
+  z-index:2;
+  direction:ltr
 }
 
 .company-card h3{
-color:white;
-font-size:17px;
-line-height:1.3;
-margin-bottom:5px;
-position:relative;
-z-index:2;
+  color:white;
+  font-size:17px;
+  line-height:1.3;
+  margin-bottom:5px;
+  position:relative;
+  z-index:2
 }
 
 .company-card p{
-color:#dce9f5;
-font-size:13px;
-line-height:1.4;
-position:relative;
-z-index:2;
+  color:#dce9f5;
+  font-size:13px;
+  line-height:1.4;
+  position:relative;
+  z-index:2
 }
 
 .video-icon{
-color:#55b8ff;
-font-size:30px;
-margin-bottom:4px;
-position:relative;
-z-index:2;
-direction:ltr;
+  color:#55b8ff;
+  font-size:30px;
+  margin-bottom:4px;
+  position:relative;
+  z-index:2;
+  direction:ltr
 }
 
 .update-card{
-cursor:default;
-opacity:.45;
-background:linear-gradient(145deg,#172a42,#23425e);
+  cursor:default;
+  opacity:.45;
+  background:linear-gradient(145deg,#172a42,#23425e)
 }
 
 .update-card:hover{
-transform:none;
-border-color:rgba(85,184,255,.25);
-box-shadow:0 7px 22px rgba(11,31,58,.14);
+  transform:none;
+  border-color:rgba(85,184,255,.25);
+  box-shadow:0 7px 22px rgba(11,31,58,.14)
 }
 
 .update-card:hover::before{
-transform:scaleX(0);
+  transform:scaleX(0)
 }
 
 .update-card:hover::after{
-width:140px;
-height:140px;
+  width:140px;
+  height:140px
 }
 
 .update-text{
-color:#b9cfe0;
-font-size:18px;
-font-weight:bold;
-letter-spacing:2px;
-position:relative;
-z-index:2;
-direction:ltr;
+  color:#b9cfe0;
+  font-size:18px;
+  font-weight:bold;
+  letter-spacing:2px;
+  position:relative;
+  z-index:2;
+  direction:ltr
 }
 
 .slider-btn{
-flex:0 0 44px;
-width:44px;
-height:44px;
-border:1px solid rgba(85,184,255,.35);
-border-radius:50%;
-background:#0b1f3a;
-color:white;
-font-size:25px;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-z-index:5;
--webkit-tap-highlight-color:transparent;
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(85,184,255,.35);
+  border-radius:50%;
+  background:#0b1f3a;
+  color:white;
+  font-size:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:5;
+  -webkit-tap-highlight-color:transparent
 }
 
 .slider-btn:hover{
-background:#55b8ff;
-color:#0b1f3a;
+  background:#55b8ff;
+  color:#0b1f3a
 }
 
 .slider-btn:disabled{
-opacity:.35;
-cursor:default;
+  opacity:.35;
+  cursor:default
 }
 
-/* PDF VIEWER */
+/* =========================
+   PDF VIEWER
+   ========================= */
 
 .company-viewer{
-position:fixed;
-inset:0;
-z-index:99999;
-background:rgba(7,20,38,.96);
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px;
-overscroll-behavior:contain;
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:rgba(7,20,38,.96);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  overscroll-behavior:contain
 }
 
 .company-viewer.active{
-display:flex;
+  display:flex
 }
 
 .viewer-content{
-width:min(950px,94vw);
-height:90vh;
-background:#e9eef4;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,.45);
-position:relative;
-display:flex;
-flex-direction:column;
+  width:min(950px,94vw);
+  height:90vh;
+  background:#e9eef4;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+  position:relative;
+  display:flex;
+  flex-direction:column
 }
 
 .pdf-toolbar{
-flex:0 0 50px;
-min-height:50px;
-background:#0b1f3a;
-color:white;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 12px 0 18px;
-position:relative;
-z-index:20;
-direction:ltr;
+  flex:0 0 50px;
+  min-height:50px;
+  background:#0b1f3a;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12px 0 18px;
+  position:relative;
+  z-index:20;
+  direction:ltr
 }
 
 .pdf-title{
-font-size:13px;
-font-weight:bold;
-overflow:hidden;
-white-space:nowrap;
-text-overflow:ellipsis;
-padding-right:10px;
-direction:ltr;
+  font-size:13px;
+  font-weight:bold;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  padding-right:10px;
+  direction:ltr
 }
 
 .pdf-page-info{
-font-size:12px;
-color:#dce9f5;
-white-space:nowrap;
-direction:ltr;
+  font-size:12px;
+  color:#dce9f5;
+  white-space:nowrap;
+  direction:ltr
 }
 
 .pdf-scroll{
-flex:1;
-overflow-y:auto;
-overflow-x:hidden;
-background:#dfe5eb;
-padding:18px;
--webkit-overflow-scrolling:touch;
-overscroll-behavior:contain;
-direction:ltr;
+  flex:1;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background:#dfe5eb;
+  padding:18px;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
+  direction:ltr
 }
 
 .pdf-page{
-display:block;
-width:100%;
-max-width:100%;
-height:auto;
-margin:0 auto 18px;
-background:white;
-box-shadow:0 4px 15px rgba(0,0,0,.15);
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0 auto 18px;
+  background:white;
+  box-shadow:0 4px 15px rgba(0,0,0,.15)
 }
 
 .pdf-loading{
-min-height:250px;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-color:#0b1f3a;
-font-size:16px;
-font-weight:bold;
-text-align:center;
-direction:ltr;
+  min-height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:#0b1f3a;
+  font-size:16px;
+  font-weight:bold;
+  text-align:center;
+  direction:ltr
 }
 
 .pdf-spinner{
-width:42px;
-height:42px;
-border-radius:50%;
-border:4px solid #cbd5e1;
-border-top-color:#1b9be0;
-animation:pdfSpin .8s linear infinite;
-margin-bottom:15px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:4px solid #cbd5e1;
+  border-top-color:#1b9be0;
+  animation:pdfSpin .8s linear infinite;
+  margin-bottom:15px
 }
 
 @keyframes pdfSpin{
-from{transform:rotate(0)}
-to{transform:rotate(360deg)}
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
 }
 
 .pdf-error{
-padding:40px 20px;
-text-align:center;
-color:#0b1f3a;
-font-weight:bold;
-direction:ltr;
+  padding:40px 20px;
+  text-align:center;
+  color:#0b1f3a;
+  font-weight:bold;
+  direction:ltr
 }
 
 .pdf-error small{
-display:block;
-margin-top:10px;
-color:#64748b;
-font-weight:normal;
+  display:block;
+  margin-top:10px;
+  color:#64748b;
+  font-weight:normal
 }
 
 .viewer-close{
-width:38px;
-height:38px;
-border:none;
-border-radius:50%;
-background:white;
-color:#0b1f3a;
-font-size:28px;
-line-height:1;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-shrink:0;
--webkit-tap-highlight-color:transparent;
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:white;
+  color:#0b1f3a;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0
 }
 
 .viewer-close:hover{
-background:#1b9be0;
-color:white;
+  background:#1b9be0;
+  color:white
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+   ========================= */
 
 .services{
-background:#f7f9fc;
+  background:#f7f9fc
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
 }
 
 .card{
-background:white;
-padding:27px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,.07);
-text-align:center;
+  background:white;
+  padding:27px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
+  text-align:center
 }
 
 .card h3{
-color:#0b1f3a;
-margin-bottom:10px;
+  color:#0b1f3a;
+  margin-bottom:10px
 }
 
 .card p{
-color:#64748b;
+  color:#64748b
 }
 
-/* HSE */
+/* =========================
+   ASSESSED
+   ========================= */
 
-.assessed-section{
-background:white;
-padding:42px 7% 20px;
-text-align:center;
+.assessed{
+  background:#123f68;
+  color:white;
+  text-align:center;
+  padding:38px 7%
 }
 
-.assessed-box{
-max-width:850px;
-margin:auto;
+.assessed h2{
+  font-size:30px;
+  margin-bottom:10px;
+  color:#55b8ff
 }
 
-.assessed-title{
-font-size:30px;
-font-weight:bold;
-color:#0b1f3a;
-margin-bottom:8px;
-letter-spacing:.5px;
+.assessed p{
+  max-width:850px;
+  margin:auto;
+  color:#dce9f5;
+  font-size:18px
 }
 
-.assessed-line{
-font-size:17px;
-color:#64748b;
+/* =========================
+   EMPLOYEE LOGIN
+   ========================= */
+
+.employee-modal{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  background:rgba(7,20,38,.94);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px
 }
+
+.employee-modal.active{
+  display:flex
+}
+
+.employee-login-box{
+  width:min(430px,94vw);
+  background:white;
+  border-radius:14px;
+  padding:32px 28px;
+  box-shadow:0 20px 70px rgba(0,0,0,.45);
+  position:relative;
+  text-align:center
+}
+
+.employee-login-box h2{
+  color:#0b1f3a;
+  margin-bottom:8px;
+  font-size:27px
+}
+
+.login-subtitle{
+  color:#64748b;
+  font-size:14px;
+  margin-bottom:25px
+}
+
+.employee-login-box input{
+  width:100%;
+  padding:13px 14px;
+  margin-bottom:14px;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  font-family:Arial,sans-serif;
+  font-size:15px;
+  outline:none
+}
+
+.employee-login-box input:focus{
+  border-color:#1b9be0;
+  box-shadow:0 0 0 3px rgba(27,155,224,.12)
+}
+
+.employee-login-submit{
+  width:100%;
+  border:0;
+  background:#1b9be0;
+  color:white;
+  padding:13px;
+  border-radius:6px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+.employee-login-submit:hover{
+  background:#55b8ff
+}
+
+.employee-login-error{
+  display:none;
+  color:#c62828;
+  background:#fff1f2;
+  border:1px solid #fecdd3;
+  padding:9px;
+  border-radius:5px;
+  margin-bottom:14px;
+  font-size:13px
+}
+
+.employee-login-error.show{
+  display:block
+}
+
+.employee-modal-close{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:34px;
+  height:34px;
+  border:0;
+  border-radius:50%;
+  background:#0b1f3a;
+  color:white;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer
+}
+
+.employee-modal-close:hover{
+  background:#1b9be0
+}
+
+/* =========================
+   EMPLOYEE LIBRARY
+   ========================= */
+
+.employee-library{
+  display:none;
+  background:#eef4f9;
+  padding:60px 7%
+}
+
+.employee-library.active{
+  display:block
+}
+
+.employee-library-header{
+  text-align:center;
+  margin-bottom:35px
+}
+
+.employee-library-header h2{
+  color:#0b1f3a;
+  font-size:34px;
+  margin-bottom:10px
+}
+
+.employee-library-header p{
+  color:#64748b
+}
+
+.library-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+
+.library-card{
+  background:linear-gradient(145deg,#0b1f3a,#123f68);
+  border:1px solid rgba(85,184,255,.25);
+  border-radius:12px;
+  padding:25px 18px;
+  color:white;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 7px 22px rgba(11,31,58,.14);
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease
+}
+
+.library-card:hover{
+  transform:translateY(-5px);
+  border-color:#55b8ff;
+  box-shadow:0 14px 32px rgba(11,31,58,.25)
+}
+
+.library-icon{
+  font-size:32px;
+  color:#55b8ff;
+  margin-bottom:10px
+}
+
+.library-card h3{
+  color:white;
+  font-size:18px;
+  margin-bottom:5px
+}
+
+.library-card p{
+  color:#dce9f5;
+  font-size:13px
+}
+
+.library-logout{
+  display:block;
+  margin:30px auto 0;
+  border:1px solid #0b1f3a;
+  background:white;
+  color:#0b1f3a;
+  padding:10px 22px;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold
+}
+
+.library-logout:hover{
+  background:#0b1f3a;
+  color:white
+}
+
+/* =========================
+   HSE
+   ========================= */
 
 .hse{
-background:#0b1f3a;
-color:white;
-text-align:center;
+  background:#0b1f3a;
+  color:white;
+  text-align:center
 }
 
 .hse h2{
-font-size:34px;
-margin-bottom:20px;
+  font-size:34px;
+  margin-bottom:20px
 }
 
 .hse p{
-max-width:850px;
-margin:auto;
-color:#dce9f5;
-font-size:18px;
+  max-width:850px;
+  margin:auto;
+  color:#dce9f5;
+  font-size:18px
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+   ========================= */
 
 .contact{
-background:white;
-text-align:center;
+  background:white;
+  text-align:center
 }
 
 .contact-box{
-max-width:700px;
-margin:auto;
+  max-width:700px;
+  margin:auto
 }
 
 .contact-box p{
-margin:12px 0;
-font-size:18px;
+  margin:12px 0;
+  font-size:18px
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
 
 footer{
-background:#071426;
-color:#b9c6d5;
-text-align:center;
-padding:25px;
-direction:ltr;
+  background:#071426;
+  color:#b9c6d5;
+  text-align:center;
+  padding:25px;
+  direction:ltr
 }
-
-/* LIBRARY LOGIN */
-
-.library-overlay{
-position:fixed;
-inset:0;
-z-index:100000;
-background:rgba(4,16,31,.88);
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px;
-}
-
-.library-overlay.active{
-display:flex;
-}
-
-.library-panel{
-width:min(470px,94vw);
-background:white;
-border-radius:14px;
-padding:30px;
-box-shadow:0 25px 70px rgba(0,0,0,.45);
-position:relative;
-text-align:center;
-}
-
-.library-panel h2{
-color:#0b1f3a;
-margin-bottom:8px;
-font-size:28px;
-}
-
-.library-panel .library-subtitle{
-color:#64748b;
-font-size:14px;
-margin-bottom:24px;
-}
-
-.library-field{
-text-align:left;
-margin-bottom:15px;
-direction:ltr;
-}
-
-.library-field label{
-display:block;
-font-weight:bold;
-font-size:13px;
-color:#0b1f3a;
-margin-bottom:6px;
-}
-
-.library-field input{
-width:100%;
-padding:12px 13px;
-border:1px solid #cbd5e1;
-border-radius:7px;
-outline:none;
-font-size:14px;
-}
-
-.library-field input:focus{
-border-color:#1b9be0;
-box-shadow:0 0 0 3px rgba(27,155,224,.1);
-}
-
-.library-submit{
-width:100%;
-border:none;
-background:#0b1f3a;
-color:white;
-padding:12px;
-border-radius:7px;
-font-weight:bold;
-cursor:pointer;
-font-size:15px;
-transition:background .3s ease;
-}
-
-.library-submit:hover{
-background:#1b9be0;
-}
-
-.library-note{
-font-size:11px;
-color:#64748b;
-margin-top:15px;
-line-height:1.5;
-}
-
-.library-message{
-display:none;
-margin-top:15px;
-padding:10px;
-border-radius:6px;
-background:#fff7ed;
-color:#9a3412;
-font-size:13px;
-}
-
-.library-close{
-position:absolute;
-top:10px;
-right:12px;
-width:32px;
-height:32px;
-border:none;
-border-radius:50%;
-background:#eef2f7;
-color:#0b1f3a;
-font-size:22px;
-cursor:pointer;
-}
-
-/* RTL */
 
 body.rtl .hero{
-text-align:right;
+  text-align:right
 }
 
 body.rtl .hero-content{
-direction:rtl;
+  direction:rtl
 }
 
 body.rtl .hero p{
-margin-left:0;
-margin-right:0;
+  margin-left:0;
+  margin-right:0
 }
 
 body.rtl .contact-box{
-direction:rtl;
+  direction:rtl
 }
 
 body.rtl .card p,
 body.rtl .card h3{
-direction:rtl;
+  direction:rtl
 }
 
-body.rtl .feature-card{
-direction:rtl;
-}
-
-body.rtl .library-panel{
-direction:rtl;
-}
-
-body.rtl .library-field{
-text-align:right;
-direction:rtl;
-}
-
-/* TABLET */
+/* =========================
+   RESPONSIVE
+   ========================= */
 
 @media(max-width:1000px){
 
-.company-card{
-flex-basis:calc((100% - 36px)/3);
-}
+  .company-card{
+    flex-basis:calc((100% - 36px)/3)
+  }
 
-.quran-box{
-width:290px;
-right:5%;
+  .quran-box{
+    width:290px;
+    right:5%
+  }
 }
-
-.feature-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-/* MOBILE */
 
 @media(max-width:700px){
 
-header{
-flex-direction:column;
-gap:15px;
-padding:12px 4%;
+  header{
+    flex-direction:column;
+    gap:15px;
+    padding:12px 4%
+  }
+
+  nav{
+    justify-content:center;
+    width:100%
+  }
+
+  nav a{
+    margin:0 6px;
+    font-size:13px
+  }
+
+  .lang-btn,
+  .employee-login-btn{
+    margin-left:5px;
+    font-size:11px;
+    padding:6px 8px
+  }
+
+  .hero{
+    min-height:650px;
+    padding:230px 5% 60px;
+    align-items:center
+  }
+
+  .hero h1{
+    font-size:38px
+  }
+
+  .hero p{
+    font-size:16px
+  }
+
+  .quran-box{
+    position:absolute;
+    top:25px;
+    left:5%;
+    right:5%;
+    width:auto;
+    max-width:90%;
+    margin:0 auto;
+    padding:12px 15px
+  }
+
+  .quran-box .verse{
+    font-size:16px;
+    line-height:1.7
+  }
+
+  .quran-box .source{
+    font-size:11px;
+    margin-top:5px
+  }
+
+  .company-slider{
+    gap:7px
+  }
+
+  .company-card{
+    flex-basis:calc((100% - 11px)/2);
+    min-height:165px;
+    padding:15px 7px
+  }
+
+  .company-track{
+    gap:11px
+  }
+
+  .slider-btn{
+    flex:0 0 38px;
+    width:38px;
+    height:38px;
+    font-size:21px
+  }
+
+  .card-logo{
+    width:35px;
+    height:35px;
+    margin-bottom:6px
+  }
+
+  .card-company-name{
+    font-size:8px;
+    margin-bottom:6px;
+    line-height:1.15
+  }
+
+  .card-number{
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:4px
+  }
+
+  .company-card h3{
+    font-size:13px;
+    line-height:1.25;
+    margin-bottom:3px
+  }
+
+  .company-card p{
+    font-size:11px;
+    line-height:1.3
+  }
+
+  .video-icon{
+    font-size:25px
+  }
+
+  .library-grid{
+    grid-template-columns:1fr
+  }
+
+  .employee-library{
+    padding:50px 5%
+  }
+
+  .employee-login-box{
+    padding:28px 20px
+  }
+
+  .company-viewer{
+    position:fixed;
+    top:0;
+    left:0;
+    right:auto;
+    bottom:auto;
+    width:100vw;
+    height:100vh;
+    min-width:0;
+    min-height:0;
+    padding:5px;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    box-sizing:border-box;
+    transform:none;
+    margin:0
+  }
+
+  .company-viewer.active{
+    display:flex
+  }
+
+  .viewer-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:calc(100% - 10px);
+    max-width:calc(100% - 10px);
+    height:calc(100% - 10px);
+    max-height:calc(100% - 10px);
+    min-width:0;
+    min-height:0;
+    margin:0;
+    flex-shrink:1;
+    box-sizing:border-box;
+    transform:translate(-50%,-50%);
+    border-radius:8px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column
+  }
+
+  .pdf-toolbar{
+    position:relative;
+    flex:0 0 48px;
+    width:100%;
+    min-width:0;
+    min-height:48px;
+    padding:0 8px 0 12px;
+    display:flex;
+    align-items:center;
+    box-sizing:border-box;
+    overflow:hidden
+  }
+
+  .pdf-title{
+    flex:1 1 auto;
+    min-width:0;
+    max-width:none;
+    font-size:11px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    padding-right:6px
+  }
+
+  .pdf-page-info{
+    flex:0 0 auto;
+    font-size:10px;
+    white-space:nowrap;
+    margin-right:6px
+  }
+
+  .viewer-close{
+    flex:0 0 36px;
+    width:36px;
+    height:36px;
+    min-width:36px;
+    min-height:36px;
+    font-size:26px;
+    margin:0;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center
+  }
+
+  .pdf-scroll{
+    flex:1 1 auto;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    min-height:0;
+    padding:8px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    box-sizing:border-box;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+    touch-action:pan-y pinch-zoom;
+    display:block;
+    direction:ltr
+  }
+
+  .pdf-page{
+    display:block;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    margin:0 auto 10px;
+    box-sizing:border-box
+  }
+
+  .assessed{
+    padding:35px 5%
+  }
+
+  .assessed h2{
+    font-size:27px
+  }
+
+  .assessed p{
+    font-size:16px
+  }
 }
-
-nav{
-justify-content:center;
-width:100%;
-}
-
-nav a{
-margin:0 6px;
-font-size:13px;
-}
-
-.lang-btn,
-.login-btn{
-margin-left:8px;
-}
-
-.hero{
-min-height:650px;
-padding:230px 5% 60px;
-align-items:center;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.quran-box{
-position:absolute;
-top:25px;
-left:5%;
-right:5%;
-width:auto;
-max-width:90%;
-margin:0 auto;
-padding:12px 15px;
-}
-
-.quran-box .verse{
-font-size:16px;
-line-height:1.7;
-}
-
-.quran-box .source{
-font-size:11px;
-margin-top:5px;
-}
-
-.feature-section{
-padding-top:40px;
-}
-
-.feature-grid{
-grid-template-columns:1fr;
-gap:15px;
-}
-
-.feature-card{
-min-height:185px;
-padding:23px 18px;
-}
-
-.feature-card h3{
-font-size:18px;
-}
-
-.feature-card p{
-font-size:13px;
-}
-
-.company-slider{
-gap:7px;
-}
-
-.company-card{
-flex-basis:calc((100% - 11px)/2);
-min-height:165px;
-padding:15px 7px;
-}
-
-.company-track{
-gap:11px;
-}
-
-.slider-btn{
-flex:0 0 38px;
-width:38px;
-height:38px;
-font-size:21px;
-}
-
-.card-logo{
-width:35px;
-height:35px;
-margin-bottom:6px;
-}
-
-.card-company-name{
-font-size:8px;
-margin-bottom:6px;
-line-height:1.15;
-}
-
-.card-number{
-font-size:10px;
-letter-spacing:2px;
-margin-bottom:4px;
-}
-
-.company-card h3{
-font-size:13px;
-line-height:1.25;
-margin-bottom:3px;
-}
-
-.company-card p{
-font-size:11px;
-line-height:1.3;
-}
-
-.video-icon{
-font-size:25px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.assessed-title{
-font-size:25px;
-}
-
-.assessed-line{
-font-size:15px;
-}
-
-/* MOBILE PDF */
-
-.company-viewer{
-position:fixed;
-top:0;
-left:0;
-right:auto;
-bottom:auto;
-width:100vw;
-height:100vh;
-min-width:0;
-min-height:0;
-padding:5px;
-display:none;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-box-sizing:border-box;
-transform:none;
--webkit-transform:none;
-margin:0;
-}
-
-.company-viewer.active{
-display:flex;
-}
-
-.viewer-content{
-position:absolute;
-top:50%;
-left:50%;
-width:calc(100% - 10px);
-max-width:calc(100% - 10px);
-height:calc(100% - 10px);
-max-height:calc(100% - 10px);
-min-width:0;
-min-height:0;
-margin:0;
-flex-shrink:1;
-box-sizing:border-box;
-transform:translate(-50%,-50%);
--webkit-transform:translate(-50%,-50%);
-border-radius:8px;
-overflow:hidden;
-display:flex;
-flex-direction:column;
-}
-
-.pdf-toolbar{
-position:relative;
-flex:0 0 48px;
-width:100%;
-min-width:0;
-min-height:48px;
-padding:0 8px 0 12px;
-display:flex;
-align-items:center;
-box-sizing:border-box;
-overflow:hidden;
-}
-
-.pdf-title{
-flex:1 1 auto;
-min-width:0;
-max-width:none;
-font-size:11px;
-overflow:hidden;
-white-space:nowrap;
-text-overflow:ellipsis;
-padding-right:6px;
-}
-
-.pdf-page-info{
-flex:0 0 auto;
-font-size:10px;
-white-space:nowrap;
-margin-right:6px;
-}
-
-.viewer-close{
-flex:0 0 36px;
-width:36px;
-height:36px;
-min-width:36px;
-min-height:36px;
-font-size:26px;
-margin:0;
-padding:0;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.pdf-scroll{
-flex:1 1 auto;
-width:100%;
-max-width:100%;
-min-width:0;
-min-height:0;
-padding:8px;
-overflow-y:auto;
-overflow-x:hidden;
-box-sizing:border-box;
--webkit-overflow-scrolling:touch;
-overscroll-behavior:contain;
-touch-action:pan-y pinch-zoom;
-display:block;
-direction:ltr;
-}
-
-.pdf-page{
-display:block;
-width:100%!important;
-max-width:100%!important;
-height:auto!important;
-margin:0 auto 10px;
-box-sizing:border-box;
-}
-
-}
-
-/* SMALL MOBILE */
 
 @media(max-width:450px){
 
-section{
-padding:50px 4%;
-}
+  section{
+    padding:50px 4%
+  }
 
-.logo img{
-height:50px;
-max-width:180px;
-object-fit:contain;
-}
+  .logo img{
+    height:50px;
+    max-width:180px;
+    object-fit:contain
+  }
 
-nav a{
-font-size:11px;
-margin:0 3px;
-}
+  nav a{
+    font-size:11px;
+    margin:0 3px
+  }
 
-.lang-btn,
-.login-btn{
-font-size:11px;
-padding:6px 8px;
-margin-left:5px;
-}
+  .lang-btn,
+  .employee-login-btn{
+    font-size:10px;
+    padding:6px 7px;
+    margin-left:3px
+  }
 
-.hero{
-min-height:630px;
-padding:220px 5% 50px;
-}
+  .hero{
+    min-height:630px;
+    padding:220px 5% 50px
+  }
 
-.hero h1{
-font-size:32px;
-}
+  .hero h1{
+    font-size:32px
+  }
 
-.hero p{
-font-size:16px;
-}
+  .hero p{
+    font-size:16px
+  }
 
-.quran-box{
-top:20px;
-left:4%;
-right:4%;
-max-width:92%;
-padding:10px 12px;
-}
+  .quran-box{
+    top:20px;
+    left:4%;
+    right:4%;
+    max-width:92%;
+    padding:10px 12px
+  }
 
-.quran-box .verse{
-font-size:15px;
-}
+  .quran-box .verse{
+    font-size:15px
+  }
 
-.company-card{
-min-height:160px;
-}
+  .company-card{
+    min-height:160px
+  }
 
-.card-company-name{
-font-size:7.5px;
-}
+  .card-company-name{
+    font-size:7.5px
+  }
 
-.slider-btn{
-flex:0 0 34px;
-width:34px;
-height:34px;
-font-size:19px;
+  .slider-btn{
+    flex:0 0 34px;
+    width:34px;
+    height:34px;
+    font-size:19px
+  }
 }
-
-}
-
-/* ACCESSIBILITY / PRINT */
 
 .company-slider,
 .company-card,
 .slider-btn{
--webkit-user-select:none;
-user-select:none;
+  -webkit-user-select:none;
+  user-select:none
 }
 
 @media print{
-.company-viewer,
-.library-overlay{
-display:none!important;
-}
+  .company-viewer,
+  .employee-modal{
+    display:none!important
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+     ========================= -->
 
 <header>
 
 <div class="logo">
-<img src="kamra-energy.svg" alt="KAMRA ENERGY">
-<div class="logo-text">KAMRA FOR ENERGY CONTRACTING L.L.C.</div>
+  <img src="kamra-energy.svg" alt="KAMRA ENERGY">
+  <div class="logo-text">
+    KAMRA FOR ENERGY CONTRACTING L.L.C.
+  </div>
 </div>
 
 <nav>
 
 <a href="#home">
-<span class="en">Home</span>
-<span class="ar">الرئيسية</span>
+  <span class="en">Home</span>
+  <span class="ar">الرئيسية</span>
 </a>
 
 <a href="#about">
-<span class="en">About Us</span>
-<span class="ar">من نحن</span>
+  <span class="en">About Us</span>
+  <span class="ar">من نحن</span>
 </a>
 
 <a href="#services">
-<span class="en">Services</span>
-<span class="ar">خدماتنا</span>
+  <span class="en">Services</span>
+  <span class="ar">خدماتنا</span>
 </a>
 
 <a href="#hse">
-<span class="en">HSE</span>
-<span class="ar">السلامة</span>
+  <span class="en">HSE</span>
+  <span class="ar">السلامة</span>
 </a>
 
 <a href="#contact">
-<span class="en">Contact</span>
-<span class="ar">اتصل بنا</span>
+  <span class="en">Contact</span>
+  <span class="ar">اتصل بنا</span>
 </a>
 
-<button class="login-btn" type="button" id="employeeLoginButton">
-<span class="en">Employee Login</span>
-<span class="ar">دخول الموظفين</span>
+<button
+  class="employee-login-btn"
+  type="button"
+  id="employeeLoginButton">
+
+  <span class="en">Employee Login</span>
+  <span class="ar">دخول الموظفين</span>
+
 </button>
 
-<button class="lang-btn" type="button" id="languageButton">العربية</button>
+<button
+  class="lang-btn"
+  type="button"
+  id="languageButton">
+  العربية
+</button>
 
 </nav>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+     ========================= -->
 
 <section class="hero" id="home">
 
 <div class="quran-box" aria-live="polite">
-<div class="verse" id="quranVerse">﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾</div>
-<div class="source" id="quranSource">سورة طه — الآية 114</div>
+
+<div class="verse" id="quranVerse">
+﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾
+</div>
+
+<div class="source" id="quranSource">
+سورة طه — الآية 114
+</div>
+
 </div>
 
 <div class="hero-content">
 
 <div class="en">
-<h1>KAMRA FOR ENERGY CONTRACTING L.L.C.</h1>
+
+<h1>
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</h1>
+
 <p>
-Professional Energy, Well Services and Contracting Solutions
-with a strong commitment to safety, quality and operational excellence.
+Professional Energy, Well Services and Contracting Solutions with a strong commitment to safety, quality and operational excellence.
 </p>
-<a class="btn" href="#contact">Contact Us</a>
+
+<a class="btn" href="#contact">
+Contact Us
+</a>
+
 </div>
 
 <div class="ar">
-<h1>كامرا للمقاولات في مجال الطاقة ذ.م.م</h1>
+
+<h1>
+كامرا للمقاولات في مجال الطاقة ذ.م.م
+</h1>
+
 <p>
-حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
-مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
+حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات، مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
 </p>
-<a class="btn" href="#contact">اتصل بنا</a>
+
+<a class="btn" href="#contact">
+اتصل بنا
+</a>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- NEW MAIN WINDOWS -->
-
-<section class="feature-section">
-
-<div class="section-title en">
-<h2>Why Operators Choose Us</h2>
-<p>Execution discipline, safety and experienced technical teams.</p>
-</div>
-
-<div class="section-title ar">
-<h2>لماذا يختارنا المشغلون</h2>
-<p>انضباط صارم في التنفيذ وسلامة مطلقة وخبرات فنية متقدمة.</p>
-</div>
-
-
-<div class="feature-grid">
-
-<!-- 01 -->
-
-<div class="feature-card">
-
-<div class="feature-number">01</div>
-<div class="feature-icon">◆</div>
-
-<div class="en">
-<h3>Execution Discipline</h3>
-<p>
-Operators choose KAMRA for disciplined execution,
-clear procedures and a strong commitment to doing the job right.
-</p>
-<div class="small-note">Strict execution. Consistent delivery.</div>
-</div>
-
-<div class="ar">
-<h3>الانضباط في التنفيذ</h3>
-<p>
-يختار المشغلون كامرا لما تتميز به من تنفيذ صارم،
-وإجراءات واضحة والتزام قوي بإنجاز العمل بالشكل الصحيح.
-</p>
-<div class="small-note">تنفيذ صارم. أداء ثابت.</div>
-</div>
-
-</div>
-
-
-<!-- 02 -->
-
-<div class="feature-card">
-
-<div class="feature-number">02</div>
-<div class="feature-icon">✓</div>
-
-<div class="en">
-<h3>Absolute Safety</h3>
-<p>
-Safety is built into every stage of our operation,
-from planning and preparation to execution and close-out.
-</p>
-<div class="small-note">Safety is never compromised.</div>
-</div>
-
-<div class="ar">
-<h3>السلامة المطلقة</h3>
-<p>
-السلامة جزء أساسي من كل مرحلة من مراحل عملياتنا،
-من التخطيط والتحضير وحتى التنفيذ وإنهاء العمل.
-</p>
-<div class="small-note">السلامة لا تقبل المساومة.</div>
-</div>
-
-</div>
-
-
-<!-- 03 -->
-
-<div class="feature-card">
-
-<div class="feature-number">03</div>
-<div class="feature-icon">★</div>
-
-<div class="en">
-<h3>Experienced Technical Teams</h3>
-<p>
-Our technical personnel bring more than ten years
-of field experience across energy and well service operations.
-</p>
-<div class="small-note">10+ years of technical experience.</div>
-</div>
-
-<div class="ar">
-<h3>خبرات فنية وتقنية</h3>
-<p>
-يتمتع كوادرنا الفنية والتقنية بخبرات ميدانية
-تتجاوز عشر سنوات في عمليات الطاقة وخدمات الآبار.
-</p>
-<div class="small-note">خبرة فنية تتجاوز 10 سنوات.</div>
-</div>
-
-</div>
-
-
-<!-- 04 -->
-
-<div class="feature-card">
-
-<div class="feature-number">04</div>
-<div class="feature-icon">◈</div>
-
-<div class="en">
-<h3>Major International & Regional Experience</h3>
-<p>
-Our personnel have gained valuable experience working
-with major international and regional companies in the energy sector.
-</p>
-<div class="small-note">Regional knowledge. International standards.</div>
-</div>
-
-<div class="ar">
-<h3>خبرة مع الشركات العالمية والإقليمية الكبرى</h3>
-<p>
-يمتلك كوادرنا خبرات متميزة من خلال العمل
-مع كبرى الشركات العالمية والإقليمية في قطاع الطاقة.
-</p>
-<div class="small-note">خبرة إقليمية. معايير عالمية.</div>
-</div>
-
-</div>
-
-
-<!-- 05 -->
-
-<div class="feature-card">
-
-<div class="feature-number">05</div>
-<div class="feature-icon">▣</div>
-
-<div class="en">
-<h3>Well Services Department</h3>
-<p>
-A dedicated well services team supported by experienced
-technicians and field personnel prepared for operational requirements.
-</p>
-<div class="small-note">Prepared for the well. Ready for the operation.</div>
-</div>
-
-<div class="ar">
-<h3>قسم خدمات الآبار</h3>
-<p>
-قسم متخصص في خدمات الآبار مدعوم بفنيين وتقنيين
-ذوي خبرة وكوادر ميدانية جاهزة للمتطلبات التشغيلية.
-</p>
-<div class="small-note">جاهزون للبئر. جاهزون للعملية التشغيلية.</div>
-</div>
-
-</div>
-
-
-<!-- 06 -->
-
-<div class="feature-card">
-
-<div class="feature-number">06</div>
-<div class="feature-icon">▤</div>
-
-<div class="en">
-<h3>Well Services Documents</h3>
-<p>
-Our technicians and technical personnel have prepared
-the essential documentation required for well service operations.
-</p>
-<div class="small-note">
-Standard Operation · Risk Assessment · HSE
-</div>
-</div>
-
-<div class="ar">
-<h3>وثائق خدمات الآبار</h3>
-<p>
-قام الفنيون والتقنيون لدينا بتجهيز جميع الوثائق
-الأساسية والخاصة المطلوبة لعمليات خدمات الآبار.
-</p>
-<div class="small-note">
-إجراءات التشغيل القياسية · تقييم المخاطر · HSE
-</div>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT US
+     ========================= -->
 
 <section class="about" id="about">
 
 <div class="section-title en">
+
 <h2>About Us</h2>
-<p>Professional experience. Reliable solutions.</p>
+
+<p>
+Professional experience. Reliable solutions.
+</p>
+
 </div>
 
 <div class="section-title ar">
+
 <h2>من نحن</h2>
-<p>خبرة مهنية وحلول موثوقة.</p>
+
+<p>
+خبرة مهنية وحلول موثوقة.
+</p>
+
 </div>
 
 
 <div class="company-slider">
 
 <button
-type="button"
-class="slider-btn"
-id="prevBtn"
-aria-label="Previous cards">
+  type="button"
+  class="slider-btn"
+  id="prevBtn"
+  aria-label="Previous cards">
 ‹
 </button>
 
-<div class="company-slider-window" id="sliderWindow">
+<div
+  class="company-slider-window"
+  id="sliderWindow">
 
-<div class="company-track" id="companyTrack">
+<div
+  class="company-track"
+  id="companyTrack">
 
 
 <!-- 01 -->
 
-<div class="company-card" data-pdf="01-logo.pdf">
+<div
+  class="company-card"
+  data-pdf="01-logo.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">01</div>
+<div class="card-number">
+01
+</div>
 
 <div class="en">
 <h3>Company Logo</h3>
@@ -1634,17 +1477,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 02 -->
 
-<div class="company-card" data-pdf="02-about-us.pdf">
+<div
+  class="company-card"
+  data-pdf="02-about-us.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">02</div>
+<div class="card-number">
+02
+</div>
 
 <div class="en">
 <h3>About Us</h3>
@@ -1661,17 +1509,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 03 -->
 
-<div class="company-card" data-pdf="03-vision.pdf">
+<div
+  class="company-card"
+  data-pdf="03-vision.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">03</div>
+<div class="card-number">
+03
+</div>
 
 <div class="en">
 <h3>Vision</h3>
@@ -1688,17 +1541,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 04 -->
 
-<div class="company-card" data-pdf="04-mission.pdf">
+<div
+  class="company-card"
+  data-pdf="04-mission.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">04</div>
+<div class="card-number">
+04
+</div>
 
 <div class="en">
 <h3>Mission</h3>
@@ -1715,17 +1573,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 05 -->
 
-<div class="company-card" data-pdf="05-comprehensive-safety.pdf">
+<div
+  class="company-card"
+  data-pdf="05-comprehensive-safety.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">05</div>
+<div class="card-number">
+05
+</div>
 
 <div class="en">
 <h3>Comprehensive Safety</h3>
@@ -1742,17 +1605,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 06 -->
 
-<div class="company-card" data-pdf="06-core-values.pdf">
+<div
+  class="company-card"
+  data-pdf="06-core-values.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">06</div>
+<div class="card-number">
+06
+</div>
 
 <div class="en">
 <h3>Core Values</h3>
@@ -1769,17 +1637,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 07 -->
 
-<div class="company-card" data-pdf="07-operational-efficiency.pdf">
+<div
+  class="company-card"
+  data-pdf="07-operational-efficiency.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">07</div>
+<div class="card-number">
+07
+</div>
 
 <div class="en">
 <h3>Operational Efficiency</h3>
@@ -1796,17 +1669,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 08 -->
 
-<div class="company-card" data-pdf="08-continuous-innovation.pdf">
+<div
+  class="company-card"
+  data-pdf="08-continuous-innovation.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">08</div>
+<div class="card-number">
+08
+</div>
 
 <div class="en">
 <h3>Continuous Innovation</h3>
@@ -1823,17 +1701,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 09 -->
 
-<div class="company-card" data-pdf="09-company-perspective.pdf">
+<div
+  class="company-card"
+  data-pdf="09-company-perspective.pdf">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">09</div>
+<div class="card-number">
+09
+</div>
 
 <div class="en">
 <h3>Company Perspective</h3>
@@ -1850,19 +1733,26 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <!-- 10 VIDEO -->
 
-<div class="company-card" id="videoCard">
+<div
+  class="company-card"
+  id="videoCard">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">10</div>
+<div class="card-number">
+10
+</div>
 
-<div class="video-icon">▶</div>
+<div class="video-icon">
+▶
+</div>
 
 <div class="en">
 <h3>Company Video</h3>
@@ -1881,17 +1771,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <div class="company-card update-card">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">11</div>
+<div class="card-number">
+11
+</div>
 
-<div class="update-text">UPDATE</div>
+<div class="update-text">
+UPDATE
+</div>
 
 </div>
 
@@ -1900,17 +1795,22 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 <div class="company-card update-card">
 
-<img src="kamra-energy.svg"
-class="card-logo"
-alt="KAMRA ENERGY">
+<img
+  src="kamra-energy.svg"
+  class="card-logo"
+  alt="KAMRA ENERGY">
 
 <div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
-<div class="card-number">12</div>
+<div class="card-number">
+12
+</div>
 
-<div class="update-text">UPDATE</div>
+<div class="update-text">
+UPDATE
+</div>
 
 </div>
 
@@ -1919,26 +1819,26 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
 <button
-type="button"
-class="slider-btn"
-id="nextBtn"
-aria-label="Next cards">
+  type="button"
+  class="slider-btn"
+  id="nextBtn"
+  aria-label="Next cards">
 ›
 </button>
 
 </div>
 
 
-<!-- PDF / VIDEO VIEWER -->
+<!-- PDF VIEWER -->
 
 <div
-id="companyViewer"
-class="company-viewer"
-aria-hidden="true">
+  id="companyViewer"
+  class="company-viewer"
+  aria-hidden="true">
 
 <div
-class="viewer-content"
-id="viewerContent">
+  class="viewer-content"
+  id="viewerContent">
 </div>
 
 </div>
@@ -1946,141 +1846,453 @@ id="viewerContent">
 </section>
 
 
-<!-- SERVICES -->
+<!-- =========================
+     SERVICES
+     ========================= -->
 
 <section class="services" id="services">
 
 <div class="section-title en">
+
 <h2>Our Services</h2>
-<p>Integrated solutions for energy and well service operations.</p>
+
+<p>
+Integrated solutions for energy and well service operations.
+</p>
+
 </div>
 
 <div class="section-title ar">
+
 <h2>خدماتنا</h2>
-<p>حلول متكاملة لعمليات الطاقة وخدمات الآبار.</p>
+
+<p>
+حلول متكاملة لعمليات الطاقة وخدمات الآبار.
+</p>
+
 </div>
 
 
 <div class="cards">
 
+
 <div class="card">
+
 <div class="en">
 <h3>Well Services</h3>
-<p>Professional support and services for well operations.</p>
+<p>
+Professional support and services for well operations.
+</p>
 </div>
 
 <div class="ar">
 <h3>خدمات الآبار</h3>
-<p>دعم وخدمات احترافية لعمليات الآبار.</p>
+<p>
+دعم وخدمات احترافية لعمليات الآبار.
+</p>
 </div>
+
 </div>
 
 
 <div class="card">
+
 <div class="en">
 <h3>Energy Contracting</h3>
-<p>Contracting solutions designed around operational requirements.</p>
+<p>
+Contracting solutions designed around operational requirements.
+</p>
 </div>
 
 <div class="ar">
 <h3>مقاولات الطاقة</h3>
-<p>حلول مقاولات مصممة وفق المتطلبات التشغيلية.</p>
+<p>
+حلول مقاولات مصممة وفق المتطلبات التشغيلية.
+</p>
 </div>
+
 </div>
 
 
 <div class="card">
+
 <div class="en">
 <h3>Technical Services</h3>
-<p>Experienced technical personnel and operational support.</p>
+<p>
+Experienced technical personnel and operational support.
+</p>
 </div>
 
 <div class="ar">
 <h3>الخدمات الفنية</h3>
-<p>كوادر فنية ذات خبرة ودعم تشغيلي متكامل.</p>
+<p>
+كوادر فنية ذات خبرة ودعم تشغيلي متكامل.
+</p>
 </div>
+
 </div>
 
 
 <div class="card">
+
 <div class="en">
 <h3>Inspection</h3>
-<p>Inspection and quality-focused technical services.</p>
+<p>
+Inspection and quality-focused technical services.
+</p>
 </div>
 
 <div class="ar">
 <h3>الفحص والتفتيش</h3>
-<p>خدمات فنية متخصصة في الفحص والجودة.</p>
+<p>
+خدمات فنية متخصصة في الفحص والجودة.
+</p>
 </div>
+
 </div>
 
 
 <div class="card">
+
 <div class="en">
 <h3>HSE</h3>
-<p>Health, Safety and Environmental commitment in every operation.</p>
+<p>
+Health, Safety and Environmental commitment in every operation.
+</p>
 </div>
 
 <div class="ar">
 <h3>الصحة والسلامة والبيئة</h3>
-<p>الالتزام بالصحة والسلامة وحماية البيئة في جميع عملياتنا.</p>
+<p>
+الالتزام بالصحة والسلامة وحماية البيئة في جميع عملياتنا.
+</p>
 </div>
+
 </div>
 
 
 <div class="card">
+
 <div class="en">
 <h3>Quality</h3>
-<p>Structured processes focused on quality and continuous improvement.</p>
+<p>
+Structured processes focused on quality and continuous improvement.
+</p>
 </div>
 
 <div class="ar">
 <h3>الجودة</h3>
-<p>عمليات منظمة تركز على الجودة والتحسين المستمر.</p>
-</div>
+<p>
+عمليات منظمة تركز على الجودة والتحسين المستمر.
+</p>
 </div>
 
 </div>
+
+
+</div>
+
 </section>
 
 
-<!-- ASSESSED -->
+<!-- =========================
+     EMPLOYEE LIBRARY
+     ========================= -->
 
-<section class="assessed-section">
+<section
+  class="employee-library"
+  id="employeeLibrary">
 
-<div class="assessed-box">
+<div class="employee-library-header">
 
 <div class="en">
-<div class="assessed-title">Assessed</div>
-<div class="assessed-line">
-Every operation begins with a documented risk assessment.
-</div>
+
+<h2>Employee Library</h2>
+
+<p>
+Authorized company documents and operational resources.
+</p>
+
 </div>
 
 <div class="ar">
-<div class="assessed-title">التقييم</div>
-<div class="assessed-line">
+
+<h2>مكتبة الموظفين</h2>
+
+<p>
+الوثائق والموارد التشغيلية الخاصة بالشركة للمستخدمين المصرح لهم.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="library-grid">
+
+
+<!-- WELL SERVICES -->
+
+<div
+  class="library-card"
+  data-library-pdf="employee-well-services.pdf">
+
+<div class="library-icon">
+▣
+</div>
+
+<div class="en">
+
+<h3>Well Services</h3>
+
+<p>
+Well Services Documents
+</p>
+
+</div>
+
+<div class="ar">
+
+<h3>خدمات الآبار</h3>
+
+<p>
+وثائق خدمات الآبار
+</p>
+
+</div>
+
+</div>
+
+
+<!-- HSE -->
+
+<div
+  class="library-card"
+  data-library-pdf="employee-hse.pdf">
+
+<div class="library-icon">
+✓
+</div>
+
+<div class="en">
+
+<h3>HSE</h3>
+
+<p>
+Health, Safety & Environment
+</p>
+
+</div>
+
+<div class="ar">
+
+<h3>الصحة والسلامة والبيئة</h3>
+
+<p>
+وثائق الصحة والسلامة والبيئة
+</p>
+
+</div>
+
+</div>
+
+
+<!-- TECHNICAL -->
+
+<div
+  class="library-card"
+  data-library-pdf="employee-technical-documents.pdf">
+
+<div class="library-icon">
+⚙
+</div>
+
+<div class="en">
+
+<h3>Technical Documents</h3>
+
+<p>
+Technical Documentation
+</p>
+
+</div>
+
+<div class="ar">
+
+<h3>الوثائق الفنية</h3>
+
+<p>
+الوثائق الفنية والتقنية
+</p>
+
+</div>
+
+</div>
+
+
+<!-- OPERATIONS -->
+
+<div
+  class="library-card"
+  data-library-pdf="employee-operations.pdf">
+
+<div class="library-icon">
+◈
+</div>
+
+<div class="en">
+
+<h3>Operations</h3>
+
+<p>
+Operational Documents
+</p>
+
+</div>
+
+<div class="ar">
+
+<h3>العمليات</h3>
+
+<p>
+الوثائق التشغيلية
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FORMS -->
+
+<div
+  class="library-card"
+  data-library-pdf="employee-forms-templates.pdf">
+
+<div class="library-icon">
+▤
+</div>
+
+<div class="en">
+
+<h3>Forms & Templates</h3>
+
+<p>
+Company Forms and Templates
+</p>
+
+</div>
+
+<div class="ar">
+
+<h3>النماذج والقوالب</h3>
+
+<p>
+نماذج وقوالب الشركة
+</p>
+
+</div>
+
+</div>
+
+
+<!-- TRAINING -->
+
+<div
+  class="library-card"
+  data-library-pdf="employee-training.pdf">
+
+<div class="library-icon">
+★
+</div>
+
+<div class="en">
+
+<h3>Training</h3>
+
+<p>
+Training Materials
+</p>
+
+</div>
+
+<div class="ar">
+
+<h3>التدريب</h3>
+
+<p>
+مواد التدريب
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<button
+  type="button"
+  class="library-logout"
+  id="libraryLogout">
+
+<span class="en">
+Log Out
+</span>
+
+<span class="ar">
+تسجيل الخروج
+</span>
+
+</button>
+
+</section>
+
+
+<!-- =========================
+     ASSESSED
+     ========================= -->
+
+<section class="assessed">
+
+<div class="en">
+
+<h2>Assessed</h2>
+
+<p>
+Every operation begins with a documented risk assessment.
+</p>
+
+</div>
+
+<div class="ar">
+
+<h2>التقييم</h2>
+
+<p>
 تبدأ كل عملية بتقييم موثق للمخاطر.
-</div>
-</div>
+</p>
 
 </div>
 
 </section>
 
 
-<!-- HSE -->
+<!-- =========================
+     HSE
+     ========================= -->
 
 <section class="hse" id="hse">
 
 <div class="en">
 
-<h2>Health, Safety & Environment</h2>
+<h2>
+Health, Safety & Environment
+</h2>
 
 <p>
-Safety is a fundamental part of our operations.
-We are committed to responsible work practices,
-risk awareness, environmental protection and continuous improvement.
+Safety is a fundamental part of our operations. We are committed to responsible work practices, risk awareness, environmental protection and continuous improvement.
 </p>
 
 </div>
@@ -2088,12 +2300,12 @@ risk awareness, environmental protection and continuous improvement.
 
 <div class="ar">
 
-<h2>الصحة والسلامة والبيئة</h2>
+<h2>
+الصحة والسلامة والبيئة
+</h2>
 
 <p>
-السلامة جزء أساسي من عملياتنا.
-نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
-وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.
 </p>
 
 </div>
@@ -2101,18 +2313,34 @@ risk awareness, environmental protection and continuous improvement.
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+     ========================= -->
 
 <section id="contact" class="contact">
 
 <div class="section-title en">
-<h2>Contact Us</h2>
-<p>We would be pleased to discuss your requirements.</p>
+
+<h2>
+Contact Us
+</h2>
+
+<p>
+We would be pleased to discuss your requirements.
+</p>
+
 </div>
 
 <div class="section-title ar">
-<h2>اتصل بنا</h2>
-<p>يسعدنا مناقشة متطلباتكم واحتياجاتكم.</p>
+
+<h2>
+اتصل بنا
+</h2>
+
+<p>
+يسعدنا مناقشة متطلباتكم واحتياجاتكم.
+</p>
+
 </div>
 
 
@@ -2152,7 +2380,9 @@ info@kamra-energy.com
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+     ========================= -->
 
 <footer>
 
@@ -2163,119 +2393,101 @@ info@kamra-energy.com
 </footer>
 
 
-<!-- EMPLOYEE LIBRARY LOGIN -->
+<!-- =========================
+     EMPLOYEE LOGIN MODAL
+     ========================= -->
 
 <div
-id="libraryOverlay"
-class="library-overlay"
-aria-hidden="true">
+  class="employee-modal"
+  id="employeeModal"
+  aria-hidden="true">
 
-<div class="library-panel">
+<div class="employee-login-box">
 
 <button
-type="button"
-class="library-close"
-id="libraryClose"
-aria-label="Close">
+  type="button"
+  class="employee-modal-close"
+  id="employeeModalClose"
+  aria-label="Close">
 ×
 </button>
 
 
 <div class="en">
 
-<h2>Employee Login</h2>
+<h2>
+Employee Login
+</h2>
 
-<div class="library-subtitle">
-Authorized personnel access to the KAMRA document library.
-</div>
+<p class="login-subtitle">
+Authorized employees only.
+</p>
 
 </div>
 
 
 <div class="ar">
 
-<h2>دخول الموظفين</h2>
+<h2>
+دخول الموظفين
+</h2>
 
-<div class="library-subtitle">
-دخول الموظفين المصرح لهم إلى مكتبة وثائق KAMRA.
+<p class="login-subtitle">
+للموظفين والمستخدمين المصرح لهم فقط.
+</p>
+
 </div>
 
-</div>
 
-
-<div class="library-field">
-
-<label for="employeeEmail">
-<span class="en">Company Email</span>
-<span class="ar">البريد الإلكتروني للشركة</span>
-</label>
+<form id="employeeLoginForm">
 
 <input
-type="email"
-id="employeeEmail"
-placeholder="name@kamra-energy.com"
-autocomplete="username">
-
-</div>
-
-
-<div class="library-field">
-
-<label for="employeePassword">
-<span class="en">Password</span>
-<span class="ar">كلمة المرور</span>
-</label>
+  type="email"
+  id="employeeEmail"
+  placeholder="Official Email"
+  autocomplete="username"
+  required
+>
 
 <input
-type="password"
-id="employeePassword"
-placeholder="Password"
-autocomplete="current-password">
+  type="password"
+  id="employeePassword"
+  placeholder="Password"
+  autocomplete="current-password"
+  required
+>
+
+
+<div
+  class="employee-login-error"
+  id="employeeLoginError">
+
+<div class="en">
+Invalid email or password.
+</div>
+
+<div class="ar">
+البريد الإلكتروني أو كلمة المرور غير صحيحة.
+</div>
 
 </div>
 
 
 <button
-type="button"
-class="library-submit"
-id="librarySubmit">
+  type="submit"
+  class="employee-login-submit">
 
-<span class="en">Enter Library</span>
-<span class="ar">دخول إلى المكتبة</span>
+<span class="en">
+Login
+</span>
+
+<span class="ar">
+دخول
+</span>
 
 </button>
 
-
-<div
-class="library-message"
-id="libraryMessage">
-
-<span class="en">
-Library authentication is not connected yet.
-The interface is ready for secure server-side authentication.
-</span>
-
-<span class="ar">
-لم يتم ربط المصادقة بالمكتبة بعد.
-الواجهة جاهزة لربطها بنظام دخول آمن من جهة الخادم.
-</span>
-
-</div>
-
-
-<div class="library-note">
-
-<span class="en">
-For security, employee authentication should be handled
-by a server-side authentication system rather than JavaScript alone.
-</span>
-
-<span class="ar">
-لأسباب أمنية، يجب تنفيذ مصادقة الموظفين من خلال
-نظام دخول آمن على الخادم وليس بواسطة JavaScript فقط.
-</span>
-
-</div>
+</form>
 
 </div>
 
@@ -2289,25 +2501,35 @@ by a server-side authentication system rather than JavaScript alone.
 
 <script>
 
-/* LANGUAGE */
+/* =========================================
+   LANGUAGE
+   ========================================= */
 
-const languageButton=document.getElementById("languageButton");
+const languageButton =
+document.getElementById("languageButton");
+
 
 function updateLanguage(){
 
-const isArabic=document.body.classList.contains("rtl");
+const isArabic =
+document.body.classList.contains("rtl");
 
-document.documentElement.lang=isArabic?"ar":"en";
+document.documentElement.lang =
+isArabic ? "ar" : "en";
 
-document.documentElement.dir="ltr";
+document.documentElement.dir = "ltr";
 
-languageButton.textContent=isArabic?"English":"العربية";
+languageButton.textContent =
+isArabic ? "English" : "العربية";
 
 setTimeout(updateSlider,50);
 
 }
 
-languageButton.addEventListener("click",function(){
+
+languageButton.addEventListener(
+"click",
+function(){
 
 document.body.classList.toggle("rtl");
 
@@ -2316,60 +2538,95 @@ updateLanguage();
 });
 
 
-/* SLIDER */
+/* =========================================
+   COMPANY SLIDER
+   ========================================= */
 
-const track=document.getElementById("companyTrack");
-const prevBtn=document.getElementById("prevBtn");
-const nextBtn=document.getElementById("nextBtn");
-const sliderWindow=document.getElementById("sliderWindow");
+const track =
+document.getElementById("companyTrack");
 
-let currentSlide=0;
+const prevBtn =
+document.getElementById("prevBtn");
 
-const totalCards=track.children.length;
+const nextBtn =
+document.getElementById("nextBtn");
+
+const sliderWindow =
+document.getElementById("sliderWindow");
+
+let currentSlide = 0;
+
+const totalCards =
+track.children.length;
+
 
 function getVisibleCards(){
 
-if(window.innerWidth<=700)return 2;
+if(window.innerWidth <= 700)
+return 2;
 
-if(window.innerWidth<=1000)return 3;
+if(window.innerWidth <= 1000)
+return 3;
 
 return 4;
 
 }
 
+
 function updateSlider(){
 
-const visibleCards=getVisibleCards();
+const visibleCards =
+getVisibleCards();
 
-const maxSlide=Math.max(0,totalCards-visibleCards);
+const maxSlide =
+Math.max(
+0,
+totalCards - visibleCards
+);
 
-if(currentSlide>maxSlide){
-currentSlide=maxSlide;
+if(currentSlide > maxSlide)
+currentSlide = maxSlide;
+
+const firstCard =
+track.children[0];
+
+if(!firstCard)
+return;
+
+const cardWidth =
+firstCard.getBoundingClientRect().width;
+
+const gap =
+parseFloat(
+getComputedStyle(track).gap
+) || 0;
+
+const move =
+(cardWidth + gap) * currentSlide;
+
+track.style.transform =
+"translateX(-" + move + "px)";
+
+prevBtn.disabled =
+currentSlide === 0;
+
+nextBtn.disabled =
+currentSlide === maxSlide;
+
 }
 
-const firstCard=track.children[0];
 
-if(!firstCard)return;
+nextBtn.addEventListener(
+"click",
+function(){
 
-const cardWidth=firstCard.getBoundingClientRect().width;
+const maxSlide =
+Math.max(
+0,
+totalCards - getVisibleCards()
+);
 
-const gap=parseFloat(getComputedStyle(track).gap)||0;
-
-const move=(cardWidth+gap)*currentSlide;
-
-track.style.transform="translateX(-"+move+"px)";
-
-prevBtn.disabled=currentSlide===0;
-
-nextBtn.disabled=currentSlide===maxSlide;
-
-}
-
-nextBtn.addEventListener("click",function(){
-
-const maxSlide=Math.max(0,totalCards-getVisibleCards());
-
-if(currentSlide<maxSlide){
+if(currentSlide < maxSlide){
 
 currentSlide++;
 
@@ -2379,9 +2636,12 @@ updateSlider();
 
 });
 
-prevBtn.addEventListener("click",function(){
 
-if(currentSlide>0){
+prevBtn.addEventListener(
+"click",
+function(){
+
+if(currentSlide > 0){
 
 currentSlide--;
 
@@ -2391,18 +2651,27 @@ updateSlider();
 
 });
 
-window.addEventListener("resize",updateSlider);
+
+window.addEventListener(
+"resize",
+updateSlider
+);
 
 
-/* PDF VIEWER */
+/* =========================================
+   PDF VIEWER
+   ========================================= */
 
-const viewer=document.getElementById("companyViewer");
+const viewer =
+document.getElementById("companyViewer");
 
-const viewerContent=document.getElementById("viewerContent");
+const viewerContent =
+document.getElementById("viewerContent");
 
-if(typeof pdfjsLib!=="undefined"){
 
-pdfjsLib.GlobalWorkerOptions.workerSrc=
+if(typeof pdfjsLib !== "undefined"){
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 }
@@ -2410,49 +2679,76 @@ pdfjsLib.GlobalWorkerOptions.workerSrc=
 
 async function openPDF(file){
 
-document.body.style.overflow="hidden";
+document.body.style.overflow = "hidden";
 
 viewer.classList.add("active");
 
-viewer.setAttribute("aria-hidden","false");
+viewer.setAttribute(
+"aria-hidden",
+"false"
+);
 
-requestAnimationFrame(syncMobileViewerViewport);
+requestAnimationFrame(
+syncMobileViewerViewport
+);
 
-setTimeout(syncMobileViewerViewport,100);
+setTimeout(
+syncMobileViewerViewport,
+100
+);
 
-viewerContent.innerHTML="";
-
-
-const toolbar=document.createElement("div");
-
-toolbar.className="pdf-toolbar";
-
-
-const title=document.createElement("div");
-
-title.className="pdf-title";
-
-title.textContent="KAMRA Company Document";
+viewerContent.innerHTML = "";
 
 
-const pageInfo=document.createElement("div");
+/* TOOLBAR */
 
-pageInfo.className="pdf-page-info";
+const toolbar =
+document.createElement("div");
 
-pageInfo.textContent="Loading...";
+toolbar.className =
+"pdf-toolbar";
 
 
-const closeButton=document.createElement("button");
+const title =
+document.createElement("div");
 
-closeButton.type="button";
+title.className =
+"pdf-title";
 
-closeButton.className="viewer-close";
+title.textContent =
+"KAMRA Company Document";
 
-closeButton.setAttribute("aria-label","Close");
 
-closeButton.innerHTML="×";
+const pageInfo =
+document.createElement("div");
 
-closeButton.addEventListener("click",function(e){
+pageInfo.className =
+"pdf-page-info";
+
+pageInfo.textContent =
+"Loading...";
+
+
+const closeButton =
+document.createElement("button");
+
+closeButton.type =
+"button";
+
+closeButton.className =
+"viewer-close";
+
+closeButton.setAttribute(
+"aria-label",
+"Close"
+);
+
+closeButton.innerHTML =
+"×";
+
+closeButton.addEventListener(
+"click",
+function(e){
 
 e.preventDefault();
 
@@ -2470,24 +2766,34 @@ toolbar.appendChild(pageInfo);
 toolbar.appendChild(closeButton);
 
 
-const scrollArea=document.createElement("div");
+/* SCROLL AREA */
 
-scrollArea.className="pdf-scroll";
+const scrollArea =
+document.createElement("div");
 
-
-const loading=document.createElement("div");
-
-loading.className="pdf-loading";
-
-
-const spinner=document.createElement("div");
-
-spinner.className="pdf-spinner";
+scrollArea.className =
+"pdf-scroll";
 
 
-const loadingText=document.createElement("div");
+const loading =
+document.createElement("div");
 
-loadingText.textContent="Opening document...";
+loading.className =
+"pdf-loading";
+
+
+const spinner =
+document.createElement("div");
+
+spinner.className =
+"pdf-spinner";
+
+
+const loadingText =
+document.createElement("div");
+
+loadingText.textContent =
+"Opening document...";
 
 
 loading.appendChild(spinner);
@@ -2496,13 +2802,12 @@ loading.appendChild(loadingText);
 
 scrollArea.appendChild(loading);
 
-
 viewerContent.appendChild(toolbar);
 
 viewerContent.appendChild(scrollArea);
 
 
-if(typeof pdfjsLib==="undefined"){
+if(typeof pdfjsLib === "undefined"){
 
 showPDFError(
 scrollArea,
@@ -2516,34 +2821,44 @@ return;
 
 try{
 
-const loadingTask=pdfjsLib.getDocument({
+const loadingTask =
+pdfjsLib.getDocument({
 url:file
 });
 
-const pdf=await loadingTask.promise;
-
-pageInfo.textContent=
-pdf.numPages+(pdf.numPages===1?" page":" pages");
-
-scrollArea.innerHTML="";
+const pdf =
+await loadingTask.promise;
 
 
-const isMobile=window.innerWidth<=700;
+pageInfo.textContent =
+pdf.numPages +
+(pdf.numPages === 1 ? " page" : " pages");
 
-let availableWidth=
-scrollArea.clientWidth-(isMobile?16:36);
 
-if(availableWidth<=0){
+scrollArea.innerHTML = "";
 
-availableWidth=
-window.innerWidth-(isMobile?16:36);
+
+const isMobile =
+window.innerWidth <= 700;
+
+
+let availableWidth =
+scrollArea.clientWidth -
+(isMobile ? 16 : 36);
+
+
+if(availableWidth <= 0){
+
+availableWidth =
+window.innerWidth -
+(isMobile ? 16 : 36);
 
 }
 
 
 for(
-let pageNumber=1;
-pageNumber<=pdf.numPages;
+let pageNumber = 1;
+pageNumber <= pdf.numPages;
 pageNumber++
 ){
 
@@ -2566,6 +2881,7 @@ pageError
 }
 
 }
+
 
 }catch(error){
 
@@ -2591,61 +2907,86 @@ container,
 availableWidth
 ){
 
-const page=await pdf.getPage(pageNumber);
+const page =
+await pdf.getPage(pageNumber);
 
-const originalViewport=
-page.getViewport({scale:1});
+const originalViewport =
+page.getViewport({
+scale:1
+});
 
-let scale=
-availableWidth/originalViewport.width;
 
-if(scale>2)scale=2;
+let scale =
+availableWidth /
+originalViewport.width;
 
-if(window.innerWidth<=700){
 
-scale=Math.min(
+if(scale > 2)
+scale = 2;
+
+
+if(window.innerWidth <= 700){
+
+scale =
+Math.min(
 scale,
-availableWidth/originalViewport.width
+availableWidth /
+originalViewport.width
 );
 
 }
 
-const viewport=
-page.getViewport({scale});
 
-const canvas=
+const viewport =
+page.getViewport({
+scale
+});
+
+
+const canvas =
 document.createElement("canvas");
 
-canvas.className="pdf-page";
+canvas.className =
+"pdf-page";
 
-const context=
+
+const context =
 canvas.getContext("2d");
 
-const devicePixelRatio=
-window.devicePixelRatio||1;
 
-canvas.width=
+const devicePixelRatio =
+window.devicePixelRatio || 1;
+
+
+canvas.width =
 Math.floor(
-viewport.width*devicePixelRatio
+viewport.width *
+devicePixelRatio
 );
 
-canvas.height=
+canvas.height =
 Math.floor(
-viewport.height*devicePixelRatio
+viewport.height *
+devicePixelRatio
 );
 
-const finalWidth=
+
+const finalWidth =
 Math.min(
 viewport.width,
 availableWidth
 );
 
-canvas.style.width=
-finalWidth+"px";
 
-canvas.style.height="auto";
+canvas.style.width =
+finalWidth + "px";
 
-canvas.style.maxWidth="100%";
+canvas.style.height =
+"auto";
+
+canvas.style.maxWidth =
+"100%";
+
 
 context.setTransform(
 devicePixelRatio,
@@ -2656,7 +2997,9 @@ devicePixelRatio,
 0
 );
 
+
 container.appendChild(canvas);
+
 
 await page.render({
 
@@ -2669,22 +3012,29 @@ viewport:viewport
 }
 
 
-function showPDFError(container,message){
+function showPDFError(
+container,
+message
+){
 
-container.innerHTML="";
+container.innerHTML = "";
 
-const error=
+const error =
 document.createElement("div");
 
-error.className="pdf-error";
+error.className =
+"pdf-error";
 
-error.textContent=message;
+error.textContent =
+message;
 
-const small=
+
+const small =
 document.createElement("small");
 
-small.textContent=
+small.textContent =
 "Please check that the PDF file exists on the server.";
+
 
 error.appendChild(small);
 
@@ -2693,34 +3043,42 @@ container.appendChild(error);
 }
 
 
+/* =========================================
+   COMPANY PDF CARDS
+   ========================================= */
+
 document
-.querySelectorAll(".company-card[data-pdf]")
+.querySelectorAll(
+".company-card[data-pdf]"
+)
 .forEach(function(card){
 
-card.addEventListener("click",function(event){
+card.addEventListener(
+"click",
+function(event){
 
 event.preventDefault();
 
 event.stopPropagation();
 
-const file=
+const file =
 card.getAttribute("data-pdf");
 
-if(file){
-
+if(file)
 openPDF(file);
 
-}
-
 });
 
 });
 
 
-/* VIDEO */
+/* =========================================
+   COMPANY VIDEO
+   ========================================= */
 
-const videoCard=
+const videoCard =
 document.getElementById("videoCard");
+
 
 videoCard.addEventListener(
 "click",
@@ -2732,13 +3090,13 @@ event.stopPropagation();
 
 openVideo();
 
-}
-);
+});
 
 
 function openVideo(){
 
-document.body.style.overflow="hidden";
+document.body.style.overflow =
+"hidden";
 
 viewer.classList.add("active");
 
@@ -2757,9 +3115,10 @@ syncMobileViewerViewport,
 );
 
 
-viewerContent.innerHTML=`
+viewerContent.innerHTML = `
 
-<div style="
+<div
+style="
 width:100%;
 height:100%;
 background:#071426;
@@ -2782,7 +3141,9 @@ z-index:20;
 ×
 </button>
 
-<div style="
+
+<div
+style="
 width:92%;
 max-width:900px;
 aspect-ratio:16 / 9;
@@ -2832,48 +3193,55 @@ event.stopPropagation();
 
 closeViewer();
 
-}
-);
+});
 
 }
 
 
-/* MOBILE VIEWER */
+/* =========================================
+   MOBILE PDF VIEWER
+   ========================================= */
 
 function syncMobileViewerViewport(){
 
 if(
-window.innerWidth>700 ||
+window.innerWidth > 700 ||
 !viewer.classList.contains("active")
-)return;
+)
+return;
 
-const vv=window.visualViewport;
+
+const vv =
+window.visualViewport;
+
 
 if(vv){
 
-viewer.style.top=
-vv.offsetTop+"px";
+viewer.style.top =
+vv.offsetTop + "px";
 
-viewer.style.left=
-vv.offsetLeft+"px";
+viewer.style.left =
+vv.offsetLeft + "px";
 
-viewer.style.width=
-vv.width+"px";
+viewer.style.width =
+vv.width + "px";
 
-viewer.style.height=
-vv.height+"px";
+viewer.style.height =
+vv.height + "px";
 
 }else{
 
-viewer.style.top="0px";
+viewer.style.top =
+"0px";
 
-viewer.style.left="0px";
+viewer.style.left =
+"0px";
 
-viewer.style.width=
-window.innerWidth+"px";
+viewer.style.width =
+window.innerWidth + "px";
 
-viewer.style.height=
-window.innerHeight+"px";
+viewer.style.height =
+window.innerHeight + "px";
 
 }
 
@@ -2884,6 +3252,7 @@ window.addEventListener(
 "resize",
 syncMobileViewerViewport
 );
+
 
 window.addEventListener(
 "orientationchange",
@@ -2899,8 +3268,7 @@ syncMobileViewerViewport,
 250
 );
 
-}
-);
+});
 
 
 if(window.visualViewport){
@@ -2920,24 +3288,26 @@ syncMobileViewerViewport
 
 function closeViewer(){
 
-viewer.classList.remove("active");
+viewer.classList.remove(
+"active"
+);
 
-viewer.style.top="";
+viewer.style.top = "";
 
-viewer.style.left="";
+viewer.style.left = "";
 
-viewer.style.width="";
+viewer.style.width = "";
 
-viewer.style.height="";
+viewer.style.height = "";
 
 viewer.setAttribute(
 "aria-hidden",
 "true"
 );
 
-viewerContent.innerHTML="";
+viewerContent.innerHTML = "";
 
-document.body.style.overflow="";
+document.body.style.overflow = "";
 
 }
 
@@ -2946,14 +3316,10 @@ viewer.addEventListener(
 "click",
 function(event){
 
-if(event.target===viewer){
-
+if(event.target === viewer)
 closeViewer();
 
-}
-
-}
-);
+});
 
 
 document.addEventListener(
@@ -2961,7 +3327,7 @@ document.addEventListener(
 function(event){
 
 if(
-event.key==="Escape" &&
+event.key === "Escape" &&
 viewer.classList.contains("active")
 ){
 
@@ -2969,21 +3335,23 @@ closeViewer();
 
 }
 
-}
-);
+});
 
 
-/* SLIDER TOUCH */
+/* =========================================
+   SLIDER TOUCH
+   ========================================= */
 
-let touchStartX=0;
+let touchStartX = 0;
 
-let touchEndX=0;
+let touchEndX = 0;
+
 
 sliderWindow.addEventListener(
 "touchstart",
 function(event){
 
-touchStartX=
+touchStartX =
 event.changedTouches[0].screenX;
 
 },
@@ -2995,32 +3363,30 @@ sliderWindow.addEventListener(
 "touchend",
 function(event){
 
-touchEndX=
+touchEndX =
 event.changedTouches[0].screenX;
 
-const difference=
-touchStartX-touchEndX;
+const difference =
+touchStartX - touchEndX;
 
-if(difference>50){
 
+if(difference > 50)
 nextBtn.click();
 
-}
 
-if(difference<-50){
-
+if(difference < -50)
 prevBtn.click();
-
-}
 
 },
 {passive:true}
 );
 
 
-/* QURAN VERSES */
+/* =========================================
+   QURAN VERSES
+   ========================================= */
 
-const quranVerses=[
+const quranVerses = [
 
 {
 verse:"﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",
@@ -3054,49 +3420,51 @@ source:"سورة الشرح — الآيتان 5–6"
 
 ];
 
-let quranIndex=0;
+
+let quranIndex = 0;
 
 
 function changeQuranVerse(){
 
-const verseElement=
+const verseElement =
 document.getElementById("quranVerse");
 
-const sourceElement=
+const sourceElement =
 document.getElementById("quranSource");
 
-if(
-!verseElement ||
-!sourceElement
-)return;
+
+if(!verseElement || !sourceElement)
+return;
 
 
-verseElement.style.opacity="0";
+verseElement.style.opacity = "0";
 
-sourceElement.style.opacity="0";
+sourceElement.style.opacity = "0";
 
 
-setTimeout(function(){
+setTimeout(
+function(){
 
 quranIndex++;
 
-if(quranIndex>=quranVerses.length){
+if(quranIndex >= quranVerses.length)
+quranIndex = 0;
 
-quranIndex=0;
 
-}
-
-verseElement.textContent=
+verseElement.textContent =
 quranVerses[quranIndex].verse;
 
-sourceElement.textContent=
+sourceElement.textContent =
 quranVerses[quranIndex].source;
 
-verseElement.style.opacity="1";
 
-sourceElement.style.opacity="1";
+verseElement.style.opacity = "1";
 
-},500);
+sourceElement.style.opacity = "1";
+
+},
+500
+);
 
 }
 
@@ -3107,158 +3475,305 @@ changeQuranVerse,
 );
 
 
-/* EMPLOYEE LIBRARY */
+/* =========================================
+   EMPLOYEE LOGIN
+   ========================================= */
 
-const employeeLoginButton=
+const EMPLOYEE_EMAIL =
+"info@kamra-energy.com";
+
+const EMPLOYEE_PASSWORD =
+"00000";
+
+
+const employeeLoginButton =
 document.getElementById(
 "employeeLoginButton"
 );
 
-const libraryOverlay=
+
+const employeeModal =
 document.getElementById(
-"libraryOverlay"
+"employeeModal"
 );
 
-const libraryClose=
+
+const employeeModalClose =
 document.getElementById(
-"libraryClose"
+"employeeModalClose"
 );
 
-const librarySubmit=
+
+const employeeLoginForm =
 document.getElementById(
-"librarySubmit"
+"employeeLoginForm"
 );
 
-const libraryMessage=
-document.getElementById(
-"libraryMessage"
-);
 
-const employeeEmail=
+const employeeEmail =
 document.getElementById(
 "employeeEmail"
 );
 
-const employeePassword=
+
+const employeePassword =
 document.getElementById(
 "employeePassword"
 );
 
 
-function openLibraryLogin(){
+const employeeLoginError =
+document.getElementById(
+"employeeLoginError"
+);
 
-document.body.style.overflow="hidden";
 
-libraryOverlay.classList.add("active");
+const employeeLibrary =
+document.getElementById(
+"employeeLibrary"
+);
 
-libraryOverlay.setAttribute(
+
+const libraryLogout =
+document.getElementById(
+"libraryLogout"
+);
+
+
+function openEmployeeLogin(){
+
+employeeModal.classList.add(
+"active"
+);
+
+employeeModal.setAttribute(
 "aria-hidden",
 "false"
 );
 
-setTimeout(function(){
+employeeLoginError.classList.remove(
+"show"
+);
+
+
+setTimeout(
+function(){
 
 employeeEmail.focus();
 
-},100);
+},
+100
+);
 
 }
 
 
-function closeLibraryLogin(){
+function closeEmployeeLogin(){
 
-libraryOverlay.classList.remove("active");
+employeeModal.classList.remove(
+"active"
+);
 
-libraryOverlay.setAttribute(
+employeeModal.setAttribute(
 "aria-hidden",
 "true"
 );
 
-libraryMessage.style.display="none";
+employeeLoginForm.reset();
 
-document.body.style.overflow="";
+employeeLoginError.classList.remove(
+"show"
+);
+
+}
+
+
+function showEmployeeLibrary(){
+
+employeeLibrary.classList.add(
+"active"
+);
+
+
+setTimeout(
+function(){
+
+employeeLibrary.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},
+100
+);
+
+}
+
+
+function hideEmployeeLibrary(){
+
+employeeLibrary.classList.remove(
+"active"
+);
 
 }
 
 
 employeeLoginButton.addEventListener(
 "click",
-openLibraryLogin
+openEmployeeLogin
 );
 
 
-libraryClose.addEventListener(
+employeeModalClose.addEventListener(
 "click",
-closeLibraryLogin
+closeEmployeeLogin
 );
 
 
-libraryOverlay.addEventListener(
+employeeModal.addEventListener(
 "click",
 function(event){
 
-if(event.target===libraryOverlay){
+if(event.target === employeeModal)
+closeEmployeeLogin();
 
-closeLibraryLogin();
+});
+
+
+employeeLoginForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const email =
+employeeEmail.value
+.trim()
+.toLowerCase();
+
+
+const password =
+employeePassword.value;
+
+
+if(
+email === EMPLOYEE_EMAIL.toLowerCase() &&
+password === EMPLOYEE_PASSWORD
+){
+
+employeeLoginError.classList.remove(
+"show"
+);
+
+closeEmployeeLogin();
+
+showEmployeeLibrary();
+
+
+employeeLoginButton.innerHTML =
+'<span class="en">Employee Library</span>' +
+'<span class="ar">مكتبة الموظفين</span>';
+
+}else{
+
+employeeLoginError.classList.add(
+"show"
+);
+
+employeePassword.value = "";
+
+employeePassword.focus();
 
 }
 
-}
+});
+
+
+/* =========================================
+   EMPLOYEE LIBRARY PDFS
+   ========================================= */
+
+document
+.querySelectorAll(
+".library-card[data-library-pdf]"
+)
+.forEach(function(card){
+
+card.addEventListener(
+"click",
+function(event){
+
+event.preventDefault();
+
+event.stopPropagation();
+
+
+const file =
+card.getAttribute(
+"data-library-pdf"
 );
 
 
-librarySubmit.addEventListener(
+if(file)
+openPDF(file);
+
+});
+
+});
+
+
+/* =========================================
+   LOGOUT
+   ========================================= */
+
+libraryLogout.addEventListener(
 "click",
 function(){
 
-const email=
-employeeEmail.value.trim();
-
-const password=
-employeePassword.value.trim();
-
-if(!email || !password){
-
-libraryMessage.style.display="block";
-
-return;
-
-}
+hideEmployeeLibrary();
 
 
-/*
-IMPORTANT:
-This is only the front-end interface.
-Real employee authentication must be connected
-to a secure server-side authentication system.
-*/
-
-libraryMessage.style.display="block";
-
-}
-);
+employeeLoginButton.innerHTML =
+'<span class="en">Employee Login</span>' +
+'<span class="ar">دخول الموظفين</span>';
 
 
-/* ESCAPE */
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});
+
+
+/* =========================================
+   INITIAL STATE
+   ========================================= */
+
+hideEmployeeLibrary();
+
 
 document.addEventListener(
 "keydown",
 function(event){
 
 if(
-event.key==="Escape" &&
-libraryOverlay.classList.contains("active")
+event.key === "Escape" &&
+employeeModal.classList.contains("active")
 ){
 
-closeLibraryLogin();
+closeEmployeeLogin();
 
 }
 
-}
-);
+});
 
 
-/* INITIALIZE */
+/* =========================================
+   START
+   ========================================= */
 
 document.addEventListener(
 "DOMContentLoaded",
@@ -3268,8 +3783,7 @@ updateLanguage();
 
 updateSlider();
 
-}
-);
+});
 
 
 window.addEventListener(
@@ -3278,8 +3792,7 @@ function(){
 
 updateSlider();
 
-}
-);
+});
 
 </script>
 
