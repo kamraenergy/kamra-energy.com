@@ -4,83 +4,1098 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;color:#172033;background:#f7f9fc;line-height:1.6}
-.ar{display:none;direction:rtl}.en{display:block;direction:ltr}
-body.rtl .en{display:none}body.rtl .ar{display:block}
 
-header{background:#0b1f3a;color:white;padding:15px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.logo{text-align:center;flex-shrink:0}.logo img{height:55px;width:auto;display:block}
-.logo-text{display:block;margin-top:4px;text-align:center;color:white;font-size:11px;font-weight:bold;letter-spacing:.5px;line-height:1.2;direction:ltr}
-nav{display:flex;align-items:center;flex-wrap:wrap}nav a{color:white;text-decoration:none;margin-left:22px;font-size:15px;transition:color .3s ease;direction:ltr}
-nav a:hover{color:#55b8ff}.lang-btn{border:1px solid #55b8ff;background:transparent;color:white;padding:7px 12px;border-radius:5px;cursor:pointer;margin-left:20px;font-family:Arial,sans-serif;transition:background .3s ease,color .3s ease}
-.lang-btn:hover{background:#55b8ff;color:white}
+body{
+font-family:Arial,sans-serif;
+color:#172033;
+background:#f7f9fc;
+line-height:1.6;
+}
 
-.hero{min-height:620px;display:flex;align-items:center;padding:80px 7%;background:linear-gradient(135deg,#0b1f3a,#123f68);color:white;position:relative}
-.hero-content{max-width:850px;width:100%}.hero h1{font-size:52px;margin-bottom:20px;line-height:1.15}.hero p{font-size:20px;max-width:700px;margin-bottom:30px;color:#dce9f5}
-.btn{display:inline-block;background:#1b9be0;color:white;padding:13px 25px;text-decoration:none;border-radius:5px;font-weight:bold;transition:background .3s ease}.btn:hover{background:#55b8ff}
+.ar{display:none;direction:rtl}
+.en{display:block;direction:ltr}
 
-.quran-box{position:absolute;top:95px;right:7%;width:320px;padding:18px 20px;border-radius:10px;background:linear-gradient(145deg,#0b1f3a,#123f68);border:1px solid rgba(85,184,255,.35);box-shadow:0 8px 25px rgba(0,0,0,.25);text-align:center;direction:rtl;z-index:10;transition:opacity .5s ease,transform .5s ease}
-.quran-box .verse{color:white;font-size:18px;font-weight:bold;line-height:1.8;direction:rtl;transition:opacity .5s ease}.quran-box .source{margin-top:8px;color:#55b8ff;font-size:12px;direction:rtl;transition:opacity .5s ease}
+body.rtl .en{display:none}
+body.rtl .ar{display:block}
 
-section{padding:70px 7%}.section-title{text-align:center;margin-bottom:40px}.section-title h2{font-size:34px;color:#0b1f3a;margin-bottom:10px}.section-title p{color:#64748b}.about{background:white}
+header{
+background:#0b1f3a;
+color:white;
+padding:15px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-.company-slider{max-width:1180px;margin:30px auto 0;position:relative;display:flex;align-items:center;gap:12px}
-.company-slider-window{overflow:hidden;width:100%;border-radius:18px;touch-action:pan-y}
-.company-track{display:flex;gap:18px;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.logo{
+text-align:center;
+flex-shrink:0;
+}
 
-.company-card{position:relative;overflow:hidden;flex:0 0 calc((100% - 54px)/4);min-height:190px;background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);border:1px solid rgba(85,184,255,.25);border-radius:15px;padding:20px 15px;text-align:center;cursor:pointer;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 7px 22px rgba(11,31,58,.14);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;user-select:none;-webkit-tap-highlight-color:transparent}
-.company-card::after{content:"";position:absolute;width:140px;height:140px;top:-75px;right:-75px;background:rgba(85,184,255,.12);border-radius:50%;transition:width .4s ease,height .4s ease}
-.company-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:#55b8ff;transform:scaleX(0);transition:transform .35s ease}
-.company-card:hover{transform:translateY(-7px);border-color:#55b8ff;box-shadow:0 16px 38px rgba(11,31,58,.27)}
-.company-card:hover::before{transform:scaleX(1)}.company-card:hover::after{width:190px;height:190px}
+.logo img{
+height:55px;
+width:auto;
+display:block;
+}
 
-.card-logo{width:42px;height:42px;object-fit:contain;margin-bottom:7px;position:relative;z-index:2;opacity:.95;transition:transform .35s ease,opacity .35s ease}
-.company-card:hover .card-logo{transform:scale(1.08);opacity:1}
-.card-company-name{color:white;font-size:9px;font-weight:bold;line-height:1.2;margin-bottom:8px;position:relative;z-index:2;text-align:center;width:100%;direction:ltr}
-.card-number{color:#55b8ff;font-size:12px;font-weight:bold;letter-spacing:3px;margin-bottom:6px;position:relative;z-index:2;direction:ltr}
-.company-card h3{color:white;font-size:17px;line-height:1.3;margin-bottom:5px;position:relative;z-index:2}.company-card p{color:#dce9f5;font-size:13px;line-height:1.4;position:relative;z-index:2}
-.video-icon{color:#55b8ff;font-size:30px;margin-bottom:4px;position:relative;z-index:2;direction:ltr}
-.update-card{cursor:default;opacity:.45;background:linear-gradient(145deg,#172a42,#23425e)}.update-card:hover{transform:none;border-color:rgba(85,184,255,.25);box-shadow:0 7px 22px rgba(11,31,58,.14)}.update-card:hover::before{transform:scaleX(0)}.update-card:hover::after{width:140px;height:140px}
-.update-text{color:#b9cfe0;font-size:18px;font-weight:bold;letter-spacing:2px;position:relative;z-index:2;direction:ltr}
+.logo-text{
+display:block;
+margin-top:4px;
+text-align:center;
+color:white;
+font-size:11px;
+font-weight:bold;
+letter-spacing:.5px;
+line-height:1.2;
+direction:ltr;
+}
 
-.slider-btn{flex:0 0 44px;width:44px;height:44px;border:1px solid rgba(85,184,255,.35);border-radius:50%;background:#0b1f3a;color:white;font-size:25px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;-webkit-tap-highlight-color:transparent}
-.slider-btn:hover{background:#55b8ff;color:#0b1f3a}.slider-btn:disabled{opacity:.35;cursor:default}
+nav{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:22px;
+font-size:15px;
+transition:color .3s ease;
+direction:ltr;
+}
+
+nav a:hover{
+color:#55b8ff;
+}
+
+.lang-btn,
+.login-btn{
+border:1px solid #55b8ff;
+background:transparent;
+color:white;
+padding:7px 12px;
+border-radius:5px;
+cursor:pointer;
+margin-left:15px;
+font-family:Arial,sans-serif;
+transition:background .3s ease,color .3s ease;
+}
+
+.lang-btn:hover,
+.login-btn:hover{
+background:#55b8ff;
+color:white;
+}
+
+.login-btn{
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+min-height:620px;
+display:flex;
+align-items:center;
+padding:80px 7%;
+background:linear-gradient(135deg,#0b1f3a,#123f68);
+color:white;
+position:relative;
+}
+
+.hero-content{
+max-width:850px;
+width:100%;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:20px;
+line-height:1.15;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+margin-bottom:30px;
+color:#dce9f5;
+}
+
+.btn{
+display:inline-block;
+background:#1b9be0;
+color:white;
+padding:13px 25px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+transition:background .3s ease;
+}
+
+.btn:hover{
+background:#55b8ff;
+}
+
+/* QURAN */
+
+.quran-box{
+position:absolute;
+top:95px;
+right:7%;
+width:320px;
+padding:18px 20px;
+border-radius:10px;
+background:linear-gradient(145deg,#0b1f3a,#123f68);
+border:1px solid rgba(85,184,255,.35);
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+text-align:center;
+direction:rtl;
+z-index:10;
+transition:opacity .5s ease,transform .5s ease;
+}
+
+.quran-box .verse{
+color:white;
+font-size:18px;
+font-weight:bold;
+line-height:1.8;
+direction:rtl;
+transition:opacity .5s ease;
+}
+
+.quran-box .source{
+margin-top:8px;
+color:#55b8ff;
+font-size:12px;
+direction:rtl;
+transition:opacity .5s ease;
+}
+
+/* GENERAL SECTIONS */
+
+section{
+padding:70px 7%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.section-title h2{
+font-size:34px;
+color:#0b1f3a;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#64748b;
+}
+
+/* NEW FEATURE WINDOWS */
+
+.feature-section{
+background:#f7f9fc;
+padding-top:55px;
+padding-bottom:35px;
+}
+
+.feature-grid{
+max-width:1180px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.feature-card{
+position:relative;
+overflow:hidden;
+background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
+border:1px solid rgba(85,184,255,.25);
+border-radius:15px;
+padding:27px 22px;
+min-height:205px;
+color:white;
+text-align:center;
+box-shadow:0 7px 22px rgba(11,31,58,.14);
+transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+
+.feature-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:#55b8ff;
+transform:scaleX(0);
+transition:transform .35s ease;
+}
+
+.feature-card::after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+top:-80px;
+right:-80px;
+background:rgba(85,184,255,.12);
+border-radius:50%;
+transition:width .4s ease,height .4s ease;
+}
+
+.feature-card:hover{
+transform:translateY(-7px);
+border-color:#55b8ff;
+box-shadow:0 16px 38px rgba(11,31,58,.27);
+}
+
+.feature-card:hover::before{
+transform:scaleX(1);
+}
+
+.feature-card:hover::after{
+width:200px;
+height:200px;
+}
+
+.feature-number{
+color:#55b8ff;
+font-size:12px;
+font-weight:bold;
+letter-spacing:3px;
+margin-bottom:9px;
+position:relative;
+z-index:2;
+direction:ltr;
+}
+
+.feature-icon{
+font-size:32px;
+margin-bottom:8px;
+position:relative;
+z-index:2;
+}
+
+.feature-card h3{
+font-size:20px;
+margin-bottom:10px;
+position:relative;
+z-index:2;
+}
+
+.feature-card p{
+color:#dce9f5;
+font-size:14px;
+line-height:1.55;
+position:relative;
+z-index:2;
+}
+
+.feature-card .small-note{
+color:#55b8ff;
+font-size:12px;
+margin-top:10px;
+font-weight:bold;
+position:relative;
+z-index:2;
+}
+
+/* ABOUT */
+
+.about{
+background:white;
+}
+
+/* COMPANY SLIDER */
+
+.company-slider{
+max-width:1180px;
+margin:30px auto 0;
+position:relative;
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.company-slider-window{
+overflow:hidden;
+width:100%;
+border-radius:18px;
+touch-action:pan-y;
+}
+
+.company-track{
+display:flex;
+gap:18px;
+transition:transform .55s cubic-bezier(.22,.61,.36,1);
+will-change:transform;
+}
+
+.company-card{
+position:relative;
+overflow:hidden;
+flex:0 0 calc((100% - 54px)/4);
+min-height:190px;
+background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
+border:1px solid rgba(85,184,255,.25);
+border-radius:15px;
+padding:20px 15px;
+text-align:center;
+cursor:pointer;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:0 7px 22px rgba(11,31,58,.14);
+transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+user-select:none;
+-webkit-tap-highlight-color:transparent;
+}
+
+.company-card::after{
+content:"";
+position:absolute;
+width:140px;
+height:140px;
+top:-75px;
+right:-75px;
+background:rgba(85,184,255,.12);
+border-radius:50%;
+transition:width .4s ease,height .4s ease;
+}
+
+.company-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:#55b8ff;
+transform:scaleX(0);
+transition:transform .35s ease;
+}
+
+.company-card:hover{
+transform:translateY(-7px);
+border-color:#55b8ff;
+box-shadow:0 16px 38px rgba(11,31,58,.27);
+}
+
+.company-card:hover::before{
+transform:scaleX(1);
+}
+
+.company-card:hover::after{
+width:190px;
+height:190px;
+}
+
+.card-logo{
+width:42px;
+height:42px;
+object-fit:contain;
+margin-bottom:7px;
+position:relative;
+z-index:2;
+opacity:.95;
+transition:transform .35s ease,opacity .35s ease;
+}
+
+.company-card:hover .card-logo{
+transform:scale(1.08);
+opacity:1;
+}
+
+.card-company-name{
+color:white;
+font-size:9px;
+font-weight:bold;
+line-height:1.2;
+margin-bottom:8px;
+position:relative;
+z-index:2;
+text-align:center;
+width:100%;
+direction:ltr;
+}
+
+.card-number{
+color:#55b8ff;
+font-size:12px;
+font-weight:bold;
+letter-spacing:3px;
+margin-bottom:6px;
+position:relative;
+z-index:2;
+direction:ltr;
+}
+
+.company-card h3{
+color:white;
+font-size:17px;
+line-height:1.3;
+margin-bottom:5px;
+position:relative;
+z-index:2;
+}
+
+.company-card p{
+color:#dce9f5;
+font-size:13px;
+line-height:1.4;
+position:relative;
+z-index:2;
+}
+
+.video-icon{
+color:#55b8ff;
+font-size:30px;
+margin-bottom:4px;
+position:relative;
+z-index:2;
+direction:ltr;
+}
+
+.update-card{
+cursor:default;
+opacity:.45;
+background:linear-gradient(145deg,#172a42,#23425e);
+}
+
+.update-card:hover{
+transform:none;
+border-color:rgba(85,184,255,.25);
+box-shadow:0 7px 22px rgba(11,31,58,.14);
+}
+
+.update-card:hover::before{
+transform:scaleX(0);
+}
+
+.update-card:hover::after{
+width:140px;
+height:140px;
+}
+
+.update-text{
+color:#b9cfe0;
+font-size:18px;
+font-weight:bold;
+letter-spacing:2px;
+position:relative;
+z-index:2;
+direction:ltr;
+}
+
+.slider-btn{
+flex:0 0 44px;
+width:44px;
+height:44px;
+border:1px solid rgba(85,184,255,.35);
+border-radius:50%;
+background:#0b1f3a;
+color:white;
+font-size:25px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+z-index:5;
+-webkit-tap-highlight-color:transparent;
+}
+
+.slider-btn:hover{
+background:#55b8ff;
+color:#0b1f3a;
+}
+
+.slider-btn:disabled{
+opacity:.35;
+cursor:default;
+}
 
 /* PDF VIEWER */
-.company-viewer{position:fixed;inset:0;z-index:99999;background:rgba(7,20,38,.96);display:none;align-items:center;justify-content:center;padding:20px;overscroll-behavior:contain}
-.company-viewer.active{display:flex}
-.viewer-content{width:min(950px,94vw);height:90vh;background:#e9eef4;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);position:relative;display:flex;flex-direction:column}
-.pdf-toolbar{flex:0 0 50px;min-height:50px;background:#0b1f3a;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 18px;position:relative;z-index:20;direction:ltr}
-.pdf-title{font-size:13px;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:10px;direction:ltr}
-.pdf-page-info{font-size:12px;color:#dce9f5;white-space:nowrap;direction:ltr}
-.pdf-scroll{flex:1;overflow-y:auto;overflow-x:hidden;background:#dfe5eb;padding:18px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;direction:ltr}
-.pdf-page{display:block;width:100%;max-width:100%;height:auto;margin:0 auto 18px;background:white;box-shadow:0 4px 15px rgba(0,0,0,.15)}
-.pdf-loading{min-height:250px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#0b1f3a;font-size:16px;font-weight:bold;text-align:center;direction:ltr}
-.pdf-spinner{width:42px;height:42px;border-radius:50%;border:4px solid #cbd5e1;border-top-color:#1b9be0;animation:pdfSpin .8s linear infinite;margin-bottom:15px}
-@keyframes pdfSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.pdf-error{padding:40px 20px;text-align:center;color:#0b1f3a;font-weight:bold;direction:ltr}.pdf-error small{display:block;margin-top:10px;color:#64748b;font-weight:normal}
-.viewer-close{width:38px;height:38px;border:none;border-radius:50%;background:white;color:#0b1f3a;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.viewer-close:hover{background:#1b9be0;color:white}
 
-.services{background:#f7f9fc}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:white;padding:27px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.07);text-align:center}.card h3{color:#0b1f3a;margin-bottom:10px}.card p{color:#64748b}
-.hse{background:#0b1f3a;color:white;text-align:center}.hse h2{font-size:34px;margin-bottom:20px}.hse p{max-width:850px;margin:auto;color:#dce9f5;font-size:18px}
-.contact{background:white;text-align:center}.contact-box{max-width:700px;margin:auto}.contact-box p{margin:12px 0;font-size:18px}
-footer{background:#071426;color:#b9c6d5;text-align:center;padding:25px;direction:ltr}
-body.rtl .hero{text-align:right}body.rtl .hero-content{direction:rtl}body.rtl .hero p{margin-left:0;margin-right:0}body.rtl .contact-box{direction:rtl}body.rtl .card p,body.rtl .card h3{direction:rtl}
+.company-viewer{
+position:fixed;
+inset:0;
+z-index:99999;
+background:rgba(7,20,38,.96);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+overscroll-behavior:contain;
+}
 
-@media(max-width:1000px){.company-card{flex-basis:calc((100% - 36px)/3)}.quran-box{width:290px;right:5%}}
+.company-viewer.active{
+display:flex;
+}
+
+.viewer-content{
+width:min(950px,94vw);
+height:90vh;
+background:#e9eef4;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+position:relative;
+display:flex;
+flex-direction:column;
+}
+
+.pdf-toolbar{
+flex:0 0 50px;
+min-height:50px;
+background:#0b1f3a;
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 12px 0 18px;
+position:relative;
+z-index:20;
+direction:ltr;
+}
+
+.pdf-title{
+font-size:13px;
+font-weight:bold;
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+padding-right:10px;
+direction:ltr;
+}
+
+.pdf-page-info{
+font-size:12px;
+color:#dce9f5;
+white-space:nowrap;
+direction:ltr;
+}
+
+.pdf-scroll{
+flex:1;
+overflow-y:auto;
+overflow-x:hidden;
+background:#dfe5eb;
+padding:18px;
+-webkit-overflow-scrolling:touch;
+overscroll-behavior:contain;
+direction:ltr;
+}
+
+.pdf-page{
+display:block;
+width:100%;
+max-width:100%;
+height:auto;
+margin:0 auto 18px;
+background:white;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.pdf-loading{
+min-height:250px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+color:#0b1f3a;
+font-size:16px;
+font-weight:bold;
+text-align:center;
+direction:ltr;
+}
+
+.pdf-spinner{
+width:42px;
+height:42px;
+border-radius:50%;
+border:4px solid #cbd5e1;
+border-top-color:#1b9be0;
+animation:pdfSpin .8s linear infinite;
+margin-bottom:15px;
+}
+
+@keyframes pdfSpin{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+
+.pdf-error{
+padding:40px 20px;
+text-align:center;
+color:#0b1f3a;
+font-weight:bold;
+direction:ltr;
+}
+
+.pdf-error small{
+display:block;
+margin-top:10px;
+color:#64748b;
+font-weight:normal;
+}
+
+.viewer-close{
+width:38px;
+height:38px;
+border:none;
+border-radius:50%;
+background:white;
+color:#0b1f3a;
+font-size:28px;
+line-height:1;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+-webkit-tap-highlight-color:transparent;
+}
+
+.viewer-close:hover{
+background:#1b9be0;
+color:white;
+}
+
+/* SERVICES */
+
+.services{
+background:#f7f9fc;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+}
+
+.card{
+background:white;
+padding:27px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.card h3{
+color:#0b1f3a;
+margin-bottom:10px;
+}
+
+.card p{
+color:#64748b;
+}
+
+/* HSE */
+
+.assessed-section{
+background:white;
+padding:42px 7% 20px;
+text-align:center;
+}
+
+.assessed-box{
+max-width:850px;
+margin:auto;
+}
+
+.assessed-title{
+font-size:30px;
+font-weight:bold;
+color:#0b1f3a;
+margin-bottom:8px;
+letter-spacing:.5px;
+}
+
+.assessed-line{
+font-size:17px;
+color:#64748b;
+}
+
+.hse{
+background:#0b1f3a;
+color:white;
+text-align:center;
+}
+
+.hse h2{
+font-size:34px;
+margin-bottom:20px;
+}
+
+.hse p{
+max-width:850px;
+margin:auto;
+color:#dce9f5;
+font-size:18px;
+}
+
+/* CONTACT */
+
+.contact{
+background:white;
+text-align:center;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+}
+
+.contact-box p{
+margin:12px 0;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#071426;
+color:#b9c6d5;
+text-align:center;
+padding:25px;
+direction:ltr;
+}
+
+/* LIBRARY LOGIN */
+
+.library-overlay{
+position:fixed;
+inset:0;
+z-index:100000;
+background:rgba(4,16,31,.88);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.library-overlay.active{
+display:flex;
+}
+
+.library-panel{
+width:min(470px,94vw);
+background:white;
+border-radius:14px;
+padding:30px;
+box-shadow:0 25px 70px rgba(0,0,0,.45);
+position:relative;
+text-align:center;
+}
+
+.library-panel h2{
+color:#0b1f3a;
+margin-bottom:8px;
+font-size:28px;
+}
+
+.library-panel .library-subtitle{
+color:#64748b;
+font-size:14px;
+margin-bottom:24px;
+}
+
+.library-field{
+text-align:left;
+margin-bottom:15px;
+direction:ltr;
+}
+
+.library-field label{
+display:block;
+font-weight:bold;
+font-size:13px;
+color:#0b1f3a;
+margin-bottom:6px;
+}
+
+.library-field input{
+width:100%;
+padding:12px 13px;
+border:1px solid #cbd5e1;
+border-radius:7px;
+outline:none;
+font-size:14px;
+}
+
+.library-field input:focus{
+border-color:#1b9be0;
+box-shadow:0 0 0 3px rgba(27,155,224,.1);
+}
+
+.library-submit{
+width:100%;
+border:none;
+background:#0b1f3a;
+color:white;
+padding:12px;
+border-radius:7px;
+font-weight:bold;
+cursor:pointer;
+font-size:15px;
+transition:background .3s ease;
+}
+
+.library-submit:hover{
+background:#1b9be0;
+}
+
+.library-note{
+font-size:11px;
+color:#64748b;
+margin-top:15px;
+line-height:1.5;
+}
+
+.library-message{
+display:none;
+margin-top:15px;
+padding:10px;
+border-radius:6px;
+background:#fff7ed;
+color:#9a3412;
+font-size:13px;
+}
+
+.library-close{
+position:absolute;
+top:10px;
+right:12px;
+width:32px;
+height:32px;
+border:none;
+border-radius:50%;
+background:#eef2f7;
+color:#0b1f3a;
+font-size:22px;
+cursor:pointer;
+}
+
+/* RTL */
+
+body.rtl .hero{
+text-align:right;
+}
+
+body.rtl .hero-content{
+direction:rtl;
+}
+
+body.rtl .hero p{
+margin-left:0;
+margin-right:0;
+}
+
+body.rtl .contact-box{
+direction:rtl;
+}
+
+body.rtl .card p,
+body.rtl .card h3{
+direction:rtl;
+}
+
+body.rtl .feature-card{
+direction:rtl;
+}
+
+body.rtl .library-panel{
+direction:rtl;
+}
+
+body.rtl .library-field{
+text-align:right;
+direction:rtl;
+}
+
+/* TABLET */
+
+@media(max-width:1000px){
+
+.company-card{
+flex-basis:calc((100% - 36px)/3);
+}
+
+.quran-box{
+width:290px;
+right:5%;
+}
+
+.feature-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* MOBILE */
 
 @media(max-width:700px){
-header{flex-direction:column;gap:15px;padding:12px 4%}nav{justify-content:center;width:100%}nav a{margin:0 6px;font-size:13px}.lang-btn{margin-left:8px}
-.hero{min-height:650px;padding:230px 5% 60px;align-items:center}.hero h1{font-size:38px}.hero p{font-size:16px}
-.quran-box{position:absolute;top:25px;left:5%;right:5%;width:auto;max-width:90%;margin:0 auto;padding:12px 15px}.quran-box .verse{font-size:16px;line-height:1.7}.quran-box .source{font-size:11px;margin-top:5px}
-.company-slider{gap:7px}.company-card{flex-basis:calc((100% - 11px)/2);min-height:165px;padding:15px 7px}.company-track{gap:11px}.slider-btn{flex:0 0 38px;width:38px;height:38px;font-size:21px}
-.card-logo{width:35px;height:35px;margin-bottom:6px}.card-company-name{font-size:8px;margin-bottom:6px;line-height:1.15}.card-number{font-size:10px;letter-spacing:2px;margin-bottom:4px}.company-card h3{font-size:13px;line-height:1.25;margin-bottom:3px}.company-card p{font-size:11px;line-height:1.3}.video-icon{font-size:25px}
 
-/* MOBILE PDF FIX */
+header{
+flex-direction:column;
+gap:15px;
+padding:12px 4%;
+}
+
+nav{
+justify-content:center;
+width:100%;
+}
+
+nav a{
+margin:0 6px;
+font-size:13px;
+}
+
+.lang-btn,
+.login-btn{
+margin-left:8px;
+}
+
+.hero{
+min-height:650px;
+padding:230px 5% 60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.quran-box{
+position:absolute;
+top:25px;
+left:5%;
+right:5%;
+width:auto;
+max-width:90%;
+margin:0 auto;
+padding:12px 15px;
+}
+
+.quran-box .verse{
+font-size:16px;
+line-height:1.7;
+}
+
+.quran-box .source{
+font-size:11px;
+margin-top:5px;
+}
+
+.feature-section{
+padding-top:40px;
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.feature-card{
+min-height:185px;
+padding:23px 18px;
+}
+
+.feature-card h3{
+font-size:18px;
+}
+
+.feature-card p{
+font-size:13px;
+}
+
+.company-slider{
+gap:7px;
+}
+
+.company-card{
+flex-basis:calc((100% - 11px)/2);
+min-height:165px;
+padding:15px 7px;
+}
+
+.company-track{
+gap:11px;
+}
+
+.slider-btn{
+flex:0 0 38px;
+width:38px;
+height:38px;
+font-size:21px;
+}
+
+.card-logo{
+width:35px;
+height:35px;
+margin-bottom:6px;
+}
+
+.card-company-name{
+font-size:8px;
+margin-bottom:6px;
+line-height:1.15;
+}
+
+.card-number{
+font-size:10px;
+letter-spacing:2px;
+margin-bottom:4px;
+}
+
+.company-card h3{
+font-size:13px;
+line-height:1.25;
+margin-bottom:3px;
+}
+
+.company-card p{
+font-size:11px;
+line-height:1.3;
+}
+
+.video-icon{
+font-size:25px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.assessed-title{
+font-size:25px;
+}
+
+.assessed-line{
+font-size:15px;
+}
+
+/* MOBILE PDF */
+
 .company-viewer{
 position:fixed;
 top:0;
@@ -101,7 +1116,11 @@ transform:none;
 -webkit-transform:none;
 margin:0;
 }
-.company-viewer.active{display:flex}
+
+.company-viewer.active{
+display:flex;
+}
+
 .viewer-content{
 position:absolute;
 top:50%;
@@ -122,184 +1141,2147 @@ overflow:hidden;
 display:flex;
 flex-direction:column;
 }
-.pdf-toolbar{position:relative;flex:0 0 48px;width:100%;min-width:0;min-height:48px;padding:0 8px 0 12px;display:flex;align-items:center;box-sizing:border-box;overflow:hidden}
-.pdf-title{flex:1 1 auto;min-width:0;max-width:none;font-size:11px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:6px}
-.pdf-page-info{flex:0 0 auto;font-size:10px;white-space:nowrap;margin-right:6px}
-.viewer-close{flex:0 0 36px;width:36px;height:36px;min-width:36px;min-height:36px;font-size:26px;margin:0;padding:0;display:flex;align-items:center;justify-content:center}
-.pdf-scroll{flex:1 1 auto;width:100%;max-width:100%;min-width:0;min-height:0;padding:8px;overflow-y:auto;overflow-x:hidden;box-sizing:border-box;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;display:block;direction:ltr}
-.pdf-page{display:block;width:100%!important;max-width:100%!important;height:auto!important;margin:0 auto 10px;box-sizing:border-box}
+
+.pdf-toolbar{
+position:relative;
+flex:0 0 48px;
+width:100%;
+min-width:0;
+min-height:48px;
+padding:0 8px 0 12px;
+display:flex;
+align-items:center;
+box-sizing:border-box;
+overflow:hidden;
 }
 
-@media(max-width:450px){section{padding:50px 4%}.logo img{height:50px;max-width:180px;object-fit:contain}nav a{font-size:11px;margin:0 3px}.lang-btn{font-size:11px;padding:6px 8px;margin-left:5px}.hero{min-height:630px;padding:220px 5% 50px}.hero h1{font-size:32px}.hero p{font-size:16px}.quran-box{top:20px;left:4%;right:4%;max-width:92%;padding:10px 12px}.quran-box .verse{font-size:15px}.company-card{min-height:160px}.card-company-name{font-size:7.5px}.slider-btn{flex:0 0 34px;width:34px;height:34px;font-size:19px}}
-.company-slider,.company-card,.slider-btn{-webkit-user-select:none;user-select:none}
-@media print{.company-viewer{display:none!important}}
+.pdf-title{
+flex:1 1 auto;
+min-width:0;
+max-width:none;
+font-size:11px;
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+padding-right:6px;
+}
+
+.pdf-page-info{
+flex:0 0 auto;
+font-size:10px;
+white-space:nowrap;
+margin-right:6px;
+}
+
+.viewer-close{
+flex:0 0 36px;
+width:36px;
+height:36px;
+min-width:36px;
+min-height:36px;
+font-size:26px;
+margin:0;
+padding:0;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.pdf-scroll{
+flex:1 1 auto;
+width:100%;
+max-width:100%;
+min-width:0;
+min-height:0;
+padding:8px;
+overflow-y:auto;
+overflow-x:hidden;
+box-sizing:border-box;
+-webkit-overflow-scrolling:touch;
+overscroll-behavior:contain;
+touch-action:pan-y pinch-zoom;
+display:block;
+direction:ltr;
+}
+
+.pdf-page{
+display:block;
+width:100%!important;
+max-width:100%!important;
+height:auto!important;
+margin:0 auto 10px;
+box-sizing:border-box;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:450px){
+
+section{
+padding:50px 4%;
+}
+
+.logo img{
+height:50px;
+max-width:180px;
+object-fit:contain;
+}
+
+nav a{
+font-size:11px;
+margin:0 3px;
+}
+
+.lang-btn,
+.login-btn{
+font-size:11px;
+padding:6px 8px;
+margin-left:5px;
+}
+
+.hero{
+min-height:630px;
+padding:220px 5% 50px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.quran-box{
+top:20px;
+left:4%;
+right:4%;
+max-width:92%;
+padding:10px 12px;
+}
+
+.quran-box .verse{
+font-size:15px;
+}
+
+.company-card{
+min-height:160px;
+}
+
+.card-company-name{
+font-size:7.5px;
+}
+
+.slider-btn{
+flex:0 0 34px;
+width:34px;
+height:34px;
+font-size:19px;
+}
+
+}
+
+/* ACCESSIBILITY / PRINT */
+
+.company-slider,
+.company-card,
+.slider-btn{
+-webkit-user-select:none;
+user-select:none;
+}
+
+@media print{
+.company-viewer,
+.library-overlay{
+display:none!important;
+}
+}
 </style>
 </head>
+
 <body>
+
+<!-- HEADER -->
+
 <header>
-<div class="logo"><img src="kamra-energy.svg" alt="KAMRA ENERGY"><div class="logo-text">KAMRA FOR ENERGY CONTRACTING L.L.C.</div></div>
-<nav>
-<a href="#home"><span class="en">Home</span><span class="ar">الرئيسية</span></a>
-<a href="#about"><span class="en">About Us</span><span class="ar">من نحن</span></a>
-<a href="#services"><span class="en">Services</span><span class="ar">خدماتنا</span></a>
-<a href="#hse"><span class="en">HSE</span><span class="ar">السلامة</span></a>
-<a href="#contact"><span class="en">Contact</span><span class="ar">اتصل بنا</span></a>
-<button class="lang-btn" type="button" id="languageButton">العربية</button>
-</nav></header>
 
-<section class="hero" id="home">
-<div class="quran-box" aria-live="polite"><div class="verse" id="quranVerse">﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾</div><div class="source" id="quranSource">سورة طه — الآية 114</div></div>
-<div class="hero-content">
-<div class="en"><h1>KAMRA FOR ENERGY CONTRACTING L.L.C.</h1><p>Professional Energy, Well Services and Contracting Solutions with a strong commitment to safety, quality and operational excellence.</p><a class="btn" href="#contact">Contact Us</a></div>
-<div class="ar"><h1>كامرا للمقاولات في مجال الطاقة ذ.م.م</h1><p>حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات، مع التزام قوي بالسلامة والجودة والتميز التشغيلي.</p><a class="btn" href="#contact">اتصل بنا</a></div>
-</div></section>
-
-<section class="about" id="about">
-<div class="section-title en"><h2>About Us</h2><p>Professional experience. Reliable solutions.</p></div>
-<div class="section-title ar"><h2>من نحن</h2><p>خبرة مهنية وحلول موثوقة.</p></div>
-<div class="company-slider">
-<button type="button" class="slider-btn" id="prevBtn" aria-label="Previous cards">‹</button>
-<div class="company-slider-window" id="sliderWindow"><div class="company-track" id="companyTrack">
-
-<div class="company-card" data-pdf="01-logo.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">01</div><div class="en"><h3>Company Logo</h3><p>Company Logo</p></div><div class="ar"><h3>شعار الشركة</h3><p>شعار الشركة</p></div></div>
-<div class="company-card" data-pdf="02-about-us.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">02</div><div class="en"><h3>About Us</h3><p>من نحن</p></div><div class="ar"><h3>من نحن</h3><p>نبذة عن الشركة</p></div></div>
-<div class="company-card" data-pdf="03-vision.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">03</div><div class="en"><h3>Vision</h3><p>Our Vision</p></div><div class="ar"><h3>الرؤية</h3><p>رؤيتنا</p></div></div>
-<div class="company-card" data-pdf="04-mission.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">04</div><div class="en"><h3>Mission</h3><p>Our Mission</p></div><div class="ar"><h3>الرسالة</h3><p>رسالتنا</p></div></div>
-<div class="company-card" data-pdf="05-comprehensive-safety.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">05</div><div class="en"><h3>Comprehensive Safety</h3><p>Safety First</p></div><div class="ar"><h3>السلامة الشاملة</h3><p>السلامة أولاً</p></div></div>
-<div class="company-card" data-pdf="06-core-values.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">06</div><div class="en"><h3>Core Values</h3><p>Our Core Values</p></div><div class="ar"><h3>القيم الجوهرية</h3><p>قيمنا الأساسية</p></div></div>
-<div class="company-card" data-pdf="07-operational-efficiency.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">07</div><div class="en"><h3>Operational Efficiency</h3><p>Efficient Operations</p></div><div class="ar"><h3>الكفاءة التشغيلية</h3><p>عمليات تشغيلية فعالة</p></div></div>
-<div class="company-card" data-pdf="08-continuous-innovation.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">08</div><div class="en"><h3>Continuous Innovation</h3><p>Innovation and Development</p></div><div class="ar"><h3>الابتكار المستمر</h3><p>الابتكار والتطوير</p></div></div>
-<div class="company-card" data-pdf="09-company-perspective.pdf"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">09</div><div class="en"><h3>Company Perspective</h3><p>Our Perspective</p></div><div class="ar"><h3>منظور الشركة</h3><p>رؤية الشركة</p></div></div>
-<div class="company-card" id="videoCard"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">10</div><div class="video-icon">▶</div><div class="en"><h3>Company Video</h3><p>Watch Company Video</p></div><div class="ar"><h3>فيديو الشركة</h3><p>مشاهدة فيديو الشركة</p></div></div>
-<div class="company-card update-card"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">11</div><div class="update-text">UPDATE</div></div>
-<div class="company-card update-card"><img src="kamra-energy.svg" class="card-logo" alt="KAMRA ENERGY"><div class="card-company-name">KAMRA FOR ENERGY CONTRACTING L.L.C.</div><div class="card-number">12</div><div class="update-text">UPDATE</div></div>
-
-</div></div>
-<button type="button" class="slider-btn" id="nextBtn" aria-label="Next cards">›</button>
+<div class="logo">
+<img src="kamra-energy.svg" alt="KAMRA ENERGY">
+<div class="logo-text">KAMRA FOR ENERGY CONTRACTING L.L.C.</div>
 </div>
 
-<div id="companyViewer" class="company-viewer" aria-hidden="true"><div class="viewer-content" id="viewerContent"></div></div>
+<nav>
+
+<a href="#home">
+<span class="en">Home</span>
+<span class="ar">الرئيسية</span>
+</a>
+
+<a href="#about">
+<span class="en">About Us</span>
+<span class="ar">من نحن</span>
+</a>
+
+<a href="#services">
+<span class="en">Services</span>
+<span class="ar">خدماتنا</span>
+</a>
+
+<a href="#hse">
+<span class="en">HSE</span>
+<span class="ar">السلامة</span>
+</a>
+
+<a href="#contact">
+<span class="en">Contact</span>
+<span class="ar">اتصل بنا</span>
+</a>
+
+<button class="login-btn" type="button" id="employeeLoginButton">
+<span class="en">Employee Login</span>
+<span class="ar">دخول الموظفين</span>
+</button>
+
+<button class="lang-btn" type="button" id="languageButton">العربية</button>
+
+</nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="quran-box" aria-live="polite">
+<div class="verse" id="quranVerse">﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾</div>
+<div class="source" id="quranSource">سورة طه — الآية 114</div>
+</div>
+
+<div class="hero-content">
+
+<div class="en">
+<h1>KAMRA FOR ENERGY CONTRACTING L.L.C.</h1>
+<p>
+Professional Energy, Well Services and Contracting Solutions
+with a strong commitment to safety, quality and operational excellence.
+</p>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
+
+<div class="ar">
+<h1>كامرا للمقاولات في مجال الطاقة ذ.م.م</h1>
+<p>
+حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات،
+مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
+</p>
+<a class="btn" href="#contact">اتصل بنا</a>
+</div>
+
+</div>
 </section>
+
+
+<!-- NEW MAIN WINDOWS -->
+
+<section class="feature-section">
+
+<div class="section-title en">
+<h2>Why Operators Choose Us</h2>
+<p>Execution discipline, safety and experienced technical teams.</p>
+</div>
+
+<div class="section-title ar">
+<h2>لماذا يختارنا المشغلون</h2>
+<p>انضباط صارم في التنفيذ وسلامة مطلقة وخبرات فنية متقدمة.</p>
+</div>
+
+
+<div class="feature-grid">
+
+<!-- 01 -->
+
+<div class="feature-card">
+
+<div class="feature-number">01</div>
+<div class="feature-icon">◆</div>
+
+<div class="en">
+<h3>Execution Discipline</h3>
+<p>
+Operators choose KAMRA for disciplined execution,
+clear procedures and a strong commitment to doing the job right.
+</p>
+<div class="small-note">Strict execution. Consistent delivery.</div>
+</div>
+
+<div class="ar">
+<h3>الانضباط في التنفيذ</h3>
+<p>
+يختار المشغلون كامرا لما تتميز به من تنفيذ صارم،
+وإجراءات واضحة والتزام قوي بإنجاز العمل بالشكل الصحيح.
+</p>
+<div class="small-note">تنفيذ صارم. أداء ثابت.</div>
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="feature-card">
+
+<div class="feature-number">02</div>
+<div class="feature-icon">✓</div>
+
+<div class="en">
+<h3>Absolute Safety</h3>
+<p>
+Safety is built into every stage of our operation,
+from planning and preparation to execution and close-out.
+</p>
+<div class="small-note">Safety is never compromised.</div>
+</div>
+
+<div class="ar">
+<h3>السلامة المطلقة</h3>
+<p>
+السلامة جزء أساسي من كل مرحلة من مراحل عملياتنا،
+من التخطيط والتحضير وحتى التنفيذ وإنهاء العمل.
+</p>
+<div class="small-note">السلامة لا تقبل المساومة.</div>
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="feature-card">
+
+<div class="feature-number">03</div>
+<div class="feature-icon">★</div>
+
+<div class="en">
+<h3>Experienced Technical Teams</h3>
+<p>
+Our technical personnel bring more than ten years
+of field experience across energy and well service operations.
+</p>
+<div class="small-note">10+ years of technical experience.</div>
+</div>
+
+<div class="ar">
+<h3>خبرات فنية وتقنية</h3>
+<p>
+يتمتع كوادرنا الفنية والتقنية بخبرات ميدانية
+تتجاوز عشر سنوات في عمليات الطاقة وخدمات الآبار.
+</p>
+<div class="small-note">خبرة فنية تتجاوز 10 سنوات.</div>
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="feature-card">
+
+<div class="feature-number">04</div>
+<div class="feature-icon">◈</div>
+
+<div class="en">
+<h3>Major International & Regional Experience</h3>
+<p>
+Our personnel have gained valuable experience working
+with major international and regional companies in the energy sector.
+</p>
+<div class="small-note">Regional knowledge. International standards.</div>
+</div>
+
+<div class="ar">
+<h3>خبرة مع الشركات العالمية والإقليمية الكبرى</h3>
+<p>
+يمتلك كوادرنا خبرات متميزة من خلال العمل
+مع كبرى الشركات العالمية والإقليمية في قطاع الطاقة.
+</p>
+<div class="small-note">خبرة إقليمية. معايير عالمية.</div>
+</div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="feature-card">
+
+<div class="feature-number">05</div>
+<div class="feature-icon">▣</div>
+
+<div class="en">
+<h3>Well Services Department</h3>
+<p>
+A dedicated well services team supported by experienced
+technicians and field personnel prepared for operational requirements.
+</p>
+<div class="small-note">Prepared for the well. Ready for the operation.</div>
+</div>
+
+<div class="ar">
+<h3>قسم خدمات الآبار</h3>
+<p>
+قسم متخصص في خدمات الآبار مدعوم بفنيين وتقنيين
+ذوي خبرة وكوادر ميدانية جاهزة للمتطلبات التشغيلية.
+</p>
+<div class="small-note">جاهزون للبئر. جاهزون للعملية التشغيلية.</div>
+</div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="feature-card">
+
+<div class="feature-number">06</div>
+<div class="feature-icon">▤</div>
+
+<div class="en">
+<h3>Well Services Documents</h3>
+<p>
+Our technicians and technical personnel have prepared
+the essential documentation required for well service operations.
+</p>
+<div class="small-note">
+Standard Operation · Risk Assessment · HSE
+</div>
+</div>
+
+<div class="ar">
+<h3>وثائق خدمات الآبار</h3>
+<p>
+قام الفنيون والتقنيون لدينا بتجهيز جميع الوثائق
+الأساسية والخاصة المطلوبة لعمليات خدمات الآبار.
+</p>
+<div class="small-note">
+إجراءات التشغيل القياسية · تقييم المخاطر · HSE
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="section-title en">
+<h2>About Us</h2>
+<p>Professional experience. Reliable solutions.</p>
+</div>
+
+<div class="section-title ar">
+<h2>من نحن</h2>
+<p>خبرة مهنية وحلول موثوقة.</p>
+</div>
+
+
+<div class="company-slider">
+
+<button
+type="button"
+class="slider-btn"
+id="prevBtn"
+aria-label="Previous cards">
+‹
+</button>
+
+<div class="company-slider-window" id="sliderWindow">
+
+<div class="company-track" id="companyTrack">
+
+
+<!-- 01 -->
+
+<div class="company-card" data-pdf="01-logo.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">01</div>
+
+<div class="en">
+<h3>Company Logo</h3>
+<p>Company Logo</p>
+</div>
+
+<div class="ar">
+<h3>شعار الشركة</h3>
+<p>شعار الشركة</p>
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="company-card" data-pdf="02-about-us.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">02</div>
+
+<div class="en">
+<h3>About Us</h3>
+<p>من نحن</p>
+</div>
+
+<div class="ar">
+<h3>من نحن</h3>
+<p>نبذة عن الشركة</p>
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="company-card" data-pdf="03-vision.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">03</div>
+
+<div class="en">
+<h3>Vision</h3>
+<p>Our Vision</p>
+</div>
+
+<div class="ar">
+<h3>الرؤية</h3>
+<p>رؤيتنا</p>
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="company-card" data-pdf="04-mission.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">04</div>
+
+<div class="en">
+<h3>Mission</h3>
+<p>Our Mission</p>
+</div>
+
+<div class="ar">
+<h3>الرسالة</h3>
+<p>رسالتنا</p>
+</div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="company-card" data-pdf="05-comprehensive-safety.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">05</div>
+
+<div class="en">
+<h3>Comprehensive Safety</h3>
+<p>Safety First</p>
+</div>
+
+<div class="ar">
+<h3>السلامة الشاملة</h3>
+<p>السلامة أولاً</p>
+</div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="company-card" data-pdf="06-core-values.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">06</div>
+
+<div class="en">
+<h3>Core Values</h3>
+<p>Our Core Values</p>
+</div>
+
+<div class="ar">
+<h3>القيم الجوهرية</h3>
+<p>قيمنا الأساسية</p>
+</div>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="company-card" data-pdf="07-operational-efficiency.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">07</div>
+
+<div class="en">
+<h3>Operational Efficiency</h3>
+<p>Efficient Operations</p>
+</div>
+
+<div class="ar">
+<h3>الكفاءة التشغيلية</h3>
+<p>عمليات تشغيلية فعالة</p>
+</div>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="company-card" data-pdf="08-continuous-innovation.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">08</div>
+
+<div class="en">
+<h3>Continuous Innovation</h3>
+<p>Innovation and Development</p>
+</div>
+
+<div class="ar">
+<h3>الابتكار المستمر</h3>
+<p>الابتكار والتطوير</p>
+</div>
+
+</div>
+
+
+<!-- 09 -->
+
+<div class="company-card" data-pdf="09-company-perspective.pdf">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">09</div>
+
+<div class="en">
+<h3>Company Perspective</h3>
+<p>Our Perspective</p>
+</div>
+
+<div class="ar">
+<h3>منظور الشركة</h3>
+<p>رؤية الشركة</p>
+</div>
+
+</div>
+
+
+<!-- 10 VIDEO -->
+
+<div class="company-card" id="videoCard">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">10</div>
+
+<div class="video-icon">▶</div>
+
+<div class="en">
+<h3>Company Video</h3>
+<p>Watch Company Video</p>
+</div>
+
+<div class="ar">
+<h3>فيديو الشركة</h3>
+<p>مشاهدة فيديو الشركة</p>
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="company-card update-card">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">11</div>
+
+<div class="update-text">UPDATE</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="company-card update-card">
+
+<img src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+
+<div class="card-company-name">
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</div>
+
+<div class="card-number">12</div>
+
+<div class="update-text">UPDATE</div>
+
+</div>
+
+
+</div>
+</div>
+
+<button
+type="button"
+class="slider-btn"
+id="nextBtn"
+aria-label="Next cards">
+›
+</button>
+
+</div>
+
+
+<!-- PDF / VIDEO VIEWER -->
+
+<div
+id="companyViewer"
+class="company-viewer"
+aria-hidden="true">
+
+<div
+class="viewer-content"
+id="viewerContent">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
 
 <section class="services" id="services">
-<div class="section-title en"><h2>Our Services</h2><p>Integrated solutions for energy and well service operations.</p></div>
-<div class="section-title ar"><h2>خدماتنا</h2><p>حلول متكاملة لعمليات الطاقة وخدمات الآبار.</p></div>
-<div class="cards">
-<div class="card"><div class="en"><h3>Well Services</h3><p>Professional support and services for well operations.</p></div><div class="ar"><h3>خدمات الآبار</h3><p>دعم وخدمات احترافية لعمليات الآبار.</p></div></div>
-<div class="card"><div class="en"><h3>Energy Contracting</h3><p>Contracting solutions designed around operational requirements.</p></div><div class="ar"><h3>مقاولات الطاقة</h3><p>حلول مقاولات مصممة وفق المتطلبات التشغيلية.</p></div></div>
-<div class="card"><div class="en"><h3>Technical Services</h3><p>Experienced technical personnel and operational support.</p></div><div class="ar"><h3>الخدمات الفنية</h3><p>كوادر فنية ذات خبرة ودعم تشغيلي متكامل.</p></div></div>
-<div class="card"><div class="en"><h3>Inspection</h3><p>Inspection and quality-focused technical services.</p></div><div class="ar"><h3>الفحص والتفتيش</h3><p>خدمات فنية متخصصة في الفحص والجودة.</p></div></div>
-<div class="card"><div class="en"><h3>HSE</h3><p>Health, Safety and Environmental commitment in every operation.</p></div><div class="ar"><h3>الصحة والسلامة والبيئة</h3><p>الالتزام بالصحة والسلامة وحماية البيئة في جميع عملياتنا.</p></div></div>
-<div class="card"><div class="en"><h3>Quality</h3><p>Structured processes focused on quality and continuous improvement.</p></div><div class="ar"><h3>الجودة</h3><p>عمليات منظمة تركز على الجودة والتحسين المستمر.</p></div></div>
-</div></section>
 
-<section class="hse" id="hse"><div class="en"><h2>Health, Safety & Environment</h2><p>Safety is a fundamental part of our operations. We are committed to responsible work practices, risk awareness, environmental protection and continuous improvement.</p></div><div class="ar"><h2>الصحة والسلامة والبيئة</h2><p>السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.</p></div></section>
+<div class="section-title en">
+<h2>Our Services</h2>
+<p>Integrated solutions for energy and well service operations.</p>
+</div>
+
+<div class="section-title ar">
+<h2>خدماتنا</h2>
+<p>حلول متكاملة لعمليات الطاقة وخدمات الآبار.</p>
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="en">
+<h3>Well Services</h3>
+<p>Professional support and services for well operations.</p>
+</div>
+
+<div class="ar">
+<h3>خدمات الآبار</h3>
+<p>دعم وخدمات احترافية لعمليات الآبار.</p>
+</div>
+</div>
+
+
+<div class="card">
+<div class="en">
+<h3>Energy Contracting</h3>
+<p>Contracting solutions designed around operational requirements.</p>
+</div>
+
+<div class="ar">
+<h3>مقاولات الطاقة</h3>
+<p>حلول مقاولات مصممة وفق المتطلبات التشغيلية.</p>
+</div>
+</div>
+
+
+<div class="card">
+<div class="en">
+<h3>Technical Services</h3>
+<p>Experienced technical personnel and operational support.</p>
+</div>
+
+<div class="ar">
+<h3>الخدمات الفنية</h3>
+<p>كوادر فنية ذات خبرة ودعم تشغيلي متكامل.</p>
+</div>
+</div>
+
+
+<div class="card">
+<div class="en">
+<h3>Inspection</h3>
+<p>Inspection and quality-focused technical services.</p>
+</div>
+
+<div class="ar">
+<h3>الفحص والتفتيش</h3>
+<p>خدمات فنية متخصصة في الفحص والجودة.</p>
+</div>
+</div>
+
+
+<div class="card">
+<div class="en">
+<h3>HSE</h3>
+<p>Health, Safety and Environmental commitment in every operation.</p>
+</div>
+
+<div class="ar">
+<h3>الصحة والسلامة والبيئة</h3>
+<p>الالتزام بالصحة والسلامة وحماية البيئة في جميع عملياتنا.</p>
+</div>
+</div>
+
+
+<div class="card">
+<div class="en">
+<h3>Quality</h3>
+<p>Structured processes focused on quality and continuous improvement.</p>
+</div>
+
+<div class="ar">
+<h3>الجودة</h3>
+<p>عمليات منظمة تركز على الجودة والتحسين المستمر.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ASSESSED -->
+
+<section class="assessed-section">
+
+<div class="assessed-box">
+
+<div class="en">
+<div class="assessed-title">Assessed</div>
+<div class="assessed-line">
+Every operation begins with a documented risk assessment.
+</div>
+</div>
+
+<div class="ar">
+<div class="assessed-title">التقييم</div>
+<div class="assessed-line">
+تبدأ كل عملية بتقييم موثق للمخاطر.
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HSE -->
+
+<section class="hse" id="hse">
+
+<div class="en">
+
+<h2>Health, Safety & Environment</h2>
+
+<p>
+Safety is a fundamental part of our operations.
+We are committed to responsible work practices,
+risk awareness, environmental protection and continuous improvement.
+</p>
+
+</div>
+
+
+<div class="ar">
+
+<h2>الصحة والسلامة والبيئة</h2>
+
+<p>
+السلامة جزء أساسي من عملياتنا.
+نحن ملتزمون بممارسات العمل الآمنة والمسؤولة
+وتقييم المخاطر وحماية البيئة والتحسين المستمر.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
-<div class="section-title en"><h2>Contact Us</h2><p>We would be pleased to discuss your requirements.</p></div>
-<div class="section-title ar"><h2>اتصل بنا</h2><p>يسعدنا مناقشة متطلباتكم واحتياجاتكم.</p></div>
-<div class="contact-box"><div class="en"><p><strong>Company:</strong> KAMRA FOR ENERGY CONTRACTING L.L.C.</p><p><strong>Email:</strong> info@kamra-energy.com</p></div><div class="ar"><p><strong>الشركة:</strong> كامرا للمقاولات في مجال الطاقة ذ.م.م</p><p><strong>البريد الإلكتروني:</strong> info@kamra-energy.com</p></div></div>
+
+<div class="section-title en">
+<h2>Contact Us</h2>
+<p>We would be pleased to discuss your requirements.</p>
+</div>
+
+<div class="section-title ar">
+<h2>اتصل بنا</h2>
+<p>يسعدنا مناقشة متطلباتكم واحتياجاتكم.</p>
+</div>
+
+
+<div class="contact-box">
+
+<div class="en">
+
+<p>
+<strong>Company:</strong>
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+</p>
+
+<p>
+<strong>Email:</strong>
+info@kamra-energy.com
+</p>
+
+</div>
+
+
+<div class="ar">
+
+<p>
+<strong>الشركة:</strong>
+كامرا للمقاولات في مجال الطاقة ذ.م.م
+</p>
+
+<p>
+<strong>البريد الإلكتروني:</strong>
+info@kamra-energy.com
+</p>
+
+</div>
+
+</div>
+
 </section>
-<footer><p>© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C. — All Rights Reserved.</p></footer>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C. — All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- EMPLOYEE LIBRARY LOGIN -->
+
+<div
+id="libraryOverlay"
+class="library-overlay"
+aria-hidden="true">
+
+<div class="library-panel">
+
+<button
+type="button"
+class="library-close"
+id="libraryClose"
+aria-label="Close">
+×
+</button>
+
+
+<div class="en">
+
+<h2>Employee Login</h2>
+
+<div class="library-subtitle">
+Authorized personnel access to the KAMRA document library.
+</div>
+
+</div>
+
+
+<div class="ar">
+
+<h2>دخول الموظفين</h2>
+
+<div class="library-subtitle">
+دخول الموظفين المصرح لهم إلى مكتبة وثائق KAMRA.
+</div>
+
+</div>
+
+
+<div class="library-field">
+
+<label for="employeeEmail">
+<span class="en">Company Email</span>
+<span class="ar">البريد الإلكتروني للشركة</span>
+</label>
+
+<input
+type="email"
+id="employeeEmail"
+placeholder="name@kamra-energy.com"
+autocomplete="username">
+
+</div>
+
+
+<div class="library-field">
+
+<label for="employeePassword">
+<span class="en">Password</span>
+<span class="ar">كلمة المرور</span>
+</label>
+
+<input
+type="password"
+id="employeePassword"
+placeholder="Password"
+autocomplete="current-password">
+
+</div>
+
+
+<button
+type="button"
+class="library-submit"
+id="librarySubmit">
+
+<span class="en">Enter Library</span>
+<span class="ar">دخول إلى المكتبة</span>
+
+</button>
+
+
+<div
+class="library-message"
+id="libraryMessage">
+
+<span class="en">
+Library authentication is not connected yet.
+The interface is ready for secure server-side authentication.
+</span>
+
+<span class="ar">
+لم يتم ربط المصادقة بالمكتبة بعد.
+الواجهة جاهزة لربطها بنظام دخول آمن من جهة الخادم.
+</span>
+
+</div>
+
+
+<div class="library-note">
+
+<span class="en">
+For security, employee authentication should be handled
+by a server-side authentication system rather than JavaScript alone.
+</span>
+
+<span class="ar">
+لأسباب أمنية، يجب تنفيذ مصادقة الموظفين من خلال
+نظام دخول آمن على الخادم وليس بواسطة JavaScript فقط.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PDF.JS -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script>
-const languageButton=document.getElementById("languageButton");
-function updateLanguage(){const isArabic=document.body.classList.contains("rtl");document.documentElement.lang=isArabic?"ar":"en";document.documentElement.dir="ltr";languageButton.textContent=isArabic?"English":"العربية";setTimeout(updateSlider,50)}
-languageButton.addEventListener("click",function(){document.body.classList.toggle("rtl");updateLanguage()});
 
-const track=document.getElementById("companyTrack"),prevBtn=document.getElementById("prevBtn"),nextBtn=document.getElementById("nextBtn"),sliderWindow=document.getElementById("sliderWindow");
-let currentSlide=0;const totalCards=track.children.length;
-function getVisibleCards(){if(window.innerWidth<=700)return 2;if(window.innerWidth<=1000)return 3;return 4}
-function updateSlider(){const visibleCards=getVisibleCards(),maxSlide=Math.max(0,totalCards-visibleCards);if(currentSlide>maxSlide)currentSlide=maxSlide;const firstCard=track.children[0];if(!firstCard)return;const cardWidth=firstCard.getBoundingClientRect().width,gap=parseFloat(getComputedStyle(track).gap)||0,move=(cardWidth+gap)*currentSlide;track.style.transform="translateX(-"+move+"px)";prevBtn.disabled=currentSlide===0;nextBtn.disabled=currentSlide===maxSlide}
-nextBtn.addEventListener("click",function(){const maxSlide=Math.max(0,totalCards-getVisibleCards());if(currentSlide<maxSlide){currentSlide++;updateSlider()}});
-prevBtn.addEventListener("click",function(){if(currentSlide>0){currentSlide--;updateSlider()}});
+
+<script>
+
+/* LANGUAGE */
+
+const languageButton=document.getElementById("languageButton");
+
+function updateLanguage(){
+
+const isArabic=document.body.classList.contains("rtl");
+
+document.documentElement.lang=isArabic?"ar":"en";
+
+document.documentElement.dir="ltr";
+
+languageButton.textContent=isArabic?"English":"العربية";
+
+setTimeout(updateSlider,50);
+
+}
+
+languageButton.addEventListener("click",function(){
+
+document.body.classList.toggle("rtl");
+
+updateLanguage();
+
+});
+
+
+/* SLIDER */
+
+const track=document.getElementById("companyTrack");
+const prevBtn=document.getElementById("prevBtn");
+const nextBtn=document.getElementById("nextBtn");
+const sliderWindow=document.getElementById("sliderWindow");
+
+let currentSlide=0;
+
+const totalCards=track.children.length;
+
+function getVisibleCards(){
+
+if(window.innerWidth<=700)return 2;
+
+if(window.innerWidth<=1000)return 3;
+
+return 4;
+
+}
+
+function updateSlider(){
+
+const visibleCards=getVisibleCards();
+
+const maxSlide=Math.max(0,totalCards-visibleCards);
+
+if(currentSlide>maxSlide){
+currentSlide=maxSlide;
+}
+
+const firstCard=track.children[0];
+
+if(!firstCard)return;
+
+const cardWidth=firstCard.getBoundingClientRect().width;
+
+const gap=parseFloat(getComputedStyle(track).gap)||0;
+
+const move=(cardWidth+gap)*currentSlide;
+
+track.style.transform="translateX(-"+move+"px)";
+
+prevBtn.disabled=currentSlide===0;
+
+nextBtn.disabled=currentSlide===maxSlide;
+
+}
+
+nextBtn.addEventListener("click",function(){
+
+const maxSlide=Math.max(0,totalCards-getVisibleCards());
+
+if(currentSlide<maxSlide){
+
+currentSlide++;
+
+updateSlider();
+
+}
+
+});
+
+prevBtn.addEventListener("click",function(){
+
+if(currentSlide>0){
+
+currentSlide--;
+
+updateSlider();
+
+}
+
+});
+
 window.addEventListener("resize",updateSlider);
 
-const viewer=document.getElementById("companyViewer"),viewerContent=document.getElementById("viewerContent");
-if(typeof pdfjsLib!=="undefined")pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+/* PDF VIEWER */
+
+const viewer=document.getElementById("companyViewer");
+
+const viewerContent=document.getElementById("viewerContent");
+
+if(typeof pdfjsLib!=="undefined"){
+
+pdfjsLib.GlobalWorkerOptions.workerSrc=
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+}
+
 
 async function openPDF(file){
-document.body.style.overflow="hidden";viewer.classList.add("active");viewer.setAttribute("aria-hidden","false");requestAnimationFrame(syncMobileViewerViewport);setTimeout(syncMobileViewerViewport,100);viewerContent.innerHTML="";
-const toolbar=document.createElement("div");toolbar.className="pdf-toolbar";
-const title=document.createElement("div");title.className="pdf-title";title.textContent="KAMRA Company Document";
-const pageInfo=document.createElement("div");pageInfo.className="pdf-page-info";pageInfo.textContent="Loading...";
-const closeButton=document.createElement("button");closeButton.type="button";closeButton.className="viewer-close";closeButton.setAttribute("aria-label","Close");closeButton.innerHTML="×";closeButton.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();closeViewer()});
-toolbar.appendChild(title);toolbar.appendChild(pageInfo);toolbar.appendChild(closeButton);
-const scrollArea=document.createElement("div");scrollArea.className="pdf-scroll";
-const loading=document.createElement("div");loading.className="pdf-loading";const spinner=document.createElement("div");spinner.className="pdf-spinner";const loadingText=document.createElement("div");loadingText.textContent="Opening document...";loading.appendChild(spinner);loading.appendChild(loadingText);scrollArea.appendChild(loading);
-viewerContent.appendChild(toolbar);viewerContent.appendChild(scrollArea);
-if(typeof pdfjsLib==="undefined"){showPDFError(scrollArea,"PDF viewer library could not be loaded.");return}
-try{
-const loadingTask=pdfjsLib.getDocument({url:file});const pdf=await loadingTask.promise;
-pageInfo.textContent=pdf.numPages+(pdf.numPages===1?" page":" pages");scrollArea.innerHTML="";
-const isMobile=window.innerWidth<=700;let availableWidth=scrollArea.clientWidth-(isMobile?16:36);
-if(availableWidth<=0)availableWidth=window.innerWidth-(isMobile?16:36);
-for(let pageNumber=1;pageNumber<=pdf.numPages;pageNumber++){try{await renderPDFPage(pdf,pageNumber,scrollArea,availableWidth)}catch(pageError){console.error("PDF page error:",pageError)}}
-}catch(error){console.error("PDF loading error:",error);showPDFError(scrollArea,"Unable to display this PDF.")}
-}
 
-async function renderPDFPage(pdf,pageNumber,container,availableWidth){
-const page=await pdf.getPage(pageNumber),originalViewport=page.getViewport({scale:1});let scale=availableWidth/originalViewport.width;if(scale>2)scale=2;if(window.innerWidth<=700)scale=Math.min(scale,availableWidth/originalViewport.width);
-const viewport=page.getViewport({scale}),canvas=document.createElement("canvas");canvas.className="pdf-page";const context=canvas.getContext("2d"),devicePixelRatio=window.devicePixelRatio||1;
-canvas.width=Math.floor(viewport.width*devicePixelRatio);canvas.height=Math.floor(viewport.height*devicePixelRatio);const finalWidth=Math.min(viewport.width,availableWidth);canvas.style.width=finalWidth+"px";canvas.style.height="auto";canvas.style.maxWidth="100%";context.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);container.appendChild(canvas);await page.render({canvasContext:context,viewport:viewport}).promise
-}
+document.body.style.overflow="hidden";
 
-function showPDFError(container,message){container.innerHTML="";const error=document.createElement("div");error.className="pdf-error";error.textContent=message;const small=document.createElement("small");small.textContent="Please check that the PDF file exists on the server.";error.appendChild(small);container.appendChild(error)}
+viewer.classList.add("active");
 
-document.querySelectorAll(".company-card[data-pdf]").forEach(function(card){card.addEventListener("click",function(event){event.preventDefault();event.stopPropagation();const file=card.getAttribute("data-pdf");if(file)openPDF(file)})});
+viewer.setAttribute("aria-hidden","false");
 
-const videoCard=document.getElementById("videoCard");
-videoCard.addEventListener("click",function(event){event.preventDefault();event.stopPropagation();openVideo()});
-function openVideo(){
-document.body.style.overflow="hidden";viewer.classList.add("active");viewer.setAttribute("aria-hidden","false");requestAnimationFrame(syncMobileViewerViewport);setTimeout(syncMobileViewerViewport,100);
-viewerContent.innerHTML=`<div style="width:100%;height:100%;background:#071426;position:relative;display:flex;align-items:center;justify-content:center;"><button type="button" class="viewer-close" id="videoCloseButton" style="position:absolute;top:12px;right:12px;z-index:20;">×</button><div style="width:92%;max-width:900px;aspect-ratio:16 / 9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 15px 50px rgba(0,0,0,.5);"><iframe src="https://www.youtube.com/embed/AYpN-eqPF6g" title="KAMRA FOR ENERGY CONTRACTING L.L.C. | Company Introduction" style="width:100%;height:100%;border:0;display:block;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>`;
-document.getElementById("videoCloseButton").addEventListener("click",function(event){event.preventDefault();event.stopPropagation();closeViewer()})
-}
-function syncMobileViewerViewport(){
-if(window.innerWidth>700||!viewer.classList.contains("active"))return;
-const vv=window.visualViewport;
-if(vv){
-viewer.style.top=vv.offsetTop+"px";
-viewer.style.left=vv.offsetLeft+"px";
-viewer.style.width=vv.width+"px";
-viewer.style.height=vv.height+"px";
-}else{
-viewer.style.top="0px";
-viewer.style.left="0px";
-viewer.style.width=window.innerWidth+"px";
-viewer.style.height=window.innerHeight+"px";
-}
-}
-window.addEventListener("resize",syncMobileViewerViewport);
-window.addEventListener("orientationchange",function(){
-setTimeout(syncMobileViewerViewport,50);
-setTimeout(syncMobileViewerViewport,250);
+requestAnimationFrame(syncMobileViewerViewport);
+
+setTimeout(syncMobileViewerViewport,100);
+
+viewerContent.innerHTML="";
+
+
+const toolbar=document.createElement("div");
+
+toolbar.className="pdf-toolbar";
+
+
+const title=document.createElement("div");
+
+title.className="pdf-title";
+
+title.textContent="KAMRA Company Document";
+
+
+const pageInfo=document.createElement("div");
+
+pageInfo.className="pdf-page-info";
+
+pageInfo.textContent="Loading...";
+
+
+const closeButton=document.createElement("button");
+
+closeButton.type="button";
+
+closeButton.className="viewer-close";
+
+closeButton.setAttribute("aria-label","Close");
+
+closeButton.innerHTML="×";
+
+closeButton.addEventListener("click",function(e){
+
+e.preventDefault();
+
+e.stopPropagation();
+
+closeViewer();
+
 });
-if(window.visualViewport){
-window.visualViewport.addEventListener("resize",syncMobileViewerViewport);
-window.visualViewport.addEventListener("scroll",syncMobileViewerViewport);
-}
-function closeViewer(){viewer.classList.remove("active");viewer.style.top="";viewer.style.left="";viewer.style.width="";viewer.style.height="";viewer.setAttribute("aria-hidden","true");viewerContent.innerHTML="";document.body.style.overflow=""}
-viewer.addEventListener("click",function(event){if(event.target===viewer)closeViewer()});
-document.addEventListener("keydown",function(event){if(event.key==="Escape"&&viewer.classList.contains("active"))closeViewer()});
 
-let touchStartX=0,touchEndX=0;
-sliderWindow.addEventListener("touchstart",function(event){touchStartX=event.changedTouches[0].screenX},{passive:true});
-sliderWindow.addEventListener("touchend",function(event){touchEndX=event.changedTouches[0].screenX;const difference=touchStartX-touchEndX;if(difference>50)nextBtn.click();if(difference<-50)prevBtn.click()},{passive:true});
+
+toolbar.appendChild(title);
+
+toolbar.appendChild(pageInfo);
+
+toolbar.appendChild(closeButton);
+
+
+const scrollArea=document.createElement("div");
+
+scrollArea.className="pdf-scroll";
+
+
+const loading=document.createElement("div");
+
+loading.className="pdf-loading";
+
+
+const spinner=document.createElement("div");
+
+spinner.className="pdf-spinner";
+
+
+const loadingText=document.createElement("div");
+
+loadingText.textContent="Opening document...";
+
+
+loading.appendChild(spinner);
+
+loading.appendChild(loadingText);
+
+scrollArea.appendChild(loading);
+
+
+viewerContent.appendChild(toolbar);
+
+viewerContent.appendChild(scrollArea);
+
+
+if(typeof pdfjsLib==="undefined"){
+
+showPDFError(
+scrollArea,
+"PDF viewer library could not be loaded."
+);
+
+return;
+
+}
+
+
+try{
+
+const loadingTask=pdfjsLib.getDocument({
+url:file
+});
+
+const pdf=await loadingTask.promise;
+
+pageInfo.textContent=
+pdf.numPages+(pdf.numPages===1?" page":" pages");
+
+scrollArea.innerHTML="";
+
+
+const isMobile=window.innerWidth<=700;
+
+let availableWidth=
+scrollArea.clientWidth-(isMobile?16:36);
+
+if(availableWidth<=0){
+
+availableWidth=
+window.innerWidth-(isMobile?16:36);
+
+}
+
+
+for(
+let pageNumber=1;
+pageNumber<=pdf.numPages;
+pageNumber++
+){
+
+try{
+
+await renderPDFPage(
+pdf,
+pageNumber,
+scrollArea,
+availableWidth
+);
+
+}catch(pageError){
+
+console.error(
+"PDF page error:",
+pageError
+);
+
+}
+
+}
+
+}catch(error){
+
+console.error(
+"PDF loading error:",
+error
+);
+
+showPDFError(
+scrollArea,
+"Unable to display this PDF."
+);
+
+}
+
+}
+
+
+async function renderPDFPage(
+pdf,
+pageNumber,
+container,
+availableWidth
+){
+
+const page=await pdf.getPage(pageNumber);
+
+const originalViewport=
+page.getViewport({scale:1});
+
+let scale=
+availableWidth/originalViewport.width;
+
+if(scale>2)scale=2;
+
+if(window.innerWidth<=700){
+
+scale=Math.min(
+scale,
+availableWidth/originalViewport.width
+);
+
+}
+
+const viewport=
+page.getViewport({scale});
+
+const canvas=
+document.createElement("canvas");
+
+canvas.className="pdf-page";
+
+const context=
+canvas.getContext("2d");
+
+const devicePixelRatio=
+window.devicePixelRatio||1;
+
+canvas.width=
+Math.floor(
+viewport.width*devicePixelRatio
+);
+
+canvas.height=
+Math.floor(
+viewport.height*devicePixelRatio
+);
+
+const finalWidth=
+Math.min(
+viewport.width,
+availableWidth
+);
+
+canvas.style.width=
+finalWidth+"px";
+
+canvas.style.height="auto";
+
+canvas.style.maxWidth="100%";
+
+context.setTransform(
+devicePixelRatio,
+0,
+0,
+devicePixelRatio,
+0,
+0
+);
+
+container.appendChild(canvas);
+
+await page.render({
+
+canvasContext:context,
+
+viewport:viewport
+
+}).promise;
+
+}
+
+
+function showPDFError(container,message){
+
+container.innerHTML="";
+
+const error=
+document.createElement("div");
+
+error.className="pdf-error";
+
+error.textContent=message;
+
+const small=
+document.createElement("small");
+
+small.textContent=
+"Please check that the PDF file exists on the server.";
+
+error.appendChild(small);
+
+container.appendChild(error);
+
+}
+
+
+document
+.querySelectorAll(".company-card[data-pdf]")
+.forEach(function(card){
+
+card.addEventListener("click",function(event){
+
+event.preventDefault();
+
+event.stopPropagation();
+
+const file=
+card.getAttribute("data-pdf");
+
+if(file){
+
+openPDF(file);
+
+}
+
+});
+
+});
+
+
+/* VIDEO */
+
+const videoCard=
+document.getElementById("videoCard");
+
+videoCard.addEventListener(
+"click",
+function(event){
+
+event.preventDefault();
+
+event.stopPropagation();
+
+openVideo();
+
+}
+);
+
+
+function openVideo(){
+
+document.body.style.overflow="hidden";
+
+viewer.classList.add("active");
+
+viewer.setAttribute(
+"aria-hidden",
+"false"
+);
+
+requestAnimationFrame(
+syncMobileViewerViewport
+);
+
+setTimeout(
+syncMobileViewerViewport,
+100
+);
+
+
+viewerContent.innerHTML=`
+
+<div style="
+width:100%;
+height:100%;
+background:#071426;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+">
+
+<button
+type="button"
+class="viewer-close"
+id="videoCloseButton"
+style="
+position:absolute;
+top:12px;
+right:12px;
+z-index:20;
+">
+×
+</button>
+
+<div style="
+width:92%;
+max-width:900px;
+aspect-ratio:16 / 9;
+background:#000;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 15px 50px rgba(0,0,0,.5);
+">
+
+<iframe
+src="https://www.youtube.com/embed/AYpN-eqPF6g"
+title="KAMRA FOR ENERGY CONTRACTING L.L.C. | Company Introduction"
+style="
+width:100%;
+height:100%;
+border:0;
+display:block;
+"
+allow="
+accelerometer;
+autoplay;
+clipboard-write;
+encrypted-media;
+gyroscope;
+picture-in-picture;
+web-share
+"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+`;
+
+
+document
+.getElementById("videoCloseButton")
+.addEventListener(
+"click",
+function(event){
+
+event.preventDefault();
+
+event.stopPropagation();
+
+closeViewer();
+
+}
+);
+
+}
+
+
+/* MOBILE VIEWER */
+
+function syncMobileViewerViewport(){
+
+if(
+window.innerWidth>700 ||
+!viewer.classList.contains("active")
+)return;
+
+const vv=window.visualViewport;
+
+if(vv){
+
+viewer.style.top=
+vv.offsetTop+"px";
+
+viewer.style.left=
+vv.offsetLeft+"px";
+
+viewer.style.width=
+vv.width+"px";
+
+viewer.style.height=
+vv.height+"px";
+
+}else{
+
+viewer.style.top="0px";
+
+viewer.style.left="0px";
+
+viewer.style.width=
+window.innerWidth+"px";
+
+viewer.style.height=
+window.innerHeight+"px";
+
+}
+
+}
+
+
+window.addEventListener(
+"resize",
+syncMobileViewerViewport
+);
+
+window.addEventListener(
+"orientationchange",
+function(){
+
+setTimeout(
+syncMobileViewerViewport,
+50
+);
+
+setTimeout(
+syncMobileViewerViewport,
+250
+);
+
+}
+);
+
+
+if(window.visualViewport){
+
+window.visualViewport.addEventListener(
+"resize",
+syncMobileViewerViewport
+);
+
+window.visualViewport.addEventListener(
+"scroll",
+syncMobileViewerViewport
+);
+
+}
+
+
+function closeViewer(){
+
+viewer.classList.remove("active");
+
+viewer.style.top="";
+
+viewer.style.left="";
+
+viewer.style.width="";
+
+viewer.style.height="";
+
+viewer.setAttribute(
+"aria-hidden",
+"true"
+);
+
+viewerContent.innerHTML="";
+
+document.body.style.overflow="";
+
+}
+
+
+viewer.addEventListener(
+"click",
+function(event){
+
+if(event.target===viewer){
+
+closeViewer();
+
+}
+
+}
+);
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key==="Escape" &&
+viewer.classList.contains("active")
+){
+
+closeViewer();
+
+}
+
+}
+);
+
+
+/* SLIDER TOUCH */
+
+let touchStartX=0;
+
+let touchEndX=0;
+
+sliderWindow.addEventListener(
+"touchstart",
+function(event){
+
+touchStartX=
+event.changedTouches[0].screenX;
+
+},
+{passive:true}
+);
+
+
+sliderWindow.addEventListener(
+"touchend",
+function(event){
+
+touchEndX=
+event.changedTouches[0].screenX;
+
+const difference=
+touchStartX-touchEndX;
+
+if(difference>50){
+
+nextBtn.click();
+
+}
+
+if(difference<-50){
+
+prevBtn.click();
+
+}
+
+},
+{passive:true}
+);
+
+
+/* QURAN VERSES */
 
 const quranVerses=[
-{verse:"﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",source:"سورة طه — الآية 114"},
-{verse:"﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾",source:"سورة البقرة — الآية 153"},
-{verse:"﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾",source:"سورة الطلاق — الآية 3"},
-{verse:"﴿وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ﴾",source:"سورة التوبة — الآية 105"},
-{verse:"﴿إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ﴾",source:"سورة البقرة — الآية 195"},
-{verse:"﴿فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾",source:"سورة الشرح — الآيتان 5–6"}];
+
+{
+verse:"﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",
+source:"سورة طه — الآية 114"
+},
+
+{
+verse:"﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾",
+source:"سورة البقرة — الآية 153"
+},
+
+{
+verse:"﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾",
+source:"سورة الطلاق — الآية 3"
+},
+
+{
+verse:"﴿وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ﴾",
+source:"سورة التوبة — الآية 105"
+},
+
+{
+verse:"﴿إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ﴾",
+source:"سورة البقرة — الآية 195"
+},
+
+{
+verse:"﴿فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾",
+source:"سورة الشرح — الآيتان 5–6"
+}
+
+];
+
 let quranIndex=0;
-function changeQuranVerse(){const verseElement=document.getElementById("quranVerse"),sourceElement=document.getElementById("quranSource");if(!verseElement||!sourceElement)return;verseElement.style.opacity="0";sourceElement.style.opacity="0";setTimeout(function(){quranIndex++;if(quranIndex>=quranVerses.length)quranIndex=0;verseElement.textContent=quranVerses[quranIndex].verse;sourceElement.textContent=quranVerses[quranIndex].source;verseElement.style.opacity="1";sourceElement.style.opacity="1"},500)}
-setInterval(changeQuranVerse,7000);
-document.addEventListener("DOMContentLoaded",function(){updateLanguage();updateSlider()});
-window.addEventListener("load",function(){updateSlider()});
+
+
+function changeQuranVerse(){
+
+const verseElement=
+document.getElementById("quranVerse");
+
+const sourceElement=
+document.getElementById("quranSource");
+
+if(
+!verseElement ||
+!sourceElement
+)return;
+
+
+verseElement.style.opacity="0";
+
+sourceElement.style.opacity="0";
+
+
+setTimeout(function(){
+
+quranIndex++;
+
+if(quranIndex>=quranVerses.length){
+
+quranIndex=0;
+
+}
+
+verseElement.textContent=
+quranVerses[quranIndex].verse;
+
+sourceElement.textContent=
+quranVerses[quranIndex].source;
+
+verseElement.style.opacity="1";
+
+sourceElement.style.opacity="1";
+
+},500);
+
+}
+
+
+setInterval(
+changeQuranVerse,
+7000
+);
+
+
+/* EMPLOYEE LIBRARY */
+
+const employeeLoginButton=
+document.getElementById(
+"employeeLoginButton"
+);
+
+const libraryOverlay=
+document.getElementById(
+"libraryOverlay"
+);
+
+const libraryClose=
+document.getElementById(
+"libraryClose"
+);
+
+const librarySubmit=
+document.getElementById(
+"librarySubmit"
+);
+
+const libraryMessage=
+document.getElementById(
+"libraryMessage"
+);
+
+const employeeEmail=
+document.getElementById(
+"employeeEmail"
+);
+
+const employeePassword=
+document.getElementById(
+"employeePassword"
+);
+
+
+function openLibraryLogin(){
+
+document.body.style.overflow="hidden";
+
+libraryOverlay.classList.add("active");
+
+libraryOverlay.setAttribute(
+"aria-hidden",
+"false"
+);
+
+setTimeout(function(){
+
+employeeEmail.focus();
+
+},100);
+
+}
+
+
+function closeLibraryLogin(){
+
+libraryOverlay.classList.remove("active");
+
+libraryOverlay.setAttribute(
+"aria-hidden",
+"true"
+);
+
+libraryMessage.style.display="none";
+
+document.body.style.overflow="";
+
+}
+
+
+employeeLoginButton.addEventListener(
+"click",
+openLibraryLogin
+);
+
+
+libraryClose.addEventListener(
+"click",
+closeLibraryLogin
+);
+
+
+libraryOverlay.addEventListener(
+"click",
+function(event){
+
+if(event.target===libraryOverlay){
+
+closeLibraryLogin();
+
+}
+
+}
+);
+
+
+librarySubmit.addEventListener(
+"click",
+function(){
+
+const email=
+employeeEmail.value.trim();
+
+const password=
+employeePassword.value.trim();
+
+if(!email || !password){
+
+libraryMessage.style.display="block";
+
+return;
+
+}
+
+
+/*
+IMPORTANT:
+This is only the front-end interface.
+Real employee authentication must be connected
+to a secure server-side authentication system.
+*/
+
+libraryMessage.style.display="block";
+
+}
+);
+
+
+/* ESCAPE */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key==="Escape" &&
+libraryOverlay.classList.contains("active")
+){
+
+closeLibraryLogin();
+
+}
+
+}
+);
+
+
+/* INITIALIZE */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+updateLanguage();
+
+updateSlider();
+
+}
+);
+
+
+window.addEventListener(
+"load",
+function(){
+
+updateSlider();
+
+}
+);
+
 </script>
+
 </body>
 </html>
