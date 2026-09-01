@@ -3892,6 +3892,80 @@ function escapeHtml(value) {
     .replace(/'/g, "&#039;");
 }
 
+<script>
+const operationsCard =
+  document.getElementById("operationsLibraryCard");
 
+if (operationsCard) {
+  operationsCard.addEventListener("click", function () {
+
+    viewer.classList.add("active");
+    document.body.style.overflow = "hidden";
+
+    viewerContent.innerHTML = `
+      <div style="
+        width:100%;
+        height:100%;
+        background:#eef4f9;
+        display:flex;
+        flex-direction:column;
+      ">
+
+        <div style="
+          height:50px;
+          min-height:50px;
+          background:#0b1f3a;
+          color:white;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          padding:0 15px 0 20px;
+        ">
+          <strong>Operations</strong>
+
+          <button
+            type="button"
+            id="operationsClose"
+            style="
+              border:0;
+              background:none;
+              color:white;
+              font-size:28px;
+              cursor:pointer;
+            "
+          >×</button>
+        </div>
+
+        <div
+          id="operationsFiles"
+          style="
+            flex:1;
+            overflow-y:auto;
+            padding:25px;
+          "
+        >
+          <div style="
+            text-align:center;
+            padding:40px;
+            color:#64748b;
+          ">
+            Loading documents...
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    document
+      .getElementById("operationsClose")
+      .addEventListener("click", function () {
+        closeViewer();
+      });
+
+    loadOperationsFiles();
+
+  });
+}
+</script>
 </script>
 </body>
