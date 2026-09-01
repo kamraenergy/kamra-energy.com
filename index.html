@@ -3901,38 +3901,6 @@ const OPERATIONS_FOLDER =
 "Operations";
 
 
-/*
-  Creates the public URL correctly even when
-  the file name contains spaces or special characters.
-*/
-
-function createOperationsFileUrl(fileName){
-
-const encodedPath =
-OPERATIONS_FOLDER
-.split("/")
-.map(function(part){
-
-return encodeURIComponent(part);
-
-})
-.join("/")
-+
-"/" +
-encodeURIComponent(fileName);
-
-
-return (
-SUPABASE_URL +
-"/storage/v1/object/public/" +
-SUPABASE_BUCKET +
-"/" +
-encodedPath
-);
-
-}
-
-
 function escapeHtml(value){
 
 return String(value)
@@ -3945,17 +3913,67 @@ return String(value)
 }
 
 
+function encodeStoragePath(path){
+
+return String(path)
+.split("/")
+.map(function(part){
+
+return encodeURIComponent(part);
+
+})
+.join("/");
+
+}
+
+
+function createOperationsFileUrl(fileName){
+
+let cleanName =
+String(fileName || "")
+.trim();
+
+
+if(
+cleanName.indexOf(
+OPERATIONS_FOLDER + "/"
+) === 0
+){
+
+cleanName =
+cleanName.substring(
+(OPERATIONS_FOLDER + "/").length
+);
+
+}
+
+
+return (
+SUPABASE_URL +
+"/storage/v1/object/public/" +
+SUPABASE_BUCKET +
+"/" +
+encodeStoragePath(
+OPERATIONS_FOLDER + "/" + cleanName
+)
+);
+
+}
+
+
 function getFileExtension(fileName){
 
-const parts =
-String(fileName)
-.split(".");
+const cleanName =
+String(fileName || "");
 
-if(parts.length <= 1)
+const lastDot =
+cleanName.lastIndexOf(".");
+
+if(lastDot === -1)
 return "FILE";
 
-return parts
-.pop()
+return cleanName
+.substring(lastDot + 1)
 .toUpperCase();
 
 }
@@ -3976,6 +3994,14 @@ if(!container)
 return;
 
 
+const loadingText =
+document.body.classList.contains("rtl")
+?
+"جاري تحميل الوثائق التشغيلية..."
+:
+"Loading operational documents...";
+
+
 container.innerHTML = `
 
 <div class="operations-loading">
@@ -3983,7 +4009,7 @@ container.innerHTML = `
 <div class="pdf-spinner"></div>
 
 <div>
-Loading operational documents...
+${loadingText}
 </div>
 
 </div>
@@ -3993,28 +4019,22 @@ Loading operational documents...
 
 try{
 
-const response =
-await fetch(
-
+const listUrl =
 SUPABASE_URL +
 "/storage/v1/object/list/" +
-SUPABASE_BUCKET,
+SUPABASE_BUCKET;
 
+
+const response =
+await fetch(
+listUrl,
 {
-
 method:"POST",
 
 headers:{
-
-"Content-Type":
-"application/json",
-
-"apikey":
-SUPABASE_KEY,
-
-"Authorization":
-"Bearer " + SUPABASE_KEY
-
+"Content-Type":"application/json",
+"apikey":SUPABASE_KEY,
+"Authorization":"Bearer " + SUPABASE_KEY
 },
 
 body:JSON.stringify({
@@ -4027,70 +4047,119 @@ limit:100,
 offset:0,
 
 sortBy:{
-
 column:"name",
-
 order:"asc"
-
 }
 
 })
-
 }
-
 );
+
+
+const responseText =
+await response.text();
 
 
 if(!response.ok){
 
-const errorText =
-await response.text();
-
 console.error(
-"Supabase Operations error:",
-errorText
+"Supabase Operations HTTP error:",
+response.status,
+responseText
 );
 
 throw new Error(
-"Could not load Operations files"
+"Supabase returned HTTP " +
+response.status
 );
 
 }
 
 
-const files =
-await response.json();
+let files;
+
+try{
+
+files =
+JSON.parse(responseText);
+
+}catch(parseError){
+
+console.error(
+"Invalid Supabase response:",
+responseText
+);
+
+throw new Error(
+"Invalid response from Supabase"
+);
+
+}
+
+
+if(!Array.isArray(files)){
+
+throw new Error(
+"Supabase did not return a file list"
+);
+
+}
 
 
 const documents =
-Array.isArray(files)
-?
 files.filter(function(file){
 
-return (
-file &&
-file.name &&
-file.name !==
-".emptyFolderPlaceholder"
-);
+if(!file || !file.name)
+return false;
 
-})
-:
-[];
+if(
+file.name ===
+".emptyFolderPlaceholder"
+)
+return false;
+
+if(
+file.id === null ||
+file.id === undefined
+){
+
+return false;
+
+}
+
+return true;
+
+});
 
 
 if(documents.length === 0){
+
+const isArabic =
+document.body.classList.contains("rtl");
+
 
 container.innerHTML = `
 
 <div class="operations-empty">
 
 <strong>
-No operational documents available.
+${
+isArabic
+?
+"لا توجد وثائق تشغيلية"
+:
+"No operational documents available."
+}
 </strong>
 
 <span>
-Upload files into employee-library/Operations
+${
+isArabic
+?
+"قم برفع الملفات داخل مجلد employee-library/Operations"
+:
+"Upload files into employee-library/Operations"
+}
 </span>
 
 </div>
@@ -4107,8 +4176,27 @@ container.innerHTML = "";
 
 documents.forEach(function(file){
 
-const fileName =
-file.name;
+let fileName =
+String(file.name)
+.trim();
+
+
+if(
+fileName.indexOf(
+OPERATIONS_FOLDER + "/"
+) === 0
+){
+
+fileName =
+fileName.substring(
+(OPERATIONS_FOLDER + "/").length
+);
+
+}
+
+
+if(!fileName)
+return;
 
 
 const fileUrl =
@@ -4123,49 +4211,105 @@ fileName
 );
 
 
-const card =
+const fileCard =
 document.createElement("div");
 
-card.className =
+fileCard.className =
 "operations-file-card";
 
 
-card.innerHTML = `
+const icon =
+document.createElement("div");
 
-<div class="operations-file-icon">
-📄
-</div>
+icon.className =
+"operations-file-icon";
 
-<div class="operations-file-info">
-
-<div class="operations-file-name">
-${escapeHtml(fileName)}
-</div>
-
-<div class="operations-file-type">
-${escapeHtml(extension)} — Operational Document
-</div>
-
-</div>
-
-<a
-  href="${fileUrl}"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="operations-open-btn">
-  <span class="en">Open</span>
-  <span class="ar">فتح</span>
-</a>
-
-`;
+icon.textContent =
+"📄";
 
 
-container.appendChild(card);
+const info =
+document.createElement("div");
+
+info.className =
+"operations-file-info";
+
+
+const name =
+document.createElement("div");
+
+name.className =
+"operations-file-name";
+
+name.textContent =
+fileName;
+
+
+const type =
+document.createElement("div");
+
+type.className =
+"operations-file-type";
+
+const isArabic =
+document.body.classList.contains("rtl");
+
+
+type.textContent =
+isArabic
+?
+extension + " — وثيقة تشغيلية"
+:
+extension + " — Operational Document";
+
+
+info.appendChild(name);
+info.appendChild(type);
+
+
+const openButton =
+document.createElement("a");
+
+openButton.href =
+fileUrl;
+
+openButton.target =
+"_blank";
+
+openButton.rel =
+"noopener noreferrer";
+
+openButton.className =
+"operations-open-btn";
+
+openButton.textContent =
+isArabic
+?
+"فتح"
+:
+"Open";
+
+
+openButton.addEventListener(
+"click",
+function(event){
+
+event.stopPropagation();
+
+}
+);
+
+
+fileCard.appendChild(icon);
+fileCard.appendChild(info);
+fileCard.appendChild(openButton);
+
+container.appendChild(fileCard);
 
 });
 
-}
-catch(error){
+
+}catch(error){
 
 console.error(
 "Operations Error:",
@@ -4173,16 +4317,32 @@ error
 );
 
 
+const isArabic =
+document.body.classList.contains("rtl");
+
+
 container.innerHTML = `
 
 <div class="operations-error">
 
 <strong>
-Unable to load operational documents.
+${
+isArabic
+?
+"تعذر تحميل الوثائق التشغيلية"
+:
+"Unable to load operational documents."
+}
 </strong>
 
 <span>
-Please check the Supabase Storage connection.
+${
+isArabic
+?
+"تحقق من صلاحيات Supabase Storage ومجلد Operations."
+:
+"Please check Supabase Storage permissions and the Operations folder."
+}
 </span>
 
 </div>
@@ -4325,11 +4485,15 @@ isArabic
 `;
 
 
-document
-.getElementById(
+const operationsClose =
+document.getElementById(
 "operationsClose"
-)
-.addEventListener(
+);
+
+
+if(operationsClose){
+
+operationsClose.addEventListener(
 "click",
 function(event){
 
@@ -4339,7 +4503,10 @@ event.stopPropagation();
 
 closeViewer();
 
-});
+}
+);
+
+}
 
 
 loadOperationsFiles();
