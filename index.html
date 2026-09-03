@@ -600,25 +600,81 @@ section{
 }
 
 /* =========================
-   SERVICES
+   SERVICES — KAMRA 3D BACKGROUND
    ========================= */
 
 .services{
-  background:#f7f9fc
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:#071426;
+}
+
+.services::before{
+  content:"";
+  position:absolute;
+  inset:-7%;
+  z-index:-2;
+  background-image:url("kamra-3d-background.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  transform:scale(1.08) translate3d(var(--services-x,0px),var(--services-y,0px),0);
+  will-change:transform;
+  transition:transform .35s ease-out;
+  animation:kamraServicesFloat 18s ease-in-out infinite alternate;
+}
+
+.services::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(7,20,38,.48),rgba(7,20,38,.72)),
+    radial-gradient(circle at 50% 25%,rgba(85,184,255,.10),transparent 45%);
+}
+
+.services .section-title{
+  position:relative;
+  z-index:1;
+}
+
+.services .section-title h2{
+  color:white;
+  text-shadow:0 4px 18px rgba(0,0,0,.45);
+}
+
+.services .section-title p{
+  color:#e6f2fb;
+  text-shadow:0 2px 10px rgba(0,0,0,.5);
 }
 
 .cards{
+  position:relative;
+  z-index:1;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:22px
 }
 
 .card{
-  background:white;
+  background:rgba(255,255,255,.90);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
   padding:27px;
   border-radius:10px;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
-  text-align:center
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 8px 28px rgba(0,0,0,.22);
+  text-align:center;
+  transition:transform .3s ease,box-shadow .3s ease,background .3s ease
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 15px 36px rgba(0,0,0,.30)
 }
 
 .card h3{
@@ -627,7 +683,46 @@ section{
 }
 
 .card p{
-  color:#64748b
+  color:#475569
+}
+
+@keyframes kamraServicesFloat{
+  0%{
+    transform:scale(1.08) translate3d(-1.5%,-1%,0);
+  }
+  100%{
+    transform:scale(1.15) translate3d(1.5%,1%,0);
+  }
+}
+
+@media(max-width:700px){
+  .services::before{
+    inset:-14%;
+    animation:kamraServicesFloatMobile 16s ease-in-out infinite alternate;
+  }
+
+  .card{
+    background:rgba(255,255,255,.92);
+  }
+}
+
+@keyframes kamraServicesFloatMobile{
+  0%{
+    transform:scale(1.12) translate3d(-1%,0,0);
+  }
+  100%{
+    transform:scale(1.20) translate3d(1%,0,0);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .services::before{
+    animation:none!important;
+  }
+
+  .card{
+    transition:none;
+  }
 }
 
 /* =========================
@@ -4579,6 +4674,39 @@ function(){
 updateSlider();
 
 });
+
+
+
+/* =========================================
+   SERVICES 3D PARALLAX
+   ========================================= */
+
+const servicesSection = document.querySelector(".services");
+
+if(servicesSection && window.matchMedia("(pointer:fine)").matches){
+
+  servicesSection.addEventListener(
+  "mousemove",
+  function(event){
+
+    const rect = servicesSection.getBoundingClientRect();
+
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    servicesSection.style.setProperty(
+      "--services-x",
+      `${x * 12}px`
+    );
+
+    servicesSection.style.setProperty(
+      "--services-y",
+      `${y * 8}px`
+    );
+
+  });
+
+}
 
 </script>
 
