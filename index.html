@@ -1,3383 +1,1276 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-
-<title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0
-}
-
-html{
-  scroll-behavior:smooth
-}
-
-body{
-  font-family:Arial,sans-serif;
-  color:#172033;
-  background:#f7f9fc;
-  line-height:1.6
-}
-
-.ar{
-  display:none;
-  direction:rtl
-}
-
-.en{
-  display:block;
-  direction:ltr
-}
-
-body.rtl .en{
-  display:none
-}
-
-body.rtl .ar{
-  display:block
-}
-
-/* =========================
-   HEADER
-   ========================= */
-
-header{
-  background:#0b1f3a;
-  color:white;
-  padding:15px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:100
-}
-
-.logo{
-  text-align:center;
-  flex-shrink:0
-}
-
-.logo img{
-  height:55px;
-  width:auto;
-  display:block
-}
-
-.logo-text{
-  display:block;
-  margin-top:4px;
-  text-align:center;
-  color:white;
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:.5px;
-  line-height:1.2;
-  direction:ltr
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:22px;
-  font-size:15px;
-  transition:color .3s ease;
-  direction:ltr
-}
-
-nav a:hover{
-  color:#55b8ff
-}
-
-.lang-btn,
-.employee-login-btn{
-  border:1px solid #55b8ff;
-  background:transparent;
-  color:white;
-  padding:7px 12px;
-  border-radius:5px;
-  cursor:pointer;
-  font-family:Arial,sans-serif;
-  transition:background .3s ease,color .3s ease
-}
-
-.lang-btn{
-  margin-left:20px
-}
-
-.employee-login-btn{
-  margin-left:12px;
-  font-size:14px;
-  font-weight:bold
-}
-
-.lang-btn:hover,
-.employee-login-btn:hover{
-  background:#55b8ff;
-  color:#0b1f3a
-}
-
-/* =========================
-   HERO
-   ========================= */
-
-.hero{
-  min-height:620px;
-  display:flex;
-  align-items:center;
-  padding:80px 7%;
-  background:linear-gradient(135deg,#0b1f3a,#123f68);
-  color:white;
-  position:relative
-}
-
-.hero-content{
-  max-width:850px;
-  width:100%
-}
-
-.hero h1{
-  font-size:52px;
-  margin-bottom:20px;
-  line-height:1.15
-}
-
-.hero p{
-  font-size:20px;
-  max-width:700px;
-  margin-bottom:30px;
-  color:#dce9f5
-}
-
-.btn{
-  display:inline-block;
-  background:#1b9be0;
-  color:white;
-  padding:13px 25px;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:bold;
-  transition:background .3s ease
-}
-
-.btn:hover{
-  background:#55b8ff
-}
-
-/* =========================
-   QURAN BOX
-   ========================= */
-
-.quran-box{
-  position:absolute;
-  top:95px;
-  right:7%;
-  width:320px;
-  padding:18px 20px;
-  border-radius:10px;
-  background:linear-gradient(145deg,#0b1f3a,#123f68);
-  border:1px solid rgba(85,184,255,.35);
-  box-shadow:0 8px 25px rgba(0,0,0,.25);
-  text-align:center;
-  direction:rtl;
-  z-index:10;
-  transition:opacity .5s ease,transform .5s ease
-}
-
-.quran-box .verse{
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  line-height:1.8;
-  direction:rtl;
-  transition:opacity .5s ease
-}
-
-.quran-box .source{
-  margin-top:8px;
-  color:#55b8ff;
-  font-size:12px;
-  direction:rtl;
-  transition:opacity .5s ease
-}
-
-/* =========================
-   SECTIONS
-   ========================= */
-
-section{
-  padding:70px 7%
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:40px
-}
-
-.section-title h2{
-  font-size:34px;
-  color:#0b1f3a;
-  margin-bottom:10px
-}
-
-.section-title p{
-  color:#64748b
-}
-
-.about{
-  background:white
-}
-
-/* =========================
-   COMPANY SLIDER
-   ========================= */
-
-.company-slider{
-  max-width:1180px;
-  margin:30px auto 0;
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:12px
-}
-
-.company-slider-window{
-  overflow:hidden;
-  width:100%;
-  border-radius:18px;
-  touch-action:pan-y
-}
-
-.company-track{
-  display:flex;
-  gap:18px;
-  transition:transform .55s cubic-bezier(.22,.61,.36,1);
-  will-change:transform
-}
-
-.company-card{
-  position:relative;
-  overflow:hidden;
-  flex:0 0 calc((100% - 54px)/4);
-  min-height:190px;
-  background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
-  border:1px solid rgba(85,184,255,.25);
-  border-radius:15px;
-  padding:20px 15px;
-  text-align:center;
-  cursor:pointer;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  box-shadow:0 7px 22px rgba(11,31,58,.14);
-  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
-  user-select:none;
-  -webkit-tap-highlight-color:transparent
-}
-
-.company-card::after{
-  content:"";
-  position:absolute;
-  width:140px;
-  height:140px;
-  top:-75px;
-  right:-75px;
-  background:rgba(85,184,255,.12);
-  border-radius:50%;
-  transition:width .4s ease,height .4s ease
-}
-
-.company-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:#55b8ff;
-  transform:scaleX(0);
-  transition:transform .35s ease
-}
-
-.company-card:hover{
-  transform:translateY(-7px);
-  border-color:#55b8ff;
-  box-shadow:0 16px 38px rgba(11,31,58,.27)
-}
-
-.company-card:hover::before{
-  transform:scaleX(1)
-}
-
-.company-card:hover::after{
-  width:190px;
-  height:190px
-}
-
-.card-logo{
-  width:42px;
-  height:42px;
-  object-fit:contain;
-  margin-bottom:7px;
-  position:relative;
-  z-index:2;
-  opacity:.95;
-  transition:transform .35s ease,opacity .35s ease
-}
-
-.company-card:hover .card-logo{
-  transform:scale(1.08);
-  opacity:1
-}
-
-.card-company-name{
-  color:white;
-  font-size:9px;
-  font-weight:bold;
-  line-height:1.2;
-  margin-bottom:8px;
-  position:relative;
-  z-index:2;
-  text-align:center;
-  width:100%;
-  direction:ltr
-}
-
-.card-number{
-  color:#55b8ff;
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:3px;
-  margin-bottom:6px;
-  position:relative;
-  z-index:2;
-  direction:ltr
-}
-
-.company-card h3{
-  color:white;
-  font-size:17px;
-  line-height:1.3;
-  margin-bottom:5px;
-  position:relative;
-  z-index:2
-}
-
-.company-card p{
-  color:#dce9f5;
-  font-size:13px;
-  line-height:1.4;
-  position:relative;
-  z-index:2
-}
-
-.video-icon{
-  color:#55b8ff;
-  font-size:30px;
-  margin-bottom:4px;
-  position:relative;
-  z-index:2;
-  direction:ltr
-}
-
-.update-card{
-  cursor:default;
-  opacity:.45;
-  background:linear-gradient(145deg,#172a42,#23425e)
-}
-
-.update-card:hover{
-  transform:none;
-  border-color:rgba(85,184,255,.25);
-  box-shadow:0 7px 22px rgba(11,31,58,.14)
-}
-
-.update-card:hover::before{
-  transform:scaleX(0)
-}
-
-.update-card:hover::after{
-  width:140px;
-  height:140px
-}
-
-.update-text{
-  color:#b9cfe0;
-  font-size:18px;
-  font-weight:bold;
-  letter-spacing:2px;
-  position:relative;
-  z-index:2;
-  direction:ltr
-}
-
-.slider-btn{
-  flex:0 0 44px;
-  width:44px;
-  height:44px;
-  border:1px solid rgba(85,184,255,.35);
-  border-radius:50%;
-  background:#0b1f3a;
-  color:white;
-  font-size:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:5;
-  -webkit-tap-highlight-color:transparent
-}
-
-.slider-btn:hover{
-  background:#55b8ff;
-  color:#0b1f3a
-}
-
-.slider-btn:disabled{
-  opacity:.35;
-  cursor:default
-}
-
-/* =========================
-   PDF VIEWER
-   ========================= */
-
-.company-viewer{
-  position:fixed;
-  inset:0;
-  z-index:99999;
-  background:rgba(7,20,38,.96);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  overscroll-behavior:contain
-}
-
-.company-viewer.active{
-  display:flex
-}
-
-.viewer-content{
-  width:min(950px,94vw);
-  height:90vh;
-  background:#e9eef4;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
-  position:relative;
-  display:flex;
-  flex-direction:column
-}
-
-.pdf-toolbar{
-  flex:0 0 50px;
-  min-height:50px;
-  background:#0b1f3a;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 12px 0 18px;
-  position:relative;
-  z-index:20;
-  direction:ltr
-}
-
-.pdf-title{
-  font-size:13px;
-  font-weight:bold;
-  overflow:hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  padding-right:10px;
-  direction:ltr
-}
-
-.pdf-page-info{
-  font-size:12px;
-  color:#dce9f5;
-  white-space:nowrap;
-  direction:ltr
-}
-
-.pdf-scroll{
-  flex:1;
-  overflow-y:auto;
-  overflow-x:hidden;
-  background:#dfe5eb;
-  padding:18px;
-  -webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain;
-  direction:ltr
-}
-
-.pdf-page{
-  display:block;
-  width:100%;
-  max-width:100%;
-  height:auto;
-  margin:0 auto 18px;
-  background:white;
-  box-shadow:0 4px 15px rgba(0,0,0,.15)
-}
-
-.pdf-loading{
-  min-height:250px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  color:#0b1f3a;
-  font-size:16px;
-  font-weight:bold;
-  text-align:center;
-  direction:ltr
-}
-
-.pdf-spinner{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  border:4px solid #cbd5e1;
-  border-top-color:#1b9be0;
-  animation:pdfSpin .8s linear infinite;
-  margin-bottom:15px
-}
-
-@keyframes pdfSpin{
-  from{transform:rotate(0)}
-  to{transform:rotate(360deg)}
-}
-
-.pdf-error{
-  padding:40px 20px;
-  text-align:center;
-  color:#0b1f3a;
-  font-weight:bold;
-  direction:ltr
-}
-
-.pdf-error small{
-  display:block;
-  margin-top:10px;
-  color:#64748b;
-  font-weight:normal
-}
-
-.viewer-close{
-  width:38px;
-  height:38px;
-  border:none;
-  border-radius:50%;
-  background:white;
-  color:#0b1f3a;
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0
-}
-
-.viewer-close:hover{
-  background:#1b9be0;
-  color:white
-}
-
-/* =========================
-   SERVICES — 3D ORBIT
-   ========================= */
-
-.services{
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-  background:#071426;
-}
-
-/* moving 3D background */
-.services::before{
-  content:"";
-  position:absolute;
-  inset:-8%;
-  z-index:-3;
-  background:url("kamra-3d-background.png.png") center/cover no-repeat;
-  transform:scale(1.10) translate3d(0,0,0);
-  will-change:transform;
-  animation:kamraServicesFloat 16s ease-in-out infinite alternate;
-}
-
-/* dark overlay so the background remains visible */
-.services::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  pointer-events:none;
-  background:
-    linear-gradient(180deg,rgba(7,20,38,.22),rgba(7,20,38,.52)),
-    radial-gradient(circle at 50% 32%,rgba(255,255,255,.10),transparent 48%);
-}
-
-.services .section-title{
-  position:relative;
-  z-index:3;
-}
-
-.services .section-title h2{
-  color:#fff;
-  text-shadow:0 4px 18px rgba(0,0,0,.55);
-}
-
-.services .section-title p{
-  color:#eef6fb;
-  text-shadow:0 2px 10px rgba(0,0,0,.55);
-}
-
-.cards{
-  position:relative;
-  z-index:2;
-  width:min(1100px,100%);
-  height:540px;
-  margin:0 auto;
-  isolation:isolate;
-}
-
-/* upper half-oval orbit */
-.cards::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:34px;
-  width:min(900px,90%);
-  height:300px;
-  transform:translateX(-50%);
-  border:2px solid transparent;
-  border-bottom:0;
-  border-radius:50% 50% 0 0 / 100% 100% 0 0;
-  background:
-    linear-gradient(#071426,#071426) padding-box,
-    linear-gradient(90deg,#19a64a 0%,#19a64a 16%,#ffffff 42%,#ffffff 58%,#19a64a 84%,#19a64a 100%) border-box;
-  opacity:.9;
-  filter:drop-shadow(0 0 10px rgba(255,255,255,.25));
-  pointer-events:none;
-}
-
-/* lower dark orbit glow */
-.cards::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:18px;
-  width:min(930px,92%);
-  height:105px;
-  transform:translateX(-50%);
-  border-bottom:3px solid rgba(0,0,0,.82);
-  border-radius:0 0 50% 50% / 0 0 100% 100%;
-  box-shadow:0 16px 24px rgba(0,0,0,.42),0 2px 18px rgba(25,166,74,.16);
-  pointer-events:none;
-}
-
-.card{
-  --x:0px;
-  --y:0px;
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:112px;
-  min-height:72px;
-  padding:9px 8px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.42);
-  background:rgba(255,255,255,.09);
-  backdrop-filter:blur(3px);
-  -webkit-backdrop-filter:blur(3px);
-  box-shadow:0 7px 20px rgba(0,0,0,.16);
-  text-align:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y)));
-  animation:serviceOrbit 12s ease-in-out infinite;
-  animation-delay:var(--delay);
-  transition:background .3s ease,border-color .3s ease,box-shadow .3s ease;
-  z-index:2;
-  cursor:default;
-}
-
-/* descend while reading, then return to orbit */
-.card:hover{
-  background:rgba(255,255,255,.18);
-  border-color:rgba(255,255,255,.82);
-  box-shadow:0 18px 36px rgba(0,0,0,.32);
-  animation-play-state:paused;
-  transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y) + 62px)) scale(1.06);
-  z-index:10;
-}
-
-.card:nth-child(1){--x:-360px;--y:115px;--delay:0s}
-.card:nth-child(2){--x:-215px;--y:-20px;--delay:-2s}
-.card:nth-child(3){--x:-75px;--y:-105px;--delay:-4s}
-.card:nth-child(4){--x:75px;--y:-105px;--delay:-6s}
-.card:nth-child(5){--x:215px;--y:-20px;--delay:-8s}
-.card:nth-child(6){--x:360px;--y:115px;--delay:-10s}
-
-@keyframes serviceOrbit{
-  0%,100%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y)))}
-  25%{transform:translate(calc(-50% + var(--x) + 18px),calc(-50% + var(--y) - 12px))}
-  50%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y) - 25px))}
-  75%{transform:translate(calc(-50% + var(--x) - 18px),calc(-50% + var(--y) - 12px))}
-}
-
-@keyframes kamraServicesFloat{
-  0%{transform:scale(1.10) translate3d(-1.6%,-1.2%,0)}
-  50%{transform:scale(1.16) translate3d(1.4%,1%,0)}
-  100%{transform:scale(1.12) translate3d(-.6%,1.8%,0)}
-}
-
-.card h3{
-  color:#fff;
-  margin-bottom:5px;
-  font-size:13px;
-  line-height:1.18;
-  text-shadow:0 2px 8px rgba(0,0,0,.6);
-}
-
-.card p{
-  color:rgba(255,255,255,.92);
-  font-size:9px;
-  line-height:1.28;
-  text-shadow:0 1px 6px rgba(0,0,0,.62);
-}
-
-
-/* =========================
-   ASSESSED
-   ========================= */
-
-.assessed{
-  background:#123f68;
-  color:white;
-  text-align:center;
-  padding:38px 7%
-}
-
-.assessed h2{
-  font-size:30px;
-  margin-bottom:10px;
-  color:#55b8ff
-}
-
-.assessed p{
-  max-width:850px;
-  margin:auto;
-  color:#dce9f5;
-  font-size:18px
-}
-
-/* =========================
-   EMPLOYEE LOGIN
-   ========================= */
-
-.employee-modal{
-  position:fixed;
-  inset:0;
-  z-index:100000;
-  background:rgba(7,20,38,.94);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px
-}
-
-.employee-modal.active{
-  display:flex
-}
-
-.employee-login-box{
-  width:min(430px,94vw);
-  background:white;
-  border-radius:14px;
-  padding:32px 28px;
-  box-shadow:0 20px 70px rgba(0,0,0,.45);
-  position:relative;
-  text-align:center
-}
-
-.employee-login-box h2{
-  color:#0b1f3a;
-  margin-bottom:8px;
-  font-size:27px
-}
-
-.login-subtitle{
-  color:#64748b;
-  font-size:14px;
-  margin-bottom:25px
-}
-
-.employee-login-box input{
-  width:100%;
-  padding:13px 14px;
-  margin-bottom:14px;
-  border:1px solid #cbd5e1;
-  border-radius:6px;
-  font-family:Arial,sans-serif;
-  font-size:15px;
-  outline:none
-}
-
-.employee-login-box input:focus{
-  border-color:#1b9be0;
-  box-shadow:0 0 0 3px rgba(27,155,224,.12)
-}
-
-.employee-login-submit{
-  width:100%;
-  border:0;
-  background:#1b9be0;
-  color:white;
-  padding:13px;
-  border-radius:6px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer
-}
-
-.employee-login-submit:hover{
-  background:#55b8ff
-}
-
-.employee-login-error{
-  display:none;
-  color:#c62828;
-  background:#fff1f2;
-  border:1px solid #fecdd3;
-  padding:9px;
-  border-radius:5px;
-  margin-bottom:14px;
-  font-size:13px
-}
-
-.employee-login-error.show{
-  display:block
-}
-
-.employee-modal-close{
-  position:absolute;
-  top:10px;
-  right:12px;
-  width:34px;
-  height:34px;
-  border:0;
-  border-radius:50%;
-  background:#0b1f3a;
-  color:white;
-  font-size:24px;
-  line-height:1;
-  cursor:pointer
-}
-
-.employee-modal-close:hover{
-  background:#1b9be0
-}
-
-/* =========================
-   EMPLOYEE LIBRARY
-   ========================= */
-
-.employee-library{
-  display:none;
-  background:#eef4f9;
-  padding:60px 7%
-}
-
-.employee-library.active{
-  display:block
-}
-
-.employee-library-header{
-  text-align:center;
-  margin-bottom:35px
-}
-
-.employee-library-header h2{
-  color:#0b1f3a;
-  font-size:34px;
-  margin-bottom:10px
-}
-
-.employee-library-header p{
-  color:#64748b
-}
-
-.library-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px
-}
-
-.library-card{
-  background:linear-gradient(145deg,#0b1f3a,#123f68);
-  border:1px solid rgba(85,184,255,.25);
-  border-radius:12px;
-  padding:25px 18px;
-  color:white;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0 7px 22px rgba(11,31,58,.14);
-  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease
-}
-
-.library-card:hover{
-  transform:translateY(-5px);
-  border-color:#55b8ff;
-  box-shadow:0 14px 32px rgba(11,31,58,.25)
-}
-
-.library-icon{
-  font-size:32px;
-  color:#55b8ff;
-  margin-bottom:10px
-}
-
-.library-card h3{
-  color:white;
-  font-size:18px;
-  margin-bottom:5px
-}
-
-.library-card p{
-  color:#dce9f5;
-  font-size:13px
-}
-
-.library-logout{
-  display:block;
-  margin:30px auto 0;
-  border:1px solid #0b1f3a;
-  background:white;
-  color:#0b1f3a;
-  padding:10px 22px;
-  border-radius:5px;
-  cursor:pointer;
-  font-weight:bold
-}
-
-.library-logout:hover{
-  background:#0b1f3a;
-  color:white
-}
-
-/* =========================
-   OPERATIONS FILE LIST
-   ========================= */
-
-.operations-files{
-  flex:1;
-  overflow-y:auto;
-  padding:25px;
-  background:#eef4f9;
-  direction:ltr
-}
-
-.operations-file-card{
-  background:white;
-  border:1px solid #d5e0ea;
-  border-radius:10px;
-  padding:15px 18px;
-  margin-bottom:12px;
-  display:flex;
-  align-items:center;
-  gap:15px;
-  box-shadow:0 4px 14px rgba(11,31,58,.07);
-  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
-}
-
-.operations-file-card:hover{
-  transform:translateY(-2px);
-  border-color:#55b8ff;
-  box-shadow:0 7px 20px rgba(11,31,58,.12)
-}
-
-.operations-file-icon{
-  width:45px;
-  height:45px;
-  flex:0 0 45px;
-  border-radius:8px;
-  background:#0b1f3a;
-  color:#55b8ff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px
-}
-
-.operations-file-info{
-  flex:1;
-  min-width:0
-}
-
-.operations-file-name{
-  color:#0b1f3a;
-  font-size:15px;
-  font-weight:bold;
-  word-break:break-word;
-  line-height:1.35
-}
-
-.operations-file-type{
-  color:#64748b;
-  font-size:12px;
-  margin-top:3px
-}
-
-.operations-open-btn{
-  flex:0 0 auto;
-  display:inline-block;
-  text-decoration:none;
-  background:#1b9be0;
-  color:white;
-  padding:8px 15px;
-  border-radius:5px;
-  font-size:13px;
-  font-weight:bold;
-  transition:background .2s ease
-}
-
-.operations-open-btn:hover{
-  background:#55b8ff;
-  color:#0b1f3a
-}
-
-.operations-loading,
+\<html lang="en" dir="ltr">
+\<head>
+\<meta charset="UTF-8">
+\<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+user-scalable=yes">
+\<title>KAMRA FOR ENERGY CONTRACTING
+L.L.C.\</title>
+\<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,sans-serif;color:#172033;background:#f7f9fc;line-height:1.6}.ar{display:none;direction:rtl}.en{display:block;direction:ltr}body.rtl .en{display:none}body.rtl .ar{display:block}/* =========================
+HEADER
+========================= */
+header{background:#0b1f3a;color:white;padding:15px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}.logo{text-align:center;flex-shrink:0}.logo img{height:55px;width:auto;display:block}.logo-text{display:block;margin-top:4px;text-align:center;color:white;font-size:11px;font-weight:bold;letter-spacing:.5px;line-height:1.2;direction:ltr}nav{display:flex;align-items:center;flex-wrap:wrap}nav a{color:white;text-decoration:none;margin-left:22px;font-size:15px;transition:color .3s ease;direction:ltr}nav a:hover{color:#55b8ff}.lang-btn,
+.employee-login-btn{border:1px solid #55b8ff;background:transparent;color:white;padding:7px 12px;border-radius:5px;cursor:pointer;font-family:Arial,sans-serif;transition:background .3s ease,color .3s ease}.lang-btn{margin-left:20px}.employee-login-btn{margin-left:12px;font-size:14px;font-weight:bold}.lang-btn:hover,
+.employee-login-btn:hover{background:#55b8ff;color:#0b1f3a}/* =========================
+HERO
+========================= */
+.hero{min-height:620px;display:flex;align-items:center;padding:80px 7%;background:linear-gradient(135deg,#0b1f3a,#123f68);color:white;position:relative}.hero-content{max-width:850px;width:100%}.hero h1{font-size:52px;margin-bottom:20px;line-height:1.15}.hero p{font-size:20px;max-width:700px;margin-bottom:30px;color:#dce9f5}.btn{display:inline-block;background:#1b9be0;color:white;padding:13px 25px;text-decoration:none;border-radius:5px;font-weight:bold;transition:background .3s ease}.btn:hover{background:#55b8ff}/* =========================
+QURAN BOX
+========================= */
+.quran-box{position:absolute;top:95px;right:7%;width:320px;padding:18px 20px;border-radius:10px;background:linear-gradient(145deg,#0b1f3a,#123f68);border:1px solid rgba(85,184,255,.35);box-shadow:0 8px 25px rgba(0,0,0,.25);text-align:center;direction:rtl;z-index:10;transition:opacity .5s ease,transform .5s ease}.quran-box .verse{color:white;font-size:18px;font-weight:bold;line-height:1.8;direction:rtl;transition:opacity .5s ease}.quran-box .source{margin-top:8px;color:#55b8ff;font-size:12px;direction:rtl;transition:opacity .5s ease}/* =========================
+SECTIONS
+========================= */
+section{padding:70px 7%}.section-title{text-align:center;margin-bottom:40px}.section-title h2{font-size:34px;color:#0b1f3a;margin-bottom:10px}.section-title p{color:#64748b}.about{background:white}/* =========================
+COMPANY SLIDER
+========================= */
+.company-slider{max-width:1180px;margin:30px auto 0;position:relative;display:flex;align-items:center;gap:12px}.company-slider-window{overflow:hidden;width:100%;border-radius:18px;touch-action:pan-y}.company-track{display:flex;gap:18px;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform}.company-card{position:relative;overflow:hidden;flex:0 0 calc((100% - 54px)/4);min-height:190px;background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);border:1px solid rgba(85,184,255,.25);border-radius:15px;padding:20px 15px;text-align:center;cursor:pointer;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 7px 22px rgba(11,31,58,.14);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;user-select:none;-webkit-tap-highlight-color:transparent}.company-card::after{content:"";position:absolute;width:140px;height:140px;top:-75px;right:-75px;background:rgba(85,184,255,.12);border-radius:50%;transition:width .4s ease,height .4s ease}.company-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:#55b8ff;transform:scaleX(0);transition:transform .35s ease}.company-card:hover{transform:translateY(-7px);border-color:#55b8ff;box-shadow:0 16px 38px rgba(11,31,58,.27)}.company-card:hover::before{transform:scaleX(1)}.company-card:hover::after{width:190px;height:190px}.card-logo{width:42px;height:42px;object-fit:contain;margin-bottom:7px;position:relative;z-index:2;opacity:.95;transition:transform .35s ease,opacity .35s ease}.company-card:hover .card-logo{transform:scale(1.08);opacity:1}.card-company-name{color:white;font-size:9px;font-weight:bold;line-height:1.2;margin-bottom:8px;position:relative;z-index:2;text-align:center;width:100%;direction:ltr}.card-number{color:#55b8ff;font-size:12px;font-weight:bold;letter-spacing:3px;margin-bottom:6px;position:relative;z-index:2;direction:ltr}.company-card h3{color:white;font-size:17px;line-height:1.3;margin-bottom:5px;position:relative;z-index:2}.company-card p{color:#dce9f5;font-size:13px;line-height:1.4;position:relative;z-index:2}.video-icon{color:#55b8ff;font-size:30px;margin-bottom:4px;position:relative;z-index:2;direction:ltr}.update-card{cursor:default;opacity:.45;background:linear-gradient(145deg,#172a42,#23425e)}.update-card:hover{transform:none;border-color:rgba(85,184,255,.25);box-shadow:0 7px 22px rgba(11,31,58,.14)}.update-card:hover::before{transform:scaleX(0)}.update-card:hover::after{width:140px;height:140px}.update-text{color:#b9cfe0;font-size:18px;font-weight:bold;letter-spacing:2px;position:relative;z-index:2;direction:ltr}.slider-btn{flex:0 0 44px;width:44px;height:44px;border:1px solid rgba(85,184,255,.35);border-radius:50%;background:#0b1f3a;color:white;font-size:25px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;-webkit-tap-highlight-color:transparent}.slider-btn:hover{background:#55b8ff;color:#0b1f3a}.slider-btn:disabled{opacity:.35;cursor:default}/* =========================
+PDF VIEWER
+========================= */
+.company-viewer{position:fixed;inset:0;z-index:99999;background:rgba(7,20,38,.96);display:none;align-items:center;justify-content:center;padding:20px;overscroll-behavior:contain}.company-viewer.active{display:flex}.viewer-content{width:min(950px,94vw);height:90vh;background:#e9eef4;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);position:relative;display:flex;flex-direction:column}.pdf-toolbar{flex:0 0 50px;min-height:50px;background:#0b1f3a;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 18px;position:relative;z-index:20;direction:ltr}.pdf-title{font-size:13px;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:10px;direction:ltr}.pdf-page-info{font-size:12px;color:#dce9f5;white-space:nowrap;direction:ltr}.pdf-scroll{flex:1;overflow-y:auto;overflow-x:hidden;background:#dfe5eb;padding:18px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;direction:ltr}.pdf-page{display:block;width:100%;max-width:100%;height:auto;margin:0 auto 18px;background:white;box-shadow:0 4px 15px rgba(0,0,0,.15)}.pdf-loading{min-height:250px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#0b1f3a;font-size:16px;font-weight:bold;text-align:center;direction:ltr}.pdf-spinner{width:42px;height:42px;border-radius:50%;border:4px solid #cbd5e1;border-top-color:#1b9be0;animation:pdfSpin .8s linear infinite;margin-bottom:15px}
+@keyframes pdfSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}
+}.pdf-error{padding:40px 20px;text-align:center;color:#0b1f3a;font-weight:bold;direction:ltr}.pdf-error small{display:block;margin-top:10px;color:#64748b;font-weight:normal}.viewer-close{width:38px;height:38px;border:none;border-radius:50%;background:white;color:#0b1f3a;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.viewer-close:hover{background:#1b9be0;color:white}/* =========================
+SERVICES
+========================= */
+.services{background:linear-gradient(rgba(247,249,252,.42),rgba(247,249,252,.42)), url("kamra-3d-background.png.png") center center/cover no-repeat;overflow:hidden}.cards{position:relative;width:min(1100px,100%);height:540px;margin:0 auto;isolation:isolate}.cards::before{content:"";position:absolute;left:50%;bottom:34px;width:min(900px,90%);height:300px;transform:translateX(-50%);border:1px solid rgba(85,184,255,.34);border-bottom:0;border-radius:50% 50% 0 0 / 100% 100% 0 0;opacity:.65;pointer-events:none}.cards::after{content:"";position:absolute;left:50%;bottom:20px;width:150px;height:150px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(85,184,255,.16),rgba(85,184,255,0) 70%);pointer-events:none}.card{--x:0px;--y:0px;position:absolute;left:50%;top:50%;width:210px;min-height:128px;padding:18px 16px;border-radius:22px;border:1px solid rgba(255,255,255,.48);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 12px 30px rgba(11,31,58,.16);text-align:center;display:flex;align-items:center;justify-content:center;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y)));animation:serviceOrbit 12s ease-in-out infinite;animation-delay:var(--delay);transition:border-color .3s ease,background .3s ease,box-shadow .3s ease;z-index:2}.card:hover{background:rgba(255,255,255,.42);border-color:#55b8ff;box-shadow:0 18px 38px rgba(11,31,58,.24);animation-play-state:paused}.card:nth-child(1){--x:-360px;--y:115px;--delay:0s}.card:nth-child(2){--x:-215px;--y:-20px;--delay:-2s}.card:nth-child(3){--x:-75px;--y:-105px;--delay:-4s}.card:nth-child(4){--x:75px;--y:-105px;--delay:-6s}.card:nth-child(5){--x:215px;--y:-20px;--delay:-8s}.card:nth-child(6){--x:360px;--y:115px;--delay:-10s}
+@keyframes serviceOrbit{0%,100%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y)))}25%{transform:translate(calc(-50% + var(--x) + 18px),calc(-50% + var(--y) - 12px))}50%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y) - 25px))}75%{transform:translate(calc(-50% + var(--x) - 18px),calc(-50% + var(--y) - 12px))}
+}.card h3{color:#0b1f3a;margin-bottom:8px;font-size:19px;line-height:1.25}.card p{color:#31445d;font-size:14px;line-height:1.45}/* =========================
+ASSESSED
+========================= */
+.assessed{background:#123f68;color:white;text-align:center;padding:38px 7%}.assessed h2{font-size:30px;margin-bottom:10px;color:#55b8ff}.assessed p{max-width:850px;margin:auto;color:#dce9f5;font-size:18px}/* =========================
+EMPLOYEE LOGIN
+========================= */
+.employee-modal{position:fixed;inset:0;z-index:100000;background:rgba(7,20,38,.94);display:none;align-items:center;justify-content:center;padding:20px}.employee-modal.active{display:flex}.employee-login-box{width:min(430px,94vw);background:white;border-radius:14px;padding:32px 28px;box-shadow:0 20px 70px rgba(0,0,0,.45);position:relative;text-align:center}.employee-login-box h2{color:#0b1f3a;margin-bottom:8px;font-size:27px}.login-subtitle{color:#64748b;font-size:14px;margin-bottom:25px}.employee-login-box input{width:100%;padding:13px 14px;margin-bottom:14px;border:1px solid #cbd5e1;border-radius:6px;font-family:Arial,sans-serif;font-size:15px;outline:none}.employee-login-box input:focus{border-color:#1b9be0;box-shadow:0 0 0 3px rgba(27,155,224,.12)}.employee-login-submit{width:100%;border:0;background:#1b9be0;color:white;padding:13px;border-radius:6px;font-size:15px;font-weight:bold;cursor:pointer}.employee-login-submit:hover{background:#55b8ff}.employee-login-error{display:none;color:#c62828;background:#fff1f2;border:1px solid #fecdd3;padding:9px;border-radius:5px;margin-bottom:14px;font-size:13px}.employee-login-error.show{display:block}.employee-modal-close{position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:#0b1f3a;color:white;font-size:24px;line-height:1;cursor:pointer}.employee-modal-close:hover{background:#1b9be0}/* =========================
+EMPLOYEE LIBRARY
+========================= */
+.employee-library{display:none;background:#eef4f9;padding:60px 7%}.employee-library.active{display:block}.employee-library-header{text-align:center;margin-bottom:35px}.employee-library-header h2{color:#0b1f3a;font-size:34px;margin-bottom:10px}.employee-library-header p{color:#64748b}.library-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.library-card{background:linear-gradient(145deg,#0b1f3a,#123f68);border:1px solid rgba(85,184,255,.25);border-radius:12px;padding:25px 18px;color:white;text-align:center;cursor:pointer;box-shadow:0 7px 22px rgba(11,31,58,.14);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.library-card:hover{transform:translateY(-5px);border-color:#55b8ff;box-shadow:0 14px 32px rgba(11,31,58,.25)}.library-icon{font-size:32px;color:#55b8ff;margin-bottom:10px}.library-card h3{color:white;font-size:18px;margin-bottom:5px}.library-card p{color:#dce9f5;font-size:13px}.library-logout{display:block;margin:30px auto 0;border:1px solid #0b1f3a;background:white;color:#0b1f3a;padding:10px 22px;border-radius:5px;cursor:pointer;font-weight:bold}.library-logout:hover{background:#0b1f3a;color:white}/* =========================
+OPERATIONS FILE LIST
+========================= */
+.operations-files{flex:1;overflow-y:auto;padding:25px;background:#eef4f9;direction:ltr}.operations-file-card{background:white;border:1px solid #d5e0ea;border-radius:10px;padding:15px 18px;margin-bottom:12px;display:flex;align-items:center;gap:15px;box-shadow:0 4px 14px rgba(11,31,58,.07);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}.operations-file-card:hover{transform:translateY(-2px);border-color:#55b8ff;box-shadow:0 7px 20px rgba(11,31,58,.12)}.operations-file-icon{width:45px;height:45px;flex:0 0 45px;border-radius:8px;background:#0b1f3a;color:#55b8ff;display:flex;align-items:center;justify-content:center;font-size:22px}.operations-file-info{flex:1;min-width:0}.operations-file-name{color:#0b1f3a;font-size:15px;font-weight:bold;word-break:break-word;line-height:1.35}.operations-file-type{color:#64748b;font-size:12px;margin-top:3px}.operations-open-btn{flex:0 0 auto;display:inline-block;text-decoration:none;background:#1b9be0;color:white;padding:8px 15px;border-radius:5px;font-size:13px;font-weight:bold;transition:background .2s ease}.operations-open-btn:hover{background:#55b8ff;color:#0b1f3a}.operations-loading,
 .operations-empty,
-.operations-error{
-  min-height:220px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  color:#64748b;
-  font-size:15px;
-  padding:30px
-}
-
-.operations-loading{
-  color:#0b1f3a;
-  font-weight:bold
-}
-
-.operations-empty strong,
-.operations-error strong{
-  display:block;
-  color:#0b1f3a;
-  font-size:17px;
-  margin-bottom:7px
-}
-
-.operations-error{
-  color:#c62828
-}
-
-.operations-error strong{
-  color:#c62828
-}
-
+.operations-error{min-height:220px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#64748b;font-size:15px;padding:30px}.operations-loading{color:#0b1f3a;font-weight:bold}.operations-empty strong,
+.operations-error strong{display:block;color:#0b1f3a;font-size:17px;margin-bottom:7px}.operations-error{color:#c62828}.operations-error strong{color:#c62828}/* =========================
+HSE
+========================= */
+.hse{background:#0b1f3a;color:white;text-align:center}.hse h2{font-size:34px;margin-bottom:20px}.hse p{max-width:850px;margin:auto;color:#dce9f5;font-size:18px}/* =========================
+CONTACT
+========================= */
+.contact{background:white;text-align:center}.contact-box{max-width:700px;margin:auto}.contact-box p{margin:12px 0;font-size:18px}/* =========================
+FOOTER
+========================= */
+footer{background:#071426;color:#b9c6d5;text-align:center;padding:25px;direction:ltr}body.rtl .hero{text-align:right}body.rtl .hero-content{direction:rtl}body.rtl .hero p{margin-left:0;margin-right:0}body.rtl .contact-box{direction:rtl}body.rtl .card p,
+body.rtl .card h3{direction:rtl}
 /* =========================
-   HSE
-   ========================= */
-
-.hse{
-  background:#0b1f3a;
-  color:white;
-  text-align:center
+RESPONSIVE
+========================= */
+@media(max-width:1000px){.company-card{flex-basis:calc((100% - 36px)/3)}.quran-box{width:290px;right:5%}
 }
-
-.hse h2{
-  font-size:34px;
-  margin-bottom:20px
+@media(max-width:700px){header{flex-direction:column;gap:15px;padding:12px 4%}nav{justify-content:center;width:100%}nav a{margin:0 6px;font-size:13px}.lang-btn,
+.employee-login-btn{margin-left:5px;font-size:11px;padding:6px 8px}.hero{min-height:650px;padding:230px 5% 60px;align-items:center}.hero h1{font-size:38px}.hero p{font-size:16px}.quran-box{position:absolute;top:25px;left:5%;right:5%;width:auto;max-width:90%;margin:0 auto;padding:12px 15px}.quran-box .verse{font-size:16px;line-height:1.7}.quran-box .source{font-size:11px;margin-top:5px}.company-slider{gap:7px}.company-card{flex-basis:calc((100% - 11px)/2);min-height:165px;padding:15px 7px}.company-track{gap:11px}.slider-btn{flex:0 0 38px;width:38px;height:38px;font-size:21px}.card-logo{width:35px;height:35px;margin-bottom:6px}.card-company-name{font-size:8px;margin-bottom:6px;line-height:1.15}.card-number{font-size:10px;letter-spacing:2px;margin-bottom:4px}.company-card h3{font-size:13px;line-height:1.25;margin-bottom:3px}.company-card p{font-size:11px;line-height:1.3}.video-icon{font-size:25px}/* Services orbital layout on mobile */
+.services{background-position:center center}.cards{width:100%;height:620px}.cards::before{width:92%;height:390px;bottom:48px}.cards::after{width:120px;height:120px;bottom:30px}.card{width:min(42vw,185px);min-height:112px;padding:14px 10px;border-radius:18px}.card:nth-child(1){--x:-24vw;--y:190px}.card:nth-child(2){--x:-25vw;--y:55px}.card:nth-child(3){--x:-15vw;--y:-75px}.card:nth-child(4){--x:15vw;--y:-75px}.card:nth-child(5){--x:25vw;--y:55px}.card:nth-child(6){--x:24vw;--y:190px}.card h3{font-size:15px;margin-bottom:5px}.card p{font-size:11px;line-height:1.35}.library-grid{grid-template-columns:1fr}.employee-library{padding:50px 5%}.employee-login-box{padding:28px 20px}.company-viewer{position:fixed;top:0;left:0;right:auto;bottom:auto;width:100vw;height:100vh;min-width:0;min-height:0;padding:5px;display:none;align-items:center;justify-content:center;overflow:hidden;box-sizing:border-box;transform:none;margin:0}.company-viewer.active{display:flex}.viewer-content{position:absolute;top:50%;left:50%;width:calc(100% - 10px);max-width:calc(100% - 10px);height:calc(100% - 10px);max-height:calc(100% - 10px);min-width:0;min-height:0;margin:0;flex-shrink:1;box-sizing:border-box;transform:translate(-50%,-50%);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}.pdf-toolbar{position:relative;flex:0 0 48px;width:100%;min-width:0;min-height:48px;padding:0 8px 0 12px;display:flex;align-items:center;box-sizing:border-box;overflow:hidden}.pdf-title{flex:1 1 auto;min-width:0;max-width:none;font-size:11px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:6px}.pdf-page-info{flex:0 0 auto;font-size:10px;white-space:nowrap;margin-right:6px}.viewer-close{flex:0 0 36px;width:36px;height:36px;min-width:36px;min-height:36px;font-size:26px;margin:0;padding:0;display:flex;align-items:center;justify-content:center}.pdf-scroll{flex:1 1 auto;width:100%;max-width:100%;min-width:0;min-height:0;padding:8px;overflow-y:auto;overflow-x:hidden;box-sizing:border-box;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;display:block;direction:ltr}.pdf-page{display:block;width:100%!important;max-width:100%!important;height:auto!important;margin:0 auto 10px;box-sizing:border-box}.operations-files{padding:12px}.operations-file-card{padding:12px;gap:10px}.operations-file-icon{width:40px;height:40px;flex-basis:40px;font-size:19px}.operations-file-name{font-size:13px}.operations-file-type{font-size:11px}.operations-open-btn{padding:7px 10px;font-size:11px}.assessed{padding:35px 5%}.assessed h2{font-size:27px}.assessed p{font-size:16px}
 }
-
-.hse p{
-  max-width:850px;
-  margin:auto;
-  color:#dce9f5;
-  font-size:18px
-}
-
-/* =========================
-   CONTACT
-   ========================= */
-
-.contact{
-  background:white;
-  text-align:center
-}
-
-.contact-box{
-  max-width:700px;
-  margin:auto
-}
-
-.contact-box p{
-  margin:12px 0;
-  font-size:18px
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-
-footer{
-  background:#071426;
-  color:#b9c6d5;
-  text-align:center;
-  padding:25px;
-  direction:ltr
-}
-
-body.rtl .hero{
-  text-align:right
-}
-
-body.rtl .hero-content{
-  direction:rtl
-}
-
-body.rtl .hero p{
-  margin-left:0;
-  margin-right:0
-}
-
-body.rtl .contact-box{
-  direction:rtl
-}
-
-body.rtl .card p,
-body.rtl .card h3{
-  direction:rtl
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-@media(max-width:1000px){
-
-  .company-card{
-    flex-basis:calc((100% - 36px)/3)
-  }
-
-  .quran-box{
-    width:290px;
-    right:5%
-  }
-}
-
-@media(max-width:700px){
-
-  header{
-    flex-direction:column;
-    gap:15px;
-    padding:12px 4%
-  }
-
-  nav{
-    justify-content:center;
-    width:100%
-  }
-
-  nav a{
-    margin:0 6px;
-    font-size:13px
-  }
-
-  .lang-btn,
-  .employee-login-btn{
-    margin-left:5px;
-    font-size:11px;
-    padding:6px 8px
-  }
-
-  .hero{
-    min-height:650px;
-    padding:230px 5% 60px;
-    align-items:center
-  }
-
-  .hero h1{
-    font-size:38px
-  }
-
-  .hero p{
-    font-size:16px
-  }
-
-  .quran-box{
-    position:absolute;
-    top:25px;
-    left:5%;
-    right:5%;
-    width:auto;
-    max-width:90%;
-    margin:0 auto;
-    padding:12px 15px
-  }
-
-  .quran-box .verse{
-    font-size:16px;
-    line-height:1.7
-  }
-
-  .quran-box .source{
-    font-size:11px;
-    margin-top:5px
-  }
-
-  .company-slider{
-    gap:7px
-  }
-
-  .company-card{
-    flex-basis:calc((100% - 11px)/2);
-    min-height:165px;
-    padding:15px 7px
-  }
-
-  .company-track{
-    gap:11px
-  }
-
-  .slider-btn{
-    flex:0 0 38px;
-    width:38px;
-    height:38px;
-    font-size:21px
-  }
-
-  .card-logo{
-    width:35px;
-    height:35px;
-    margin-bottom:6px
-  }
-
-  .card-company-name{
-    font-size:8px;
-    margin-bottom:6px;
-    line-height:1.15
-  }
-
-  .card-number{
-    font-size:10px;
-    letter-spacing:2px;
-    margin-bottom:4px
-  }
-
-  .company-card h3{
-    font-size:13px;
-    line-height:1.25;
-    margin-bottom:3px
-  }
-
-  .company-card p{
-    font-size:11px;
-    line-height:1.3
-  }
-
-  .video-icon{
-    font-size:25px
-  }
-
-  /* Services orbital layout on mobile */
-  .services{
-    background-position:center center
-  }
-
-  .cards{
-    width:100%;
-    height:620px
-  }
-
-  .cards::before{
-    width:92%;
-    height:390px;
-    bottom:48px
-  }
-
-  .cards::after{
-    width:120px;
-    height:120px;
-    bottom:30px
-  }
-
-  .card{
-    width:min(42vw,185px);
-    min-height:112px;
-    padding:14px 10px;
-    border-radius:18px
-  }
-
-  .card:nth-child(1){--x:-24vw;--y:190px}
-  .card:nth-child(2){--x:-25vw;--y:55px}
-  .card:nth-child(3){--x:-15vw;--y:-75px}
-  .card:nth-child(4){--x:15vw;--y:-75px}
-  .card:nth-child(5){--x:25vw;--y:55px}
-  .card:nth-child(6){--x:24vw;--y:190px}
-
-  .card h3{
-    font-size:15px;
-    margin-bottom:5px
-  }
-
-  .card p{
-    font-size:11px;
-    line-height:1.35
-  }
-
-  .library-grid{
-    grid-template-columns:1fr
-  }
-
-  .employee-library{
-    padding:50px 5%
-  }
-
-  .employee-login-box{
-    padding:28px 20px
-  }
-
-  .company-viewer{
-    position:fixed;
-    top:0;
-    left:0;
-    right:auto;
-    bottom:auto;
-    width:100vw;
-    height:100vh;
-    min-width:0;
-    min-height:0;
-    padding:5px;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    box-sizing:border-box;
-    transform:none;
-    margin:0
-  }
-
-  .company-viewer.active{
-    display:flex
-  }
-
-  .viewer-content{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:calc(100% - 10px);
-    max-width:calc(100% - 10px);
-    height:calc(100% - 10px);
-    max-height:calc(100% - 10px);
-    min-width:0;
-    min-height:0;
-    margin:0;
-    flex-shrink:1;
-    box-sizing:border-box;
-    transform:translate(-50%,-50%);
-    border-radius:8px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column
-  }
-
-  .pdf-toolbar{
-    position:relative;
-    flex:0 0 48px;
-    width:100%;
-    min-width:0;
-    min-height:48px;
-    padding:0 8px 0 12px;
-    display:flex;
-    align-items:center;
-    box-sizing:border-box;
-    overflow:hidden
-  }
-
-  .pdf-title{
-    flex:1 1 auto;
-    min-width:0;
-    max-width:none;
-    font-size:11px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-    padding-right:6px
-  }
-
-  .pdf-page-info{
-    flex:0 0 auto;
-    font-size:10px;
-    white-space:nowrap;
-    margin-right:6px
-  }
-
-  .viewer-close{
-    flex:0 0 36px;
-    width:36px;
-    height:36px;
-    min-width:36px;
-    min-height:36px;
-    font-size:26px;
-    margin:0;
-    padding:0;
-    display:flex;
-    align-items:center;
-    justify-content:center
-  }
-
-  .pdf-scroll{
-    flex:1 1 auto;
-    width:100%;
-    max-width:100%;
-    min-width:0;
-    min-height:0;
-    padding:8px;
-    overflow-y:auto;
-    overflow-x:hidden;
-    box-sizing:border-box;
-    -webkit-overflow-scrolling:touch;
-    overscroll-behavior:contain;
-    touch-action:pan-y pinch-zoom;
-    display:block;
-    direction:ltr
-  }
-
-  .pdf-page{
-    display:block;
-    width:100%!important;
-    max-width:100%!important;
-    height:auto!important;
-    margin:0 auto 10px;
-    box-sizing:border-box
-  }
-
-  .operations-files{
-    padding:12px
-  }
-
-  .operations-file-card{
-    padding:12px;
-    gap:10px
-  }
-
-  .operations-file-icon{
-    width:40px;
-    height:40px;
-    flex-basis:40px;
-    font-size:19px
-  }
-
-  .operations-file-name{
-    font-size:13px
-  }
-
-  .operations-file-type{
-    font-size:11px
-  }
-
-  .operations-open-btn{
-    padding:7px 10px;
-    font-size:11px
-  }
-
-  .assessed{
-    padding:35px 5%
-  }
-
-  .assessed h2{
-    font-size:27px
-  }
-
-  .assessed p{
-    font-size:16px
-  }
-}
-
-@media(max-width:450px){
-
-  section{
-    padding:50px 4%
-  }
-
-  .logo img{
-    height:50px;
-    max-width:180px;
-    object-fit:contain
-  }
-
-  nav a{
-    font-size:11px;
-    margin:0 3px
-  }
-
-  .lang-btn,
-  .employee-login-btn{
-    font-size:10px;
-    padding:6px 7px;
-    margin-left:3px
-  }
-
-  .hero{
-    min-height:630px;
-    padding:220px 5% 50px
-  }
-
-  .hero h1{
-    font-size:32px
-  }
-
-  .hero p{
-    font-size:16px
-  }
-
-  .quran-box{
-    top:20px;
-    left:4%;
-    right:4%;
-    max-width:92%;
-    padding:10px 12px
-  }
-
-  .quran-box .verse{
-    font-size:15px
-  }
-
-  .company-card{
-    min-height:160px
-  }
-
-  .card-company-name{
-    font-size:7.5px
-  }
-
-  .slider-btn{
-    flex:0 0 34px;
-    width:34px;
-    height:34px;
-    font-size:19px
-  }
-
-  .operations-file-card{
-    align-items:flex-start
-  }
-
-  .operations-open-btn{
-    align-self:center
-  }
-}
-
-.company-slider,
+@media(max-width:450px){section{padding:50px 4%}.logo img{height:50px;max-width:180px;object-fit:contain}nav a{font-size:11px;margin:0 3px}.lang-btn,
+.employee-login-btn{font-size:10px;padding:6px 7px;margin-left:3px}.hero{min-height:630px;padding:220px 5% 50px}.hero h1{font-size:32px}.hero p{font-size:16px}.quran-box{top:20px;left:4%;right:4%;max-width:92%;padding:10px 12px}.quran-box .verse{font-size:15px}.company-card{min-height:160px}.card-company-name{font-size:7.5px}.slider-btn{flex:0 0 34px;width:34px;height:34px;font-size:19px}.operations-file-card{align-items:flex-start}.operations-open-btn{align-self:center}
+}.company-slider,
 .company-card,
-.slider-btn{
-  -webkit-user-select:none;
-  user-select:none
-}
-
-@media print{
-  .company-viewer,
-  .employee-modal{
-    display:none!important
-  }
-}
-
-
+.slider-btn{-webkit-user-select:none;user-select:none}
+@media print{.company-viewer,
+.employee-modal{display:none!important}
+}\
 /* =========================
-   SERVICES ORBIT — MOBILE
+   KAMRA FINAL VISUAL OVERRIDES
    ========================= */
-@media(max-width:700px){
-  .services::before{
-    inset:-15%;
-    animation:kamraServicesFloatMobile 14s ease-in-out infinite alternate;
-  }
-
-  .cards{
-    width:100%;
-    height:600px;
-  }
-
-  .cards::before{
-    width:92%;
-    height:380px;
-    bottom:48px;
-  }
-
-  .cards::after{
-    width:94%;
-    height:85px;
-    bottom:24px;
-  }
-
-  .card{
-    width:min(28vw,125px);
-    min-height:72px;
-    padding:8px 6px;
-    border-radius:16px;
-  }
-
-  .card:nth-child(1){--x:-24vw;--y:190px}
-  .card:nth-child(2){--x:-25vw;--y:55px}
-  .card:nth-child(3){--x:-15vw;--y:-75px}
-  .card:nth-child(4){--x:15vw;--y:-75px}
-  .card:nth-child(5){--x:25vw;--y:55px}
-  .card:nth-child(6){--x:24vw;--y:190px}
-
-  .card:hover{
-    transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y) + 42px)) scale(1.04);
-  }
-
-  .card h3{font-size:11px;margin-bottom:4px}
-  .card p{font-size:8px;line-height:1.25}
-}
-
-@keyframes kamraServicesFloatMobile{
-  0%{transform:scale(1.14) translate3d(-1%,0,0)}
-  100%{transform:scale(1.20) translate3d(1%,1%,0)}
-}
-
-@media(prefers-reduced-motion:reduce){
-  .services::before,.card{animation:none!important}
-}
-
+.services{position:relative;isolation:isolate;perspective:1200px;background:linear-gradient(rgba(247,249,252,.46),rgba(247,249,252,.46)),#f7f9fc;overflow:hidden}.services::before{content:"";position:absolute;inset:-6%;z-index:0;background:url("kamra-3d-background.png.png") center center/92% auto no-repeat;opacity:.78;transform:translate3d(0,0,0) scale(.96) rotateX(0deg) rotateY(0deg);transform-origin:center;animation:servicesBackground3D 16s ease-in-out infinite;pointer-events:none;will-change:transform,background-position}.services::after{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.20),transparent 48%),linear-gradient(to bottom,transparent 55%,rgba(0,0,0,.12) 100%);pointer-events:none}.services>*{position:relative;z-index:1}
+@keyframes servicesBackground3D{0%,100%{transform:translate3d(0,0,0) scale(.96) rotateX(0deg) rotateY(0deg);background-position:50% 50%}25%{transform:translate3d(-1.2%,1%,18px) scale(.98) rotateX(1deg) rotateY(-1.2deg);background-position:48% 52%}50%{transform:translate3d(0,-1%,28px) scale(1) rotateX(-1deg) rotateY(1.2deg);background-position:52% 48%}75%{transform:translate3d(1.2%,1%,18px) scale(.98) rotateX(1deg) rotateY(-1deg);background-position:48% 52%}}.cards::before{border:2px solid transparent;border-bottom:0;background:linear-gradient(to bottom,#19a85b 0%,#fff 48%,#000 100%) border-box;box-shadow:0 18px 38px rgba(0,0,0,.20);opacity:.78;mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor}.cards::after{background:radial-gradient(circle,rgba(255,255,255,.20) 0%,rgba(25,168,91,.10) 38%,rgba(0,0,0,.18) 78%,transparent 72%)}
+@media(max-width:700px){.services{background:#f7f9fc;perspective:900px}.services::before{inset:0;background-size:78% auto;background-position:center 42%;opacity:.58;transform:translate3d(0,0,0) scale(.86);animation:servicesBackground3DMobile 18s ease-in-out infinite}.services::after{background:linear-gradient(to bottom,transparent 48%,rgba(0,0,0,.10) 100%)}.cards{height:520px}.cards::before{width:88%;height:300px;bottom:40px}.cards::after{width:90px;height:90px;bottom:22px}.card{width:min(21vw,92px);min-height:56px;padding:7px 5px;border-radius:11px;border:1px solid rgba(255,255,255,.20);background:rgba(255,255,255,.025);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 3px 10px rgba(0,0,0,.08);transition:border-color .3s ease,background .3s ease,box-shadow .3s ease}.card:hover{background:rgba(255,255,255,.06);border-color:rgba(85,184,255,.55);box-shadow:0 5px 12px rgba(0,0,0,.10)}.card:nth-child(1){--x:-28vw;--y:155px}.card:nth-child(2){--x:-29vw;--y:45px}.card:nth-child(3){--x:-17vw;--y:-60px}.card:nth-child(4){--x:17vw;--y:-60px}.card:nth-child(5){--x:29vw;--y:45px}.card:nth-child(6){--x:28vw;--y:155px}.card h3{font-size:10px;margin-bottom:2px;line-height:1.15}.card p{font-size:8px;line-height:1.2}.section-title{margin-bottom:24px}.section-title h2{font-size:28px}.section-title p{font-size:13px;line-height:1.45}}
+@keyframes servicesBackground3DMobile{0%,100%{transform:translate3d(0,0,0) scale(.86) rotateX(0deg) rotateY(0deg);background-position:50% 42%}50%{transform:translate3d(1%,0,12px) scale(.90) rotateX(1deg) rotateY(-1deg);background-position:52% 45%}}
+@media(max-width:450px){.services::before{background-size:70% auto;opacity:.52}.cards{height:480px}.card{width:78px;min-height:52px;padding:6px 4px}.card h3{font-size:9px}.card p{font-size:7px}.cards::before{width:90%;height:275px;bottom:34px}}
 </style>
-</head>
-
-<body>
-
-<!-- =========================
-     HEADER
-     ========================= -->
-
-<header>
-
-<div class="logo">
-  <img src="kamra-energy.svg" alt="KAMRA ENERGY">
-  <div class="logo-text">
-    KAMRA FOR ENERGY CONTRACTING L.L.C.
-  </div>
-</div>
-
-<nav>
-
-<a href="#home">
-  <span class="en">Home</span>
-  <span class="ar">الرئيسية</span>
-</a>
-
-<a href="#about">
-  <span class="en">About Us</span>
-  <span class="ar">من نحن</span>
-</a>
-
-<a href="#services">
-  <span class="en">Services</span>
-  <span class="ar">خدماتنا</span>
-</a>
-
-<a href="#hse">
-  <span class="en">HSE</span>
-  <span class="ar">السلامة</span>
-</a>
-
-<a href="#contact">
-  <span class="en">Contact</span>
-  <span class="ar">اتصل بنا</span>
-</a>
-
-<button
-  class="employee-login-btn"
-  type="button"
-  id="employeeLoginButton">
-
-  <span class="en">Employee Login</span>
-  <span class="ar">دخول الموظفين</span>
-
-</button>
-
-<button
-  class="lang-btn"
-  type="button"
-  id="languageButton">
-  العربية
-</button>
-
-</nav>
-
-</header>
-
-
-<!-- =========================
-     HERO
-     ========================= -->
-
-<section class="hero" id="home">
-
-<div class="quran-box" aria-live="polite">
-
-<div class="verse" id="quranVerse">
-﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾
-</div>
-
-<div class="source" id="quranSource">
-سورة طه — الآية 114
-</div>
-
-</div>
-
-<div class="hero-content">
-
-<div class="en">
-
-<h1>
+\</head>
+\<body>
+\<!-- =========================
+HEADER
+========================= -->
+\<header>
+\<div class="logo">
+\<img src="kamra-energy.svg" alt="KAMRA
+ENERGY">
+\<div class="logo-text">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</h1>
-
-<p>
-Professional Energy, Well Services and Contracting Solutions with a strong commitment to safety, quality and operational excellence.
-</p>
-
-<a class="btn" href="#contact">
+\</div>
+\</div>
+\<nav>
+\<a href="#home">
+\<span class="en">Home\</span>
+\<span class="ar">الرئيسية\</span>
+\</a>
+\<a href="#about">
+\<span class="en">About Us\</span>
+\<span class="ar">من نحن\</span>
+\</a>
+\<a href="#services">
+\<span class="en">Services\</span>
+\<span class="ar">خدماتنا\</span>
+\</a>
+\<a href="#hse">
+\<span class="en">HSE\</span>
+\<span class="ar">السلامة\</span>
+\</a>
+\<a href="#contact">
+\<span class="en">Contact\</span>
+\<span class="ar">اتصل بنا\</span>
+\</a>
+\<button
+class="employee-login-btn"
+type="button"
+id="employeeLoginButton">
+\<span class="en">Employee Login\</span>
+\<span class="ar">دخول الموظفين\</span>
+\</button>
+\<button
+class="lang-btn"
+type="button"
+id="languageButton">
+العربية
+\</button>
+\</nav>
+\</header>
+\<!-- =========================
+HERO
+========================= -->
+\<section class="hero" id="home">
+\<div class="quran-box"
+aria-live="polite">
+\<div class="verse"
+id="quranVerse">
+﴿وَقُل
+رَّبِّ زِدْنِي عِلْمًا﴾
+\</div>
+\<div class="source"
+id="quranSource">
+سورة طه
+— الآية 114
+\</div>
+\</div>
+\<div class="hero-content">
+\<div class="en">
+\<h1>
+KAMRA FOR ENERGY CONTRACTING L.L.C.
+\</h1>
+\<p>
+Professional Energy, Well Services and Contracting Solutions
+with a strong commitment to safety, quality and operational excellence.
+\</p>
+\<a class="btn" href="#contact">
 Contact Us
-</a>
-
-</div>
-
-<div class="ar">
-
-<h1>
-كامرا للمقاولات في مجال الطاقة ذ.م.م
-</h1>
-
-<p>
-حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات، مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
-</p>
-
-<a class="btn" href="#contact">
+\</a>
+\</div>
+\<div class="ar">
+\<h1>
+كامرا
+للمقاولات في مجال الطاقة ذ.م.م
+\</h1>
+\<p>
+حلول
+احترافية في مجال الطاقة وخدمات الآبار والمقاولات، مع التزام قوي بالسلامة
+والجودة والتميز التشغيلي.
+\</p>
+\<a class="btn" href="#contact">
 اتصل بنا
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT US
-     ========================= -->
-
-<section class="about" id="about">
-
-<div class="section-title en">
-
-<h2>About Us</h2>
-
-<p>
+\</a>
+\</div>
+\</div>
+\</section>
+\<!-- =========================
+ABOUT US
+========================= -->
+\<section class="about" id="about">
+\<div class="section-title en">
+\<h2>About Us\</h2>
+\<p>
 Professional experience. Reliable solutions.
-</p>
-
-</div>
-
-<div class="section-title ar">
-
-<h2>من نحن</h2>
-
-<p>
-خبرة مهنية وحلول موثوقة.
-</p>
-
-</div>
-
-
-<div class="company-slider">
-
-<button
-  type="button"
-  class="slider-btn"
-  id="prevBtn"
-  aria-label="Previous cards">
+\</p>
+\</div>
+\<div class="section-title ar">
+\<h2>من نحن\</h2>
+\<p>
+خبرة
+مهنية وحلول موثوقة.
+\</p>
+\</div>
+\<div class="company-slider">
+\<button
+type="button"
+class="slider-btn"
+id="prevBtn"
+aria-label="Previous cards">
 ‹
-</button>
-
-<div
-  class="company-slider-window"
-  id="sliderWindow">
-
-<div
-  class="company-track"
-  id="companyTrack">
-
-
-<!-- 01 -->
-
-<div
-  class="company-card"
-  data-pdf="01-logo.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</button>
+\<div
+class="company-slider-window"
+id="sliderWindow">
+\<div
+class="company-track"
+id="companyTrack">
+\<!-- 01 -->
+\<div
+class="company-card"
+data-pdf="01-logo.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 01
-</div>
-
-<div class="en">
-<h3>Company Logo</h3>
-<p>Company Logo</p>
-</div>
-
-<div class="ar">
-<h3>شعار الشركة</h3>
-<p>شعار الشركة</p>
-</div>
-
-</div>
-
-
-<!-- 02 -->
-
-<div
-  class="company-card"
-  data-pdf="02-about-us.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Company Logo\</h3>
+\<p>Company Logo\</p>
+\</div>
+\<div class="ar">
+\<h3>شعار
+الشركة\</h3>
+\<p>شعار
+الشركة\</p>
+\</div>
+\</div>
+\<!-- 02 -->
+\<div
+class="company-card"
+data-pdf="02-about-us.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 02
-</div>
-
-<div class="en">
-<h3>About Us</h3>
-<p>من نحن</p>
-</div>
-
-<div class="ar">
-<h3>من نحن</h3>
-<p>نبذة عن الشركة</p>
-</div>
-
-</div>
-
-
-<!-- 03 -->
-
-<div
-  class="company-card"
-  data-pdf="03-vision.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>About Us\</h3>
+\<p>من نحن\</p>
+\</div>
+\<div class="ar">
+\<h3>من نحن\</h3>
+\<p>نبذة عن
+الشركة\</p>
+\</div>
+\</div>
+\<!-- 03 -->
+\<div
+class="company-card"
+data-pdf="03-vision.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 03
-</div>
-
-<div class="en">
-<h3>Vision</h3>
-<p>Our Vision</p>
-</div>
-
-<div class="ar">
-<h3>الرؤية</h3>
-<p>رؤيتنا</p>
-</div>
-
-</div>
-
-
-<!-- 04 -->
-
-<div
-  class="company-card"
-  data-pdf="04-mission.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Vision\</h3>
+\<p>Our Vision\</p>
+\</div>
+\<div class="ar">
+\<h3>الرؤية\</h3>
+\<p>رؤيتنا\</p>
+\</div>
+\</div>
+\<!-- 04 -->
+\<div
+class="company-card"
+data-pdf="04-mission.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 04
-</div>
-
-<div class="en">
-<h3>Mission</h3>
-<p>Our Mission</p>
-</div>
-
-<div class="ar">
-<h3>الرسالة</h3>
-<p>رسالتنا</p>
-</div>
-
-</div>
-
-
-<!-- 05 -->
-
-<div
-  class="company-card"
-  data-pdf="05-comprehensive-safety.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Mission\</h3>
+\<p>Our Mission\</p>
+\</div>
+\<div class="ar">
+\<h3>الرسالة\</h3>
+\<p>رسالتنا\</p>
+\</div>
+\</div>
+\<!-- 05 -->
+\<div
+class="company-card"
+data-pdf="05-comprehensive-safety.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 05
-</div>
-
-<div class="en">
-<h3>Comprehensive Safety</h3>
-<p>Safety First</p>
-</div>
-
-<div class="ar">
-<h3>السلامة الشاملة</h3>
-<p>السلامة أولاً</p>
-</div>
-
-</div>
-
-
-<!-- 06 -->
-
-<div
-  class="company-card"
-  data-pdf="06-core-values.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Comprehensive Safety\</h3>
+\<p>Safety First\</p>
+\</div>
+\<div class="ar">
+\<h3>السلامة
+الشاملة\</h3>
+\<p>السلامة
+أولاً\</p>
+\</div>
+\</div>
+\<!-- 06 -->
+\<div
+class="company-card"
+data-pdf="06-core-values.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 06
-</div>
-
-<div class="en">
-<h3>Core Values</h3>
-<p>Our Core Values</p>
-</div>
-
-<div class="ar">
-<h3>القيم الجوهرية</h3>
-<p>قيمنا الأساسية</p>
-</div>
-
-</div>
-
-
-<!-- 07 -->
-
-<div
-  class="company-card"
-  data-pdf="07-operational-efficiency.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Core Values\</h3>
+\<p>Our Core Values\</p>
+\</div>
+\<div class="ar">
+\<h3>القيم
+الجوهرية\</h3>
+\<p>قيمنا
+الأساسية\</p>
+\</div>
+\</div>
+\<!-- 07 -->
+\<div
+class="company-card"
+data-pdf="07-operational-efficiency.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 07
-</div>
-
-<div class="en">
-<h3>Operational Efficiency</h3>
-<p>Efficient Operations</p>
-</div>
-
-<div class="ar">
-<h3>الكفاءة التشغيلية</h3>
-<p>عمليات تشغيلية فعالة</p>
-</div>
-
-</div>
-
-
-<!-- 08 -->
-
-<div
-  class="company-card"
-  data-pdf="08-continuous-innovation.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Operational Efficiency\</h3>
+\<p>Efficient Operations\</p>
+\</div>
+\<div class="ar">
+\<h3>الكفاءة
+التشغيلية\</h3>
+\<p>عمليات
+تشغيلية فعالة\</p>
+\</div>
+\</div>
+\<!-- 08 -->
+\<div
+class="company-card"
+data-pdf="08-continuous-innovation.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 08
-</div>
-
-<div class="en">
-<h3>Continuous Innovation</h3>
-<p>Innovation and Development</p>
-</div>
-
-<div class="ar">
-<h3>الابتكار المستمر</h3>
-<p>الابتكار والتطوير</p>
-</div>
-
-</div>
-
-
-<!-- 09 -->
-
-<div
-  class="company-card"
-  data-pdf="09-company-perspective.pdf">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Continuous Innovation\</h3>
+\<p>Innovation and Development\</p>
+\</div>
+\<div class="ar">
+\<h3>الابتكار
+المستمر\</h3>
+\<p>الابتكار
+والتطوير\</p>
+\</div>
+\</div>
+\<!-- 09 -->
+\<div
+class="company-card"
+data-pdf="09-company-perspective.pdf">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 09
-</div>
-
-<div class="en">
-<h3>Company Perspective</h3>
-<p>Our Perspective</p>
-</div>
-
-<div class="ar">
-<h3>منظور الشركة</h3>
-<p>رؤية الشركة</p>
-</div>
-
-</div>
-
-
-<!-- 10 VIDEO -->
-
-<div
-  class="company-card"
-  id="videoCard">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Company Perspective\</h3>
+\<p>Our Perspective\</p>
+\</div>
+\<div class="ar">
+\<h3>منظور
+الشركة\</h3>
+\<p>رؤية
+الشركة\</p>
+\</div>
+\</div>
+\<!-- 10 VIDEO -->
+\<div
+class="company-card"
+id="videoCard">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 10
-</div>
-
-<div class="video-icon">
+\</div>
+\<div class="video-icon">
 ▶
-</div>
-
-<div class="en">
-<h3>Company Video</h3>
-<p>Watch Company Video</p>
-</div>
-
-<div class="ar">
-<h3>فيديو الشركة</h3>
-<p>مشاهدة فيديو الشركة</p>
-</div>
-
-</div>
-
-
-<!-- 11 -->
-
-<div class="company-card update-card">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\<div class="en">
+\<h3>Company Video\</h3>
+\<p>Watch Company Video\</p>
+\</div>
+\<div class="ar">
+\<h3>فيديو
+الشركة\</h3>
+\<p>مشاهدة
+فيديو الشركة\</p>
+\</div>
+\</div>
+\<!-- 11 -->
+\<div class="company-card update-card">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 11
-</div>
-
-<div class="update-text">
+\</div>
+\<div class="update-text">
 UPDATE
-</div>
-
-</div>
-
-
-<!-- 12 -->
-
-<div class="company-card update-card">
-
-<img
-  src="kamra-energy.svg"
-  class="card-logo"
-  alt="KAMRA ENERGY">
-
-<div class="card-company-name">
+\</div>
+\</div>
+\<!-- 12 -->
+\<div class="company-card update-card">
+\<img
+src="kamra-energy.svg"
+class="card-logo"
+alt="KAMRA ENERGY">
+\<div class="card-company-name">
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
-<div class="card-number">
+\</div>
+\<div class="card-number">
 12
-</div>
-
-<div class="update-text">
+\</div>
+\<div class="update-text">
 UPDATE
-</div>
-
-</div>
-
-
-</div>
-</div>
-
-<button
-  type="button"
-  class="slider-btn"
-  id="nextBtn"
-  aria-label="Next cards">
+\</div>
+\</div>
+\</div>
+\</div>
+\<button
+type="button"
+class="slider-btn"
+id="nextBtn"
+aria-label="Next cards">
 ›
-</button>
-
-</div>
-
-
-<!-- PDF VIEWER -->
-
-<div
-  id="companyViewer"
-  class="company-viewer"
-  aria-hidden="true">
-
-<div
-  class="viewer-content"
-  id="viewerContent">
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES
-     ========================= -->
-
-<section class="services" id="services">
-
-<div class="section-title en">
-
-<h2>Our Services</h2>
-
-<p>
+\</button>
+\</div>
+\<!-- PDF VIEWER -->
+\<div
+id="companyViewer"
+class="company-viewer"
+aria-hidden="true">
+\<div
+class="viewer-content"
+id="viewerContent">
+\</div>
+\</div>
+\</section>
+\<!-- =========================
+SERVICES
+========================= -->
+\<section class="services"
+id="services">
+\<div class="section-title en">
+\<h2>Our Services\</h2>
+\<p>
 Integrated solutions for energy and well service operations.
-</p>
-
-</div>
-
-<div class="section-title ar">
-
-<h2>خدماتنا</h2>
-
-<p>
-حلول متكاملة لعمليات الطاقة وخدمات الآبار.
-</p>
-
-</div>
-
-
-<div class="cards service-orbit">
-
-
-<div class="card">
-
-<div class="en">
-<h3>Well Services</h3>
-<p>
+\</p>
+\</div>
+\<div class="section-title ar">
+\<h2>خدماتنا\</h2>
+\<p>
+حلول
+متكاملة لعمليات الطاقة وخدمات الآبار.
+\</p>
+\</div>
+\<div class="cards service-orbit">
+\<div class="card">
+\<div class="en">
+\<h3>Well Services\</h3>
+\<p>
 Professional support and services for well operations.
-</p>
-</div>
-
-<div class="ar">
-<h3>خدمات الآبار</h3>
-<p>
-دعم وخدمات احترافية لعمليات الآبار.
-</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="en">
-<h3>Energy Contracting</h3>
-<p>
-Contracting solutions designed around operational requirements.
-</p>
-</div>
-
-<div class="ar">
-<h3>مقاولات الطاقة</h3>
-<p>
-حلول مقاولات مصممة وفق المتطلبات التشغيلية.
-</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="en">
-<h3>Technical Services</h3>
-<p>
+\</p>
+\</div>
+\<div class="ar">
+\<h3>خدمات
+الآبار\</h3>
+\<p>
+دعم
+وخدمات احترافية لعمليات الآبار.
+\</p>
+\</div>
+\</div>
+\<div class="card">
+\<div class="en">
+\<h3>Energy Contracting\</h3>
+\<p>
+Contracting solutions designed around operational
+requirements.
+\</p>
+\</div>
+\<div class="ar">
+\<h3>مقاولات
+الطاقة\</h3>
+\<p>
+حلول
+مقاولات مصممة وفق المتطلبات التشغيلية.
+\</p>
+\</div>
+\</div>
+\<div class="card">
+\<div class="en">
+\<h3>Technical Services\</h3>
+\<p>
 Experienced technical personnel and operational support.
-</p>
-</div>
-
-<div class="ar">
-<h3>الخدمات الفنية</h3>
-<p>
-كوادر فنية ذات خبرة ودعم تشغيلي متكامل.
-</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="en">
-<h3>Inspection</h3>
-<p>
+\</p>
+\</div>
+\<div class="ar">
+\<h3>الخدمات
+الفنية\</h3>
+\<p>
+كوادر
+فنية ذات خبرة ودعم تشغيلي متكامل.
+\</p>
+\</div>
+\</div>
+\<div class="card">
+\<div class="en">
+\<h3>Inspection\</h3>
+\<p>
 Inspection and quality-focused technical services.
-</p>
-</div>
-
-<div class="ar">
-<h3>الفحص والتفتيش</h3>
-<p>
-خدمات فنية متخصصة في الفحص والجودة.
-</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="en">
-<h3>HSE</h3>
-<p>
-Health, Safety and Environmental commitment in every operation.
-</p>
-</div>
-
-<div class="ar">
-<h3>الصحة والسلامة والبيئة</h3>
-<p>
-الالتزام بالصحة والسلامة وحماية البيئة في جميع عملياتنا.
-</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="en">
-<h3>Quality</h3>
-<p>
-Structured processes focused on quality and continuous improvement.
-</p>
-</div>
-
-<div class="ar">
-<h3>الجودة</h3>
-<p>
-عمليات منظمة تركز على الجودة والتحسين المستمر.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     EMPLOYEE LIBRARY
-     ========================= -->
-
-<section
-  class="employee-library"
-  id="employeeLibrary">
-
-<div class="employee-library-header">
-
-<div class="en">
-
-<h2>Employee Library</h2>
-
-<p>
+\</p>
+\</div>
+\<div class="ar">
+\<h3>الفحص
+والتفتيش\</h3>
+\<p>
+خدمات
+فنية متخصصة في الفحص والجودة.
+\</p>
+\</div>
+\</div>
+\<div class="card">
+\<div class="en">
+\<h3>HSE\</h3>
+\<p>
+Health, Safety and Environmental commitment in every
+operation.
+\</p>
+\</div>
+\<div class="ar">
+\<h3>الصحة
+والسلامة والبيئة\</h3>
+\<p>
+الالتزام
+بالصحة والسلامة وحماية البيئة في جميع عملياتنا.
+\</p>
+\</div>
+\</div>
+\<div class="card">
+\<div class="en">
+\<h3>Quality\</h3>
+\<p>
+Structured processes focused on quality and continuous
+improvement.
+\</p>
+\</div>
+\<div class="ar">
+\<h3>الجودة\</h3>
+\<p>
+عمليات
+منظمة تركز على الجودة والتحسين المستمر.
+\</p>
+\</div>
+\</div>
+\</div>
+\</section>
+\<!-- =========================
+EMPLOYEE LIBRARY
+========================= -->
+\<section
+class="employee-library"
+id="employeeLibrary">
+\<div class="employee-library-header">
+\<div class="en">
+\<h2>Employee Library\</h2>
+\<p>
 Authorized company documents and operational resources.
-</p>
-
-</div>
-
-<div class="ar">
-
-<h2>مكتبة الموظفين</h2>
-
-<p>
-الوثائق والموارد التشغيلية الخاصة بالشركة للمستخدمين المصرح لهم.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="library-grid">
-
-
-<!-- CARD 01 -->
-
-<div
-  class="library-card"
-  data-library-pdf="employee-well-services.pdf">
-
-<div class="library-icon">
+\</p>
+\</div>
+\<div class="ar">
+\<h2>مكتبة
+الموظفين\</h2>
+\<p>
+الوثائق
+والموارد التشغيلية الخاصة بالشركة للمستخدمين المصرح لهم.
+\</p>
+\</div>
+\</div>
+\<div class="library-grid">
+\<!-- CARD 01 -->
+\<div
+class="library-card"
+data-library-pdf="employee-well-services.pdf">
+\<div class="library-icon">
 ▣
-</div>
-
-<div class="en">
-
-<h3>HSE</h3>
-
-<p>
+\</div>
+\<div class="en">
+\<h3>HSE\</h3>
+\<p>
 Health, Safety & Environment
-</p>
-
-</div>
-
-<div class="ar">
-
-<h3>الصحة والسلامة والبيئة</h3>
-
-<p>
-وثائق الصحة والسلامة والبيئة
-</p>
-
-</div>
-
-</div>
-
-
-<!-- CARD 02 -->
-
-<div
-  class="library-card"
-  data-library-pdf="employee-hse.pdf">
-
-<div class="library-icon">
-✓
-</div>
-
-<div class="en">
-
-<h3>Well Services Risk Documents</h3>
-
-</div>
-
-<div class="ar">
-
-<h3>خدمات الآبار</h3>
-
-<p>
-وثائق المخاطر الخاصة بخدمات الآبار
-</p>
-
-</div>
-
-</div>
-
-
-<!-- CARD 03 -->
-
-<div
-  class="library-card"
-  data-library-pdf="employee-technical-documents.pdf">
-
-<div class="library-icon">
-⚙
-</div>
-
-<div class="en">
-
-<h3>Technical Documents (SOP)</h3>
-
-<p>
-Technical Documentation
-</p>
-
-</div>
-
-<div class="ar">
-
-<h3>الوثائق الفنية</h3>
-
-<p>
-الوثائق الفنية والتقنية
-</p>
-
-</div>
-
-</div>
-
-
-<!-- CARD 04 - OPERATIONS -->
-
-<div
-  class="library-card"
-  id="operationsLibraryCard">
-
-<div class="library-icon">
-◈
-</div>
-
-<div class="en">
-
-<h3>Operations</h3>
-
-<p>
-Operational Documents
-</p>
-
-</div>
-
-<div class="ar">
-
-<h3>العمليات</h3>
-
-<p>
-الوثائق التشغيلية
-</p>
-
-</div>
-
-</div>
-
-
-<!-- CARD 05 -->
-
-<div
-  class="library-card"
-  data-library-pdf="employee-forms-templates.pdf">
-
-<div class="library-icon">
-▤
-</div>
-
-<div class="en">
-
-<h3>Forms & Templates</h3>
-
-<p>
-Company Forms and Templates
-</p>
-
-</div>
-
-<div class="ar">
-
-<h3>النماذج والقوالب</h3>
-
-<p>
-نماذج وقوالب الشركة
-</p>
-
-</div>
-
-</div>
-
-
-<!-- CARD 06 -->
-
-<div
-  class="library-card"
-  data-library-pdf="employee-training.pdf">
-
-<div class="library-icon">
-★
-</div>
-
-<div class="en">
-
-<h3>Training</h3>
-
-<p>
-Training Materials
-</p>
-
-</div>
-
-<div class="ar">
-
-<h3>التدريب</h3>
-
-<p>
-مواد التدريب
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<button
-  type="button"
-  class="library-logout"
-  id="libraryLogout">
-
-<span class="en">
-Log Out
-</span>
-
-<span class="ar">
-تسجيل الخروج
-</span>
-
-</button>
-
-</section>
-
-
-<!-- =========================
-     ASSESSED
-     ========================= -->
-
-<section class="assessed">
-
-<div class="en">
-
-<h2>Assessed</h2>
-
-<p>
-Every operation begins with a documented risk assessment.
-</p>
-
-</div>
-
-<div class="ar">
-
-<h2>التقييم</h2>
-
-<p>
-تبدأ كل عملية بتقييم موثق للمخاطر.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     HSE
-     ========================= -->
-
-<section class="hse" id="hse">
-
-<div class="en">
-
-<h2>
-Health, Safety & Environment
-</h2>
-
-<p>
-Safety is a fundamental part of our operations. We are committed to responsible work practices, risk awareness, environmental protection and continuous improvement.
-</p>
-
-</div>
-
-
-<div class="ar">
-
-<h2>
+\</p>
+\</div>
+\<div class="ar">
+\<h3>الصحة
+والسلامة والبيئة\</h3>
+\<p>
+وثائق
 الصحة والسلامة والبيئة
-</h2>
-
-<p>
-السلامة جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل الآمنة والمسؤولة وتقييم المخاطر وحماية البيئة والتحسين المستمر.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-     ========================= -->
-
-<section id="contact" class="contact">
-
-<div class="section-title en">
-
-<h2>
+\</p>
+\</div>
+\</div>
+\<!-- CARD 02 -->
+\<div
+class="library-card"
+data-library-pdf="employee-hse.pdf">
+\<div class="library-icon">
+✓
+\</div>
+\<div class="en">
+\<h3>Well Services Risk Documents\</h3>
+\</div>
+\<div class="ar">
+\<h3>خدمات
+الآبار\</h3>
+\<p>
+وثائق
+المخاطر الخاصة بخدمات الآبار
+\</p>
+\</div>
+\</div>
+\<!-- CARD 03 -->
+\<div
+class="library-card"
+data-library-pdf="employee-technical-documents.pdf">
+\<div class="library-icon">
+⚙
+\</div>
+\<div class="en">
+\<h3>Technical Documents (SOP)\</h3>
+\<p>
+Technical Documentation
+\</p>
+\</div>
+\<div class="ar">
+\<h3>الوثائق
+الفنية\</h3>
+\<p>
+الوثائق
+الفنية والتقنية
+\</p>
+\</div>
+\</div>
+\<!-- CARD 04 - OPERATIONS -->
+\<div
+class="library-card"
+id="operationsLibraryCard">
+\<div class="library-icon">
+◈
+\</div>
+\<div class="en">
+\<h3>Operations\</h3>
+\<p>
+Operational Documents
+\</p>
+\</div>
+\<div class="ar">
+\<h3>العمليات\</h3>
+\<p>
+الوثائق
+التشغيلية
+\</p>
+\</div>
+\</div>
+\<!-- CARD 05 -->
+\<div
+class="library-card"
+data-library-pdf="employee-forms-templates.pdf">
+\<div class="library-icon">
+▤
+\</div>
+\<div class="en">
+\<h3>Forms & Templates\</h3>
+\<p>
+Company Forms and Templates
+\</p>
+\</div>
+\<div class="ar">
+\<h3>النماذج
+والقوالب\</h3>
+\<p>
+نماذج
+وقوالب الشركة
+\</p>
+\</div>
+\</div>
+\<!-- CARD 06 -->
+\<div
+class="library-card"
+data-library-pdf="employee-training.pdf">
+\<div class="library-icon">
+★
+\</div>
+\<div class="en">
+\<h3>Training\</h3>
+\<p>
+Training Materials
+\</p>
+\</div>
+\<div class="ar">
+\<h3>التدريب\</h3>
+\<p>
+مواد
+التدريب
+\</p>
+\</div>
+\</div>
+\</div>
+\<button
+type="button"
+class="library-logout"
+id="libraryLogout">
+\<span class="en">
+Log Out
+\</span>
+\<span class="ar">
+تسجيل
+الخروج
+\</span>
+\</button>
+\</section>
+\<!-- =========================
+ASSESSED
+========================= -->
+\<section class="assessed">
+\<div class="en">
+\<h2>Assessed\</h2>
+\<p>
+Every operation begins with a documented risk assessment.
+\</p>
+\</div>
+\<div class="ar">
+\<h2>التقييم\</h2>
+\<p>
+تبدأ كل
+عملية بتقييم موثق للمخاطر.
+\</p>
+\</div>
+\</section>
+\<!-- =========================
+HSE
+========================= -->
+\<section class="hse" id="hse">
+\<div class="en">
+\<h2>
+Health, Safety & Environment
+\</h2>
+\<p>
+Safety is a fundamental part of our operations. We are
+committed to responsible work practices, risk awareness, environmental
+protection and continuous improvement.
+\</p>
+\</div>
+\<div class="ar">
+\<h2>
+الصحة
+والسلامة والبيئة
+\</h2>
+\<p>
+السلامة
+جزء أساسي من عملياتنا. نحن ملتزمون بممارسات العمل الآمنة والمسؤولة وتقييم
+المخاطر وحماية البيئة والتحسين المستمر.
+\</p>
+\</div>
+\</section>
+\<!-- =========================
+CONTACT
+========================= -->
+\<section id="contact"
+class="contact">
+\<div class="section-title en">
+\<h2>
 Contact Us
-</h2>
-
-<p>
+\</h2>
+\<p>
 We would be pleased to discuss your requirements.
-</p>
-
-</div>
-
-<div class="section-title ar">
-
-<h2>
+\</p>
+\</div>
+\<div class="section-title ar">
+\<h2>
 اتصل بنا
-</h2>
-
-<p>
-يسعدنا مناقشة متطلباتكم واحتياجاتكم.
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-<div class="en">
-
-<p>
-<strong>Company:</strong>
+\</h2>
+\<p>
+يسعدنا
+مناقشة متطلباتكم واحتياجاتكم.
+\</p>
+\</div>
+\<div class="contact-box">
+\<div class="en">
+\<p>
+\<strong>Company:\</strong>
 KAMRA FOR ENERGY CONTRACTING L.L.C.
-</p>
-
-<p>
-<strong>Email:</strong>
-info@kamra-energy.com
-</p>
-
-</div>
-
-
-<div class="ar">
-
-<p>
-<strong>الشركة:</strong>
-كامرا للمقاولات في مجال الطاقة ذ.م.م
-</p>
-
-<p>
-<strong>البريد الإلكتروني:</strong>
-info@kamra-energy.com
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-     ========================= -->
-
-<footer>
-
-<p>
-© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C. — All Rights Reserved.
-</p>
-
-</footer>
-
-
-<!-- =========================
-     EMPLOYEE LOGIN MODAL
-     ========================= -->
-
-<div
-  class="employee-modal"
-  id="employeeModal"
-  aria-hidden="true">
-
-<div class="employee-login-box">
-
-<button
-  type="button"
-  class="employee-modal-close"
-  id="employeeModalClose"
-  aria-label="Close">
+\</p>
+\<p>
+\<strong>Email:\</strong>
+info\@kamra-energy.com
+\</p>
+\</div>
+\<div class="ar">
+\<p>
+\<strong>الشركة:\</strong>
+كامرا
+للمقاولات في مجال الطاقة ذ.م.م
+\</p>
+\<p>
+\<strong>البريد الإلكتروني:\</strong>
+info\@kamra-energy.com
+\</p>
+\</div>
+\</div>
+\</section>
+\<!-- =========================
+FOOTER
+========================= -->
+\<footer>
+\<p>
+© 2026 KAMRA FOR ENERGY CONTRACTING L.L.C. — All Rights
+Reserved.
+\</p>
+\</footer>
+\<!-- =========================
+EMPLOYEE LOGIN MODAL
+========================= -->
+\<div
+class="employee-modal"
+id="employeeModal"
+aria-hidden="true">
+\<div class="employee-login-box">
+\<button
+type="button"
+class="employee-modal-close"
+id="employeeModalClose"
+aria-label="Close">
 ×
-</button>
-
-
-<div class="en">
-
-<h2>
+\</button>
+\<div class="en">
+\<h2>
 Employee Login
-</h2>
-
-<p class="login-subtitle">
+\</h2>
+\<p class="login-subtitle">
 Authorized employees only.
-</p>
-
-</div>
-
-
-<div class="ar">
-
-<h2>
-دخول الموظفين
-</h2>
-
-<p class="login-subtitle">
-للموظفين والمستخدمين المصرح لهم فقط.
-</p>
-
-</div>
-
-
-<form id="employeeLoginForm">
-
-<input
-  type="email"
-  id="employeeEmail"
-  placeholder="Official Email"
-  autocomplete="username"
-  required
->
-
-<input
-  type="password"
-  id="employeePassword"
-  placeholder="Password"
-  autocomplete="current-password"
-  required
->
-
-
-<div
-  class="employee-login-error"
-  id="employeeLoginError">
-
-<div class="en">
-Invalid email or password.
-</div>
-
-<div class="ar">
-البريد الإلكتروني أو كلمة المرور غير صحيحة.
-</div>
-
-</div>
-
-
-<button
-  type="submit"
-  class="employee-login-submit">
-
-<span class="en">
-Login
-</span>
-
-<span class="ar">
+\</p>
+\</div>
+\<div class="ar">
+\<h2>
 دخول
-</span>
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- PDF.JS -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-
-<script>
-
+الموظفين
+\</h2>
+\<p class="login-subtitle">
+للموظفين
+والمستخدمين المصرح لهم فقط.
+\</p>
+\</div>
+\<form id="employeeLoginForm">
+\<input
+type="email"
+id="employeeEmail"
+placeholder="Official Email"
+autocomplete="username"
+required
+> 
+\<input
+type="password"
+id="employeePassword"
+placeholder="Password"
+autocomplete="current-password"
+required
+> 
+\<div
+class="employee-login-error"
+id="employeeLoginError">
+\<div class="en">
+Invalid email or password.
+\</div>
+\<div class="ar">
+البريد
+الإلكتروني أو كلمة المرور غير صحيحة.
+\</div>
+\</div>
+\<button
+type="submit"
+class="employee-login-submit">
+\<span class="en">
+Login
+\</span>
+\<span class="ar">
+دخول
+\</span>
+\</button>
+\</form>
+\</div>
+\</div>
+\<!-- PDF.JS -->
+\<script src="[https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js](https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js)">\</script>
+\<script>
 /* =========================================
-   LANGUAGE
-   ========================================= */
-
+LANGUAGE
+========================================= */
 const languageButton =
 document.getElementById("languageButton");
-
-
 function updateLanguage(){
-
 const isArabic =
 document.body.classList.contains("rtl");
-
 document.documentElement.lang =
 isArabic ? "ar" : "en";
-
 document.documentElement.dir = "ltr";
-
 languageButton.textContent =
 isArabic ? "English" : "العربية";
-
 setTimeout(updateSlider,50);
-
 }
-
-
 languageButton.addEventListener(
 "click",
 function(){
-
 document.body.classList.toggle("rtl");
-
 updateLanguage();
-
 });
-
-
 /* =========================================
-   COMPANY SLIDER
-   ========================================= */
-
+COMPANY SLIDER
+========================================= */
 const track =
 document.getElementById("companyTrack");
-
 const prevBtn =
 document.getElementById("prevBtn");
-
 const nextBtn =
 document.getElementById("nextBtn");
-
 const sliderWindow =
 document.getElementById("sliderWindow");
-
 let currentSlide = 0;
-
 const totalCards =
 track.children.length;
-
-
 function getVisibleCards(){
-
 if(window.innerWidth <= 700)
 return 2;
-
 if(window.innerWidth <= 1000)
 return 3;
-
 return 4;
-
 }
-
-
 function updateSlider(){
-
 const visibleCards =
 getVisibleCards();
-
 const maxSlide =
 Math.max(
 0,
 totalCards - visibleCards
 );
-
 if(currentSlide > maxSlide)
 currentSlide = maxSlide;
-
 const firstCard =
 track.children[0];
-
 if(!firstCard)
 return;
-
 const cardWidth =
 firstCard.getBoundingClientRect().width;
-
 const gap =
 parseFloat(
 getComputedStyle(track).gap
 ) || 0;
-
 const move =
 (cardWidth + gap) * currentSlide;
-
 track.style.transform =
 "translateX(-" + move + "px)";
-
 prevBtn.disabled =
 currentSlide === 0;
-
 nextBtn.disabled =
 currentSlide === maxSlide;
-
 }
-
-
 nextBtn.addEventListener(
 "click",
 function(){
-
 const maxSlide =
 Math.max(
 0,
 totalCards - getVisibleCards()
 );
-
 if(currentSlide < maxSlide){
-
 currentSlide++;
-
 updateSlider();
-
 }
-
 });
-
-
 prevBtn.addEventListener(
 "click",
 function(){
-
 if(currentSlide > 0){
-
 currentSlide--;
-
 updateSlider();
-
 }
-
 });
-
-
 window.addEventListener(
 "resize",
 updateSlider
 );
-
-
 /* =========================================
-   PDF VIEWER
-   ========================================= */
-
+PDF VIEWER
+========================================= */
 const viewer =
 document.getElementById("companyViewer");
-
 const viewerContent =
 document.getElementById("viewerContent");
-
-
 if(typeof pdfjsLib !== "undefined"){
-
 pdfjsLib.GlobalWorkerOptions.workerSrc =
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
+"[https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js](https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js)";
 }
-
-
 async function openPDF(file){
-
 document.body.style.overflow = "hidden";
-
 viewer.classList.add("active");
-
 viewer.setAttribute(
 "aria-hidden",
 "false"
 );
-
 requestAnimationFrame(
 syncMobileViewerViewport
 );
-
 setTimeout(
 syncMobileViewerViewport,
 100
 );
-
 viewerContent.innerHTML = "";
-
-
 /* TOOLBAR */
-
 const toolbar =
 document.createElement("div");
-
 toolbar.className =
 "pdf-toolbar";
-
-
 const title =
 document.createElement("div");
-
 title.className =
 "pdf-title";
-
 title.textContent =
 "KAMRA Company Document";
-
-
 const pageInfo =
 document.createElement("div");
-
 pageInfo.className =
 "pdf-page-info";
-
 pageInfo.textContent =
 "Loading...";
-
-
 const closeButton =
 document.createElement("button");
-
 closeButton.type =
 "button";
-
 closeButton.className =
 "viewer-close";
-
 closeButton.setAttribute(
 "aria-label",
 "Close"
 );
-
 closeButton.innerHTML =
 "×";
-
-
 closeButton.addEventListener(
 "click",
 function(e){
-
 e.preventDefault();
-
 e.stopPropagation();
-
 closeViewer();
-
 });
-
-
 toolbar.appendChild(title);
-
 toolbar.appendChild(pageInfo);
-
 toolbar.appendChild(closeButton);
-
-
 /* SCROLL AREA */
-
 const scrollArea =
 document.createElement("div");
-
 scrollArea.className =
 "pdf-scroll";
-
-
 const loading =
 document.createElement("div");
-
 loading.className =
 "pdf-loading";
-
-
 const spinner =
 document.createElement("div");
-
 spinner.className =
 "pdf-spinner";
-
-
 const loadingText =
 document.createElement("div");
-
 loadingText.textContent =
 "Opening document...";
-
-
 loading.appendChild(spinner);
-
 loading.appendChild(loadingText);
-
 scrollArea.appendChild(loading);
-
 viewerContent.appendChild(toolbar);
-
 viewerContent.appendChild(scrollArea);
-
-
 if(typeof pdfjsLib === "undefined"){
-
 showPDFError(
 scrollArea,
 "PDF viewer library could not be loaded."
 );
-
 return;
-
 }
-
-
 try{
-
 const loadingTask =
 pdfjsLib.getDocument({
 url:file
 });
-
 const pdf =
 await loadingTask.promise;
-
-
 pageInfo.textContent =
 pdf.numPages +
-(pdf.numPages === 1 ? " page" : " pages");
-
-
+(pdf.numPages === 1 ? " page" : "
+pages");
 scrollArea.innerHTML = "";
-
-
 const isMobile =
 window.innerWidth <= 700;
-
-
 let availableWidth =
 scrollArea.clientWidth -
 (isMobile ? 16 : 36);
-
-
 if(availableWidth <= 0){
-
 availableWidth =
 window.innerWidth -
 (isMobile ? 16 : 36);
-
 }
-
-
 for(
 let pageNumber = 1;
 pageNumber <= pdf.numPages;
 pageNumber++
 ){
-
 try{
-
 await renderPDFPage(
 pdf,
 pageNumber,
 scrollArea,
 availableWidth
 );
-
 }catch(pageError){
-
 console.error(
 "PDF page error:",
 pageError
 );
-
 }
-
 }
-
-
 }catch(error){
-
 console.error(
 "PDF loading error:",
 error
 );
-
 showPDFError(
 scrollArea,
 "Unable to display this PDF."
 );
-
 }
-
 }
-
-
 async function renderPDFPage(
 pdf,
 pageNumber,
 container,
 availableWidth
 ){
-
 const page =
 await pdf.getPage(pageNumber);
-
 const originalViewport =
 page.getViewport({
 scale:1
 });
-
-
 let scale =
 availableWidth /
 originalViewport.width;
-
-
 if(scale > 2)
 scale = 2;
-
-
 if(window.innerWidth <= 700){
-
 scale =
 Math.min(
 scale,
 availableWidth /
 originalViewport.width
 );
-
 }
-
-
 const viewport =
 page.getViewport({
 scale
 });
-
-
 const canvas =
 document.createElement("canvas");
-
 canvas.className =
 "pdf-page";
-
-
 const context =
 canvas.getContext("2d");
-
-
 const devicePixelRatio =
 window.devicePixelRatio || 1;
-
-
 canvas.width =
 Math.floor(
 viewport.width *
 devicePixelRatio
 );
-
 canvas.height =
 Math.floor(
 viewport.height *
 devicePixelRatio
 );
-
-
 const finalWidth =
 Math.min(
 viewport.width,
 availableWidth
 );
-
-
 canvas.style.width =
 finalWidth + "px";
-
 canvas.style.height =
 "auto";
-
 canvas.style.maxWidth =
 "100%";
-
-
 context.setTransform(
 devicePixelRatio,
 0,
@@ -3386,128 +1279,79 @@ devicePixelRatio,
 0,
 0
 );
-
-
 container.appendChild(canvas);
-
-
 await page.render({
-
 canvasContext:context,
-
 viewport:viewport
-
 }).promise;
-
 }
-
-
 function showPDFError(
 container,
 message
 ){
-
 container.innerHTML = "";
-
 const error =
 document.createElement("div");
-
 error.className =
 "pdf-error";
-
 error.textContent =
 message;
-
-
 const small =
 document.createElement("small");
-
 small.textContent =
-"Please check that the PDF file exists on the server.";
-
-
+"Please check that the PDF file exists on the
+server.";
 error.appendChild(small);
-
 container.appendChild(error);
-
 }
-
-
 /* =========================================
-   COMPANY PDF CARDS
-   ========================================= */
-
+COMPANY PDF CARDS
+========================================= */
 document
 .querySelectorAll(
 ".company-card[data-pdf]"
 )
 .forEach(function(card){
-
 card.addEventListener(
 "click",
 function(event){
-
 event.preventDefault();
-
 event.stopPropagation();
-
 const file =
 card.getAttribute("data-pdf");
-
 if(file)
 openPDF(file);
-
 });
-
 });
-
-
 /* =========================================
-   COMPANY VIDEO
-   ========================================= */
-
+COMPANY VIDEO
+========================================= */
 const videoCard =
 document.getElementById("videoCard");
-
-
 videoCard.addEventListener(
 "click",
 function(event){
-
 event.preventDefault();
-
 event.stopPropagation();
-
 openVideo();
-
 });
-
-
 function openVideo(){
-
 document.body.style.overflow =
 "hidden";
-
 viewer.classList.add("active");
-
 viewer.setAttribute(
 "aria-hidden",
 "false"
 );
-
 requestAnimationFrame(
 syncMobileViewerViewport
 );
-
 setTimeout(
 syncMobileViewerViewport,
 100
 );
-
-
 viewerContent.innerHTML = `
-
-<div
+\<div
 style="
 width:100%;
 height:100%;
@@ -3517,8 +1361,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 ">
-
-<button
+\<button
 type="button"
 class="viewer-close"
 id="videoCloseButton"
@@ -3529,10 +1372,8 @@ right:12px;
 z-index:20;
 ">
 ×
-</button>
-
-
-<div
+\</button>
+\<div
 style="
 width:92%;
 max-width:900px;
@@ -3542,1285 +1383,844 @@ border-radius:10px;
 overflow:hidden;
 box-shadow:0 15px 50px rgba(0,0,0,.5);
 ">
-
-<video
-  controls
-  autoplay
-  playsinline
-  preload="metadata"
-  style="
-    width:100%;
-    height:auto;
-    max-height:80vh;
-    display:block;
-    background:#000;
-  "
->
-  <source
-    src="https://vwzzyrptevjuxkasglmv.supabase.co/storage/v1/object/public/employee-library/kamraEnergy.mp4"
-    type="video/mp4"
-  >
-</video>
-
-</div>
-
-</div>
-
+\<video
+controls
+autoplay
+playsinline
+preload="metadata"
+style="
+width:100%;
+height:auto;
+max-height:80vh;
+display:block;
+background:#000;
+"
+> 
+\<source
+src="[https://vwzzyrptevjuxkasglmv.supabase.co/storage/v1/object/public/employee-library/kamraEnergy.mp4](https://vwzzyrptevjuxkasglmv.supabase.co/storage/v1/object/public/employee-library/kamraEnergy.mp4)"
+type="video/mp4"
+> 
+\</video>
+\</div>
+\</div>
 `;
-
-
 document
 .getElementById("videoCloseButton")
 .addEventListener(
 "click",
 function(event){
-
 event.preventDefault();
-
 event.stopPropagation();
-
 closeViewer();
-
 });
-
 }
-
-
 /* =========================================
-   MOBILE PDF VIEWER
-   ========================================= */
-
+MOBILE PDF VIEWER
+========================================= */
 function syncMobileViewerViewport(){
-
 if(
 window.innerWidth > 700 ||
 !viewer.classList.contains("active")
 )
 return;
-
-
 const vv =
 window.visualViewport;
-
-
 if(vv){
-
 viewer.style.top =
 vv.offsetTop + "px";
-
 viewer.style.left =
 vv.offsetLeft + "px";
-
 viewer.style.width =
 vv.width + "px";
-
 viewer.style.height =
 vv.height + "px";
-
 }else{
-
 viewer.style.top =
 "0px";
-
 viewer.style.left =
 "0px";
-
 viewer.style.width =
 window.innerWidth + "px";
-
 viewer.style.height =
 window.innerHeight + "px";
-
 }
-
 }
-
-
 window.addEventListener(
 "resize",
 syncMobileViewerViewport
 );
-
-
 window.addEventListener(
 "orientationchange",
 function(){
-
 setTimeout(
 syncMobileViewerViewport,
 50
 );
-
 setTimeout(
 syncMobileViewerViewport,
 250
 );
-
 });
-
-
 if(window.visualViewport){
-
 window.visualViewport.addEventListener(
 "resize",
 syncMobileViewerViewport
 );
-
 window.visualViewport.addEventListener(
 "scroll",
 syncMobileViewerViewport
 );
-
 }
-
-
 function closeViewer(){
-
 viewer.classList.remove(
 "active"
 );
-
 viewer.style.top = "";
-
 viewer.style.left = "";
-
 viewer.style.width = "";
-
 viewer.style.height = "";
-
 viewer.setAttribute(
 "aria-hidden",
 "true"
 );
-
 viewerContent.innerHTML = "";
-
 document.body.style.overflow = "";
-
 }
-
-
 viewer.addEventListener(
 "click",
 function(event){
-
 if(event.target === viewer)
 closeViewer();
-
 });
-
-
 document.addEventListener(
 "keydown",
 function(event){
-
 if(
 event.key === "Escape" &&
 viewer.classList.contains("active")
 ){
-
 closeViewer();
-
 }
-
 });
-
-
 /* =========================================
-   SLIDER TOUCH
-   ========================================= */
-
+SLIDER TOUCH
+========================================= */
 let touchStartX = 0;
-
 let touchEndX = 0;
-
-
 sliderWindow.addEventListener(
 "touchstart",
 function(event){
-
 touchStartX =
 event.changedTouches[0].screenX;
-
 },
 {passive:true}
 );
-
-
 sliderWindow.addEventListener(
 "touchend",
 function(event){
-
 touchEndX =
 event.changedTouches[0].screenX;
-
 const difference =
 touchStartX - touchEndX;
-
-
 if(difference > 50)
 nextBtn.click();
-
-
 if(difference < -50)
 prevBtn.click();
-
 },
 {passive:true}
 );
-
-
 /* =========================================
-   QURAN VERSES
-   ========================================= */
-
+QURAN VERSES
+========================================= */
 const quranVerses = [
-
 {
-verse:"﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",
+verse:"﴿وَقُل
+رَّبِّ زِدْنِي عِلْمًا﴾",
 source:"سورة طه — الآية 114"
 },
-
 {
-verse:"﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾",
+verse:"﴿إِنَّ
+اللَّهَ مَعَ الصَّابِرِينَ﴾",
 source:"سورة البقرة — الآية 153"
 },
-
 {
-verse:"﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾",
+verse:"﴿وَمَن
+يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾",
 source:"سورة الطلاق — الآية 3"
 },
-
 {
-verse:"﴿وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ﴾",
+verse:"﴿وَقُلِ
+اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ﴾",
 source:"سورة التوبة — الآية 105"
 },
-
 {
-verse:"﴿إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ﴾",
+verse:"﴿إِنَّ
+اللَّهَ يُحِبُّ الْمُحْسِنِينَ﴾",
 source:"سورة البقرة — الآية 195"
 },
-
 {
-verse:"﴿فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾",
+verse:"﴿فَإِنَّ
+مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾",
 source:"سورة الشرح — الآيتان 5–6"
 }
-
 ];
-
-
 let quranIndex = 0;
-
-
 function changeQuranVerse(){
-
 const verseElement =
 document.getElementById("quranVerse");
-
 const sourceElement =
 document.getElementById("quranSource");
-
-
 if(!verseElement || !sourceElement)
 return;
-
-
 verseElement.style.opacity = "0";
-
 sourceElement.style.opacity = "0";
-
-
 setTimeout(
 function(){
-
 quranIndex++;
-
 if(quranIndex >= quranVerses.length)
 quranIndex = 0;
-
-
 verseElement.textContent =
 quranVerses[quranIndex].verse;
-
 sourceElement.textContent =
 quranVerses[quranIndex].source;
-
-
 verseElement.style.opacity = "1";
-
 sourceElement.style.opacity = "1";
-
 },
 500
 );
-
 }
-
-
 setInterval(
 changeQuranVerse,
 7000
 );
-
-
 /* =========================================
-   EMPLOYEE LOGIN
-   ========================================= */
-
+EMPLOYEE LOGIN
+========================================= */
 const EMPLOYEE_EMAIL =
-"info@kamra-energy.com";
-
+"info\@kamra-energy.com";
 const EMPLOYEE_PASSWORD =
 "00000";
-
-
 const employeeLoginButton =
 document.getElementById(
 "employeeLoginButton"
 );
-
-
 const employeeModal =
 document.getElementById(
 "employeeModal"
 );
-
-
 const employeeModalClose =
 document.getElementById(
 "employeeModalClose"
 );
-
-
 const employeeLoginForm =
 document.getElementById(
 "employeeLoginForm"
 );
-
-
 const employeeEmail =
 document.getElementById(
 "employeeEmail"
 );
-
-
 const employeePassword =
 document.getElementById(
 "employeePassword"
 );
-
-
 const employeeLoginError =
 document.getElementById(
 "employeeLoginError"
 );
-
-
 const employeeLibrary =
 document.getElementById(
 "employeeLibrary"
 );
-
-
 const libraryLogout =
 document.getElementById(
 "libraryLogout"
 );
-
-
 function openEmployeeLogin(){
-
 employeeModal.classList.add(
 "active"
 );
-
 employeeModal.setAttribute(
 "aria-hidden",
 "false"
 );
-
 employeeLoginError.classList.remove(
 "show"
 );
-
-
 setTimeout(
 function(){
-
 employeeEmail.focus();
-
 },
 100
 );
-
 }
-
-
 function closeEmployeeLogin(){
-
 employeeModal.classList.remove(
 "active"
 );
-
 employeeModal.setAttribute(
 "aria-hidden",
 "true"
 );
-
 employeeLoginForm.reset();
-
 employeeLoginError.classList.remove(
 "show"
 );
-
 }
-
-
 function showEmployeeLibrary(){
-
 employeeLibrary.classList.add(
 "active"
 );
-
-
 setTimeout(
 function(){
-
 employeeLibrary.scrollIntoView({
 behavior:"smooth",
 block:"start"
 });
-
 },
 100
 );
-
 }
-
-
 function hideEmployeeLibrary(){
-
 employeeLibrary.classList.remove(
 "active"
 );
-
 }
-
-
 employeeLoginButton.addEventListener(
 "click",
 openEmployeeLogin
 );
-
-
 employeeModalClose.addEventListener(
 "click",
 closeEmployeeLogin
 );
-
-
 employeeModal.addEventListener(
 "click",
 function(event){
-
 if(event.target === employeeModal)
 closeEmployeeLogin();
-
 });
-
-
 employeeLoginForm.addEventListener(
 "submit",
 function(event){
-
 event.preventDefault();
-
-
 const email =
 employeeEmail.value
 .trim()
 .toLowerCase();
-
-
 const password =
 employeePassword.value;
-
-
 if(
 email === EMPLOYEE_EMAIL.toLowerCase() &&
 password === EMPLOYEE_PASSWORD
 ){
-
 employeeLoginError.classList.remove(
 "show"
 );
-
 closeEmployeeLogin();
-
 showEmployeeLibrary();
-
-
 employeeLoginButton.innerHTML =
-'<span class="en">Employee Library</span>' +
-'<span class="ar">مكتبة الموظفين</span>';
-
+'\<span class="en">Employee
+Library\</span>' +
+'\<span class="ar">مكتبة الموظفين\</span>';
 }else{
-
 employeeLoginError.classList.add(
 "show"
 );
-
 employeePassword.value = "";
-
 employeePassword.focus();
-
 }
-
 });
-
-
 /* =========================================
-   EMPLOYEE LIBRARY PDFS
-   ========================================= */
-
+EMPLOYEE LIBRARY PDFS
+========================================= */
 document
 .querySelectorAll(".library-card[data-library-pdf]")
 .forEach(function(card){
-
 card.addEventListener(
 "click",
 function(event){
-
 event.preventDefault();
 event.stopPropagation();
-
 const file =
 card.getAttribute("data-library-pdf");
-
 if(!file)
 return;
-
-
 const pdfPath =
 "./" + file
 .split("/")
 .map(function(part){
-
 return encodeURIComponent(part);
-
 })
 .join("/");
-
-
 console.log(
 "Opening employee PDF:",
 pdfPath
 );
-
 openPDF(pdfPath);
-
 });
-
 });
-
-
 /* =========================================
-   SUPABASE OPERATIONS
-   ========================================= */
-
+SUPABASE OPERATIONS
+========================================= */
 const SUPABASE_URL =
-"https://vwzzyrptevjuxkasglmv.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_hBufmGhBmdm8Yi1ziJ8fDg_7NU1ahF-";
-
-const SUPABASE_BUCKET =
-"employee-library";
-
-const OPERATIONS_FOLDER =
-"Operations";
-
-
-function escapeHtml(value){
-
-return String(value)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-function encodeStoragePath(path){
-
-return String(path)
-.split("/")
-.map(function(part){
-
-return encodeURIComponent(part);
-
-})
-.join("/");
-
-}
-
-
-function createOperationsFileUrl(fileName){
-
-let cleanName =
-String(fileName || "")
-.trim();
-
-
-if(
-cleanName.indexOf(
-OPERATIONS_FOLDER + "/"
-) === 0
-){
-
-cleanName =
-cleanName.substring(
-(OPERATIONS_FOLDER + "/").length
-);
-
-}
-
-
-return (
-SUPABASE_URL +
-"/storage/v1/object/public/" +
-SUPABASE_BUCKET +
-"/" +
-encodeStoragePath(
-OPERATIONS_FOLDER + "/" + cleanName
-)
-);
-
-}
-
-
-function getFileExtension(fileName){
-
-const cleanName =
-String(fileName || "");
-
-const lastDot =
-cleanName.lastIndexOf(".");
-
-if(lastDot === -1)
-return "FILE";
-
-return cleanName
-.substring(lastDot + 1)
-.toUpperCase();
-
-}
-
-
-/* =========================================
-   LOAD OPERATIONS FILES
-   ========================================= */
-
-async function loadOperationsFiles(){
-
-const container =
-document.getElementById(
-"operationsFiles"
-);
-
-if(!container)
-return;
-
-
-const loadingText =
-document.body.classList.contains("rtl")
-?
-"جاري تحميل الوثائق التشغيلية..."
-:
-"Loading operational documents...";
-
-
-container.innerHTML = `
-
-<div class="operations-loading">
-
-<div class="pdf-spinner"></div>
-
-<div>
-${loadingText}
-</div>
-
-</div>
-
-`;
-
-
-try{
-
-const listUrl =
-SUPABASE_URL +
-"/storage/v1/object/list/" +
-SUPABASE_BUCKET;
-
-
-const response =
-await fetch(
-listUrl,
-{
-method:"POST",
-
-headers:{
-"Content-Type":"application/json",
-"apikey":SUPABASE_KEY,
+"[https://vwzzyrptevjuxkasglmv.supabase.co](https://vwzzyrptevjuxkasglmv.supabase.co)";
+const SUPABASE_KEY = 
+"sb_publishable_hBufmGhBmdm8Yi1ziJ8fDg_7NU1ahF-"; 
+const SUPABASE_BUCKET = 
+"employee-library"; 
+const OPERATIONS_FOLDER = 
+"Operations"; 
+function escapeHtml(value){ 
+return String(value) 
+.replace(/&/g,"&amp;") 
+.replace(/\</g,"&lt;") 
+.replace(/>/g,"&gt;") 
+.replace(/"/g,"&quot;") 
+.replace(/'/g,"&#039;"); 
+} 
+function encodeStoragePath(path){ 
+return String(path) 
+.split("/") 
+.map(function(part){ 
+return encodeURIComponent(part); 
+}) 
+.join("/"); 
+} 
+function createOperationsFileUrl(fileName){ 
+let cleanName = 
+String(fileName || "") 
+.trim(); 
+if( 
+cleanName.indexOf( 
+OPERATIONS_FOLDER + "/" 
+) === 0 
+){ 
+cleanName = 
+cleanName.substring( 
+(OPERATIONS_FOLDER + "/").length 
+); 
+} 
+return ( 
+SUPABASE_URL + 
+"/storage/v1/object/public/" + 
+SUPABASE_BUCKET + 
+"/" + 
+encodeStoragePath( 
+OPERATIONS_FOLDER + "/" + cleanName 
+) 
+); 
+} 
+function getFileExtension(fileName){ 
+const cleanName = 
+String(fileName || ""); 
+const lastDot = 
+cleanName.lastIndexOf("."); 
+if(lastDot === -1) 
+return "FILE"; 
+return cleanName 
+.substring(lastDot + 1) 
+.toUpperCase(); 
+} 
+/* ========================================= 
+LOAD OPERATIONS FILES 
+========================================= */ 
+async function loadOperationsFiles(){ 
+const container = 
+document.getElementById( 
+"operationsFiles" 
+); 
+if(!container) 
+return; 
+const loadingText = 
+document.body.classList.contains("rtl") 
+? 
+"جاري
+تحميل الوثائق التشغيلية..." 
+: 
+"Loading operational documents..."; 
+container.innerHTML = ` 
+\<div class="operations-loading"> 
+\<div class="pdf-spinner">\</div> 
+\<div> 
+${loadingText} 
+\</div> 
+\</div> 
+`; 
+try{ 
+const listUrl = 
+SUPABASE_URL + 
+"/storage/v1/object/list/" + 
+SUPABASE_BUCKET; 
+const response = 
+await fetch( 
+listUrl, 
+{ 
+method:"POST", 
+headers:{ 
+"Content-Type":"application/json", 
+"apikey":SUPABASE_KEY, 
 "Authorization":"Bearer " + SUPABASE_KEY
-},
-
-body:JSON.stringify({
-
-prefix:
-OPERATIONS_FOLDER + "/",
-
-limit:100,
-
-offset:0,
-
-sortBy:{
-column:"name",
-order:"asc"
-}
-
-})
-}
-);
-
-
-const responseText =
-await response.text();
-
-
-if(!response.ok){
-
-console.error(
-"Supabase Operations HTTP error:",
-response.status,
-responseText
-);
-
-throw new Error(
-"Supabase returned HTTP " +
-response.status
-);
-
-}
-
-
-let files;
-
-try{
-
-files =
-JSON.parse(responseText);
-
-}catch(parseError){
-
-console.error(
-"Invalid Supabase response:",
-responseText
-);
-
-throw new Error(
-"Invalid response from Supabase"
-);
-
-}
-
-
-if(!Array.isArray(files)){
-
-throw new Error(
-"Supabase did not return a file list"
-);
-
-}
-
-
-const documents =
-files.filter(function(file){
-
-if(!file || !file.name)
-return false;
-
-if(
-file.name ===
-".emptyFolderPlaceholder"
-)
-return false;
-
-if(
-file.id === null ||
-file.id === undefined
-){
-
-return false;
-
-}
-
-return true;
-
-});
-
-
-if(documents.length === 0){
-
-const isArabic =
-document.body.classList.contains("rtl");
-
-
-container.innerHTML = `
-
-<div class="operations-empty">
-
-<strong>
-${
-isArabic
-?
-"لا توجد وثائق تشغيلية"
-:
-"No operational documents available."
-}
-</strong>
-
-<span>
-${
-isArabic
-?
-"قم برفع الملفات داخل مجلد employee-library/Operations"
-:
-"Upload files into employee-library/Operations"
-}
-</span>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-container.innerHTML = "";
-
-
-documents.forEach(function(file){
-
-let fileName =
-String(file.name)
-.trim();
-
-
-if(
-fileName.indexOf(
-OPERATIONS_FOLDER + "/"
-) === 0
-){
-
-fileName =
-fileName.substring(
-(OPERATIONS_FOLDER + "/").length
-);
-
-}
-
-
-if(!fileName)
-return;
-
-
-const fileUrl =
-createOperationsFileUrl(
-fileName
-);
-
-
-const extension =
-getFileExtension(
-fileName
-);
-
-
-const fileCard =
-document.createElement("div");
-
-fileCard.className =
-"operations-file-card";
-
-
-const icon =
-document.createElement("div");
-
-icon.className =
-"operations-file-icon";
-
-icon.textContent =
-"📄";
-
-
-const info =
-document.createElement("div");
-
-info.className =
-"operations-file-info";
-
-
-const name =
-document.createElement("div");
-
-name.className =
-"operations-file-name";
-
-name.textContent =
-fileName;
-
-
-const type =
-document.createElement("div");
-
-type.className =
-"operations-file-type";
-
-const isArabic =
-document.body.classList.contains("rtl");
-
-
-type.textContent =
-isArabic
-?
-extension + " — وثيقة تشغيلية"
-:
-extension + " — Operational Document";
-
-
-info.appendChild(name);
-info.appendChild(type);
-
-
-const openButton =
-document.createElement("a");
-
-openButton.href =
-fileUrl;
-
-openButton.target =
-"_blank";
-
-openButton.rel =
-"noopener noreferrer";
-
-openButton.className =
-"operations-open-btn";
-
-openButton.textContent =
-isArabic
-?
+}, 
+body:JSON.stringify({ 
+prefix: 
+OPERATIONS_FOLDER + "/", 
+limit:100, 
+offset:0, 
+sortBy:{ 
+column:"name", 
+order:"asc" 
+} 
+}) 
+} 
+); 
+const responseText = 
+await response.text(); 
+if(!response.ok){ 
+console.error( 
+"Supabase Operations HTTP error:", 
+response.status, 
+responseText 
+); 
+throw new Error( 
+"Supabase returned HTTP " + 
+response.status 
+); 
+} 
+let files; 
+try{ 
+files = 
+JSON.parse(responseText); 
+}catch(parseError){ 
+console.error( 
+"Invalid Supabase response:", 
+responseText 
+); 
+throw new Error( 
+"Invalid response from Supabase" 
+); 
+} 
+if(!Array.isArray(files)){ 
+throw new Error( 
+"Supabase did not return a file list" 
+); 
+} 
+const documents = 
+files.filter(function(file){ 
+if(!file || !file.name) 
+return false; 
+if( 
+file.name === 
+".emptyFolderPlaceholder" 
+) 
+return false; 
+if( 
+file.id === null || 
+file.id === undefined 
+){ 
+return false; 
+} 
+return true; 
+}); 
+if(documents.length === 0){ 
+const isArabic = 
+document.body.classList.contains("rtl"); 
+container.innerHTML = ` 
+\<div class="operations-empty"> 
+\<strong> 
+${ 
+isArabic 
+? 
+"لا توجد
+وثائق تشغيلية" 
+: 
+"No operational documents available." 
+} 
+\</strong> 
+\<span> 
+${ 
+isArabic 
+? 
+"قم برفع
+الملفات داخل مجلد employee-library/Operations" 
+: 
+"Upload files into employee-library/Operations" 
+} 
+\</span> 
+\</div> 
+`; 
+return; 
+} 
+container.innerHTML = ""; 
+documents.forEach(function(file){ 
+let fileName = 
+String(file.name) 
+.trim(); 
+if( 
+fileName.indexOf( 
+OPERATIONS_FOLDER + "/" 
+) === 0 
+){ 
+fileName = 
+fileName.substring( 
+(OPERATIONS_FOLDER + "/").length 
+); 
+} 
+if(!fileName) 
+return; 
+const fileUrl = 
+createOperationsFileUrl( 
+fileName 
+); 
+const extension = 
+getFileExtension( 
+fileName 
+); 
+const fileCard = 
+document.createElement("div"); 
+fileCard.className = 
+"operations-file-card"; 
+const icon = 
+document.createElement("div"); 
+icon.className = 
+"operations-file-icon"; 
+icon.textContent = 
+"📄"; 
+const info = 
+document.createElement("div"); 
+info.className = 
+"operations-file-info"; 
+const name = 
+document.createElement("div"); 
+name.className = 
+"operations-file-name"; 
+name.textContent = 
+fileName; 
+const type = 
+document.createElement("div"); 
+type.className = 
+"operations-file-type"; 
+const isArabic = 
+document.body.classList.contains("rtl"); 
+type.textContent = 
+isArabic 
+? 
+extension + " — وثيقة تشغيلية" 
+: 
+extension + " — Operational Document"; 
+info.appendChild(name); 
+info.appendChild(type); 
+const openButton = 
+document.createElement("a"); 
+openButton.href = 
+fileUrl; 
+openButton.target = 
+"_blank"; 
+openButton.rel = 
+"noopener noreferrer"; 
+openButton.className = 
+"operations-open-btn"; 
+openButton.textContent = 
+isArabic 
+? 
 "فتح"
-:
-"Open";
-
-
-openButton.addEventListener(
-"click",
-function(event){
-
-event.stopPropagation();
-
-}
-);
-
-
-fileCard.appendChild(icon);
-fileCard.appendChild(info);
-fileCard.appendChild(openButton);
-
-container.appendChild(fileCard);
-
-});
-
-
-}catch(error){
-
-console.error(
-"Operations Error:",
-error
-);
-
-
-const isArabic =
-document.body.classList.contains("rtl");
-
-
-container.innerHTML = `
-
-<div class="operations-error">
-
-<strong>
-${
-isArabic
-?
-"تعذر تحميل الوثائق التشغيلية"
-:
-"Unable to load operational documents."
-}
-</strong>
-
-<span>
-${
-isArabic
-?
-"تحقق من صلاحيات Supabase Storage ومجلد Operations."
-:
-"Please check Supabase Storage permissions and the Operations folder."
-}
-</span>
-
-</div>
-
-`;
-
-}
-
-}
-
-
-/* =========================================
-   OPERATIONS CARD
-   ========================================= */
-
-const operationsCard =
-document.getElementById(
-"operationsLibraryCard"
-);
-
-
-if(operationsCard){
-
-operationsCard.addEventListener(
-"click",
-function(event){
-
-event.preventDefault();
-
-event.stopPropagation();
-
-
-document.body.style.overflow =
-"hidden";
-
-
-viewer.classList.add(
-"active"
-);
-
-viewer.setAttribute(
-"aria-hidden",
-"false"
-);
-
-
-requestAnimationFrame(
-syncMobileViewerViewport
-);
-
-setTimeout(
-syncMobileViewerViewport,
-100
-);
-
-
-const isArabic =
-document.body.classList.contains(
-"rtl"
-);
-
-
-viewerContent.innerHTML = `
-
-<div
-style="
-width:100%;
-height:100%;
-background:#eef4f9;
-display:flex;
-flex-direction:column;
-">
-
-<div
-style="
-height:50px;
-min-height:50px;
-background:#0b1f3a;
-color:white;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 12px 0 20px;
-direction:ltr;
-">
-
-<strong
-style="
-font-size:15px;
-">
-
-${
-isArabic
-?
+: 
+"Open"; 
+openButton.addEventListener( 
+"click", 
+function(event){ 
+event.stopPropagation(); 
+} 
+); 
+fileCard.appendChild(icon); 
+fileCard.appendChild(info); 
+fileCard.appendChild(openButton); 
+container.appendChild(fileCard); 
+}); 
+}catch(error){ 
+console.error( 
+"Operations Error:", 
+error 
+); 
+const isArabic = 
+document.body.classList.contains("rtl"); 
+container.innerHTML = ` 
+\<div class="operations-error"> 
+\<strong> 
+${ 
+isArabic 
+? 
+"تعذر
+تحميل الوثائق التشغيلية" 
+: 
+"Unable to load operational documents." 
+} 
+\</strong> 
+\<span> 
+${ 
+isArabic 
+? 
+"تحقق من
+صلاحيات Supabase Storage ومجلد Operations." 
+: 
+"Please check Supabase Storage permissions and the
+Operations folder." 
+} 
+\</span> 
+\</div> 
+`; 
+} 
+} 
+/* ========================================= 
+OPERATIONS CARD 
+========================================= */ 
+const operationsCard = 
+document.getElementById( 
+"operationsLibraryCard" 
+); 
+if(operationsCard){ 
+operationsCard.addEventListener( 
+"click", 
+function(event){ 
+event.preventDefault(); 
+event.stopPropagation(); 
+document.body.style.overflow = 
+"hidden"; 
+viewer.classList.add( 
+"active" 
+); 
+viewer.setAttribute( 
+"aria-hidden", 
+"false" 
+); 
+requestAnimationFrame( 
+syncMobileViewerViewport 
+); 
+setTimeout( 
+syncMobileViewerViewport, 
+100 
+); 
+const isArabic = 
+document.body.classList.contains( 
+"rtl" 
+); 
+viewerContent.innerHTML = ` 
+\<div 
+style=" 
+width:100%; 
+height:100%; 
+background:#eef4f9; 
+display:flex; 
+flex-direction:column; 
+"> 
+\<div 
+style=" 
+height:50px; 
+min-height:50px; 
+background:#0b1f3a; 
+color:white; 
+display:flex; 
+align-items:center; 
+justify-content:space-between; 
+padding:0 12px 0 20px; 
+direction:ltr; 
+"> 
+\<strong 
+style=" 
+font-size:15px; 
+"> 
+${ 
+isArabic 
+? 
 "العمليات"
-:
-"Operations"
-}
-
-</strong>
-
-
-<button
-type="button"
-class="viewer-close"
-id="operationsClose"
-aria-label="Close">
-
-×
-
-</button>
-
-</div>
-
-
-<div
-id="operationsFiles"
-class="operations-files">
-
-<div class="operations-loading">
-
-<div class="pdf-spinner"></div>
-
-<div>
-${
-isArabic
-?
-"جاري تحميل الوثائق التشغيلية..."
-:
-"Loading operational documents..."
-}
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-
-const operationsClose =
-document.getElementById(
-"operationsClose"
-);
-
-
-if(operationsClose){
-
-operationsClose.addEventListener(
-"click",
-function(event){
-
-event.preventDefault();
-
-event.stopPropagation();
-
-closeViewer();
-
-}
-);
-
-}
-
-
-loadOperationsFiles();
-
-});
-
-}
-
-
-/* =========================================
-   LOGOUT
-   ========================================= */
-
-libraryLogout.addEventListener(
-"click",
-function(){
-
-hideEmployeeLibrary();
-
-
-employeeLoginButton.innerHTML =
-'<span class="en">Employee Login</span>' +
-'<span class="ar">دخول الموظفين</span>';
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-});
-
-
-/* =========================================
-   INITIAL STATE
-   ========================================= */
-
-hideEmployeeLibrary();
-
-
-document.addEventListener(
-"keydown",
-function(event){
-
-if(
-event.key === "Escape" &&
-employeeModal.classList.contains("active")
-){
-
-closeEmployeeLogin();
-
-}
-
-});
-
-
-/* =========================================
-   START
-   ========================================= */
-
-updateLanguage();
-
-updateSlider();
-
-
-window.addEventListener(
-"load",
-function(){
-
-updateSlider();
-
-});
-
-</script>
-
-</body>
-</html>
+: 
+"Operations" 
+} 
+\</strong> 
+\<button 
+type="button" 
+class="viewer-close" 
+id="operationsClose" 
+aria-label="Close"> 
+× 
+\</button> 
+\</div> 
+\<div 
+id="operationsFiles" 
+class="operations-files"> 
+\<div class="operations-loading"> 
+\<div class="pdf-spinner">\</div> 
+\<div> 
+${ 
+isArabic 
+? 
+"جاري
+تحميل الوثائق التشغيلية..." 
+: 
+"Loading operational documents..." 
+} 
+\</div> 
+\</div> 
+\</div> 
+\</div> 
+`; 
+const operationsClose = 
+document.getElementById( 
+"operationsClose" 
+); 
+if(operationsClose){ 
+operationsClose.addEventListener( 
+"click", 
+function(event){ 
+event.preventDefault(); 
+event.stopPropagation(); 
+closeViewer(); 
+} 
+); 
+} 
+loadOperationsFiles(); 
+}); 
+} 
+/* ========================================= 
+LOGOUT 
+========================================= */ 
+libraryLogout.addEventListener( 
+"click", 
+function(){ 
+hideEmployeeLibrary(); 
+employeeLoginButton.innerHTML = 
+'\<span class="en">Employee
+Login\</span>' + 
+'\<span class="ar">دخول الموظفين\</span>'; 
+window.scrollTo({ 
+top:0, 
+behavior:"smooth" 
+}); 
+}); 
+/* ========================================= 
+INITIAL STATE 
+========================================= */ 
+hideEmployeeLibrary(); 
+document.addEventListener( 
+"keydown", 
+function(event){ 
+if( 
+event.key === "Escape" && 
+employeeModal.classList.contains("active") 
+){ 
+closeEmployeeLogin(); 
+} 
+}); 
+/* ========================================= 
+START 
+========================================= */ 
+updateLanguage(); 
+updateSlider(); 
+window.addEventListener( 
+"load", 
+function(){ 
+updateSlider(); 
+}); 
+\</script> 
+\</body> 
+\</html> 
