@@ -521,12 +521,31 @@ section{padding:70px 7%}
   width:min(900px,90%);
   height:300px;
   transform:translateX(-50%);
-  border:2px solid transparent;
-  border-bottom:0;
+  border:0;
   border-radius:50% 50% 0 0 / 100% 100% 0 0;
-  background:
-  linear-gradient(transparent,transparent) padding-box,
-  linear-gradient(90deg,#19a64a 0%,#19a64a 16%,#ffffff 42%,#ffffff 58%,#19a64a 84%,#19a64a 100%) border-box;
+  padding:2px;
+  background:linear-gradient(
+    90deg,
+    #19a64a 0%,
+    #19a64a 16%,
+    #ffffff 42%,
+    #ffffff 58%,
+    #19a64a 84%,
+    #19a64a 100%
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite:exclude;
+
+  clip-path:inset(0 0 2px 0);
+
   opacity:.9;
   filter:drop-shadow(0 0 10px rgba(255,255,255,.25));
   pointer-events:none;
