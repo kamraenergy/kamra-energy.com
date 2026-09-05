@@ -1094,13 +1094,14 @@ content:"";
 
   position:absolute;
 
-  inset:-4%;
+  inset:-8%;
 
   z-index:-3;
 
-background:url("kamra-3d-background.png.png") center/92% auto no-repeat;
+background:url("kamra-3d-background.png.png") center/cover
+no-repeat;
 
-transform:scale(1.02) translate3d(0,0,0);
+transform:scale(1.10) translate3d(0,0,0);
 
 will-change:transform;
 
@@ -1350,9 +1351,13 @@ var(--y) - 12px))}
 }
 
 @keyframes kamraServicesFloat{
-0%{transform:scale(1.02) translate3d(-.8%,-.6%,0)}
-50%{transform:scale(1.05) translate3d(.7%,.5%,0)}
-100%{transform:scale(1.03) translate3d(-.3%,.9%,0)}
+
+0%{transform:scale(1.10) translate3d(-1.6%,-1.2%,0)}
+
+50%{transform:scale(1.16) translate3d(1.4%,1%,0)}
+
+100%{transform:scale(1.12) translate3d(-.6%,1.8%,0)}
+
 }
 
 .card h3{
@@ -2309,8 +2314,11 @@ letter-spacing:2px;
   /* Services orbital
 layout on mobile */
 
-  .services{background-position:center center}
-.services::before{inset:0;background-size:38% auto;background-position:center center;transform:scale(1) translate3d(0,0,0);animation:kamraServicesFloatMobile 18s ease-in-out infinite alternate}
+  .services{
+
+background-position:center center
+
+  }
 
   .cards{
 
@@ -2340,17 +2348,45 @@ layout on mobile */
 
   }
 
-  .card{width:min(21vw,92px);min-height:56px;padding:7px 5px;border-radius:10px;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.015);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 2px 8px rgba(0,0,0,.10)}
+  .card{
 
-.card:nth-child(1){--x:-23vw;--y:155px}
-.card:nth-child(2){--x:-23vw;--y:42px}
-.card:nth-child(3){--x:-14vw;--y:-55px}
-.card:nth-child(4){--x:14vw;--y:-55px}
-.card:nth-child(5){--x:23vw;--y:42px}
-.card:nth-child(6){--x:23vw;--y:155px}
+width:min(42vw,185px);
 
-  .card h3{font-size:9px;margin-bottom:2px}
-.card p{font-size:7px;line-height:1.2}
+    min-height:112px;
+
+    padding:14px 10px;
+
+    border-radius:18px
+
+  }
+
+.card:nth-child(1){--x:-24vw;--y:190px}
+
+.card:nth-child(2){--x:-25vw;--y:55px}
+
+.card:nth-child(3){--x:-15vw;--y:-75px}
+
+.card:nth-child(4){--x:15vw;--y:-75px}
+
+.card:nth-child(5){--x:25vw;--y:55px}
+
+.card:nth-child(6){--x:24vw;--y:190px}
+
+  .card h3{
+
+    font-size:15px;
+
+    margin-bottom:5px
+
+  }
+
+  .card p{
+
+    font-size:11px;
+
+    line-height:1.35
+
+  }
 
   .library-grid{
 
@@ -2891,7 +2927,6 @@ p{font-size:8px;line-height:1.25}
 .services::before,.card{animation:none!important}
 
 }
-
 </style>
 
 </head>
@@ -4502,7 +4537,7 @@ autocomplete="username"
 
   required
 
-> 
+>
 
 <input
 
@@ -4516,7 +4551,7 @@ autocomplete="current-password"
 
   required
 
-> 
+>
 
 <div
 
@@ -5417,7 +5452,7 @@ preload="metadata"
 
   "
 
-> 
+>
 
   <source
 
