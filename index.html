@@ -1263,7 +1263,43 @@ body.rtl .card h3{direction:rtl}
   .card h3{font-size:11px;margin-bottom:4px}
   .card p{font-size:8px;line-height:1.25}
 }
+@media (max-width:700px) and (orientation:portrait){
 
+  .cards{
+    height:clamp(480px,150vmin,620px);
+  }
+
+  .cards::before{
+    height:clamp(290px,97vmin,380px);
+    bottom:clamp(28px,12vmin,48px);
+  }
+
+  .cards::after{
+    height:clamp(65px,22vmin,85px);
+    bottom:clamp(18px,6vmin,24px);
+  }
+
+  .card{
+    width:min(28vmin,125px);
+    min-height:clamp(72px,18vmin,100px);
+    padding:clamp(8px,2vmin,12px) clamp(6px,1.5vmin,10px);
+  }
+
+  .card:nth-child(1){--x:-24vmin;--y:48.7vmin}
+  .card:nth-child(2){--x:-25vmin;--y:14.1vmin}
+  .card:nth-child(3){--x:-15vmin;--y:-19.2vmin}
+  .card:nth-child(4){--x:15vmin;--y:-19.2vmin}
+  .card:nth-child(5){--x:25vmin;--y:14.1vmin}
+  .card:nth-child(6){--x:24vmin;--y:48.7vmin}
+
+  .card h3{
+    font-size:clamp(10px,2.8vmin,11px);
+  }
+
+  .card p{
+    font-size:clamp(7px,2vmin,8px);
+  }
+}
 @keyframes kamraServicesFloatMobile{
   0%{transform:scale(1.14) translate3d(-1%,0,0)}
   100%{transform:scale(1.20) translate3d(1%,1%,0)}
