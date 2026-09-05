@@ -4179,7 +4179,44 @@ function(){
 updateSlider();
 
 });
+/* =========================================
+   SERVICES BACKGROUND SLIDER
+   ========================================= */
 
+const servicesSection =
+document.querySelector(".services");
+
+const servicesBackgrounds = [
+"url('kamra-3d-background.png.png')",
+"url('kamra-new-background.png.png')"
+];
+
+let servicesBackgroundIndex = 0;
+
+if(servicesSection){
+
+servicesSection.style.setProperty(
+"--services-bg",
+servicesBackgrounds[0]
+);
+
+setInterval(
+function(){
+
+servicesBackgroundIndex =
+(servicesBackgroundIndex + 1) %
+servicesBackgrounds.length;
+
+servicesSection.style.setProperty(
+"--services-bg",
+servicesBackgrounds[servicesBackgroundIndex]
+);
+
+},
+5000
+);
+
+}
 </script>
 
 </body>
