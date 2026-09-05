@@ -408,7 +408,7 @@ section{padding:70px 7%}
   position:absolute;
   inset:-8%;
   z-index:-3;
-  background:url("kamra-3d-background.png.png") center center/20% auto no-repeat;
+  background:url("kamra-3d-background.png.png") center/cover no-repeat;
   transform:scale(1.10) translate3d(0,0,0);
   will-change:transform;
   animation:kamraServicesFloat 16s ease-in-out infinite alternate;
@@ -448,7 +448,7 @@ section{padding:70px 7%}
   border-radius:50% 50% 0 0 / 100% 100% 0 0;
   background:
     linear-gradient(#071426,#071426) padding-box,
-    conic-gradient(from 180deg at 50% 100%,#000 0deg,#000 18deg,#19a64a 58deg,#fff 128deg,#fff 232deg,#19a64a 302deg,#000 342deg,#000 360deg) border-box;
+    linear-gradient(90deg,#19a64a 0%,#19a64a 16%,#ffffff 42%,#ffffff 58%,#19a64a 84%,#19a64a 100%) border-box;
   opacity:.9;
   filter:drop-shadow(0 0 10px rgba(255,255,255,.25));
   pointer-events:none;
@@ -1040,7 +1040,7 @@ body.rtl .card h3{direction:rtl}
    SERVICES ORBIT — MOBILE
    ========================= */
 @media(max-width:700px){
-  .services::before{inset:-15%;; background-size:60% auto;; animation:kamraServicesFloatMobile 14s ease-in-out infinite alternate;}
+  .services::before{inset:-15%;; animation:kamraServicesFloatMobile 14s ease-in-out infinite alternate;}
 
   .cards{width:100%;; height:600px;}
 
