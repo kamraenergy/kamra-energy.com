@@ -7,15 +7,15 @@
 <title>KAMRA FOR ENERGY CONTRACTING L.L.C.</title>
 
 <style>
-*{box-sizing:border-box; margin:0; padding:0}
+*{box-sizing:border-box;; margin:0;; padding:0}
 
 html{scroll-behavior:smooth}
 
-body{font-family:Arial,sans-serif; color:#172033; background:#f7f9fc; line-height:1.6}
+body{font-family:Arial,sans-serif;; color:#172033;; background:#f7f9fc;; line-height:1.6}
 
-.ar{display:none; direction:rtl}
+.ar{display:none;; direction:rtl}
 
-.en{display:block; direction:ltr}
+.en{display:block;; direction:ltr}
 
 body.rtl .en{display:none}
 
@@ -37,9 +37,9 @@ header{
   z-index:100
 }
 
-.logo{text-align:center; flex-shrink:0}
+.logo{text-align:center;; flex-shrink:0}
 
-.logo img{height:55px; width:auto; display:block}
+.logo img{height:55px;; width:auto;; display:block}
 
 .logo-text{
   display:block;
@@ -53,9 +53,9 @@ header{
   direction:ltr
 }
 
-nav{display:flex; align-items:center; flex-wrap:wrap}
+nav{display:flex;; align-items:center;; flex-wrap:wrap}
 
-nav a{color:white; text-decoration:none; margin-left:22px; font-size:15px; transition:color .3s ease; direction:ltr}
+nav a{color:white;; text-decoration:none;; margin-left:22px;; font-size:15px;; transition:color .3s ease;; direction:ltr}
 
 nav a:hover{color:#55b8ff}
 
@@ -73,10 +73,10 @@ nav a:hover{color:#55b8ff}
 
 .lang-btn{margin-left:20px}
 
-.employee-login-btn{margin-left:12px; font-size:14px; font-weight:bold}
+.employee-login-btn{margin-left:12px;; font-size:14px;; font-weight:bold}
 
 .lang-btn:hover,
-.employee-login-btn:hover{background:#55b8ff; color:#0b1f3a}
+.employee-login-btn:hover{background:#55b8ff;; color:#0b1f3a}
 
 /* =========================
    HERO
@@ -87,80 +87,16 @@ nav a:hover{color:#55b8ff}
   display:flex;
   align-items:center;
   padding:80px 7%;
-  background:
-    linear-gradient(135deg,rgba(11,31,58,.78),rgba(18,63,104,.68)),
-    url("kamra-new-background.png") center center / cover no-repeat;
+  background:linear-gradient(135deg,#0b1f3a,#123f68);
   color:white;
-  position:relative;
-  overflow:hidden
+  position:relative
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 78% 35%,rgba(85,184,255,.12),transparent 30%),
-    linear-gradient(90deg,rgba(11,31,58,.08),rgba(11,31,58,0));
-}
+.hero-content{max-width:850px;; width:100%}
 
-.hero-content{
-  max-width:850px;
-  width:100%;
-  position:relative;
-  z-index:3
-}
+.hero h1{font-size:52px;; margin-bottom:20px;; line-height:1.15}
 
-.hero h1{
-  font-size:68px;
-  font-weight:700;
-  line-height:1.05;
-  letter-spacing:-1px;
-  margin:0 0 18px;
-  max-width:850px
-}
-
-.hero p{
-  font-size:19px;
-  line-height:1.7;
-  max-width:720px;
-  margin-bottom:30px;
-  color:#dce9f5
-}
-
-.hero-company-name{
-  font-size:20px;
-  font-weight:600;
-  letter-spacing:1.5px;
-  line-height:1.3;
-  margin-bottom:18px;
-  color:#ffffff
-}
-
-.hero-subtitle{
-  font-size:38px;
-  font-weight:600;
-  line-height:1.2;
-  margin-bottom:24px;
-  color:#ffffff
-}
-
-.hero-features{
-  font-size:22px;
-  font-weight:500;
-  letter-spacing:1px;
-  margin-bottom:20px;
-  color:#55b8ff
-}
-
-.hero-tagline{
-  font-size:22px;
-  font-weight:600;
-  letter-spacing:.5px;
-  margin-bottom:25px;
-  color:#ffffff
-}
+.hero p{font-size:20px;; max-width:700px;; margin-bottom:30px;; color:#dce9f5}
 
 .btn{
   display:inline-block;
@@ -170,14 +106,10 @@ nav a:hover{color:#55b8ff}
   text-decoration:none;
   border-radius:5px;
   font-weight:bold;
-  transition:background .3s ease,transform .3s ease,box-shadow .3s ease
+  transition:background .3s ease
 }
 
-.btn:hover{
-  background:#55b8ff;
-  transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(0,0,0,.22)
-}
+.btn:hover{background:#55b8ff}
 
 /* =========================
    QURAN BOX
@@ -199,22 +131,9 @@ nav a:hover{color:#55b8ff}
   transition:opacity .5s ease,transform .5s ease
 }
 
-.quran-box .verse{
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  line-height:1.8;
-  direction:rtl;
-  transition:opacity .5s ease
-}
+.quran-box .verse{color:white;; font-size:18px;; font-weight:bold;; line-height:1.8;; direction:rtl;; transition:opacity .5s ease}
 
-.quran-box .source{
-  margin-top:8px;
-  color:#55b8ff;
-  font-size:12px;
-  direction:rtl;
-  transition:opacity .5s ease
-}
+.quran-box .source{margin-top:8px;; color:#55b8ff;; font-size:12px;; direction:rtl;; transition:opacity .5s ease}
 
 /* =========================
    SECTIONS
@@ -222,9 +141,9 @@ nav a:hover{color:#55b8ff}
 
 section{padding:70px 7%}
 
-.section-title{text-align:center; margin-bottom:40px}
+.section-title{text-align:center;; margin-bottom:40px}
 
-.section-title h2{font-size:34px; color:#0b1f3a; margin-bottom:10px}
+.section-title h2{font-size:34px;; color:#0b1f3a;; margin-bottom:10px}
 
 .section-title p{color:#64748b}
 
@@ -234,11 +153,11 @@ section{padding:70px 7%}
    COMPANY SLIDER
    ========================= */
 
-.company-slider{max-width:1180px; margin:30px auto 0; position:relative; display:flex; align-items:center; gap:12px}
+.company-slider{max-width:1180px;; margin:30px auto 0;; position:relative;; display:flex;; align-items:center;; gap:12px}
 
-.company-slider-window{overflow:hidden; width:100%; border-radius:18px; touch-action:pan-y}
+.company-slider-window{overflow:hidden;; width:100%;; border-radius:18px;; touch-action:pan-y}
 
-.company-track{display:flex; gap:18px; transition:transform .55s cubic-bezier(.22,.61,.36,1); will-change:transform}
+.company-track{display:flex;; gap:18px;; transition:transform .55s cubic-bezier(.22,.61,.36,1);; will-change:transform}
 
 .company-card{
   position:relative;
@@ -286,11 +205,11 @@ section{padding:70px 7%}
   transition:transform .35s ease
 }
 
-.company-card:hover{transform:translateY(-7px); border-color:#55b8ff; box-shadow:0 16px 38px rgba(11,31,58,.27)}
+.company-card:hover{transform:translateY(-7px);; border-color:#55b8ff;; box-shadow:0 16px 38px rgba(11,31,58,.27)}
 
 .company-card:hover::before{transform:scaleX(1)}
 
-.company-card:hover::after{width:190px; height:190px}
+.company-card:hover::after{width:190px;; height:190px}
 
 .card-logo{
   width:42px;
@@ -303,7 +222,7 @@ section{padding:70px 7%}
   transition:transform .35s ease,opacity .35s ease
 }
 
-.company-card:hover .card-logo{transform:scale(1.08); opacity:1}
+.company-card:hover .card-logo{transform:scale(1.08);; opacity:1}
 
 .card-company-name{
   color:white;
@@ -329,21 +248,21 @@ section{padding:70px 7%}
   direction:ltr
 }
 
-.company-card h3{color:white; font-size:17px; line-height:1.3; margin-bottom:5px; position:relative; z-index:2}
+.company-card h3{color:white;; font-size:17px;; line-height:1.3;; margin-bottom:5px;; position:relative;; z-index:2}
 
-.company-card p{color:#dce9f5; font-size:13px; line-height:1.4; position:relative; z-index:2}
+.company-card p{color:#dce9f5;; font-size:13px;; line-height:1.4;; position:relative;; z-index:2}
 
-.video-icon{color:#55b8ff; font-size:30px; margin-bottom:4px; position:relative; z-index:2; direction:ltr}
+.video-icon{color:#55b8ff;; font-size:30px;; margin-bottom:4px;; position:relative;; z-index:2;; direction:ltr}
 
-.update-card{cursor:default; opacity:.45; background:linear-gradient(145deg,#172a42,#23425e)}
+.update-card{cursor:default;; opacity:.45;; background:linear-gradient(145deg,#172a42,#23425e)}
 
-.update-card:hover{transform:none; border-color:rgba(85,184,255,.25); box-shadow:0 7px 22px rgba(11,31,58,.14)}
+.update-card:hover{transform:none;; border-color:rgba(85,184,255,.25);; box-shadow:0 7px 22px rgba(11,31,58,.14)}
 
 .update-card:hover::before{transform:scaleX(0)}
 
-.update-card:hover::after{width:140px; height:140px}
+.update-card:hover::after{width:140px;; height:140px}
 
-.update-text{color:#b9cfe0; font-size:18px; font-weight:bold; letter-spacing:2px; position:relative; z-index:2; direction:ltr}
+.update-text{color:#b9cfe0;; font-size:18px;; font-weight:bold;; letter-spacing:2px;; position:relative;; z-index:2;; direction:ltr}
 
 .slider-btn{
   flex:0 0 44px;
@@ -362,9 +281,9 @@ section{padding:70px 7%}
   -webkit-tap-highlight-color:transparent
 }
 
-.slider-btn:hover{background:#55b8ff; color:#0b1f3a}
+.slider-btn:hover{background:#55b8ff;; color:#0b1f3a}
 
-.slider-btn:disabled{opacity:.35; cursor:default}
+.slider-btn:disabled{opacity:.35;; cursor:default}
 
 /* =========================
    PDF VIEWER
@@ -410,9 +329,9 @@ section{padding:70px 7%}
   direction:ltr
 }
 
-.pdf-title{font-size:13px; font-weight:bold; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; padding-right:10px; direction:ltr}
+.pdf-title{font-size:13px;; font-weight:bold;; overflow:hidden;; white-space:nowrap;; text-overflow:ellipsis;; padding-right:10px;; direction:ltr}
 
-.pdf-page-info{font-size:12px; color:#dce9f5; white-space:nowrap; direction:ltr}
+.pdf-page-info{font-size:12px;; color:#dce9f5;; white-space:nowrap;; direction:ltr}
 
 .pdf-scroll{
   flex:1;
@@ -425,7 +344,7 @@ section{padding:70px 7%}
   direction:ltr
 }
 
-.pdf-page{display:block; width:100%; max-width:100%; height:auto; margin:0 auto 18px; background:white; box-shadow:0 4px 15px rgba(0,0,0,.15)}
+.pdf-page{display:block;; width:100%;; max-width:100%;; height:auto;; margin:0 auto 18px;; background:white;; box-shadow:0 4px 15px rgba(0,0,0,.15)}
 
 .pdf-loading{
   min-height:250px;
@@ -455,9 +374,9 @@ section{padding:70px 7%}
   to{transform:rotate(360deg)}
 }
 
-.pdf-error{padding:40px 20px; text-align:center; color:#0b1f3a; font-weight:bold; direction:ltr}
+.pdf-error{padding:40px 20px;; text-align:center;; color:#0b1f3a;; font-weight:bold;; direction:ltr}
 
-.pdf-error small{display:block; margin-top:10px; color:#64748b; font-weight:normal}
+.pdf-error small{display:block;; margin-top:10px;; color:#64748b;; font-weight:normal}
 
 .viewer-close{
   width:38px;
@@ -475,25 +394,32 @@ section{padding:70px 7%}
   flex-shrink:0
 }
 
-.viewer-close:hover{background:#1b9be0; color:white}
+.viewer-close:hover{background:#1b9be0;; color:white}
 
 /* =========================
    SERVICES — 3D ORBIT
    ========================= */
 
-.services{position:relative; overflow:hidden; isolation:isolate; background:#071426;}
+.services{position:relative;; overflow:hidden;; isolation:isolate;; background:#071426;}
 
+/* moving 3D background */
 .services::before{
   content:"";
   position:absolute;
-  inset:-8%;
+  top:-12%;
+  left:-12%;
+  width:124%;
+  height:124%;
   z-index:-3;
-  background:url("kamra-new-background.png") center/cover no-repeat;
-  transform:scale(1.10) translate3d(0,0,0);
+  background:
+    linear-gradient(135deg,rgba(7,20,38,.35),rgba(7,20,38,.10)),
+    url("kamra-new-background.png") center center/cover no-repeat;
+  transform-origin:center center;
   will-change:transform;
-  animation:kamraServicesFloat 16s ease-in-out infinite alternate;
+  animation:kamraServices3D 18s ease-in-out infinite alternate;
 }
 
+/* dark overlay so the background remains visible */
 .services::after{
   content:"";
   position:absolute;
@@ -505,14 +431,15 @@ section{padding:70px 7%}
     radial-gradient(circle at 50% 32%,rgba(255,255,255,.10),transparent 48%);
 }
 
-.services .section-title{position:relative; z-index:3;}
+.services .section-title{position:relative;; z-index:3;}
 
-.services .section-title h2{color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.55);}
+.services .section-title h2{color:#fff;; text-shadow:0 4px 18px rgba(0,0,0,.55);}
 
-.services .section-title p{color:#eef6fb; text-shadow:0 2px 10px rgba(0,0,0,.55);}
+.services .section-title p{color:#eef6fb;; text-shadow:0 2px 10px rgba(0,0,0,.55);}
 
-.cards{position:relative; z-index:2; width:min(1100px,100%); height:540px; margin:0 auto; isolation:isolate;}
+.cards{position:relative;; z-index:2;; width:min(1100px,100%);; height:540px;; margin:0 auto;; isolation:isolate;}
 
+/* upper half-oval orbit */
 .cards::before{
   content:"";
   position:absolute;
@@ -526,12 +453,13 @@ section{padding:70px 7%}
   border-radius:50% 50% 0 0 / 100% 100% 0 0;
   background:
     linear-gradient(#071426,#071426) padding-box,
-    linear-gradient(90deg,#19a64a 0%,#19a64a 16%,#ffffff 42%,#ffffff 58%,#19a64a 84%,#19a64a 100%) border-box;
+    conic-gradient(from 180deg at 50% 100%,#000 0deg,#000 18deg,#19a64a 58deg,#fff 128deg,#fff 232deg,#19a64a 302deg,#000 342deg,#000 360deg) border-box;
   opacity:.9;
   filter:drop-shadow(0 0 10px rgba(255,255,255,.25));
   pointer-events:none;
 }
 
+/* lower dark orbit glow */
 .cards::after{
   content:"";
   position:absolute;
@@ -573,6 +501,7 @@ section{padding:70px 7%}
   cursor:default;
 }
 
+/* descend while reading, then return to orbit */
 .card:hover{
   background:rgba(255,255,255,.18);
   border-color:rgba(255,255,255,.82);
@@ -596,25 +525,31 @@ section{padding:70px 7%}
   75%{transform:translate(calc(-50% + var(--x) - 18px),calc(-50% + var(--y) - 12px))}
 }
 
-@keyframes kamraServicesFloat{
-  0%{transform:scale(1.10) translate3d(-1.6%,-1.2%,0)}
-  50%{transform:scale(1.16) translate3d(1.4%,1%,0)}
-  100%{transform:scale(1.12) translate3d(-.6%,1.8%,0)}
+@keyframes kamraServices3D{
+  0%{
+    transform:perspective(1200px) scale(1.08) translate3d(-1.5%,0%,0) rotateX(0deg) rotateY(-1deg);
+  }
+  50%{
+    transform:perspective(1200px) scale(1.14) translate3d(1%,-1.5%,0) rotateX(1deg) rotateY(1deg);
+  }
+  100%{
+    transform:perspective(1200px) scale(1.10) translate3d(-1%,1.5%,0) rotateX(-1deg) rotateY(-1deg);
+  }
 }
 
-.card h3{color:#fff; margin-bottom:5px; font-size:13px; line-height:1.18; text-shadow:0 2px 8px rgba(0,0,0,.6);}
+.card h3{color:#fff;; margin-bottom:5px;; font-size:13px;; line-height:1.18;; text-shadow:0 2px 8px rgba(0,0,0,.6);}
 
-.card p{color:rgba(255,255,255,.92); font-size:9px; line-height:1.28; text-shadow:0 1px 6px rgba(0,0,0,.62);}
+.card p{color:rgba(255,255,255,.92);; font-size:9px;; line-height:1.28;; text-shadow:0 1px 6px rgba(0,0,0,.62);}
 
 /* =========================
    ASSESSED
    ========================= */
 
-.assessed{background:#123f68; color:white; text-align:center; padding:38px 7%}
+.assessed{background:#123f68;; color:white;; text-align:center;; padding:38px 7%}
 
-.assessed h2{font-size:30px; margin-bottom:10px; color:#55b8ff}
+.assessed h2{font-size:30px;; margin-bottom:10px;; color:#55b8ff}
 
-.assessed p{max-width:850px; margin:auto; color:#dce9f5; font-size:18px}
+.assessed p{max-width:850px;; margin:auto;; color:#dce9f5;; font-size:18px}
 
 /* =========================
    EMPLOYEE LOGIN
@@ -643,9 +578,9 @@ section{padding:70px 7%}
   text-align:center
 }
 
-.employee-login-box h2{color:#0b1f3a; margin-bottom:8px; font-size:27px}
+.employee-login-box h2{color:#0b1f3a;; margin-bottom:8px;; font-size:27px}
 
-.login-subtitle{color:#64748b; font-size:14px; margin-bottom:25px}
+.login-subtitle{color:#64748b;; font-size:14px;; margin-bottom:25px}
 
 .employee-login-box input{
   width:100%;
@@ -658,7 +593,7 @@ section{padding:70px 7%}
   outline:none
 }
 
-.employee-login-box input:focus{border-color:#1b9be0; box-shadow:0 0 0 3px rgba(27,155,224,.12)}
+.employee-login-box input:focus{border-color:#1b9be0;; box-shadow:0 0 0 3px rgba(27,155,224,.12)}
 
 .employee-login-submit{
   width:100%;
@@ -708,17 +643,17 @@ section{padding:70px 7%}
    EMPLOYEE LIBRARY
    ========================= */
 
-.employee-library{display:none; background:#eef4f9; padding:60px 7%}
+.employee-library{display:none;; background:#eef4f9;; padding:60px 7%}
 
 .employee-library.active{display:block}
 
-.employee-library-header{text-align:center; margin-bottom:35px}
+.employee-library-header{text-align:center;; margin-bottom:35px}
 
-.employee-library-header h2{color:#0b1f3a; font-size:34px; margin-bottom:10px}
+.employee-library-header h2{color:#0b1f3a;; font-size:34px;; margin-bottom:10px}
 
 .employee-library-header p{color:#64748b}
 
-.library-grid{max-width:1100px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.library-grid{max-width:1100px;; margin:auto;; display:grid;; grid-template-columns:repeat(3,1fr);; gap:20px}
 
 .library-card{
   background:linear-gradient(145deg,#0b1f3a,#123f68);
@@ -732,13 +667,13 @@ section{padding:70px 7%}
   transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease
 }
 
-.library-card:hover{transform:translateY(-5px); border-color:#55b8ff; box-shadow:0 14px 32px rgba(11,31,58,.25)}
+.library-card:hover{transform:translateY(-5px);; border-color:#55b8ff;; box-shadow:0 14px 32px rgba(11,31,58,.25)}
 
-.library-icon{font-size:32px; color:#55b8ff; margin-bottom:10px}
+.library-icon{font-size:32px;; color:#55b8ff;; margin-bottom:10px}
 
-.library-card h3{color:white; font-size:18px; margin-bottom:5px}
+.library-card h3{color:white;; font-size:18px;; margin-bottom:5px}
 
-.library-card p{color:#dce9f5; font-size:13px}
+.library-card p{color:#dce9f5;; font-size:13px}
 
 .library-logout{
   display:block;
@@ -752,13 +687,13 @@ section{padding:70px 7%}
   font-weight:bold
 }
 
-.library-logout:hover{background:#0b1f3a; color:white}
+.library-logout:hover{background:#0b1f3a;; color:white}
 
 /* =========================
    OPERATIONS FILE LIST
    ========================= */
 
-.operations-files{flex:1; overflow-y:auto; padding:25px; background:#eef4f9; direction:ltr}
+.operations-files{flex:1;; overflow-y:auto;; padding:25px;; background:#eef4f9;; direction:ltr}
 
 .operations-file-card{
   background:white;
@@ -773,7 +708,7 @@ section{padding:70px 7%}
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
 }
 
-.operations-file-card:hover{transform:translateY(-2px); border-color:#55b8ff; box-shadow:0 7px 20px rgba(11,31,58,.12)}
+.operations-file-card:hover{transform:translateY(-2px);; border-color:#55b8ff;; box-shadow:0 7px 20px rgba(11,31,58,.12)}
 
 .operations-file-icon{
   width:45px;
@@ -788,11 +723,11 @@ section{padding:70px 7%}
   font-size:22px
 }
 
-.operations-file-info{flex:1; min-width:0}
+.operations-file-info{flex:1;; min-width:0}
 
-.operations-file-name{color:#0b1f3a; font-size:15px; font-weight:bold; word-break:break-word; line-height:1.35}
+.operations-file-name{color:#0b1f3a;; font-size:15px;; font-weight:bold;; word-break:break-word;; line-height:1.35}
 
-.operations-file-type{color:#64748b; font-size:12px; margin-top:3px}
+.operations-file-type{color:#64748b;; font-size:12px;; margin-top:3px}
 
 .operations-open-btn{
   flex:0 0 auto;
@@ -807,7 +742,7 @@ section{padding:70px 7%}
   transition:background .2s ease
 }
 
-.operations-open-btn:hover{background:#55b8ff; color:#0b1f3a}
+.operations-open-btn:hover{background:#55b8ff;; color:#0b1f3a}
 
 .operations-loading,
 .operations-empty,
@@ -823,10 +758,10 @@ section{padding:70px 7%}
   padding:30px
 }
 
-.operations-loading{color:#0b1f3a; font-weight:bold}
+.operations-loading{color:#0b1f3a;; font-weight:bold}
 
 .operations-empty strong,
-.operations-error strong{display:block; color:#0b1f3a; font-size:17px; margin-bottom:7px}
+.operations-error strong{display:block;; color:#0b1f3a;; font-size:17px;; margin-bottom:7px}
 
 .operations-error{color:#c62828}
 
@@ -836,33 +771,33 @@ section{padding:70px 7%}
    HSE
    ========================= */
 
-.hse{background:#0b1f3a; color:white; text-align:center}
+.hse{background:#0b1f3a;; color:white;; text-align:center}
 
-.hse h2{font-size:34px; margin-bottom:20px}
+.hse h2{font-size:34px;; margin-bottom:20px}
 
-.hse p{max-width:850px; margin:auto; color:#dce9f5; font-size:18px}
+.hse p{max-width:850px;; margin:auto;; color:#dce9f5;; font-size:18px}
 
 /* =========================
    CONTACT
    ========================= */
 
-.contact{background:white; text-align:center}
+.contact{background:white;; text-align:center}
 
-.contact-box{max-width:700px; margin:auto}
+.contact-box{max-width:700px;; margin:auto}
 
-.contact-box p{margin:12px 0; font-size:18px}
+.contact-box p{margin:12px 0;; font-size:18px}
 
 /* =========================
    FOOTER
    ========================= */
 
-footer{background:#071426; color:#b9c6d5; text-align:center; padding:25px; direction:ltr}
+footer{background:#071426;; color:#b9c6d5;; text-align:center;; padding:25px;; direction:ltr}
 
 body.rtl .hero{text-align:right}
 
 body.rtl .hero-content{direction:rtl}
 
-body.rtl .hero p{margin-left:0; margin-right:0}
+body.rtl .hero p{margin-left:0;; margin-right:0}
 
 body.rtl .contact-box{direction:rtl}
 
@@ -877,123 +812,62 @@ body.rtl .card h3{direction:rtl}
 
   .company-card{flex-basis:calc((100% - 36px)/3)}
 
-  .quran-box{width:290px; right:5%}
-
-  .hero h1{font-size:58px}
-
-  .hero-subtitle{font-size:34px}
-
+  .quran-box{width:290px;; right:5%}
 }
 
 @media(max-width:700px){
 
-  header{flex-direction:column; gap:15px; padding:12px 4%}
+  header{flex-direction:column;; gap:15px;; padding:12px 4%}
 
-  nav{justify-content:center; width:100%}
+  nav{justify-content:center;; width:100%}
 
-  nav a{margin:0 6px; font-size:13px}
+  nav a{margin:0 6px;; font-size:13px}
 
   .lang-btn,
-  .employee-login-btn{margin-left:5px; font-size:11px; padding:6px 8px}
+  .employee-login-btn{margin-left:5px;; font-size:11px;; padding:6px 8px}
 
-  /* HERO MOBILE */
+  .hero{min-height:650px;; padding:230px 5% 60px;; align-items:center}
 
-  .hero{
-    min-height:650px;
-    padding:230px 5% 60px;
-    align-items:center
-  }
+  .hero h1{font-size:38px}
 
-  .hero-content{
-    max-width:100%;
-    width:100%
-  }
+  .hero p{font-size:16px}
 
-  .hero-company-name{
-    font-size:15px;
-    letter-spacing:1px;
-    line-height:1.3;
-    margin-bottom:12px
-  }
+  .quran-box{position:absolute;; top:25px;; left:5%;; right:5%;; width:auto;; max-width:90%;; margin:0 auto;; padding:12px 15px}
 
-  .hero h1{
-    font-size:42px;
-    line-height:1.08;
-    letter-spacing:-.5px;
-    margin-bottom:10px
-  }
+  .quran-box .verse{font-size:16px;; line-height:1.7}
 
-  .hero-subtitle{
-    font-size:27px;
-    line-height:1.2;
-    margin-bottom:18px
-  }
-
-  .hero-features{
-    font-size:17px;
-    letter-spacing:.5px;
-    margin-bottom:16px
-  }
-
-  .hero p{
-    font-size:16px;
-    line-height:1.6;
-    margin-bottom:20px;
-    max-width:100%
-  }
-
-  .hero-tagline{
-    font-size:19px;
-    line-height:1.3;
-    margin-bottom:20px
-  }
-
-  .quran-box{
-    position:absolute;
-    top:25px;
-    left:5%;
-    right:5%;
-    width:auto;
-    max-width:90%;
-    margin:0 auto;
-    padding:12px 15px
-  }
-
-  .quran-box .verse{font-size:16px; line-height:1.7}
-
-  .quran-box .source{font-size:11px; margin-top:5px}
+  .quran-box .source{font-size:11px;; margin-top:5px}
 
   .company-slider{gap:7px}
 
-  .company-card{flex-basis:calc((100% - 11px)/2); min-height:165px; padding:15px 7px}
+  .company-card{flex-basis:calc((100% - 11px)/2);; min-height:165px;; padding:15px 7px}
 
   .company-track{gap:11px}
 
-  .slider-btn{flex:0 0 38px; width:38px; height:38px; font-size:21px}
+  .slider-btn{flex:0 0 38px;; width:38px;; height:38px;; font-size:21px}
 
-  .card-logo{width:35px; height:35px; margin-bottom:6px}
+  .card-logo{width:35px;; height:35px;; margin-bottom:6px}
 
-  .card-company-name{font-size:8px; margin-bottom:6px; line-height:1.15}
+  .card-company-name{font-size:8px;; margin-bottom:6px;; line-height:1.15}
 
-  .card-number{font-size:10px; letter-spacing:2px; margin-bottom:4px}
+  .card-number{font-size:10px;; letter-spacing:2px;; margin-bottom:4px}
 
-  .company-card h3{font-size:13px; line-height:1.25; margin-bottom:3px}
+  .company-card h3{font-size:13px;; line-height:1.25;; margin-bottom:3px}
 
-  .company-card p{font-size:11px; line-height:1.3}
+  .company-card p{font-size:11px;; line-height:1.3}
 
   .video-icon{font-size:25px}
 
   /* Services orbital layout on mobile */
-
   .services{background-position:center center}
 
-  .cards{width:100%; height:620px}
+  .cards{width:100%;; height:620px}
 
-  .cards::before{width:92%; height:390px; bottom:48px}
+  .cards::before{width:92%;; height:390px;; bottom:48px}
 
-  .cards::after{width:120px; height:120px; bottom:30px}
+  .cards::after{width:120px;; height:120px;; bottom:30px}
 
-  .card{width:min(42vw,185px); min-height:112px; padding:14px 10px; border-radius:18px}
+  .card{width:min(42vw,185px);; min-height:112px;; padding:14px 10px;; border-radius:18px}
 
   .card:nth-child(1){--x:-24vw;--y:190px}
   .card:nth-child(2){--x:-25vw;--y:55px}
@@ -1002,9 +876,9 @@ body.rtl .card h3{direction:rtl}
   .card:nth-child(5){--x:25vw;--y:55px}
   .card:nth-child(6){--x:24vw;--y:190px}
 
-  .card h3{font-size:15px; margin-bottom:5px}
+  .card h3{font-size:15px;; margin-bottom:5px}
 
-  .card p{font-size:11px; line-height:1.35}
+  .card p{font-size:11px;; line-height:1.35}
 
   .library-grid{grid-template-columns:1fr}
 
@@ -1078,7 +952,7 @@ body.rtl .card h3{direction:rtl}
     padding-right:6px
   }
 
-  .pdf-page-info{flex:0 0 auto; font-size:10px; white-space:nowrap; margin-right:6px}
+  .pdf-page-info{flex:0 0 auto;; font-size:10px;; white-space:nowrap;; margin-right:6px}
 
   .viewer-close{
     flex:0 0 36px;
@@ -1111,19 +985,19 @@ body.rtl .card h3{direction:rtl}
     direction:ltr
   }
 
-  .pdf-page{display:block; width:100%!important; max-width:100%!important; height:auto!important; margin:0 auto 10px; box-sizing:border-box}
+  .pdf-page{display:block;; width:100%!important;; max-width:100%!important;; height:auto!important;; margin:0 auto 10px;; box-sizing:border-box}
 
   .operations-files{padding:12px}
 
-  .operations-file-card{padding:12px; gap:10px}
+  .operations-file-card{padding:12px;; gap:10px}
 
-  .operations-file-icon{width:40px; height:40px; flex-basis:40px; font-size:19px}
+  .operations-file-icon{width:40px;; height:40px;; flex-basis:40px;; font-size:19px}
 
   .operations-file-name{font-size:13px}
 
   .operations-file-type{font-size:11px}
 
-  .operations-open-btn{padding:7px 10px; font-size:11px}
+  .operations-open-btn{padding:7px 10px;; font-size:11px}
 
   .assessed{padding:35px 5%}
 
@@ -1136,52 +1010,20 @@ body.rtl .card h3{direction:rtl}
 
   section{padding:50px 4%}
 
-  .logo img{height:50px; max-width:180px; object-fit:contain}
+  .logo img{height:50px;; max-width:180px;; object-fit:contain}
 
-  nav a{font-size:11px; margin:0 3px}
+  nav a{font-size:11px;; margin:0 3px}
 
   .lang-btn,
-  .employee-login-btn{font-size:10px; padding:6px 7px; margin-left:3px}
+  .employee-login-btn{font-size:10px;; padding:6px 7px;; margin-left:3px}
 
-  .hero{
-    min-height:660px;
-    padding:220px 5% 50px
-  }
+  .hero{min-height:630px;; padding:220px 5% 50px}
 
-  .hero-company-name{
-    font-size:13px;
-    letter-spacing:.7px;
-    margin-bottom:10px
-  }
+  .hero h1{font-size:32px}
 
-  .hero h1{
-    font-size:34px;
-    line-height:1.08
-  }
+  .hero p{font-size:16px}
 
-  .hero-subtitle{
-    font-size:24px;
-    line-height:1.2;
-    margin-bottom:16px
-  }
-
-  .hero-features{
-    font-size:16px;
-    margin-bottom:14px
-  }
-
-  .hero p{
-    font-size:15px;
-    line-height:1.55;
-    margin-bottom:18px
-  }
-
-  .hero-tagline{
-    font-size:18px;
-    margin-bottom:18px
-  }
-
-  .quran-box{top:20px; left:4%; right:4%; max-width:92%; padding:10px 12px}
+  .quran-box{top:20px;; left:4%;; right:4%;; max-width:92%;; padding:10px 12px}
 
   .quran-box .verse{font-size:15px}
 
@@ -1189,7 +1031,7 @@ body.rtl .card h3{direction:rtl}
 
   .card-company-name{font-size:7.5px}
 
-  .slider-btn{flex:0 0 34px; width:34px; height:34px; font-size:19px}
+  .slider-btn{flex:0 0 34px;; width:34px;; height:34px;; font-size:19px}
 
   .operations-file-card{align-items:flex-start}
 
@@ -1198,7 +1040,7 @@ body.rtl .card h3{direction:rtl}
 
 .company-slider,
 .company-card,
-.slider-btn{-webkit-user-select:none; user-select:none}
+.slider-btn{-webkit-user-select:none;; user-select:none}
 
 @media print{
   .company-viewer,
@@ -1208,21 +1050,16 @@ body.rtl .card h3{direction:rtl}
 /* =========================
    SERVICES ORBIT — MOBILE
    ========================= */
-
 @media(max-width:700px){
+  .services::before{inset:-15%;; background-size:60% auto;; animation:kamraServicesFloatMobile 14s ease-in-out infinite alternate;}
 
-  .services::before{
-    inset:-15%;
-    animation:kamraServicesFloatMobile 14s ease-in-out infinite alternate;
-  }
+  .cards{width:100%;; height:600px;}
 
-  .cards{width:100%; height:600px;}
+  .cards::before{width:92%;; height:380px;; bottom:48px;}
 
-  .cards::before{width:92%; height:380px; bottom:48px;}
+  .cards::after{width:94%;; height:85px;; bottom:24px;}
 
-  .cards::after{width:94%; height:85px; bottom:24px;}
-
-  .card{width:min(28vw,125px); min-height:72px; padding:8px 6px; border-radius:16px;}
+  .card{width:min(28vw,125px);; min-height:72px;; padding:8px 6px;; border-radius:16px;}
 
   .card:nth-child(1){--x:-24vw;--y:190px}
   .card:nth-child(2){--x:-25vw;--y:55px}
@@ -1332,35 +1169,15 @@ body.rtl .card h3{direction:rtl}
 
 <div class="hero-content">
 
-<!-- ENGLISH HERO -->
-
 <div class="en">
 
-<div class="hero-company-name">
-KAMRA FOR ENERGY CONTRACTING L.L.C.
-</div>
-
 <h1>
-Professional Energy.
+KAMRA FOR ENERGY CONTRACTING L.L.C.
 </h1>
 
-<div class="hero-subtitle">
-Tubular Running, Perfected.
-</div>
-
-<div class="hero-features">
-Safe. Reliable. Efficient.
-</div>
-
 <p>
-Delivering professional Well Services and Energy Contracting Solutions
-through operational excellence, competent teams, certified equipment,
-and an uncompromising commitment to Safety, Quality, and Performance.
+Professional Energy, Well Services and Contracting Solutions with a strong commitment to safety, quality and operational excellence.
 </p>
-
-<div class="hero-tagline">
-Precision in Every Operation.
-</div>
 
 <a class="btn" href="#contact">
 Contact Us
@@ -1368,36 +1185,15 @@ Contact Us
 
 </div>
 
-
-<!-- ARABIC HERO -->
-
 <div class="ar">
 
-<div class="hero-company-name">
-كامرا لمقاولات الطاقة ذ.م.م.
-</div>
-
 <h1>
-طاقة باحترافية.
+كامرا للمقاولات في مجال الطاقة ذ.م.م
 </h1>
 
-<div class="hero-subtitle">
-إتقان عمليات إنزال وتركيب الأنابيب.
-</div>
-
-<div class="hero-features">
-آمنة. موثوقة. وكفؤة.
-</div>
-
 <p>
-نقدّم خدمات الآبار وحلول مقاولات الطاقة باعتمادنا على التميز التشغيلي،
-والكوادر المؤهلة، والمعدات المعتمدة، والالتزام الراسخ بالسلامة والجودة
-والأداء.
+حلول احترافية في مجال الطاقة وخدمات الآبار والمقاولات، مع التزام قوي بالسلامة والجودة والتميز التشغيلي.
 </p>
-
-<div class="hero-tagline">
-الدقة في كل عملية.
-</div>
 
 <a class="btn" href="#contact">
 اتصل بنا
@@ -1453,6 +1249,8 @@ Professional experience. Reliable solutions.
   class="company-track"
   id="companyTrack">
 
+<!-- 01 -->
+
 <div
   class="company-card"
   data-pdf="01-logo.pdf">
@@ -1481,6 +1279,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
 </div>
+
+<!-- 02 -->
 
 <div
   class="company-card"
@@ -1511,6 +1311,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 </div>
 
+<!-- 03 -->
+
 <div
   class="company-card"
   data-pdf="03-vision.pdf">
@@ -1539,6 +1341,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
 </div>
+
+<!-- 04 -->
 
 <div
   class="company-card"
@@ -1569,6 +1373,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 </div>
 
+<!-- 05 -->
+
 <div
   class="company-card"
   data-pdf="05-comprehensive-safety.pdf">
@@ -1597,6 +1403,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
 </div>
+
+<!-- 06 -->
 
 <div
   class="company-card"
@@ -1627,6 +1435,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 </div>
 
+<!-- 07 -->
+
 <div
   class="company-card"
   data-pdf="07-operational-efficiency.pdf">
@@ -1655,6 +1465,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
 </div>
+
+<!-- 08 -->
 
 <div
   class="company-card"
@@ -1685,6 +1497,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 </div>
 
+<!-- 09 -->
+
 <div
   class="company-card"
   data-pdf="09-company-perspective.pdf">
@@ -1713,6 +1527,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 </div>
 
 </div>
+
+<!-- 10 VIDEO -->
 
 <div
   class="company-card"
@@ -1747,6 +1563,8 @@ KAMRA FOR ENERGY CONTRACTING L.L.C.
 
 </div>
 
+<!-- 11 -->
+
 <div class="company-card update-card">
 
 <img
@@ -1767,6 +1585,8 @@ UPDATE
 </div>
 
 </div>
+
+<!-- 12 -->
 
 <div class="company-card update-card">
 
@@ -1801,6 +1621,8 @@ UPDATE
 </button>
 
 </div>
+
+<!-- PDF VIEWER -->
 
 <div
   id="companyViewer"
@@ -1990,6 +1812,8 @@ Authorized company documents and operational resources.
 
 <div class="library-grid">
 
+<!-- CARD 01 -->
+
 <div
   class="library-card"
   data-library-pdf="employee-well-services.pdf">
@@ -2020,6 +1844,8 @@ Health, Safety & Environment
 
 </div>
 
+<!-- CARD 02 -->
+
 <div
   class="library-card"
   data-library-pdf="employee-hse.pdf">
@@ -2045,6 +1871,8 @@ Health, Safety & Environment
 </div>
 
 </div>
+
+<!-- CARD 03 -->
 
 <div
   class="library-card"
@@ -2076,6 +1904,8 @@ Technical Documentation
 
 </div>
 
+<!-- CARD 04 - OPERATIONS -->
+
 <div
   class="library-card"
   id="operationsLibraryCard">
@@ -2106,6 +1936,8 @@ Operational Documents
 
 </div>
 
+<!-- CARD 05 -->
+
 <div
   class="library-card"
   data-library-pdf="employee-forms-templates.pdf">
@@ -2135,6 +1967,8 @@ Company Forms and Templates
 </div>
 
 </div>
+
+<!-- CARD 06 -->
 
 <div
   class="library-card"
@@ -2609,6 +2443,8 @@ syncMobileViewerViewport,
 
 viewerContent.innerHTML = "";
 
+/* TOOLBAR */
+
 const toolbar =
 document.createElement("div");
 
@@ -2667,6 +2503,8 @@ toolbar.appendChild(title);
 toolbar.appendChild(pageInfo);
 
 toolbar.appendChild(closeButton);
+
+/* SCROLL AREA */
 
 const scrollArea =
 document.createElement("div");
@@ -3001,7 +2839,8 @@ style="
 position:absolute;
 top:12px;
 right:12px;
-z-index:20;">
+z-index:20;
+">
 ×
 </button>
 
@@ -3632,6 +3471,10 @@ return cleanName
 .toUpperCase();
 
 }
+
+/* =========================================
+   LOAD OPERATIONS FILES
+   ========================================= */
 
 async function loadOperationsFiles(){
 
