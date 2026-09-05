@@ -1229,10 +1229,12 @@ body.rtl .card h3{direction:rtl}
    ========================= */
 
 @media(max-width:700px){
-
+.services{
+    min-height:100svh;
+  }
   .services::before{
     inset:0;
-   background-size:100%;
+   background-size:100% auto;
     background-position:center center;
     background-repeat:no-repeat;
     transform:none;
