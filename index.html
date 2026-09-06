@@ -521,12 +521,31 @@ section{padding:70px 7%}
   width:min(900px,90%);
   height:300px;
   transform:translateX(-50%);
-  border:2px solid transparent;
-  border-bottom:0;
+  border:0;
   border-radius:50% 50% 0 0 / 100% 100% 0 0;
-  background:
-    linear-gradient(#071426,#071426) padding-box,
-    linear-gradient(90deg,#19a64a 0%,#19a64a 16%,#ffffff 42%,#ffffff 58%,#19a64a 84%,#19a64a 100%) border-box;
+  padding:2px;
+  background:linear-gradient(
+    90deg,
+    #19a64a 0%,
+    #19a64a 16%,
+    #ffffff 42%,
+    #ffffff 58%,
+    #19a64a 84%,
+    #19a64a 100%
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite:exclude;
+
+  clip-path:inset(0 0 2px 0);
+
   opacity:.9;
   filter:drop-shadow(0 0 10px rgba(255,255,255,.25));
   pointer-events:none;
@@ -605,7 +624,7 @@ section{padding:70px 7%}
 .card h3{color:#fff; margin-bottom:5px; font-size:13px; line-height:1.18; text-shadow:0 2px 8px rgba(0,0,0,.6);}
 
 .card p{color:rgba(255,255,255,.92); font-size:9px; line-height:1.28; text-shadow:0 1px 6px rgba(0,0,0,.62);}
-
+   
 /* =========================
    ASSESSED
    ========================= */
@@ -1211,9 +1230,13 @@ body.rtl .card h3{direction:rtl}
 
 @media(max-width:700px){
 
+ .services{
+    height:auto;
+  }
+
   .services::before{
     inset:0;
-    background-size:100% 100%;
+    background-size:130% auto;
     background-position:center center;
     background-repeat:no-repeat;
     transform:none;
@@ -1240,7 +1263,43 @@ body.rtl .card h3{direction:rtl}
   .card h3{font-size:11px;margin-bottom:4px}
   .card p{font-size:8px;line-height:1.25}
 }
+@media (max-width:700px) and (orientation:portrait){
 
+  .cards{
+height:clamp(330px,105vmin,450px);
+  }
+
+  .cards::before{
+    height:clamp(290px,97vmin,380px);
+    bottom:clamp(28px,12vmin,48px);
+  }
+
+  .cards::after{
+    height:clamp(65px,22vmin,85px);
+    bottom:clamp(18px,6vmin,24px);
+  }
+
+  .card{
+    width:min(28vmin,125px);
+    min-height:clamp(72px,18vmin,100px);
+    padding:clamp(8px,2vmin,12px) clamp(6px,1.5vmin,10px);
+  }
+
+  .card:nth-child(1){--x:-24vmin;--y:48.7vmin}
+  .card:nth-child(2){--x:-25vmin;--y:14.1vmin}
+  .card:nth-child(3){--x:-15vmin;--y:-19.2vmin}
+  .card:nth-child(4){--x:15vmin;--y:-19.2vmin}
+  .card:nth-child(5){--x:25vmin;--y:14.1vmin}
+  .card:nth-child(6){--x:24vmin;--y:48.7vmin}
+
+  .card h3{
+    font-size:clamp(10px,2.8vmin,11px);
+  }
+
+  .card p{
+    font-size:clamp(7px,2vmin,8px);
+  }
+}
 @keyframes kamraServicesFloatMobile{
   0%{transform:scale(1.14) translate3d(-1%,0,0)}
   100%{transform:scale(1.20) translate3d(1%,1%,0)}
