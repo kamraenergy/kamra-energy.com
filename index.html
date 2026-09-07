@@ -4263,7 +4263,14 @@ if(operationReportLoginButton){
 
         operationReportLoginMessage.textContent =
           "Login successful.";
+operationReportLoginModal.classList.remove(
+  "active"
+);
 
+operationReportLoginModal.setAttribute(
+  "aria-hidden",
+  "true"
+);
         console.log(
           "Operation Report authenticated:",
           data
