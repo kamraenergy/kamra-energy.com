@@ -4194,7 +4194,101 @@ const SUPABASE_URL =
 
 const SUPABASE_KEY =
 "sb_publishable_hBufmGhBmdm8Yi1ziJ8fDg_7NU1ahF-";
+/* =========================================
+   OPERATION REPORT SUPABASE AUTH
+========================================= */
 
+if(operationReportLoginButton){
+
+  operationReportLoginButton.addEventListener(
+    "click",
+    async function(){
+
+      const email =
+        operationReportEmail.value
+        .trim()
+        .toLowerCase();
+
+      const password =
+        operationReportPassword.value;
+
+      operationReportLoginMessage.textContent = "";
+
+      if(!email || !password){
+
+        operationReportLoginMessage.textContent =
+          "Please enter email and password.";
+
+        return;
+      }
+
+      operationReportLoginButton.disabled = true;
+
+      operationReportLoginMessage.textContent =
+        "Signing in...";
+
+      try{
+
+        const response =
+          await fetch(
+            SUPABASE_URL +
+            "/auth/v1/token?grant_type=password",
+            {
+              method:"POST",
+
+              headers:{
+                "Content-Type":"application/json",
+                "apikey":SUPABASE_KEY
+              },
+
+              body:JSON.stringify({
+                email:email,
+                password:password
+              })
+            }
+          );
+
+        const data =
+          await response.json();
+
+        if(!response.ok){
+
+          throw new Error(
+            data.error_description ||
+            data.msg ||
+            "Invalid email or password."
+          );
+
+        }
+
+        operationReportLoginMessage.textContent =
+          "Login successful.";
+
+        console.log(
+          "Operation Report authenticated:",
+          data
+        );
+
+      }catch(error){
+
+        console.error(
+          "Operation Report login error:",
+          error
+        );
+
+        operationReportLoginMessage.textContent =
+          "Login failed. Please check your email and password.";
+
+      }finally{
+
+        operationReportLoginButton.disabled = false;
+
+      }
+
+    }
+  );
+
+}
 const SUPABASE_BUCKET =
 "employee-library";
 
