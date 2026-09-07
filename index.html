@@ -4482,8 +4482,10 @@ operationReportReportsList.innerHTML =
     );
 
     operationReportReportsList.innerHTML =
-      "<p class='operation-report-loading'>Unable to load reports.</p>";
-
+  "<p class='operation-report-loading'>" +
+  "Unable to load reports.<br><br>" +
+  escapeHtml(error.message) +
+  "</p>";
   }
 
 }
