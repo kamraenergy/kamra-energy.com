@@ -1585,6 +1585,64 @@ height:clamp(330px,105vmin,450px);
   min-height: 20px;
   margin-top: 15px !important;
 }
+   /* =========================================
+   OPERATION REPORT PANEL
+========================================= */
+
+.operation-report-panel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.operation-report-panel.active {
+  display: flex;
+}
+
+.operation-report-panel-box {
+  position: relative;
+  width: min(900px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.operation-report-panel-box h2 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.operation-report-panel-subtitle {
+  margin: 0 0 25px;
+  text-align: center;
+}
+
+.operation-report-panel-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.operation-report-reports-list {
+  width: 100%;
+}
+
+.operation-report-loading {
+  text-align: center;
+  padding: 30px;
+}
 </style>
 </head>
 
