@@ -1517,7 +1517,74 @@ height:clamp(330px,105vmin,450px);
 @media(prefers-reduced-motion:reduce){
   .services::before,.card{animation:none!important}
 }
+/* =========================================
+   OPERATION REPORT LOGIN MODAL
+========================================= */
 
+.operation-report-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.operation-report-modal.active {
+  display: flex;
+}
+
+.operation-report-modal-box {
+  position: relative;
+  width: min(420px, 100%);
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.operation-report-modal-box h2 {
+  margin: 0 0 12px;
+}
+
+.operation-report-modal-box p {
+  margin: 0 0 22px;
+}
+
+.operation-report-modal-box input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#operationReportLoginButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.operation-report-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.operation-report-login-message {
+  min-height: 20px;
+  margin-top: 15px !important;
+}
 </style>
 </head>
 
