@@ -4617,6 +4617,126 @@ servicesBackgrounds[servicesBackgroundIndex]
 );
 
 }
+   /* =========================================
+   NEW CONTACT → OPERATION REPORTS
+   ========================================= */
+
+const newContactSubmit =
+  document.getElementById("newContactSubmit");
+
+if (newContactSubmit) {
+
+  newContactSubmit.addEventListener("click", async function () {
+
+    const firstName =
+      document.getElementById("firstName").value.trim();
+
+    const lastName =
+      document.getElementById("lastName").value.trim();
+
+    const email =
+      document.getElementById("email").value.trim();
+
+    const phone =
+      document.getElementById("phone").value.trim();
+
+    const company =
+      document.getElementById("company").value.trim();
+
+    const areaOfInterest =
+      document.getElementById("areaOfInterest").value;
+
+    const message =
+      document.getElementById("message").value.trim();
+
+    /* Check required fields */
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !message
+    ) {
+      alert("Please complete the required fields.");
+      return;
+    }
+
+    /* Change button while sending */
+    newContactSubmit.disabled = true;
+    newContactSubmit.textContent = "SENDING...";
+
+    try {
+
+      const response = await fetch(
+        SUPABASE_URL + "/rest/v1/operation_reports",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_KEY,
+            "Authorization": "Bearer " + SUPABASE_KEY,
+            "Prefer": "return=minimal"
+          },
+
+          body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone,
+            company: company,
+            area_of_interest: areaOfInterest,
+            message: message,
+            status: "New"
+          })
+        }
+      );
+
+      if (!response.ok) {
+
+        const errorText = await response.text();
+
+        console.error(
+          "Supabase error:",
+          errorText
+        );
+
+        throw new Error(errorText);
+      }
+
+      /* Success */
+      alert("Your enquiry has been sent successfully.");
+
+      /* Clear form */
+      document.getElementById("firstName").value = "";
+      document.getElementById("lastName").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("company").value = "";
+      document.getElementById("areaOfInterest").selectedIndex = 0;
+      document.getElementById("message").value = "";
+
+      newContactSubmit.textContent = "SENT ✓";
+
+      setTimeout(function () {
+        newContactSubmit.disabled = false;
+        newContactSubmit.textContent = "SEND ENQUIRY →";
+      }, 2000);
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+        "Unable to send your enquiry. Please try again."
+      );
+
+      newContactSubmit.disabled = false;
+      newContactSubmit.textContent = "SEND ENQUIRY →";
+    }
+
+  });
+
+}
 </script>
 
 </body>
