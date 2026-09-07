@@ -4210,10 +4210,27 @@ if(closeOperationReportPanel){
   );
 
 }
-const closeOperationReportPanel =
-document.getElementById(
-"closeOperationReportPanel"
-);
+/* =========================================
+   CLOSE OPERATION REPORT PANEL
+========================================= */
+
+document.addEventListener("click", function(event){
+
+  if(
+    event.target &&
+    event.target.closest("#closeOperationReportPanel")
+  ){
+
+    operationReportPanel.classList.remove("active");
+
+    operationReportPanel.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  }
+
+});
 
 const operationReportReportsList =
 document.getElementById(
