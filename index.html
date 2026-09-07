@@ -4366,8 +4366,9 @@ if(operationReportLoginButton){
 
         }
 
-        operationReportLoginMessage.textContent =
-          "Login successful.";
+ operationReportLoginMessage.textContent =
+  "Login successful.";
+
 operationReportLoginModal.classList.remove(
   "active"
 );
@@ -4376,6 +4377,17 @@ operationReportLoginModal.setAttribute(
   "aria-hidden",
   "true"
 );
+
+operationReportPanel.classList.add(
+  "active"
+);
+
+operationReportPanel.setAttribute(
+  "aria-hidden",
+  "false"
+
+);
+         );
         console.log(
           "Operation Report authenticated:",
           data
