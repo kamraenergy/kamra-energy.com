@@ -4452,13 +4452,19 @@ operationReportReportsList.innerHTML =
         }
       );
 
-    if(!response.ok){
+   if(!response.ok){
 
-      throw new Error(
-        "Failed to load operation reports."
-      );
+  const errorData =
+    await response.text();
 
-    }
+  throw new Error(
+    "HTTP " +
+    response.status +
+    ": " +
+    errorData
+  );
+
+}
 
     const reports =
       await response.json();
