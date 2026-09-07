@@ -4039,7 +4039,110 @@ employeePassword.focus();
 }
 
 });
+/* =========================================
+   OPERATION REPORT LOGIN
+   ========================================= */
 
+const operationReportCard =
+document.getElementById(
+"operationReportLibraryCard"
+);
+
+const operationReportLoginModal =
+document.getElementById(
+"operationReportLoginModal"
+);
+
+const closeOperationReportLogin =
+document.getElementById(
+"closeOperationReportLogin"
+);
+
+const operationReportLoginButton =
+document.getElementById(
+"operationReportLoginButton"
+);
+
+const operationReportEmail =
+document.getElementById(
+"operationReportEmail"
+);
+
+const operationReportPassword =
+document.getElementById(
+"operationReportPassword"
+);
+
+const operationReportLoginMessage =
+document.getElementById(
+"operationReportLoginMessage"
+);
+
+if(operationReportCard){
+
+operationReportCard.addEventListener(
+"click",
+function(){
+
+operationReportLoginModal.classList.add(
+"active"
+);
+
+operationReportLoginModal.setAttribute(
+"aria-hidden",
+"false"
+);
+
+operationReportEmail.focus();
+
+}
+);
+
+}
+
+if(closeOperationReportLogin){
+
+closeOperationReportLogin.addEventListener(
+"click",
+function(){
+
+operationReportLoginModal.classList.remove(
+"active"
+);
+
+operationReportLoginModal.setAttribute(
+"aria-hidden",
+"true"
+);
+
+}
+);
+
+}
+
+if(operationReportLoginModal){
+
+operationReportLoginModal.addEventListener(
+"click",
+function(event){
+
+if(event.target === operationReportLoginModal){
+
+operationReportLoginModal.classList.remove(
+"active"
+);
+
+operationReportLoginModal.setAttribute(
+"aria-hidden",
+"true"
+);
+
+}
+
+}
+);
+
+}
 /* =========================================
    EMPLOYEE LIBRARY PDFS
    ========================================= */
