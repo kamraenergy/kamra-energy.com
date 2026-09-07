@@ -4191,7 +4191,25 @@ const operationReportPanel =
 document.getElementById(
 "operationReportPanel"
 );
+if(closeOperationReportPanel){
 
+  closeOperationReportPanel.addEventListener(
+    "click",
+    function(){
+
+      operationReportPanel.classList.remove(
+        "active"
+      );
+
+      operationReportPanel.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+    }
+  );
+
+}
 const closeOperationReportPanel =
 document.getElementById(
 "closeOperationReportPanel"
