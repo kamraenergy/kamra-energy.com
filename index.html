@@ -4419,7 +4419,61 @@ operationReportLoginModal.setAttribute(
 }
 const SUPABASE_BUCKET =
 "employee-library";
+async function loadOperationReports(){
 
+  if(!operationReportAccessToken){
+    return;
+  }
+
+  operationReportReportsList.innerHTML =
+    "<p class='operation-report-loading'>Loading reports...</p>";
+
+  try{
+
+    const response =
+      await fetch(
+        SUPABASE_URL +
+        "/rest/v1/operation_reports?select=*&order=created_at.desc",
+        {
+          method:"GET",
+
+          headers:{
+            "apikey":SUPABASE_KEY,
+            "Authorization":
+              "Bearer " + operationReportAccessToken
+          }
+        }
+      );
+
+    if(!response.ok){
+
+      throw new Error(
+        "Failed to load operation reports."
+      );
+
+    }
+
+    const reports =
+      await response.json();
+
+    console.log(
+      "Operation Reports:",
+      reports
+    );
+
+  }catch(error){
+
+    console.error(
+      "Operation Report loading error:",
+      error
+    );
+
+    operationReportReportsList.innerHTML =
+      "<p class='operation-report-loading'>Unable to load reports.</p>";
+
+  }
+
+}
 const OPERATIONS_FOLDER =
 "Operations";
 
