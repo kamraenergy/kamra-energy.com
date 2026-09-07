@@ -4372,13 +4372,17 @@ if(operationReportLoginButton){
 
         if(!response.ok){
 
-          throw new Error(
-            data.error_description ||
-            data.msg ||
-            "Invalid email or password."
-          );
+  const errorData =
+    await response.text();
 
-        }
+  throw new Error(
+    "HTTP " +
+    response.status +
+    ": " +
+    errorData
+  );
+
+}
 operationReportAccessToken = data.access_token;
  loadOperationReports();
          operationReportPanel.classList.add("active");
