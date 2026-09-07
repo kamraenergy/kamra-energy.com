@@ -4432,7 +4432,7 @@ async function loadOperationReports(){
     return;
   }
 
-operationReportReportsList.innerHTML =
+  operationReportReportsList.innerHTML =
     "<p class='operation-report-loading'>Loading reports...</p>";
 
   try{
@@ -4452,27 +4452,85 @@ operationReportReportsList.innerHTML =
         }
       );
 
-   if(!response.ok){
+    if(!response.ok){
 
-  const errorData =
-    await response.text();
+      const errorData =
+        await response.text();
 
-  throw new Error(
-    "HTTP " +
-    response.status +
-    ": " +
-    errorData
-  );
+      throw new Error(
+        "HTTP " +
+        response.status +
+        ": " +
+        errorData
+      );
 
-}
+    }
 
     const reports =
       await response.json();
 
-    console.log(
-      "Operation Reports:",
-      reports
-    );
+    if(!Array.isArray(reports) ||
+       reports.length === 0){
+
+      operationReportReportsList.innerHTML =
+        "<p class='operation-report-loading'>" +
+        "No operation reports found." +
+        "</p>";
+
+      return;
+
+    }
+
+    operationReportReportsList.innerHTML =
+      reports.map(function(report){
+
+        return `
+<div class="operation-report-item">
+
+  <h3>
+    ${escapeHtml(
+      (report.first_name || "") +
+      " " +
+      (report.last_name || "")
+    )}
+  </h3>
+
+  <p>
+    <strong>Email:</strong>
+    ${escapeHtml(report.email || "")}
+  </p>
+
+  <p>
+    <strong>Phone:</strong>
+    ${escapeHtml(report.phone || "")}
+  </p>
+
+  <p>
+    <strong>Company:</strong>
+    ${escapeHtml(report.company || "")}
+  </p>
+
+  <p>
+    <strong>Area of Interest:</strong>
+    ${escapeHtml(
+      report.area_of_interest || ""
+    )}
+  </p>
+
+  <p>
+    <strong>Message:</strong><br>
+    ${escapeHtml(report.message || "")}
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    ${escapeHtml(report.created_at || "")}
+  </p>
+
+</div>
+        `;
+
+      }).join("");
 
   }catch(error){
 
@@ -4482,10 +4540,11 @@ operationReportReportsList.innerHTML =
     );
 
     operationReportReportsList.innerHTML =
-  "<p class='operation-report-loading'>" +
-  "Unable to load reports.<br><br>" +
-  escapeHtml(error.message) +
-  "</p>";
+      "<p class='operation-report-loading'>" +
+      "Unable to load reports.<br><br>" +
+      escapeHtml(error.message) +
+      "</p>";
+
   }
 
 }
