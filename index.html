@@ -2408,6 +2408,7 @@ async function loadEmployeeLibraryFolder(folderName,container){
   container.innerHTML=`<div class="operations-loading"><div class="pdf-spinner"></div><div>${isArabic?"جاري تحميل الوثائق...":"Loading documents..."}</div></div>`;
 
   try{
+    console.log("FOLDER REQUEST:",folderName);
     const response=await fetch(SUPABASE_URL+"/storage/v1/object/list/"+SUPABASE_BUCKET,{
       method:"POST",
       headers:{
