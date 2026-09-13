@@ -2429,9 +2429,9 @@ async function loadEmployeeLibraryFolder(folderName,container){
     const files=JSON.parse(responseText);
     if(!Array.isArray(files))throw new Error("Invalid file list");
 
-    const documents=files.filter(file=>{
-      return file&&file.name&&file.name!==".emptyFolderPlaceholder"&&file.id!==null&&file.id!==undefined;
-    });
+   const documents=files.filter(file=>{
+  return file&&file.name&&file.name!==".emptyFolderPlaceholder";
+});
 
     if(!documents.length){
       container.innerHTML=`<div class="operations-empty"><strong>${isArabic?"لا توجد وثائق":"No documents available."}</strong><span>${isArabic?"قم برفع الملفات داخل مجلد employee-library/"+folderName:"Upload files into employee-library/"+folderName}</span></div>`;
