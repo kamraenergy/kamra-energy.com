@@ -2427,6 +2427,7 @@ async function loadEmployeeLibraryFolder(folderName,container){
     if(!response.ok)throw new Error("Supabase returned HTTP "+response.status);
 
     const files=JSON.parse(responseText);
+    console.log("SUPABASE FILES:",files);
     if(!Array.isArray(files))throw new Error("Invalid file list");
 
   const documents=files.filter(file=>{
