@@ -2397,6 +2397,196 @@ closeViewer();
 loadOperationsFiles();
 });
 }
+  /* =========================================
+FORMS & TEMPLATES + TRAINING
+SUPABASE STORAGE
+========================================= */
+
+async function loadEmployeeLibraryFolder(folderName,container){
+  if(!container)return;
+  const isArabic=document.body.classList.contains("rtl");
+  container.innerHTML=`<div class="operations-loading"><div class="pdf-spinner"></div><div>${isArabic?"جاري تحميل الوثائق...":"Loading documents..."}</div></div>`;
+
+  try{
+    const response=await fetch(SUPABASE_URL+"/storage/v1/object/list/"+SUPABASE_BUCKET,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey":SUPABASE_KEY,
+        "Authorization":"Bearer "+SUPABASE_KEY
+      },
+      body:JSON.stringify({
+        prefix:folderName+"/",
+        limit:100,
+        offset:0,
+        sortBy:{column:"name",order:"asc"}
+      })
+    });
+
+    const responseText=await response.text();
+    if(!response.ok)throw new Error("Supabase returned HTTP "+response.status);
+
+    const files=JSON.parse(responseText);
+    if(!Array.isArray(files))throw new Error("Invalid file list");
+
+    const documents=files.filter(file=>{
+      return file&&file.name&&file.name!==".emptyFolderPlaceholder"&&file.id!==null&&file.id!==undefined;
+    });
+
+    if(!documents.length){
+      container.innerHTML=`<div class="operations-empty"><strong>${isArabic?"لا توجد وثائق":"No documents available."}</strong><span>${isArabic?"قم برفع الملفات داخل مجلد employee-library/"+folderName:"Upload files into employee-library/"+folderName}</span></div>`;
+      return;
+    }
+
+    container.innerHTML="";
+
+    documents.forEach(file=>{
+      let fileName=String(file.name).trim();
+
+      if(fileName.indexOf(folderName+"/")===0){
+        fileName=fileName.substring((folderName+"/").length);
+      }
+
+      if(!fileName)return;
+
+      const fileUrl=SUPABASE_URL+"/storage/v1/object/public/"+SUPABASE_BUCKET+"/"+encodeStoragePath(folderName+"/"+fileName);
+      const extension=getFileExtension(fileName);
+
+      const fileCard=document.createElement("div");
+      fileCard.className="operations-file-card";
+
+      const icon=document.createElement("div");
+      icon.className="operations-file-icon";
+      icon.textContent="📄";
+
+      const info=document.createElement("div");
+      info.className="operations-file-info";
+
+      const name=document.createElement("div");
+      name.className="operations-file-name";
+      name.textContent=fileName;
+
+      const type=document.createElement("div");
+      type.className="operations-file-type";
+      type.textContent=isArabic?extension+" — وثيقة":extension+" — Document";
+
+      info.appendChild(name);
+      info.appendChild(type);
+
+      const openButton=document.createElement("a");
+      openButton.href=fileUrl;
+      openButton.target="_blank";
+      openButton.rel="noopener noreferrer";
+      openButton.className="operations-open-btn";
+      openButton.textContent=isArabic?"فتح":"Open";
+
+      openButton.addEventListener("click",event=>event.stopPropagation());
+
+      fileCard.appendChild(icon);
+      fileCard.appendChild(info);
+      fileCard.appendChild(openButton);
+      container.appendChild(fileCard);
+    });
+
+  }catch(error){
+    console.error("Employee Library Error:",error);
+    container.innerHTML=`<div class="operations-error"><strong>${isArabic?"تعذر تحميل الوثائق":"Unable to load documents."}</strong><span>${isArabic?"تحقق من صلاحيات Supabase Storage والمجلد.":"Please check Supabase Storage permissions and the folder."}</span></div>`;
+  }
+}
+
+
+/* =========================================
+FORMS & TEMPLATES
+========================================= */
+
+const formsTemplatesCard=document.querySelector('.library-card[data-library-pdf="employee-forms-templates.pdf"]');
+
+if(formsTemplatesCard){
+  formsTemplatesCard.addEventListener("click",function(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    document.body.style.overflow="hidden";
+    viewer.classList.add("active");
+    viewer.setAttribute("aria-hidden","false");
+
+    requestAnimationFrame(syncMobileViewerViewport);
+    setTimeout(syncMobileViewerViewport,100);
+
+    const isArabic=document.body.classList.contains("rtl");
+
+    viewerContent.innerHTML=`
+      <div style="width:100%;height:100%;background:#eef4f9;display:flex;flex-direction:column;">
+        <div style="height:50px;min-height:50px;background:#0b1f3a;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 20px;direction:ltr;">
+          <strong style="font-size:15px;">${isArabic?"النماذج والقوالب":"Forms & Templates"}</strong>
+          <button type="button" class="viewer-close" id="formsTemplatesClose" aria-label="Close">×</button>
+        </div>
+        <div id="formsTemplatesFiles" class="operations-files">
+          <div class="operations-loading"><div class="pdf-spinner"></div><div>${isArabic?"جاري تحميل الوثائق...":"Loading documents..."}</div></div>
+        </div>
+      </div>
+    `;
+
+    const closeButton=document.getElementById("formsTemplatesClose");
+
+    if(closeButton){
+      closeButton.addEventListener("click",function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        closeViewer();
+      });
+    }
+
+    loadEmployeeLibraryFolder("Forms & Templates",document.getElementById("formsTemplatesFiles"));
+  });
+}
+
+
+/* =========================================
+TRAINING
+========================================= */
+
+const trainingCard=document.querySelector('.library-card[data-library-pdf="employee-training.pdf"]');
+
+if(trainingCard){
+  trainingCard.addEventListener("click",function(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    document.body.style.overflow="hidden";
+    viewer.classList.add("active");
+    viewer.setAttribute("aria-hidden","false");
+
+    requestAnimationFrame(syncMobileViewerViewport);
+    setTimeout(syncMobileViewerViewport,100);
+
+    const isArabic=document.body.classList.contains("rtl");
+
+    viewerContent.innerHTML=`
+      <div style="width:100%;height:100%;background:#eef4f9;display:flex;flex-direction:column;">
+        <div style="height:50px;min-height:50px;background:#0b1f3a;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 20px;direction:ltr;">
+          <strong style="font-size:15px;">${isArabic?"التدريب":"Training"}</strong>
+          <button type="button" class="viewer-close" id="trainingClose" aria-label="Close">×</button>
+        </div>
+        <div id="trainingFiles" class="operations-files">
+          <div class="operations-loading"><div class="pdf-spinner"></div><div>${isArabic?"جاري تحميل وثائق التدريب...":"Loading training documents..."}</div></div>
+        </div>
+      </div>
+    `;
+
+    const closeButton=document.getElementById("trainingClose");
+
+    if(closeButton){
+      closeButton.addEventListener("click",function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        closeViewer();
+      });
+    }
+
+    loadEmployeeLibraryFolder("Training",document.getElementById("trainingFiles"));
+  });
+}
 /* =========================================
 LOGOUT
 ========================================= */
