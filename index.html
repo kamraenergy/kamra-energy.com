@@ -922,7 +922,7 @@ Customer Enquiries & Reports
 </p>
 </div>
 </div>
-<div class="library-card" data-library-pdf="employee-forms-templates.pdf">
+<div class="library-card" id="formsTemplatesLibraryCard">
 <div class="library-icon">
 ▤
 </div>
@@ -939,7 +939,7 @@ Company Forms and Templates
 </p>
 </div>
 </div>
-<div class="library-card" data-library-pdf="employee-training.pdf">
+<div class="library-card" id="trainingLibraryCard">
 <div class="library-icon">
 ★
 </div>
@@ -2499,7 +2499,7 @@ async function loadEmployeeLibraryFolder(folderName,container){
 FORMS & TEMPLATES
 ========================================= */
 
-const formsTemplatesCard=document.querySelector('.library-card[data-library-pdf="employee-forms-templates.pdf"]');
+const formsTemplatesCard=document.getElementById("formsTemplatesLibraryCard");
 
 if(formsTemplatesCard){
   formsTemplatesCard.addEventListener("click",function(event){
@@ -2546,7 +2546,7 @@ if(formsTemplatesCard){
 TRAINING
 ========================================= */
 
-const trainingCard=document.querySelector('.library-card[data-library-pdf="employee-training.pdf"]');
+const trainingCard=document.getElementById("trainingLibraryCard");
 
 if(trainingCard){
   trainingCard.addEventListener("click",function(event){
