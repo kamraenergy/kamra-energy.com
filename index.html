@@ -2504,14 +2504,26 @@ async function loadEmployeeLibraryFolder(folderName,container){
       info.appendChild(name);
       info.appendChild(type);
 
-      const openButton=document.createElement("a");
-      openButton.href=fileUrl;
-      openButton.target="_blank";
-      openButton.rel="noopener noreferrer";
-      openButton.className="operations-open-btn";
-      openButton.textContent=isArabic?"فتح":"Open";
+     const openButton =
+document.createElement("button");
 
-      openButton.addEventListener("click",event=>event.stopPropagation());
+openButton.type = "button";
+openButton.className = "operations-open-btn";
+openButton.textContent =
+isArabic ? "فتح" : "Open";
+
+openButton.addEventListener(
+"click",
+function(event){
+event.preventDefault();
+event.stopPropagation();
+
+openEmployeeLibraryFile(
+fileUrl,
+fileName
+);
+}
+);
 
       fileCard.appendChild(icon);
       fileCard.appendChild(info);
