@@ -2258,13 +2258,9 @@ extension + " — Operational Document";
 info.appendChild(name);
 info.appendChild(type);
 const openButton =
-document.createElement("a");
-openButton.href =
-fileUrl;
-openButton.target =
-"_blank";
-openButton.rel =
-"noopener noreferrer";
+document.createElement("button");
+
+openButton.type = "button";
 openButton.className =
 "operations-open-btn";
 openButton.textContent =
@@ -2273,10 +2269,42 @@ isArabic
 "فتح"
 :
 "Open";
+
 openButton.addEventListener(
 "click",
 function(event){
+event.preventDefault();
 event.stopPropagation();
+
+viewerContent.innerHTML = `
+<div style="width:100%;height:100%;display:flex;flex-direction:column;background:#eef4f9;">
+<div style="height:50px;min-height:50px;background:#0b1f3a;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 20px;direction:ltr;">
+<strong style="font-size:15px;">${fileName}</strong>
+<button type="button" class="viewer-close" id="fileViewerClose" aria-label="Close">×</button>
+</div>
+<div style="flex:1;min-height:0;">
+<iframe
+src="${fileUrl}"
+style="width:100%;height:100%;border:0;display:block;"
+title="${fileName}"
+></iframe>
+</div>
+</div>
+`;
+
+const fileViewerClose =
+document.getElementById("fileViewerClose");
+
+if(fileViewerClose){
+fileViewerClose.addEventListener(
+"click",
+function(e){
+e.preventDefault();
+e.stopPropagation();
+closeViewer();
+}
+);
+}
 }
 );
 fileCard.appendChild(icon);
