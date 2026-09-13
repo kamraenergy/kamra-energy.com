@@ -2424,6 +2424,7 @@ async function loadEmployeeLibraryFolder(folderName,container){
     });
 
     const responseText=await response.text();
+    console.log("SUPABASE RESPONSE:",responseText);
     if(!response.ok)throw new Error("Supabase returned HTTP "+response.status);
 
     const files=JSON.parse(responseText);
