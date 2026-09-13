@@ -2523,7 +2523,7 @@ async function loadEmployeeLibraryFolder(folderName,container){
         "Authorization":"Bearer "+SUPABASE_KEY
       },
     body:JSON.stringify({
-  prefix:folderName,
+prefix:folderName+"/",
   limit:100,
   offset:0,
   sortBy:{column:"name",order:"asc"}
