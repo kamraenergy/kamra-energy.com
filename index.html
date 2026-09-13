@@ -2429,8 +2429,8 @@ async function loadEmployeeLibraryFolder(folderName,container){
     const files=JSON.parse(responseText);
     if(!Array.isArray(files))throw new Error("Invalid file list");
 
-   const documents=files.filter(file=>{
-  return file&&file.name&&file.name!==".emptyFolderPlaceholder";
+  const documents=files.filter(file=>{
+  return file&&file.name&&file.name!==".emptyFolderPlaceholder"&&file.metadata;
 });
 
     if(!documents.length){
