@@ -3482,24 +3482,32 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
 }
 });
 }
-</script>
-  <script>
+<script>
 (function () {
   const showcase = document.getElementById('services-showcase');
   const track = showcase?.querySelector('.services-showcase-track');
 
   if (!showcase || !track) return;
 
+  const cards = Array.from(
+    track.querySelectorAll('.energy-service-card')
+  );
+
+  cards.forEach(card => {
+    track.appendChild(card.cloneNode(true));
+  });
+
   let isPaused = false;
 
-  track.querySelectorAll('.energy-service-card').forEach(card => {
-    card.addEventListener('click', function () {
-      isPaused = !isPaused;
+  track.addEventListener('click', function (e) {
+    const card = e.target.closest('.energy-service-card');
 
-      track.style.animationPlayState = isPaused
-        ? 'paused'
-        : 'running';
-    });
+    if (!card) return;
+
+    isPaused = !isPaused;
+
+    track.style.animationPlayState =
+      isPaused ? 'paused' : 'running';
   });
 
 })();
