@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2"
+     baseProfile="tiny-ps"
+     viewBox="0 0 500 500">
+
+  <title>KAMRA ENERGY</title>
+  <desc>KAMRA ENERGY logo</desc>
+
+  <circle cx="250" cy="250" r="220" fill="#16834B"/>
+
+  <path d="M285 70
+           L135 265
+           L230 265
+           L200 430
+           L365 200
+           L270 200 Z"
+        fill="#FFFFFF"/>
+</svg>
