@@ -3409,5 +3409,26 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
 });
 }
 </script>
+  <script>
+(function () {
+  const showcase = document.getElementById('services-showcase');
+  const track = showcase?.querySelector('.services-showcase-track');
+
+  if (!showcase || !track) return;
+
+  let isPaused = false;
+
+  track.querySelectorAll('.energy-service-card').forEach(card => {
+    card.addEventListener('click', function () {
+      isPaused = !isPaused;
+
+      track.style.animationPlayState = isPaused
+        ? 'paused'
+        : 'running';
+    });
+  });
+
+})();
+</script>
 </body>
 </html>
