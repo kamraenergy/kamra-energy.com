@@ -437,10 +437,13 @@ padding:38px 0;
 .energy-service-card{
   position:relative;
   flex:0 0 360px;
-   min-height:300px;
- padding:24px;
+  height:240px;
+  min-height:0;
+  padding:24px;
+  box-sizing:border-box;
   border-radius:22px;
-  overflow:hidden;
+  overflow-y:auto;
+  overflow-x:hidden;
   text-align:left;
   background:
     linear-gradient(145deg,
@@ -458,7 +461,6 @@ padding:38px 0;
     box-shadow .35s ease,
     border-color .35s ease;
 }
-
 /* Energy glow inside each card */
 .energy-service-card::before{
   content:"";
