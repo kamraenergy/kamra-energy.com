@@ -148,6 +148,17 @@ ABOUT US — HORIZONTAL TABS
   cursor:default;
   opacity:.45;
 }
+  /* =========================
+ABOUT US — LANGUAGE ISOLATION
+========================= */
+
+body:not(.rtl) .company-card .ar{
+  display:none !important;
+}
+
+body.rtl .company-card .en{
+  display:none !important;
+}
 /* ========================= PDF VIEWER ========================= */
 .company-viewer{position:fixed;inset:0;z-index:99999;background:rgba(7, 20, 38, .96);display:none;align-items:center;justify-content:center;padding:20px;overscroll-behavior:contain}
 .company-viewer.active{display:flex}
