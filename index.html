@@ -48,25 +48,21 @@ section{padding:70px 7%}
 .section-title p{color:#64748b}
 .about{background:white}
 /* =========================
-ABOUT US — HORIZONTAL TABS
+ABOUT US — NAV STYLE
 ========================= */
 
 .company-slider{
   max-width:1180px;
   margin:30px auto 0;
   position:relative;
-  display:flex;
-  align-items:center;
-  gap:12px;
 }
 
 .company-slider-window{
   overflow-x:auto;
   overflow-y:hidden;
   width:100%;
-  border-radius:18px;
-  touch-action:pan-x;
   scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
 }
 
 .company-slider-window::-webkit-scrollbar{
@@ -75,31 +71,30 @@ ABOUT US — HORIZONTAL TABS
 
 .company-track{
   display:flex;
-  gap:12px;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
   width:max-content;
-  transition:none;
+  min-width:100%;
 }
 
 .company-card{
   position:relative;
   flex:0 0 auto;
-  width:170px;
-  min-height:80px;
-  background:linear-gradient(145deg,#0b1f3a 0%,#123f68 65%,#155b86 100%);
-  border:1px solid rgba(85,184,255,.25);
-  border-radius:12px;
-  padding:12px 10px;
-  text-align:center;
+  width:auto;
+  min-height:0;
+  padding:8px 0;
+  background:none;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  color:#0b1f3a;
   cursor:pointer;
-  color:white;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
-  box-shadow:0 7px 22px rgba(11,31,58,.14);
-  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
-  user-select:none;
-  -webkit-tap-highlight-color:transparent;
+  justify-content:center;
+  text-align:center;
+  transition:color .25s ease;
 }
 
 .company-card::after,
@@ -114,39 +109,35 @@ ABOUT US — HORIZONTAL TABS
 
 .company-card h3{
   display:block;
-  color:white;
-  font-size:14px;
-  line-height:1.3;
   margin:0;
-  position:relative;
-  z-index:2;
+  color:#0b1f3a;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.3;
+  white-space:nowrap;
 }
 
 .company-card:hover{
-  transform:translateY(-3px);
-  border-color:#55b8ff;
-  box-shadow:0 12px 28px rgba(11,31,58,.25);
+  transform:none;
+  border:none;
+  box-shadow:none;
+}
+
+.company-card:hover h3{
+  color:#55b8ff;
 }
 
 .slider-btn{
-  flex:0 0 40px;
-  width:40px;
-  height:40px;
-  border:1px solid rgba(85,184,255,.35);
-  border-radius:50%;
-  background:#0b1f3a;
-  color:white;
-  font-size:23px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:5;
+  display:none;
 }
 
 .update-card{
   cursor:default;
   opacity:.45;
+}
+
+.update-card:hover h3{
+  color:#0b1f3a;
 }
   /* =========================
 ABOUT US — LANGUAGE ISOLATION
