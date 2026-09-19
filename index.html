@@ -2385,6 +2385,17 @@ if (aboutNavButtons.length && aboutContent) {
     }
   });
 }
+  const visionContent = document.querySelector(".vision-content");
+
+if (aboutNavButtons.length && visionContent) {
+  aboutNavButtons[2].addEventListener("click", function () {
+    if (visionContent.style.display === "block") {
+      visionContent.style.display = "none";
+    } else {
+      visionContent.style.display = "block";
+    }
+  });
+}
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
