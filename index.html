@@ -349,7 +349,33 @@ nav a{font-size:11px;margin:0 3px}
 .operations-open-btn{align-self:center}
 }
 .company-slider, .company-card, .slider-btn{-webkit-user-select:none;user-select:none}
-@media print{
+@media(max-width:700px){
+  .about-nav{
+    position:relative;
+    top:0;
+    right:0;
+    width:100%;
+    overflow-x:auto;
+    white-space:nowrap;
+    display:flex;
+    gap:8px;
+    padding:8px 4px;
+    margin:0 0 20px 0 !important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+
+  .about-nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .about-nav button{
+    flex:0 0 auto;
+    font-size:11px;
+    white-space:nowrap;
+  }
+}
+  @media print{
 .company-viewer, .employee-modal{display:none!important}
 }
 /* ========================= SERVICES ORBIT — MOBILE ========================= */
