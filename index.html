@@ -398,334 +398,183 @@ nav a{font-size:11px;margin:0 3px}
 .operation-report-item p{margin:9px 0;line-height:1.6;}
 .operation-report-item strong{display:inline-block;min-width:130px;}
 .operation-report-item p:last-child{margin-top:16px;padding-top:12px;border-top:1px solid #d9e1ea;font-size:13px;opacity:.75;}
- /* =========================================================
+  /* =========================================================
    KAMRA ENERGY SERVICES SHOWCASE
-   ISOLATED / FIXED VERSION
+   Isolated styles - does not affect other sections
    ========================================================= */
 
 .services-showcase{
   position:relative;
   display:block;
-
-  width:100vw;
+width:100vw;
   max-width:100vw;
-
   margin-left:50%;
   transform:translateX(-50%);
-
-  padding:30px 5%;
-
-  box-sizing:border-box;
-
+padding:30px 5%;
   overflow:hidden;
-
   background:
-    radial-gradient(
-      circle at 15% 50%,
-      rgba(85,184,255,.20),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 85% 50%,
-      rgba(0,220,180,.16),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #071426,
-      #0b3152,
-      #123f68,
-      #071426
-    );
-
+    radial-gradient(circle at 15% 50%, rgba(85,184,255,.20), transparent 28%),
+    radial-gradient(circle at 85% 50%, rgba(0,220,180,.16), transparent 30%),
+    linear-gradient(135deg,#071426,#0b3152,#123f68,#071426);
   color:#fff;
-
   isolation:isolate;
-
-  z-index:1;
-
-  margin-bottom:0;
 }
-
-
-/* =========================================================
-   ENERGY WAVES
-   ========================================================= */
-
+/* Animated energy waves */
 .services-showcase::before,
 .services-showcase::after{
   content:"";
-
   position:absolute;
-
   left:-10%;
-
   width:120%;
   height:180px;
-
   border-radius:50%;
-
   pointer-events:none;
-
   z-index:-1;
 }
 
 .services-showcase::before{
   top:5%;
-
   border:2px solid rgba(85,184,255,.18);
-
   transform:rotate(-4deg);
-
-  animation:
-    servicesWaveOne
-    7s
-    ease-in-out
-    infinite
-    alternate;
+  animation:servicesWaveOne 7s ease-in-out infinite alternate;
 }
 
 .services-showcase::after{
   bottom:-10%;
-
   border:2px solid rgba(0,230,190,.15);
-
   transform:rotate(4deg);
-
-  animation:
-    servicesWaveTwo
-    9s
-    ease-in-out
-    infinite
-    alternate;
+  animation:servicesWaveTwo 9s ease-in-out infinite alternate;
 }
-
-
-/* =========================================================
-   MOVING TRACK
-   ========================================================= */
 
 .services-showcase-track{
   display:flex;
-
-  align-items:stretch;
-
   width:max-content;
-
-  min-height:350px;
-
   gap:24px;
-
   direction:ltr;
-
-  animation:
-    servicesContinuousMove
-    55s
-    linear
-    infinite;
-
+  animation:servicesContinuousMove 55s linear infinite;
   will-change:transform;
 }
 
-
-/* =========================================================
-   SERVICE CARD
-   ========================================================= */
-
 .energy-service-card{
   position:relative;
-
-  flex:0 0 280px;
-
-  width:280px;
-
-  height:350px;
-
-  min-height:350px;
-  max-height:350px;
-
+  flex:0 0 330px;
+  height:260px;
+  min-height:0;
   padding:24px;
-
   box-sizing:border-box;
-
   border-radius:22px;
-
   overflow-y:auto;
   overflow-x:hidden;
-
   text-align:left;
-
   background:
-    linear-gradient(
-      145deg,
+    linear-gradient(145deg,
       rgba(255,255,255,.14),
-      rgba(255,255,255,.045)
-    );
-
+      rgba(255,255,255,.045));
   border:1px solid rgba(255,255,255,.22);
-
   box-shadow:
     0 12px 35px rgba(0,0,0,.28),
     inset 0 1px 0 rgba(255,255,255,.15);
-
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-
   cursor:pointer;
-
   transition:
     transform .35s ease,
     box-shadow .35s ease,
     border-color .35s ease;
 }
-
-
-/* =========================================================
-   CARD GLOW
-   ========================================================= */
-
+/* Energy glow inside each card */
 .energy-service-card::before{
   content:"";
-
   position:absolute;
-
   width:220px;
   height:220px;
-
   right:-80px;
   bottom:-100px;
-
   border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(85,184,255,.38),
-      transparent 70%
-    );
-
+  background:radial-gradient(
+    circle,
+    rgba(85,184,255,.38),
+    transparent 70%
+  );
   pointer-events:none;
 }
 
 .energy-service-card::after{
   content:"";
-
   position:absolute;
-
   top:-80px;
   left:-80px;
-
   width:170px;
   height:170px;
-
   border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0,230,190,.22),
-      transparent 70%
-    );
-
+  background:radial-gradient(
+    circle,
+    rgba(0,230,190,.22),
+    transparent 70%
+  );
   pointer-events:none;
 }
 
-
-/* =========================================================
-   HOVER
-   ========================================================= */
-
 .energy-service-card:hover{
   transform:translateY(-6px);
-
-  border-color:
-    rgba(120,220,255,.65);
-
+  border-color:rgba(120,220,255,.65);
   box-shadow:
     0 18px 45px rgba(0,0,0,.38),
     0 0 28px rgba(85,184,255,.18);
 }
 
-
-/* =========================================================
-   BRAND
-   ========================================================= */
-
 .energy-card-brand{
   position:relative;
-
   z-index:2;
-
   display:flex;
-
   align-items:center;
-
   gap:10px;
-
   margin-bottom:14px;
-
   font-size:14px;
-
   font-weight:700;
-
   letter-spacing:.4px;
 }
 
 .energy-card-brand img{
   width:42px;
   height:42px;
-
   object-fit:contain;
-
   flex-shrink:0;
 }
 
 .energy-card-brand span{
-  color:#fff;
+  color:#ffffff;
 }
-
-
-/* =========================================================
-   CARD CONTENT
-   ========================================================= */
 
 .energy-service-card .en,
 .energy-service-card .ar{
   position:relative;
-
   z-index:2;
 }
-
 .energy-service-card h3{
-  margin:0 0 14px;
-
+  margin-bottom:14px;
   color:#55b8ff;
-
-  font-size:21px;
-
+  font-size:23px;
   line-height:1.25;
 }
 
 .energy-service-card p{
-  margin:0 0 8px;
-
+  margin-bottom:8px;
   color:#dce9f5;
-
-  font-size:13px;
-
-  line-height:1.45;
-
-  text-align:left;
+  font-size:12px;
+  line-height:1.55;
 }
 
-
-/* =========================================================
-   ARABIC
-   ========================================================= */
-
+.energy-service-card p{
+  margin:0 0 8px;
+  color:#dce9f5;
+  font-size:13px;
+  line-height:1.45;
+  text-align:left;
+}
+/* Arabic card layout */
 body.rtl .energy-service-card{
   text-align:right;
-
   direction:rtl;
 }
 
@@ -733,10 +582,66 @@ body.rtl .energy-card-brand{
   direction:rtl;
 }
 
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes servicesContinuousMove{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+@keyframes servicesWaveOne{
+  from{
+    transform:translateX(-3%) rotate(-4deg) scaleY(.9);
+  }
+
+  to{
+    transform:translateX(3%) rotate(-1deg) scaleY(1.1);
+  }
+}
+
+@keyframes servicesWaveTwo{
+  from{
+    transform:translateX(3%) rotate(4deg) scaleY(1);
+  }
+
+  to{
+    transform:translateX(-3%) rotate(1deg) scaleY(.85);
+  }
+}
 
 /* =========================================================
-   CARD 3
+   TABLET
    ========================================================= */
+/* ===== FOURTH CARD - BALANCED TEXT ===== */
+
+.energy-service-card:nth-child(4) h3{
+  font-size:19px;
+  line-height:1.2;
+  margin-bottom:8px;
+}
+
+.energy-service-card:nth-child(4) h4{
+  font-size:11px;
+  line-height:1.25;
+  margin-top:6px;
+  margin-bottom:2px;
+}
+
+.energy-service-card:nth-child(4) p{
+  width:100%;
+  max-width:none;
+  font-size:10.5px;
+  line-height:1.3;
+  margin-bottom:4px;
+}
+ /* ===== CARD 3 - FULL HORIZONTAL WIDTH ===== */
 
 .energy-service-card:nth-child(3) .en,
 .energy-service-card:nth-child(3) .ar{
@@ -749,177 +654,50 @@ body.rtl .energy-card-brand{
 .energy-service-card:nth-child(3) p{
   width:100%;
   max-width:none;
-}
-
-
-/* =========================================================
-   CARD 4
-   ========================================================= */
-
-.energy-service-card:nth-child(4) h3{
-  font-size:19px;
-
-  line-height:1.2;
-
-  margin-bottom:8px;
-}
-
-.energy-service-card:nth-child(4) h4{
-  font-size:11px;
-
-  line-height:1.25;
-
-  margin-top:6px;
-  margin-bottom:2px;
-}
-
-.energy-service-card:nth-child(4) p{
-  width:100%;
-
-  max-width:none;
-
-  font-size:10.5px;
-
-  line-height:1.3;
-
-  margin-bottom:4px;
-}
-
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-@keyframes servicesContinuousMove{
-
-  from{
-    transform:translateX(0);
+} 
+  @media (min-width:901px){
+  .energy-service-card{
+    flex-basis:280px;
   }
-
-  to{
-    transform:translateX(-50%);
-  }
-
 }
-
-@keyframes servicesWaveOne{
-
-  from{
-    transform:
-      translateX(-3%)
-      rotate(-4deg)
-      scaleY(.9);
-  }
-
-  to{
-    transform:
-      translateX(3%)
-      rotate(-1deg)
-      scaleY(1.1);
-  }
-
-}
-
-@keyframes servicesWaveTwo{
-
-  from{
-    transform:
-      translateX(3%)
-      rotate(4deg)
-      scaleY(1);
-  }
-
-  to{
-    transform:
-      translateX(-3%)
-      rotate(1deg)
-      scaleY(.85);
-  }
-
-}
-
-
-/* =========================================================
-   IMPORTANT:
-   KEEP THE NEXT SERVICES SECTION BELOW THIS SECTION
-   ========================================================= */
-
-.services-showcase + .services{
-  position:relative;
-
-  display:block;
-
-  width:100%;
-
-  clear:both;
-
-  margin-top:0 !important;
-
-  padding-top:100px;
-
-  box-sizing:border-box;
-
-  z-index:2;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
 @media (max-width:900px){
 
   .services-showcase{
     padding:32px 5%;
   }
+/* ===== CARD 1 - FULL HORIZONTAL WIDTH ===== */
 
+.energy-service-card:nth-child(1) .en,
+.energy-service-card:nth-child(1) .ar{
+  width:100%;
+  max-width:100%;
+}
+
+.energy-service-card:nth-child(1) h3,
+.energy-service-card:nth-child(1) h4,
+.energy-service-card:nth-child(1) p{
+  width:100%;
+  max-width:none;
+}
+  .energy-service-card:nth-child(1){
+  padding-left:10px;
+  padding-right:10px;
+}
+  .energy-service-card:nth-child(1) .en p{
+  width:100% !important;
+  max-width:none !important;
+  text-align:justify !important;
+  text-justify:inter-word;
+}
   .services-showcase-track{
     gap:18px;
-
-    min-height:320px;
-
     animation-duration:48s;
   }
 
   .energy-service-card{
-    flex:0 0 320px;
-
-    width:320px;
-
-    height:320px;
-
-    min-height:320px;
-    max-height:320px;
-
+    flex-basis:320px;
+    min-height:290px;
     padding:20px;
-  }
-
-  .energy-service-card:nth-child(1){
-    padding-left:10px;
-    padding-right:10px;
-  }
-
-  .energy-service-card:nth-child(1) .en,
-  .energy-service-card:nth-child(1) .ar{
-    width:100%;
-    max-width:100%;
-  }
-
-  .energy-service-card:nth-child(1) h3,
-  .energy-service-card:nth-child(1) h4,
-  .energy-service-card:nth-child(1) p{
-    width:100%;
-    max-width:none;
-  }
-
-  .energy-service-card:nth-child(1) .en p{
-    width:100% !important;
-
-    max-width:none !important;
-
-    text-align:justify !important;
-
-    text-justify:inter-word;
   }
 
   .energy-service-card h3{
@@ -929,16 +707,10 @@ body.rtl .energy-card-brand{
   .energy-service-card p{
     font-size:12.5px;
   }
-
-  .services-showcase + .services{
-    padding-top:80px;
-  }
-
 }
 
-
 /* =========================================================
-   MOBILE
+   MOBILE - PORTRAIT
    ========================================================= */
 
 @media (max-width:600px){
@@ -949,30 +721,18 @@ body.rtl .energy-card-brand{
 
   .services-showcase-track{
     gap:14px;
-
-    min-height:300px;
-
     animation-duration:42s;
   }
 
   .energy-service-card{
-    flex:0 0 82vw;
-
-    width:82vw;
-
-    height:300px;
-
+    flex-basis:82vw;
     min-height:300px;
-    max-height:300px;
-
     padding:18px;
-
     border-radius:18px;
   }
 
   .energy-card-brand{
     font-size:13px;
-
     margin-bottom:10px;
   }
 
@@ -983,7 +743,6 @@ body.rtl .energy-card-brand{
 
   .energy-service-card h3{
     font-size:19px;
-
     line-height:1.3;
   }
 
@@ -993,19 +752,12 @@ body.rtl .energy-card-brand{
 
   .energy-service-card p{
     font-size:12px;
-
     line-height:1.5;
   }
-
-  .services-showcase + .services{
-    padding-top:70px;
-  }
-
 }
 
-
 /* =========================================================
-   MOBILE LANDSCAPE
+   MOBILE - LANDSCAPE
    ========================================================= */
 
 @media (max-height:500px) and (orientation:landscape){
@@ -1014,20 +766,9 @@ body.rtl .energy-card-brand{
     padding:24px 5%;
   }
 
-  .services-showcase-track{
-    min-height:250px;
-  }
-
   .energy-service-card{
-    flex:0 0 300px;
-
-    width:300px;
-
-    height:250px;
-
+    flex-basis:300px;
     min-height:250px;
-    max-height:250px;
-
     padding:16px;
   }
 
@@ -1046,17 +787,11 @@ body.rtl .energy-card-brand{
 
   .energy-service-card p{
     font-size:11px;
-
     line-height:1.4;
   }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
+/* Respect reduced-motion accessibility preference */
 @media (prefers-reduced-motion:reduce){
 
   .services-showcase-track,
@@ -1064,8 +799,39 @@ body.rtl .energy-card-brand{
   .services-showcase::after{
     animation:none;
   }
+}
+  /* Final card height */
+.energy-service-card{
+  height:350px !important;
+  min-height:350px !important;
+  max-height:350px !important;
+  box-sizing:border-box;
 
 }
+  @media (min-width:901px){
+  .energy-service-card{
+   width:280px !important;
+    flex-basis:280px !important;
+    max-width:280px !important;
+  }
+}
+
+@media (min-width:901px){
+  .services-showcase{
+    width:98.5vw;
+    max-width:98.5vw;
+  }
+}
+
+.services{
+  margin-top:20px !important;
+}
+
+.services{
+  margin-top:-70px !important;
+}
+
+</style>
 </head>
 <body>
 <!-- =========================
