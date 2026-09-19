@@ -2578,95 +2578,48 @@ closeViewer();
 });
 }
   const aboutNavButtons = document.querySelectorAll(".about-nav button");
-const aboutContent = document.getElementById("aboutContent");
 
-if (aboutNavButtons.length && aboutContent) {
-  aboutNavButtons[1].addEventListener("click", function () {
-    if (aboutContent.style.display === "block") {
-      aboutContent.style.display = "none";
-    } else {
-      aboutContent.style.display = "block";
+const aboutContents = [
+  null,
+  document.getElementById("aboutContent"),
+  document.querySelector(".vision-content"),
+  document.querySelector(".mission-content"),
+  document.querySelector(".safety-content"),
+  document.querySelector(".core-values-content"),
+  document.querySelector(".efficiency-content"),
+  document.querySelector(".innovation-content"),
+  document.querySelector(".hse-content")
+];
+
+aboutNavButtons.forEach(function(button, index) {
+
+  if (index === 0 || index === 9 || index === 10) {
+    return;
+  }
+
+  const content = aboutContents[index];
+
+  if (!content) {
+    return;
+  }
+
+  button.addEventListener("click", function() {
+
+    const isOpen = content.style.display === "block";
+
+    aboutContents.forEach(function(item) {
+      if (item) {
+        item.style.display = "none";
+      }
+    });
+
+    if (!isOpen) {
+      content.style.display = "block";
     }
-  });
-}
-  const visionContent = document.querySelector(".vision-content");
 
-if (aboutNavButtons.length && visionContent) {
-  aboutNavButtons[2].addEventListener("click", function () {
-    if (visionContent.style.display === "block") {
-      visionContent.style.display = "none";
-    } else {
-      visionContent.style.display = "block";
-    }
   });
-}
-  const missionContent = document.querySelector(".mission-content");
 
-if (aboutNavButtons.length && missionContent) {
-  aboutNavButtons[3].addEventListener("click", function () {
-    if (missionContent.style.display === "block") {
-      missionContent.style.display = "none";
-    } else {
-      missionContent.style.display = "block";
-    }
-  });
-}
-
-const safetyContent = document.querySelector(".safety-content");
-
-if (aboutNavButtons.length && safetyContent) {
-  aboutNavButtons[4].addEventListener("click", function () {
-    if (safetyContent.style.display === "block") {
-      safetyContent.style.display = "none";
-    } else {
-      safetyContent.style.display = "block";
-    }
-  });
-}
-  const coreValuesContent = document.querySelector(".core-values-content");
-
-if (aboutNavButtons.length && coreValuesContent) {
-  aboutNavButtons[5].addEventListener("click", function () {
-    if (coreValuesContent.style.display === "block") {
-      coreValuesContent.style.display = "none";
-    } else {
-      coreValuesContent.style.display = "block";
-    }
-  });
-}
-  const efficiencyContent = document.querySelector(".efficiency-content");
-
-if (aboutNavButtons.length && efficiencyContent) {
-  aboutNavButtons[6].addEventListener("click", function () {
-    if (efficiencyContent.style.display === "block") {
-      efficiencyContent.style.display = "none";
-    } else {
-      efficiencyContent.style.display = "block";
-    }
-  });
-}
-  const innovationContent = document.querySelector(".innovation-content");
-
-if (aboutNavButtons.length && innovationContent) {
-  aboutNavButtons[7].addEventListener("click", function () {
-    if (innovationContent.style.display === "block") {
-      innovationContent.style.display = "none";
-    } else {
-      innovationContent.style.display = "block";
-    }
-  });
-}
-  const hseContent = document.querySelector(".hse-content");
-
-if (aboutNavButtons.length && hseContent) {
-  aboutNavButtons[8].addEventListener("click", function () {
-    if (hseContent.style.display === "block") {
-      hseContent.style.display = "none";
-    } else {
-      hseContent.style.display = "block";
-    }
-  });
-}
+});
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
