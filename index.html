@@ -495,15 +495,29 @@ nav a{font-size:11px;margin:0 3px}
   transform:translateX(-30px);
 }
 @media(max-width:700px){
+
   .about .company-slider{
     transform:translateX(0);
+    width:100%;
+    max-width:100%;
+  }
+
+  .about .company-slider-window{
+    overflow:hidden;
+    width:100%;
+  }
+
+  .about .company-track{
+    display:flex;
+    gap:11px;
   }
 
   .about .company-card{
-    flex:0 0 130px !important;
-    width:130px !important;
+    flex:0 0 calc((100% - 11px) / 2) !important;
+    width:auto !important;
     min-height:115px !important;
     padding:7px 4px !important;
+    box-sizing:border-box;
   }
 
   .about .card-logo{
@@ -523,31 +537,21 @@ nav a{font-size:11px;margin:0 3px}
     font-size:10px !important;
   }
 
- .about .company-card p{
-  font-size:8px !important;
-}
-}
-
-@media(max-width:700px){
-  .about .company-slider-window{
-   overflow-x:hidden;
-    overflow-y:hidden;
+  .about .company-card p{
+    font-size:8px !important;
   }
 
-  .about .company-track{
-    width:max-content;
-  }
-
-  .about .company-card{
-    flex:0 0 120px !important;
-    width:120px !important;
+  .about .slider-btn{
+    flex:0 0 34px !important;
+    width:34px !important;
+    height:34px !important;
+    font-size:19px !important;
   }
 }
 
 .about{
   overflow-x:hidden;
 }
-
 .about-content,
 .vision-content,
 .mission-content,
