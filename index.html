@@ -2047,72 +2047,30 @@ document.body.classList.toggle("rtl");
 updateLanguage();
 });
 /* =========================================
-COMPANY SLIDER
+ABOUT US NAVIGATION
 ========================================= */
 
-const track =
-document.getElementById("companyTrack");
+const aboutButtons =
+document.querySelectorAll("#companyTrack .company-card");
 
-const prevBtn =
-document.getElementById("prevBtn");
+aboutButtons.forEach(function(button, index){
 
-const nextBtn =
-document.getElementById("nextBtn");
+  button.addEventListener("click", function(){
 
-const sliderWindow =
-document.getElementById("sliderWindow");
+    aboutButtons.forEach(function(item){
+      item.classList.remove("active");
+    });
 
-if(track && prevBtn && nextBtn && sliderWindow){
+    button.classList.add("active");
 
-  function updateSlider(){
+    const number = index + 1;
 
-    const maxScroll =
-      sliderWindow.scrollWidth -
-      sliderWindow.clientWidth;
+    console.log("About Us button:", number);
 
-    prevBtn.disabled =
-      sliderWindow.scrollLeft <= 1;
+  });
 
-    nextBtn.disabled =
-      sliderWindow.scrollLeft >= maxScroll - 1;
-  }
+});
 
-  nextBtn.addEventListener(
-    "click",
-    function(){
-
-      sliderWindow.scrollBy({
-        left: sliderWindow.clientWidth,
-        behavior:"smooth"
-      });
-
-    }
-  );
-
-  prevBtn.addEventListener(
-    "click",
-    function(){
-
-      sliderWindow.scrollBy({
-        left: -sliderWindow.clientWidth,
-        behavior:"smooth"
-      });
-
-    }
-  );
-
-  sliderWindow.addEventListener(
-    "scroll",
-    updateSlider
-  );
-
-  window.addEventListener(
-    "resize",
-    updateSlider
-  );
-
-  updateSlider();
-}
 /* =========================================
 PDF VIEWER
 ========================================= */
