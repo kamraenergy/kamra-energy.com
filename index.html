@@ -47,52 +47,112 @@ section{padding:70px 7%}
 .section-title h2{font-size:34px;color:#0b1f3a;margin-bottom:10px}
 .section-title p{color:#64748b}
 .about{background:white}
-/* ========================= COMPANY SLIDER ========================= */
-.company-slider{max-width:1180px;margin:30px auto 0;position:relative;display:flex;align-items:center;gap:12px}
-  .slider-btn{
+/* =========================
+ABOUT US - NAVIGATION BUTTONS
+========================= */
+
+.about .company-slider{
+  width:100%;
+  max-width:1180px;
+  margin:30px auto 0;
+  position:relative;
+}
+
+.about .company-slider-window{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:none;
+}
+
+.about .company-slider-window::-webkit-scrollbar{
+  display:none;
+}
+
+.about .company-track{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  width:max-content;
+  min-width:100%;
+}
+
+.about .company-card{
+  position:relative;
+  flex:0 0 auto;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  width:40px;
-  height:40px;
-  flex:0 0 40px;
-  border:none;
-  border-radius:50%;
+  gap:6px;
+
+  min-width:auto;
+  width:auto;
+  height:52px;
+  min-height:52px;
+
+  padding:10px 13px;
+
   background:#0b1f3a;
-  color:#fff;
-  font-size:28px;
-  line-height:1;
+  border:1px solid rgba(85,184,255,.35);
+  border-radius:9px;
+
+  color:white;
+  font-family:inherit;
+  font-size:12px;
+  font-weight:600;
+  white-space:nowrap;
+
   cursor:pointer;
-  z-index:5;
+  box-shadow:0 5px 15px rgba(11,31,58,.12);
+
+  transition:.25s ease;
 }
 
-.slider-btn:disabled{
-  opacity:.35;
-  cursor:default;
+.about .company-card:hover{
+  background:#123f68;
+  border-color:#55b8ff;
+  transform:translateY(-2px);
 }
-.company-slider-window{overflow:hidden;width:100%;border-radius:18px;touch-action:pan-y}
-.company-track{display:flex;gap:18px;transition:transform .55s cubic-bezier(.22, .61, .36, 1);will-change:transform}
-.company-card{position:relative;overflow:hidden;flex:0 0 calc((100% - 54px)/4);min-height:190px;background:linear-gradient(145deg, #0b1f3a 0%, #123f68 65%, #155b86 100%);border:1px solid rgba(85, 184, 255, .25);border-radius:15px;padding:20px 15px;text-align:center;cursor:pointer;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 7px 22px rgba(11, 31, 58, .14);transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;user-select:none;-webkit-tap-highlight-color:transparent}
-.company-card::after{content:"";position:absolute;width:140px;height:140px;top:-75px;right:-75px;background:rgba(85, 184, 255, .12);border-radius:50%;transition:width .4s ease, height .4s ease}
-.company-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:#55b8ff;transform:scaleX(0);transition:transform .35s ease}
-.company-card:hover{transform:translateY(-7px);border-color:#55b8ff;box-shadow:0 16px 38px rgba(11, 31, 58, .27)}
-.company-card:hover::before{transform:scaleX(1)}
-.company-card:hover::after{width:190px;height:190px}
-.card-logo{width:42px;height:42px;object-fit:contain;margin-bottom:7px;position:relative;z-index:2;opacity:.95;transition:transform .35s ease, opacity .35s ease}
-.company-card:hover .card-logo{transform:scale(1.08);opacity:1}
-.card-company-name{color:white;font-size:9px;font-weight:bold;line-height:1.2;margin-bottom:8px;position:relative;z-index:2;text-align:center;width:100%;direction:ltr}
-.card-number{color:#55b8ff;font-size:12px;font-weight:bold;letter-spacing:3px;margin-bottom:6px;position:relative;z-index:2;direction:ltr}
-.company-card h3{color:white;font-size:17px;line-height:1.3;margin-bottom:5px;position:relative;z-index:2}
-.company-card p{color:#dce9f5;font-size:13px;line-height:1.4;position:relative;z-index:2}
-.video-icon{color:#55b8ff;font-size:30px;margin-bottom:4px;position:relative;z-index:2;direction:ltr}
-.update-card{cursor:default;opacity:.45;background:linear-gradient(145deg, #172a42, #23425e)}
-.update-card:hover{transform:none;border-color:rgba(85, 184, 255, .25);box-shadow:0 7px 22px rgba(11, 31, 58, .14)}
-.update-card:hover::before{transform:scaleX(0)}
-.update-card:hover::after{width:140px;height:140px}
-.update-text{color:#b9cfe0;font-size:18px;font-weight:bold;letter-spacing:2px;position:relative;z-index:2;direction:ltr}
-.slider-btn{flex:0 0 44px;width:44px;height:44px;border:1px solid rgba(85, 184, 255, .35);border-radius:50%;background:#0b1f3a;color:white;font-size:25px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;-webkit-tap-highlight-color:transparent}
-.slider-btn:hover{background:#55b8ff;color:#0b1f3a}
-.slider-btn:disabled{opacity:.35;cursor:default}
+
+.about .company-card .card-number{
+  display:inline-block;
+  color:#55b8ff;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.about .company-card .en{
+  display:inline !important;
+  color:white;
+}
+
+.about .company-card .ar{
+  display:none !important;
+  color:white;
+  direction:rtl;
+}
+
+.about .company-card.active{
+  background:#55b8ff;
+  border-color:#55b8ff;
+}
+
+.about .company-card.active .card-number{
+  color:#0b1f3a;
+}
+
+.about .company-card.active .en{
+  color:#0b1f3a;
+}
+
+/* إخفاء الأسهم القديمة */
+.about #prevBtn,
+.about #nextBtn{
+  display:none;
+}
 /* ========================= PDF VIEWER ========================= */
 .company-viewer{position:fixed;inset:0;z-index:99999;background:rgba(7, 20, 38, .96);display:none;align-items:center;justify-content:center;padding:20px;overscroll-behavior:contain}
 .company-viewer.active{display:flex}
