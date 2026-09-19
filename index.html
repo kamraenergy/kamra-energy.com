@@ -2563,6 +2563,29 @@ if (aboutNavButtons.length && visionContent) {
     }
   });
 }
+  const missionContent = document.querySelector(".mission-content");
+
+if (aboutNavButtons.length && missionContent) {
+  aboutNavButtons[3].addEventListener("click", function () {
+    if (missionContent.style.display === "block") {
+      missionContent.style.display = "none";
+    } else {
+      missionContent.style.display = "block";
+    }
+  });
+}
+
+const safetyContent = document.querySelector(".safety-content");
+
+if (aboutNavButtons.length && safetyContent) {
+  aboutNavButtons[4].addEventListener("click", function () {
+    if (safetyContent.style.display === "block") {
+      safetyContent.style.display = "none";
+    } else {
+      safetyContent.style.display = "block";
+    }
+  });
+}
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
