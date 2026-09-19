@@ -2341,6 +2341,14 @@ event.stopPropagation();
 closeViewer();
 });
 }
+  const aboutNavButtons = document.querySelectorAll(".about-nav button");
+const aboutContent = document.getElementById("aboutContent");
+
+if (aboutNavButtons.length && aboutContent) {
+  aboutNavButtons[1].addEventListener("click", function () {
+    aboutContent.style.display = "block";
+  });
+}
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
