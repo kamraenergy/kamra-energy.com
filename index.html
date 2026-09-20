@@ -4037,6 +4037,37 @@ errorText
 );
 throw new Error(errorText);
 }
+/* Send a copy by email */
+try {
+  const emailResponse = await fetch(
+    SUPABASE_URL + "/functions/v1/send-contact-email",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_KEY,
+        "Authorization": "Bearer " + SUPABASE_KEY
+      },
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        phone: phone,
+        company: company,
+        area_of_interest: areaOfInterest,
+        message: message
+      })
+    }
+  );
+
+  if (!emailResponse.ok) {
+    const emailError = await emailResponse.text();
+    console.error("Email error:", emailError);
+  }
+} catch (emailError) {
+  console.error("Email sending failed:", emailError);
+}
+
 /* Success */
 alert("Your enquiry has been sent successfully.");
 /* Clear form */
