@@ -2619,16 +2619,33 @@ extension==="svg"
 ){
 const img=document.createElement("img");
 img.src=fileUrl;
+
+img.style.display="block";
 img.style.maxWidth="100%";
 img.style.maxHeight="100%";
 img.style.width="auto";
 img.style.height="auto";
-img.style.display="block";
-img.style.objectFit="contain";
+img.style.margin="auto";
+
+img.onload=function(){
+  const availableWidth=content.clientWidth;
+  const availableHeight=content.clientHeight;
+
+  const scale=Math.min(
+    availableWidth / img.naturalWidth,
+    availableHeight / img.naturalHeight,
+    1
+  );
+
+  img.style.width=Math.floor(img.naturalWidth * scale)+"px";
+  img.style.height=Math.floor(img.naturalHeight * scale)+"px";
+};
+
 content.appendChild(img);
 return;
 }
 
+ولا تغيّر أي شيء آخر:
 /* Word */
 if(extension==="docx"){
 content.innerHTML=
