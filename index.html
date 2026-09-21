@@ -2587,12 +2587,16 @@ closeViewer();
 };
 
 const content=document.createElement("div");
-content.style.width="100%";
-content.style.height="100%";
-content.style.background="#fff";
-content.style.overflow="auto";
-content.style.position="relative";
 
+content.style.width="100%";
+content.style.height="auto";
+content.style.flex="1 1 auto";
+content.style.minHeight="0";
+content.style.minWidth="0";
+content.style.background="#fff";
+content.style.overflow="hidden";
+content.style.position="relative";
+content.style.boxSizing="border-box";
 viewerContent.appendChild(closeButton);
 viewerContent.appendChild(content);
 
@@ -2605,31 +2609,16 @@ if(
   extension==="webp"||
   extension==="svg"
 ){
-  /* اجعل زر الإغلاق فوق الصورة */
-  closeButton.style.position="absolute";
-  closeButton.style.top="12px";
-  closeButton.style.right="12px";
-  closeButton.style.zIndex="20";
-
-  /* مساحة الصورة = المساحة المتبقية داخل النافذة */
-  content.style.width="100%";
-  content.style.height="auto";
-  content.style.flex="1 1 auto";
-  content.style.minHeight="0";
-  content.style.boxSizing="border-box";
-  content.style.background="#fff";
-  content.style.overflow="hidden";
-  content.style.position="relative";
-
   content.style.display="flex";
   content.style.alignItems="center";
   content.style.justifyContent="center";
+  content.style.overflow="hidden";
   content.style.padding="10px";
-  content.style.boxSizing="border-box";
 
   const img=document.createElement("img");
 
   img.src=fileUrl;
+  img.alt=fileName || "Employee Library Image";
 
   img.style.display="block";
   img.style.width="auto";
