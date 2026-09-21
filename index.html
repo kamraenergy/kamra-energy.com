@@ -2587,11 +2587,17 @@ closeViewer();
 };
 
 const content=document.createElement("div");
+
 content.style.width="100%";
 content.style.height="100%";
+content.style.flex="1 1 0";
+content.style.minWidth="0";
+content.style.minHeight="0";
 content.style.background="#fff";
-content.style.overflow="auto";
 content.style.position="relative";
+content.style.boxSizing="border-box";
+content.style.overflow="hidden";
+
 viewerContent.appendChild(closeButton);
 viewerContent.appendChild(content);
 
@@ -2602,13 +2608,16 @@ if(
   extension==="png"||
   extension==="gif"||
   extension==="webp"||
-  extension==="svg"
+  extension==="svg"||
+  extension==="bmp"||
+  extension==="avif"
 ){
   content.style.display="flex";
   content.style.alignItems="center";
   content.style.justifyContent="center";
   content.style.overflow="hidden";
   content.style.padding="10px";
+  content.style.boxSizing="border-box";
 
   const img=document.createElement("img");
 
@@ -2616,16 +2625,21 @@ if(
   img.alt=fileName || "Employee Library Image";
 
   img.style.display="block";
+  img.style.flex="0 1 auto";
   img.style.width="auto";
   img.style.height="auto";
+
+  /* أهم سطرين */
   img.style.maxWidth="100%";
   img.style.maxHeight="100%";
+
   img.style.objectFit="contain";
   img.style.objectPosition="center";
   img.style.boxSizing="border-box";
   img.style.margin="0";
 
   content.appendChild(img);
+
   return;
 }
 /* Excel */
