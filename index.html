@@ -2595,19 +2595,15 @@ closeButton.innerHTML="×";
 closeButton.onclick=function(){
 closeViewer();
 };
-
 const content=document.createElement("div");
 content.style.width="100%";
 content.style.height="100%";
 content.style.background="#fff";
-content.style.overflow="hidden";
+content.style.overflow="auto";
 content.style.position="relative";
-content.style.display="flex";
-content.style.alignItems="center";
-content.style.justifyContent="center";
+
 viewerContent.appendChild(closeButton);
 viewerContent.appendChild(content);
-
 /* الصور */
 if(
 extension==="jpg"||
@@ -2619,32 +2615,13 @@ extension==="svg"
 ){
 const img=document.createElement("img");
 img.src=fileUrl;
-
-img.style.display="block";
 img.style.maxWidth="100%";
 img.style.maxHeight="100%";
-img.style.width="auto";
-img.style.height="auto";
+img.style.display="block";
 img.style.margin="auto";
-
-img.onload=function(){
-  const availableWidth=content.clientWidth;
-  const availableHeight=content.clientHeight;
-
-  const scale=Math.min(
-    availableWidth / img.naturalWidth,
-    availableHeight / img.naturalHeight,
-    1
-  );
-
-  img.style.width=Math.floor(img.naturalWidth * scale)+"px";
-  img.style.height=Math.floor(img.naturalHeight * scale)+"px";
-};
-
 content.appendChild(img);
 return;
 }
-
 /* Word */
 if(extension==="docx"){
 content.innerHTML=
