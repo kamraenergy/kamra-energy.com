@@ -2561,87 +2561,389 @@ const isMobile =
 window.innerWidth <= 700; let availableWidth = scrollArea.clientWidth - (isMobile ? 16 : 36); if(availableWidth <= 0){ availableWidth = window.innerWidth - (isMobile ? 16 : 36); } for( let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++ ){ try{ await renderPDFPage( pdf, pageNumber, scrollArea, availableWidth ); }catch(pageError){ console.error( "PDF page error:", pageError ); } } }catch(error){ console.error( "PDF loading error:", error ); showPDFError( scrollArea, "Unable to display this PDF." ); } } async function renderPDFPage( pdf, pageNumber, container, availableWidth ){ const page = await pdf.getPage(pageNumber); const originalViewport = page.getViewport({ scale:1 }); let scale = availableWidth / originalViewport.width; if(scale> 2)
 scale = 2;
 if(window.innerWidth <= 700){ scale = Math.min( scale, availableWidth / originalViewport.width ); } const viewport = page.getViewport({ scale }); const canvas = document.createElement("canvas"); canvas.className = "pdf-page"; const context = canvas.getContext("2d"); const devicePixelRatio = window.devicePixelRatio || 1; canvas.width = Math.floor( viewport.width * devicePixelRatio ); canvas.height = Math.floor( viewport.height * devicePixelRatio ); const finalWidth = Math.min( viewport.width, availableWidth ); canvas.style.width = finalWidth + "px"; canvas.style.height = "auto"; canvas.style.maxWidth = "100%"; context.setTransform( devicePixelRatio, 0, 0, devicePixelRatio, 0, 0 ); container.appendChild(canvas); await page.render({ canvasContext:context, viewport:viewport }).promise; } function showPDFError( container, message ){ container.innerHTML = ""; const error = document.createElement("div"); error.className = "pdf-error"; error.textContent = message; const small = document.createElement("small"); small.textContent = "Please check that the PDF file exists on the server."; error.appendChild(small); container.appendChild(error); }
-  async function openEmployeeLibraryFile(fileUrl,fileName){
-const extension=getFileExtension(fileName).toLowerCase();
+  async function openEmployeeLibraryFile(fileUrl, fileName) {
 
-if(extension==="pdf"){
-openPDF(fileUrl);
-return;
-}
+  const extension = getFileExtension(fileName).toLowerCase();
 
-document.body.style.overflow="hidden";
-viewer.classList.add("active");
-viewer.setAttribute("aria-hidden","false");
+  /* =========================================
+     PDF
+  ========================================= */
+  if (extension === "pdf") {
+    openPDF(fileUrl);
+    return;
+  }
 
-requestAnimationFrame(syncMobileViewerViewport);
+  /* =========================================
+     OPEN VIEWER
+  ========================================= */
+  document.body.style.overflow = "hidden";
 
-viewerContent.innerHTML="";
+  viewer.classList.add("active");
 
-const closeButton=document.createElement("button");
-closeButton.type="button";
-closeButton.className="viewer-close";
-closeButton.innerHTML="×";
+  viewer.setAttribute(
+    "aria-hidden",
+    "false"
+  );
 
-closeButton.onclick=function(){
-closeViewer();
-};
+  requestAnimationFrame(
+    syncMobileViewerViewport
+  );
 
-const content=document.createElement("div");
+  setTimeout(
+    syncMobileViewerViewport,
+    100
+  );
 
-content.style.width="100%";
-content.style.height="100%";
-content.style.flex="1 1 0";
-content.style.minWidth="0";
-content.style.minHeight="0";
-content.style.background="#fff";
-content.style.position="relative";
-content.style.boxSizing="border-box";
-content.style.overflow="hidden";
+  /* =========================================
+     RESET VIEWER
+  ========================================= */
+  viewerContent.innerHTML = "";
 
-viewerContent.appendChild(closeButton);
-viewerContent.appendChild(content);
+  viewerContent.style.width = "100%";
+  viewerContent.style.height = "100%";
+  viewerContent.style.maxWidth = "100%";
+  viewerContent.style.maxHeight = "100%";
+  viewerContent.style.minWidth = "0";
+  viewerContent.style.minHeight = "0";
+  viewerContent.style.position = "relative";
+  viewerContent.style.display = "flex";
+  viewerContent.style.flexDirection = "column";
+  viewerContent.style.overflow = "hidden";
+  viewerContent.style.boxSizing = "border-box";
 
-/* الصور */
-if(
-  extension==="jpg"||
-  extension==="jpeg"||
-  extension==="png"||
-  extension==="gif"||
-  extension==="webp"||
-  extension==="svg"||
-  extension==="bmp"||
-  extension==="avif"
-){
-  content.style.display="flex";
-  content.style.alignItems="center";
-  content.style.justifyContent="center";
-  content.style.width="100%";
-  content.style.height="100%";
-  content.style.minWidth="0";
-  content.style.minHeight="0";
-  content.style.overflow="hidden";
-  content.style.boxSizing="border-box";
-  content.style.background="#fff";
+  /* =========================================
+     CLOSE BUTTON
+  ========================================= */
+  const closeButton =
+    document.createElement("button");
 
-  const img=document.createElement("img");
+  closeButton.type = "button";
 
-  img.src=fileUrl;
-  img.alt=fileName;
+  closeButton.className =
+    "viewer-close";
 
-  img.style.display="block";
-  img.style.width="100%";
-  img.style.height="100%";
-  img.style.maxWidth="100%";
-  img.style.maxHeight="100%";
-  img.style.objectFit="contain";
-  img.style.objectPosition="center";
-  img.style.margin="0";
-  img.style.padding="0";
-  img.style.boxSizing="border-box";
+  closeButton.setAttribute(
+    "aria-label",
+    "Close"
+  );
 
-  content.appendChild(img);
+  closeButton.innerHTML = "×";
 
-  return;
+  closeButton.onclick = function(event) {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    closeViewer();
+
+  };
+
+  viewerContent.appendChild(
+    closeButton
+  );
+
+  /* =========================================
+     CONTENT CONTAINER
+  ========================================= */
+  const content =
+    document.createElement("div");
+
+  content.style.width = "100%";
+  content.style.height = "100%";
+  content.style.maxWidth = "100%";
+  content.style.maxHeight = "100%";
+  content.style.minWidth = "0";
+  content.style.minHeight = "0";
+  content.style.flex = "1 1 0";
+  content.style.position = "relative";
+  content.style.background = "#fff";
+  content.style.overflow = "hidden";
+  content.style.boxSizing = "border-box";
+
+  viewerContent.appendChild(
+    content
+  );
+
+  /* =========================================
+     IMAGES
+  ========================================= */
+  if (
+    extension === "jpg" ||
+    extension === "jpeg" ||
+    extension === "png" ||
+    extension === "gif" ||
+    extension === "webp" ||
+    extension === "svg" ||
+    extension === "bmp" ||
+    extension === "avif"
+  ) {
+
+    content.style.display = "flex";
+    content.style.alignItems = "center";
+    content.style.justifyContent = "center";
+    content.style.padding = "10px";
+    content.style.overflow = "hidden";
+
+    const img =
+      document.createElement("img");
+
+    img.src = fileUrl;
+
+    img.alt =
+      fileName ||
+      "Employee Library Image";
+
+    img.style.display = "block";
+
+    /*
+      أهم السطرين
+    */
+    img.style.maxWidth = "100%";
+    img.style.maxHeight = "100%";
+
+    img.style.width = "auto";
+    img.style.height = "auto";
+
+    img.style.objectFit = "contain";
+    img.style.objectPosition = "center";
+
+    img.style.margin = "auto";
+
+    img.style.padding = "0";
+
+    img.style.boxSizing = "border-box";
+
+    img.onload = function() {
+
+      const availableWidth =
+        content.clientWidth - 20;
+
+      const availableHeight =
+        content.clientHeight - 20;
+
+      if (
+        availableWidth > 0 &&
+        availableHeight > 0
+      ) {
+
+        img.style.maxWidth =
+          availableWidth + "px";
+
+        img.style.maxHeight =
+          availableHeight + "px";
+
+      }
+
+    };
+
+    img.onerror = function() {
+
+      content.innerHTML = "";
+
+      const error =
+        document.createElement("div");
+
+      error.style.width = "100%";
+      error.style.height = "100%";
+      error.style.display = "flex";
+      error.style.alignItems = "center";
+      error.style.justifyContent = "center";
+      error.style.textAlign = "center";
+      error.style.padding = "30px";
+      error.style.boxSizing = "border-box";
+
+      error.textContent =
+        "Unable to display this image.";
+
+      content.appendChild(error);
+
+    };
+
+    content.appendChild(img);
+
+    return;
+  }
+
+  /* =========================================
+     3D FILES
+  ========================================= */
+
+  if (
+    extension === "glb" ||
+    extension === "gltf" ||
+    extension === "obj" ||
+    extension === "stl" ||
+    extension === "fbx"
+  ) {
+
+    content.style.background =
+      "#071426";
+
+    content.style.overflow =
+      "hidden";
+
+    const modelFrame =
+      document.createElement("iframe");
+
+    modelFrame.src =
+      "https://modelviewer.dev/editor/";
+
+    modelFrame.style.width =
+      "100%";
+
+    modelFrame.style.height =
+      "100%";
+
+    modelFrame.style.maxWidth =
+      "100%";
+
+    modelFrame.style.maxHeight =
+      "100%";
+
+    modelFrame.style.border =
+      "0";
+
+    modelFrame.style.display =
+      "block";
+
+    modelFrame.title =
+      fileName;
+
+    /*
+      ملاحظة:
+      ملف GLB/GLTF يحتاج عارض 3D حقيقي.
+      لا يتم اعتباره صورة.
+    */
+
+    content.appendChild(
+      modelFrame
+    );
+
+    return;
+  }
+
+  /* =========================================
+     EXCEL
+  ========================================= */
+
+  if (
+    extension === "xlsx" ||
+    extension === "xls"
+  ) {
+
+    const iframe =
+      document.createElement("iframe");
+
+    iframe.src =
+      "https://view.officeapps.live.com/op/view.aspx?src=" +
+      encodeURIComponent(fileUrl);
+
+    iframe.style.width =
+      "100%";
+
+    iframe.style.height =
+      "100%";
+
+    iframe.style.maxWidth =
+      "100%";
+
+    iframe.style.maxHeight =
+      "100%";
+
+    iframe.style.border =
+      "0";
+
+    iframe.style.display =
+      "block";
+
+    iframe.title =
+      fileName;
+
+    content.appendChild(
+      iframe
+    );
+
+    return;
+  }
+
+  /* =========================================
+     WORD
+  ========================================= */
+
+  if (
+    extension === "docx"
+  ) {
+
+    const iframe =
+      document.createElement("iframe");
+
+    iframe.src =
+      "https://view.officeapps.live.com/op/view.aspx?src=" +
+      encodeURIComponent(fileUrl);
+
+    iframe.style.width =
+      "100%";
+
+    iframe.style.height =
+      "100%";
+
+    iframe.style.maxWidth =
+      "100%";
+
+    iframe.style.maxHeight =
+      "100%";
+
+    iframe.style.border =
+      "0";
+
+    iframe.style.display =
+      "block";
+
+    iframe.title =
+      fileName;
+
+    content.appendChild(
+      iframe
+    );
+
+    return;
+  }
+
+  /* =========================================
+     OTHER FILE TYPES
+  ========================================= */
+
+  const iframe =
+    document.createElement("iframe");
+
+  iframe.src =
+    fileUrl;
+
+  iframe.style.width =
+    "100%";
+
+  iframe.style.height =
+    "100%";
+
+  iframe.style.maxWidth =
+    "100%";
+
+  iframe.style.maxHeight =
+    "100%";
+
+  iframe.style.border =
+    "0";
+
+  iframe.style.display =
+    "block";
+
+  iframe.title =
+    fileName;
+
+  content.appendChild(
+    iframe
+  );
+
 }
 /* Excel */
 if(extension==="xlsx"||extension==="xls"){
