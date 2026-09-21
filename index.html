@@ -2616,10 +2616,13 @@ extension==="svg"
 ){
 const img=document.createElement("img");
 img.src=fileUrl;
-img.style.maxWidth="100%";
-img.style.maxHeight="100%";
+
 img.style.display="block";
-img.style.margin="auto";
+img.style.width="100%";
+img.style.height="100%";
+img.style.objectFit="contain";
+img.style.objectPosition="center";
+
 content.appendChild(img);
 return;
 }
