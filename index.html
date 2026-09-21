@@ -2600,7 +2600,7 @@ const content=document.createElement("div");
 content.style.width="100%";
 content.style.height="100%";
 content.style.background="#fff";
-content.style.overflow="hidden";
+content.style.overflow="auto";
 content.style.position="relative";
 viewerContent.appendChild(closeButton);
 viewerContent.appendChild(content);
@@ -2614,14 +2614,25 @@ extension==="gif"||
 extension==="webp"||
 extension==="svg"
 ){
-const img=document.createElement("img");
-img.src=fileUrl;
-img.style.maxWidth="100%";
-img.style.maxHeight="100%";
-img.style.display="block";
-img.style.margin="auto";
-content.appendChild(img);
-return;
+  content.style.display="flex";
+  content.style.alignItems="center";
+  content.style.justifyContent="center";
+  content.style.overflow="hidden";
+
+  const img=document.createElement("img");
+
+  img.src=fileUrl;
+
+  img.style.display="block";
+  img.style.width="auto";
+  img.style.height="auto";
+  img.style.maxWidth="100%";
+  img.style.maxHeight="100%";
+  img.style.objectFit="contain";
+  img.style.margin="0";
+
+  content.appendChild(img);
+  return;
 }
 
 /* Excel */
