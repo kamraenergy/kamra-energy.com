@@ -2598,10 +2598,9 @@ closeViewer();
 
 const content=document.createElement("div");
 content.style.width="100%";
-content.style.flex="1";
-content.style.minHeight="0";
+content.style.height="100%";
 content.style.background="#fff";
-content.style.overflow="hidden";
+content.style.overflow="auto";
 content.style.position="relative";
 viewerContent.appendChild(closeButton);
 viewerContent.appendChild(content);
@@ -2615,27 +2614,46 @@ extension==="gif"||
 extension==="webp"||
 extension==="svg"
 ){
-  content.style.display="flex";
-  content.style.alignItems="center";
-  content.style.justifyContent="center";
+const img=document.createElement("img");
+img.src=fileUrl;
+img.style.display="block";
+img.style.maxWidth="100%";
+img.style.maxHeight="100%";
+img.style.width="auto";
+img.style.height="auto";
+img.style.margin="auto";
+
+img.onload=function(){
+
+  const screenWidth=window.innerWidth;
+  const screenHeight=window.innerHeight;
+
+  const maxWidth=Math.min(img.naturalWidth, screenWidth*0.90);
+  const maxHeight=Math.min(img.naturalHeight, screenHeight*0.80);
+
+  const ratio=Math.min(
+    maxWidth/img.naturalWidth,
+    maxHeight/img.naturalHeight,
+    1
+  );
+
+  const imageWidth=Math.round(img.naturalWidth*ratio);
+  const imageHeight=Math.round(img.naturalHeight*ratio);
+
+  viewerContent.style.width=imageWidth+"px";
+  viewerContent.style.height=imageHeight+"px";
+
+  content.style.width="100%";
+  content.style.height="100%";
   content.style.overflow="hidden";
 
-  const img=document.createElement("img");
-
-  img.src=fileUrl;
-
-  img.style.display="block";
-  img.style.width="auto";
-  img.style.height="auto";
-  img.style.maxWidth="100%";
-  img.style.maxHeight="100%";
+  img.style.width="100%";
+  img.style.height="100%";
   img.style.objectFit="contain";
-  img.style.margin="0";
+};
 
-  content.appendChild(img);
-  return;
-}
-
+content.appendChild(img);
+return;
 /* Excel */
 if(extension==="xlsx"||extension==="xls"){
 content.innerHTML=
