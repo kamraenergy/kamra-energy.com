@@ -2598,7 +2598,9 @@ closeViewer();
 
 const content=document.createElement("div");
 content.style.width="100%";
-content.style.height="100%";
+content.style.height="0";
+content.style.flex="1 1 auto";
+content.style.minHeight="0";
 content.style.background="#fff";
 content.style.overflow="auto";
 content.style.position="relative";
