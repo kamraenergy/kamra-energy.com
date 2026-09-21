@@ -2600,8 +2600,11 @@ const content=document.createElement("div");
 content.style.width="100%";
 content.style.height="100%";
 content.style.background="#fff";
-content.style.overflow="auto";
+content.style.overflow="hidden";
 content.style.position="relative";
+content.style.display="flex";
+content.style.alignItems="center";
+content.style.justifyContent="center";
 viewerContent.appendChild(closeButton);
 viewerContent.appendChild(content);
 
@@ -2616,13 +2619,12 @@ extension==="svg"
 ){
 const img=document.createElement("img");
 img.src=fileUrl;
-
+img.style.maxWidth="100%";
+img.style.maxHeight="100%";
+img.style.width="auto";
+img.style.height="auto";
 img.style.display="block";
-img.style.width="100%";
-img.style.height="100%";
 img.style.objectFit="contain";
-img.style.objectPosition="center";
-
 content.appendChild(img);
 return;
 }
