@@ -2615,28 +2615,29 @@ if(
   content.style.display="flex";
   content.style.alignItems="center";
   content.style.justifyContent="center";
+  content.style.width="100%";
+  content.style.height="100%";
+  content.style.minWidth="0";
+  content.style.minHeight="0";
   content.style.overflow="hidden";
-  content.style.padding="10px";
   content.style.boxSizing="border-box";
+  content.style.background="#fff";
 
   const img=document.createElement("img");
 
   img.src=fileUrl;
-  img.alt=fileName || "Employee Library Image";
+  img.alt=fileName;
 
   img.style.display="block";
-  img.style.flex="0 1 auto";
-  img.style.width="auto";
-  img.style.height="auto";
-
-  /* أهم سطرين */
+  img.style.width="100%";
+  img.style.height="100%";
   img.style.maxWidth="100%";
   img.style.maxHeight="100%";
-
   img.style.objectFit="contain";
   img.style.objectPosition="center";
-  img.style.boxSizing="border-box";
   img.style.margin="0";
+  img.style.padding="0";
+  img.style.boxSizing="border-box";
 
   content.appendChild(img);
 
