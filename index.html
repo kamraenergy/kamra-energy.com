@@ -3303,9 +3303,63 @@ const OPERATIONS_FOLDER =
     return;
   }
 
-  alert(
-    "Delete is not connected yet. No report was deleted."
-  );
+  if(!operationReportAccessToken){
+    alert(
+      "Operation Report session has expired. Please login again."
+    );
+    return;
+  }
+
+  try{
+    const response =
+      await fetch(
+        SUPABASE_URL +
+        "/rest/v1/operation_reports?id=eq." +
+        encodeURIComponent(reportId),
+        {
+          method:"DELETE",
+          headers:{
+            "apikey":SUPABASE_KEY,
+            "Authorization":
+              "Bearer " + operationReportAccessToken,
+            "Prefer":"return=minimal"
+          }
+        }
+      );
+
+    if(!response.ok){
+      const errorText =
+        await response.text();
+
+      console.error(
+        "Delete Operation Report error:",
+        response.status,
+        errorText
+      );
+
+      throw new Error(
+        "HTTP " +
+        response.status +
+        ": " +
+        errorText
+      );
+    }
+
+    alert("Report deleted successfully.");
+
+    await loadOperationReports();
+
+  }catch(error){
+    console.error(
+      "Operation Report delete error:",
+      error
+    );
+
+    alert(
+      "Unable to delete this report.\n\n" +
+      error.message
+    );
+  }
 }
 function escapeHtml(value){
 return String(value)
