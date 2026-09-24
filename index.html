@@ -3294,6 +3294,19 @@ escapeHtml(error.message) +
 }
 const OPERATIONS_FOLDER =
 "Operations";
+  async function deleteOperationReport(reportId){
+  const confirmed = confirm(
+    "Are you sure you want to delete this report?"
+  );
+
+  if(!confirmed){
+    return;
+  }
+
+  alert(
+    "Delete is not connected yet. No report was deleted."
+  );
+}
 function escapeHtml(value){
 return String(value)
 .replace(/&/g,"&amp;")
