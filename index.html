@@ -2779,27 +2779,29 @@ if(
     );
 
   aboutButtons.forEach(
-    function(button,index){
+  function(button,index){
 
-      button.addEventListener(
-        "click",
-        function(){
+    button.addEventListener(
+      "click",
+      function(event){
 
-          if(index <= 10){
+        event.preventDefault();
+        event.stopPropagation();
 
-            showAboutLeftCard(
-              index
-            );
+        if(index <= 10){
 
-          }
+          showAboutLeftCard(
+            index
+          );
 
         }
-      );
 
-    }
-  );
+      },
+      true
+    );
 
-}
+  }
+);
 /* =========================================
 PDF VIEWER
 ========================================= */
