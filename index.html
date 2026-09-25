@@ -2784,13 +2784,18 @@ if(
       "click",
       function(){
 
-        if(index <= 10){
+      if(index <= 10){
 
-          showAboutLeftCard(
-            index
-          );
+  showAboutLeftCard(index);
 
-        }
+  const pdf =
+    aboutCards[index].getAttribute("data-pdf");
+
+  if(pdf){
+    openPDFInAboutLeft(pdf,index);
+  }
+
+}
 
       }
     );
