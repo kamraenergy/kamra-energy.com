@@ -2776,6 +2776,108 @@ aboutNavButtons.forEach(function(button, index) {
   });
 
 });
+  /* =========================================
+   ABOUT US - SELECTED CARD DISPLAY
+   ========================================= */
+
+const aboutMainSlider =
+  document.querySelector(".about > .company-slider");
+
+const aboutInnerSlider =
+  aboutMainSlider
+    ? aboutMainSlider.querySelector(":scope > .company-slider")
+    : null;
+
+const aboutCardTrack =
+  document.getElementById("companyTrack");
+
+if (
+  aboutMainSlider &&
+  aboutInnerSlider &&
+  aboutCardTrack
+) {
+
+  /* Create LEFT selected-card area */
+  const selectedArea =
+    document.createElement("div");
+
+  selectedArea.className =
+    "about-selected-card";
+
+  selectedArea.id =
+    "aboutSelectedCard";
+
+  aboutMainSlider.insertBefore(
+    selectedArea,
+    aboutInnerSlider
+  );
+
+  const allAboutCards =
+    Array.from(
+      aboutCardTrack.querySelectorAll(
+        ".company-card"
+      )
+    );
+
+  function showSelectedAboutCard(index){
+
+    if (!allAboutCards[index]) {
+      return;
+    }
+
+    selectedArea.innerHTML = "";
+
+    const selectedCard =
+      allAboutCards[index].cloneNode(true);
+
+    /* Avoid duplicate IDs */
+    selectedCard.removeAttribute("id");
+
+    /* Display only */
+    selectedCard.style.cursor = "default";
+
+    selectedArea.appendChild(
+      selectedCard
+    );
+  }
+
+  /* Show first card when About Us loads */
+  showSelectedAboutCard(0);
+
+  /* Top About Us navigation */
+  aboutNavButtons.forEach(
+    function(button, index){
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          showSelectedAboutCard(index);
+
+        }
+      );
+
+    }
+  );
+
+  /* Clicking a card on the right also previews it */
+  allAboutCards.forEach(
+    function(card, index){
+
+      card.addEventListener(
+        "click",
+        function(){
+
+          showSelectedAboutCard(index);
+
+        },
+        true
+      );
+
+    }
+  );
+
+}
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
