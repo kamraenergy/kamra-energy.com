@@ -2776,7 +2776,7 @@ aboutNavButtons.forEach(function(button, index) {
   });
 
 });
-  /* =========================================
+ /* =========================================
    ABOUT US - SELECTED CARD DISPLAY
    ========================================= */
 
@@ -2797,7 +2797,7 @@ if (
   aboutCardTrack
 ) {
 
-  /* Create LEFT selected-card area */
+  /* LEFT selected-card area */
   const selectedArea =
     document.createElement("div");
 
@@ -2830,21 +2830,77 @@ if (
     const selectedCard =
       allAboutCards[index].cloneNode(true);
 
-    /* Avoid duplicate IDs */
-    selectedCard.removeAttribute("id");
+    /*
+       The cloned card does not keep the
+       original click event, so we connect
+       its original function here.
+    */
 
-    /* Display only */
-    selectedCard.style.cursor = "default";
+    selectedCard.style.cursor = "pointer";
+
+    /* PDF cards */
+    const pdfFile =
+      selectedCard.getAttribute("data-pdf");
+
+    if (pdfFile) {
+
+      selectedCard.addEventListener(
+        "click",
+        function(event){
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          openPDF(pdfFile);
+
+        }
+      );
+
+    }
+
+    /* Company Video card */
+    const cardNumber =
+      selectedCard.querySelector(".card-number");
+
+    if (
+      cardNumber &&
+      cardNumber.textContent.trim() === "10"
+    ){
+
+      selectedCard.addEventListener(
+        "click",
+        function(event){
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          openVideo();
+
+        }
+      );
+
+    }
+
+    /* UPDATE cards remain inactive */
+    if (
+      selectedCard.classList.contains(
+        "update-card"
+      )
+    ){
+      selectedCard.style.cursor = "default";
+    }
 
     selectedArea.appendChild(
       selectedCard
     );
   }
 
-  /* Show first card when About Us loads */
+  /* First card */
   showSelectedAboutCard(0);
 
-  /* Top About Us navigation */
+  /*
+     About Us top navigation
+  */
   aboutNavButtons.forEach(
     function(button, index){
 
@@ -2852,7 +2908,25 @@ if (
         "click",
         function(){
 
-          showSelectedAboutCard(index);
+          /*
+             Company Logo = card 01
+             About Us    = card 02
+             Vision      = card 03
+             Mission     = card 04
+             Safety      = card 05
+             Core Values = card 06
+             Efficiency  = card 07
+             Innovation  = card 08
+             HSE         = card 09
+             Video       = card 10
+             UPDATE      = card 11
+          */
+
+          if(index <= 10){
+
+            showSelectedAboutCard(index);
+
+          }
 
         }
       );
@@ -2860,7 +2934,10 @@ if (
     }
   );
 
-  /* Clicking a card on the right also previews it */
+  /*
+     Right-side cards
+     Clicking one previews it on the left.
+  */
   allAboutCards.forEach(
     function(card, index){
 
