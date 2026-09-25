@@ -2800,94 +2800,7 @@ if (
   aboutInnerSlider &&
   aboutCardTrack
 ) {
-async function openPDFInLeftWindow(file, index){
 
-  selectedArea.innerHTML = "";
-
-  const pdfBox = document.createElement("div");
-
-  pdfBox.style.width = "100%";
-  pdfBox.style.height = "250px";
-  pdfBox.style.overflow = "auto";
-  pdfBox.style.background = "#fff";
-  pdfBox.style.borderRadius = "15px";
-  pdfBox.style.position = "relative";
-
-  const closeButton = document.createElement("button");
-
-  closeButton.type = "button";
-  closeButton.innerHTML = "×";
-
-  closeButton.style.position = "absolute";
-  closeButton.style.top = "8px";
-  closeButton.style.right = "8px";
-  closeButton.style.zIndex = "20";
-  closeButton.style.width = "32px";
-  closeButton.style.height = "32px";
-  closeButton.style.border = "none";
-  closeButton.style.borderRadius = "50%";
-  closeButton.style.background = "#0b1f3a";
-  closeButton.style.color = "#fff";
-  closeButton.style.fontSize = "22px";
-  closeButton.style.cursor = "pointer";
-
-  closeButton.onclick = function(){
-    showSelectedAboutCard(index);
-  };
-
-  pdfBox.appendChild(closeButton);
-  selectedArea.appendChild(pdfBox);
-
-  if(typeof pdfjsLib === "undefined"){
-    pdfBox.textContent =
-      "PDF viewer library could not be loaded.";
-    return;
-  }
-
-  try{
-
-    const loadingTask =
-      pdfjsLib.getDocument({
-        url:file
-      });
-
-    const pdf =
-      await loadingTask.promise;
-
-    const availableWidth =
-      Math.max(
-        100,
-        pdfBox.clientWidth - 20
-      );
-
-    for(
-      let pageNumber = 1;
-      pageNumber <= pdf.numPages;
-      pageNumber++
-    ){
-
-      await renderPDFPage(
-        pdf,
-        pageNumber,
-        pdfBox,
-        availableWidth
-      );
-
-    }
-
-  }catch(error){
-
-    console.error(
-      "Left PDF loading error:",
-      error
-    );
-
-    pdfBox.innerHTML =
-      "Unable to display this PDF.";
-
-  }
-
-}
   /* =========================================
      LEFT - INDEPENDENT CARD AREA
      ========================================= */
@@ -2906,6 +2819,7 @@ async function openPDFInLeftWindow(file, index){
     aboutInnerSlider
   );
 
+
   /* =========================================
      ORIGINAL 12 CARDS
      ========================================= */
@@ -2917,13 +2831,129 @@ async function openPDFInLeftWindow(file, index){
       )
     );
 
+
+  /* =========================================
+     PDF INSIDE LEFT WINDOW
+     ========================================= */
+
+  async function openPDFInLeftWindow(
+    file,
+    index
+  ){
+
+    selectedArea.innerHTML = "";
+
+    const pdfBox =
+      document.createElement("div");
+
+    pdfBox.style.width = "100%";
+    pdfBox.style.height = "250px";
+    pdfBox.style.overflow = "auto";
+    pdfBox.style.background = "#fff";
+    pdfBox.style.borderRadius = "15px";
+    pdfBox.style.position = "relative";
+    pdfBox.style.boxSizing = "border-box";
+
+    const closeButton =
+      document.createElement("button");
+
+    closeButton.type = "button";
+    closeButton.innerHTML = "×";
+
+    closeButton.style.position = "absolute";
+    closeButton.style.top = "8px";
+    closeButton.style.right = "8px";
+    closeButton.style.zIndex = "20";
+    closeButton.style.width = "32px";
+    closeButton.style.height = "32px";
+    closeButton.style.border = "none";
+    closeButton.style.borderRadius = "50%";
+    closeButton.style.background = "#0b1f3a";
+    closeButton.style.color = "#fff";
+    closeButton.style.fontSize = "22px";
+    closeButton.style.cursor = "pointer";
+
+    closeButton.onclick =
+      function(){
+
+        showSelectedAboutCard(index);
+
+      };
+
+    pdfBox.appendChild(
+      closeButton
+    );
+
+    selectedArea.appendChild(
+      pdfBox
+    );
+
+
+    if(typeof pdfjsLib === "undefined"){
+
+      pdfBox.innerHTML =
+        "PDF viewer library could not be loaded.";
+
+      return;
+
+    }
+
+
+    try{
+
+      const loadingTask =
+        pdfjsLib.getDocument({
+          url:file
+        });
+
+      const pdf =
+        await loadingTask.promise;
+
+
+      const availableWidth =
+        Math.max(
+          100,
+          pdfBox.clientWidth - 20
+        );
+
+
+      for(
+        let pageNumber = 1;
+        pageNumber <= pdf.numPages;
+        pageNumber++
+      ){
+
+        await renderPDFPage(
+          pdf,
+          pageNumber,
+          pdfBox,
+          availableWidth
+        );
+
+      }
+
+    }catch(error){
+
+      console.error(
+        "Left PDF loading error:",
+        error
+      );
+
+      pdfBox.innerHTML =
+        "Unable to display this PDF.";
+
+    }
+
+  }
+
+
   /* =========================================
      SHOW SELECTED CARD ON LEFT
      ========================================= */
 
   function showSelectedAboutCard(index){
 
-    if (!allAboutCards[index]) {
+    if(!allAboutCards[index]){
       return;
     }
 
@@ -2932,8 +2962,8 @@ async function openPDFInLeftWindow(file, index){
     const originalCard =
       allAboutCards[index];
 
-    /* Create a completely independent
-       card for the LEFT side */
+
+    /* Create independent LEFT card */
 
     const selectedCard =
       document.createElement("div");
@@ -2941,18 +2971,23 @@ async function openPDFInLeftWindow(file, index){
     selectedCard.className =
       "about-left-card";
 
-    /* Copy only the card contents */
+
+    /* Copy card contents only */
+
     selectedCard.innerHTML =
       originalCard.innerHTML;
 
+
     /* =====================================
-       COPY PDF INFORMATION
+       PDF
        ===================================== */
 
     const pdfFile =
-      originalCard.getAttribute("data-pdf");
+      originalCard.getAttribute(
+        "data-pdf"
+      );
 
-    if (pdfFile) {
+    if(pdfFile){
 
       selectedCard.style.cursor =
         "pointer";
@@ -2964,12 +2999,16 @@ async function openPDFInLeftWindow(file, index){
           event.preventDefault();
           event.stopPropagation();
 
-          openPDFInLeftWindow(pdfFile, index);
+          openPDFInLeftWindow(
+            pdfFile,
+            index
+          );
 
         }
       );
 
     }
+
 
     /* =====================================
        COMPANY VIDEO
@@ -2980,7 +3019,7 @@ async function openPDFInLeftWindow(file, index){
         ".card-number"
       );
 
-    if (
+    if(
       cardNumber &&
       cardNumber.textContent.trim() === "10"
     ){
@@ -3002,11 +3041,12 @@ async function openPDFInLeftWindow(file, index){
 
     }
 
+
     /* =====================================
        UPDATE CARDS
        ===================================== */
 
-    if (
+    if(
       originalCard.classList.contains(
         "update-card"
       )
@@ -3017,11 +3057,13 @@ async function openPDFInLeftWindow(file, index){
 
     }
 
+
     selectedArea.appendChild(
       selectedCard
     );
 
   }
+
 
   /* =========================================
      FIRST CARD
@@ -3029,18 +3071,19 @@ async function openPDFInLeftWindow(file, index){
 
   showSelectedAboutCard(0);
 
+
   /* =========================================
      TOP ABOUT US BUTTONS
      ========================================= */
 
   aboutNavButtons.forEach(
-    function(button, index){
+    function(button,index){
 
       button.addEventListener(
         "click",
         function(){
 
-          if (index <= 10) {
+          if(index <= 10){
 
             showSelectedAboutCard(
               index
@@ -3054,6 +3097,31 @@ async function openPDFInLeftWindow(file, index){
     }
   );
 
+
+  /* =========================================
+     RIGHT SIDE CARDS
+     Clicking a card previews it on LEFT
+     ========================================= */
+
+  allAboutCards.forEach(
+    function(card,index){
+
+      card.addEventListener(
+        "click",
+        function(){
+
+          showSelectedAboutCard(
+            index
+          );
+
+        },
+        true
+      );
+
+    }
+  );
+
+}
   /* =========================================
      RIGHT-SIDE ORIGINAL CARDS
      ========================================= */
