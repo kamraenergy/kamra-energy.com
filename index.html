@@ -2778,15 +2778,12 @@ if(
       ".about-nav button"
     );
 
-  aboutButtons.forEach(
+ aboutButtons.forEach(
   function(button,index){
 
     button.addEventListener(
       "click",
-      function(event){
-
-        event.preventDefault();
-        event.stopPropagation();
+      function(){
 
         if(index <= 10){
 
@@ -2796,8 +2793,7 @@ if(
 
         }
 
-      },
-      true
+      }
     );
 
   }
