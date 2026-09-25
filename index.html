@@ -1079,6 +1079,80 @@ body.rtl .energy-card-brand{
 .services{
   margin-top:-70px !important;
 }
+  /* =========================================
+   ABOUT US - LAPTOP SELECTED CARD LAYOUT
+   ========================================= */
+
+@media (min-width: 701px){
+
+  /* Main About Us layout */
+  .about > .company-slider{
+    display:grid !important;
+    grid-template-columns:minmax(0, 1fr) 390px;
+    gap:24px;
+    align-items:center;
+    max-width:1180px;
+    margin:30px auto 0;
+  }
+
+  /* LEFT - selected card */
+  .about-selected-card{
+    min-height:250px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px;
+  }
+
+  .about-selected-card .company-card{
+    width:100%;
+    max-width:500px;
+    min-height:250px;
+    flex:0 0 auto !important;
+    cursor:default;
+    transform:none !important;
+  }
+
+  .about-selected-card .company-card:hover{
+    transform:none !important;
+  }
+
+  /* RIGHT - two-card navigation */
+  .about > .company-slider > .company-slider{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .about > .company-slider > .company-slider
+  .company-slider-window{
+    width:100%;
+    overflow:hidden;
+  }
+
+  .about > .company-slider > .company-slider
+  .company-track{
+    gap:12px;
+  }
+
+  /* Exactly TWO cards on the right */
+  .about > .company-slider > .company-slider
+  .company-card{
+    flex:0 0 calc((100% - 12px) / 2);
+    min-height:190px;
+    padding:15px 10px;
+  }
+
+  .about > .company-slider > .company-slider
+  .slider-btn{
+    flex:0 0 34px;
+    width:34px;
+    height:34px;
+    font-size:22px;
+  }
+
+}
 </style>
 </head>
 <body>
