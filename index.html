@@ -2801,7 +2801,10 @@ if (
   aboutCardTrack
 ) {
 
-  /* LEFT selected-card area */
+  /* =========================================
+     LEFT - INDEPENDENT CARD AREA
+     ========================================= */
+
   const selectedArea =
     document.createElement("div");
 
@@ -2816,12 +2819,20 @@ if (
     aboutInnerSlider
   );
 
+  /* =========================================
+     ORIGINAL 12 CARDS
+     ========================================= */
+
   const allAboutCards =
     Array.from(
       aboutCardTrack.querySelectorAll(
         ".company-card"
       )
     );
+
+  /* =========================================
+     SHOW SELECTED CARD ON LEFT
+     ========================================= */
 
   function showSelectedAboutCard(index){
 
@@ -2831,25 +2842,33 @@ if (
 
     selectedArea.innerHTML = "";
 
-   const originalCard =
-  allAboutCards[index];
+    const originalCard =
+      allAboutCards[index];
 
-const selectedCard =
-  originalCard.cloneNode(true);
-   
-    /*
-       The cloned card does not keep the
-       original click event, so we connect
-       its original function here.
-    */
+    /* Create a completely independent
+       card for the LEFT side */
 
-    selectedCard.style.cursor = "pointer";
+    const selectedCard =
+      document.createElement("div");
 
-    /* PDF cards */
-   const pdfFile =
-  originalCard.getAttribute("data-pdf");
+    selectedCard.className =
+      "about-left-card";
+
+    /* Copy only the card contents */
+    selectedCard.innerHTML =
+      originalCard.innerHTML;
+
+    /* =====================================
+       COPY PDF INFORMATION
+       ===================================== */
+
+    const pdfFile =
+      originalCard.getAttribute("data-pdf");
 
     if (pdfFile) {
+
+      selectedCard.style.cursor =
+        "pointer";
 
       selectedCard.addEventListener(
         "click",
@@ -2865,14 +2884,22 @@ const selectedCard =
 
     }
 
-    /* Company Video card */
+    /* =====================================
+       COMPANY VIDEO
+       ===================================== */
+
     const cardNumber =
-      selectedCard.querySelector(".card-number");
+      originalCard.querySelector(
+        ".card-number"
+      );
 
     if (
       cardNumber &&
       cardNumber.textContent.trim() === "10"
     ){
+
+      selectedCard.style.cursor =
+        "pointer";
 
       selectedCard.addEventListener(
         "click",
@@ -2888,26 +2915,37 @@ const selectedCard =
 
     }
 
-    /* UPDATE cards remain inactive */
+    /* =====================================
+       UPDATE CARDS
+       ===================================== */
+
     if (
-      selectedCard.classList.contains(
+      originalCard.classList.contains(
         "update-card"
       )
     ){
-      selectedCard.style.cursor = "default";
+
+      selectedCard.style.cursor =
+        "default";
+
     }
 
     selectedArea.appendChild(
       selectedCard
     );
+
   }
 
-  /* First card */
+  /* =========================================
+     FIRST CARD
+     ========================================= */
+
   showSelectedAboutCard(0);
 
-  /*
-     About Us top navigation
-  */
+  /* =========================================
+     TOP ABOUT US BUTTONS
+     ========================================= */
+
   aboutNavButtons.forEach(
     function(button, index){
 
@@ -2915,23 +2953,11 @@ const selectedCard =
         "click",
         function(){
 
-          /*
-             Company Logo = card 01
-             About Us    = card 02
-             Vision      = card 03
-             Mission     = card 04
-             Safety      = card 05
-             Core Values = card 06
-             Efficiency  = card 07
-             Innovation  = card 08
-             HSE         = card 09
-             Video       = card 10
-             UPDATE      = card 11
-          */
+          if (index <= 10) {
 
-          if(index <= 10){
-
-            showSelectedAboutCard(index);
+            showSelectedAboutCard(
+              index
+            );
 
           }
 
@@ -2941,10 +2967,10 @@ const selectedCard =
     }
   );
 
-  /*
-     Right-side cards
-     Clicking one previews it on the left.
-  */
+  /* =========================================
+     RIGHT-SIDE ORIGINAL CARDS
+     ========================================= */
+
   allAboutCards.forEach(
     function(card, index){
 
@@ -2952,7 +2978,9 @@ const selectedCard =
         "click",
         function(){
 
-          showSelectedAboutCard(index);
+          showSelectedAboutCard(
+            index
+          );
 
         },
         true
