@@ -2832,6 +2832,9 @@ if (
 
 const selectedCard =
   originalCard.cloneNode(true);
+    selectedCard.style.width = "100%";
+selectedCard.style.maxWidth = "none";
+selectedCard.style.height = "100%";
     /*
        The cloned card does not keep the
        original click event, so we connect
