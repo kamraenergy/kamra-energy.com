@@ -2464,6 +2464,239 @@ if(track && prevBtn && nextBtn && sliderWindow){
 
   updateSlider();
 }
+  /* =========================================
+   ABOUT US - LAPTOP SELECTED CARD
+   ========================================= */
+
+const aboutSection =
+  document.querySelector(".about");
+
+const aboutMainSlider =
+  aboutSection
+    ? aboutSection.querySelector(
+        ".company-slider"
+      )
+    : null;
+
+const aboutInnerSlider =
+  aboutMainSlider
+    ? aboutMainSlider.querySelector(
+        ":scope > .company-slider"
+      )
+    : null;
+
+const aboutTrack =
+  document.getElementById(
+    "companyTrack"
+  );
+
+if(
+  window.innerWidth > 700 &&
+  aboutMainSlider &&
+  aboutInnerSlider &&
+  aboutTrack
+){
+
+  /* LEFT WINDOW */
+
+  const leftWindow =
+    document.createElement("div");
+
+  leftWindow.className =
+    "about-left-window";
+
+  aboutMainSlider.insertBefore(
+    leftWindow,
+    aboutInnerSlider
+  );
+
+
+  /* ORIGINAL CARDS */
+
+  const aboutCards =
+    Array.from(
+      aboutTrack.querySelectorAll(
+        ".company-card"
+      )
+    );
+
+
+  /* SHOW CARD ON LEFT */
+
+  function showAboutLeftCard(index){
+
+    const original =
+      aboutCards[index];
+
+    if(!original){
+      return;
+    }
+
+    leftWindow.innerHTML = "";
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "about-left-card";
+
+    card.innerHTML =
+      original.innerHTML;
+
+    leftWindow.appendChild(card);
+
+
+    /* PDF */
+
+    const pdf =
+      original.getAttribute(
+        "data-pdf"
+      );
+
+    if(pdf){
+
+      card.style.cursor =
+        "pointer";
+
+      card.addEventListener(
+        "click",
+        function(event){
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          openPDFInAboutLeft(
+            pdf,
+            index
+          );
+
+        }
+      );
+
+    }
+
+  }
+
+
+  /* =========================================
+     PDF INSIDE LEFT WINDOW
+     ========================================= */
+
+  async function openPDFInAboutLeft(
+    file,
+    index
+  ){
+
+    leftWindow.innerHTML = "";
+
+    const pdfContainer =
+      document.createElement("div");
+
+    pdfContainer.className =
+      "about-left-pdf";
+
+    leftWindow.appendChild(
+      pdfContainer
+    );
+
+
+    if(
+      typeof pdfjsLib ===
+      "undefined"
+    ){
+
+      pdfContainer.textContent =
+        "PDF viewer library could not be loaded.";
+
+      return;
+
+    }
+
+
+    try{
+
+      const loadingTask =
+        pdfjsLib.getDocument({
+          url:file
+        });
+
+      const pdf =
+        await loadingTask.promise;
+
+
+      const availableWidth =
+        Math.max(
+          100,
+          pdfContainer.clientWidth - 20
+        );
+
+
+      for(
+        let pageNumber = 1;
+        pageNumber <= pdf.numPages;
+        pageNumber++
+      ){
+
+        await renderPDFPage(
+          pdf,
+          pageNumber,
+          pdfContainer,
+          availableWidth
+        );
+
+      }
+
+    }catch(error){
+
+      console.error(
+        "About PDF error:",
+        error
+      );
+
+      pdfContainer.textContent =
+        "Unable to display this PDF.";
+
+    }
+
+  }
+
+
+  /* FIRST CARD */
+
+  showAboutLeftCard(0);
+
+
+  /* =========================================
+     TOP ABOUT BUTTONS
+     ========================================= */
+
+  const aboutButtons =
+    aboutSection.querySelectorAll(
+      ".about-nav button"
+    );
+
+  aboutButtons.forEach(
+    function(button,index){
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          if(index <= 10){
+
+            showAboutLeftCard(
+              index
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+}
 /* =========================================
 PDF VIEWER
 ========================================= */
