@@ -2987,27 +2987,27 @@ if (
         "data-pdf"
       );
 
-    if(pdfFile){
+   if(pdfFile){
 
-      selectedCard.style.cursor =
-        "pointer";
+  selectedCard.style.cursor =
+    "pointer";
 
-      selectedCard.addEventListener(
-        "click",
-        function(event){
+  selectedCard.addEventListener(
+    "click",
+    function(event){
 
-          event.preventDefault();
-          event.stopPropagation();
+      event.preventDefault();
+      event.stopPropagation();
 
-          openPDF(pdfFile);
-          );
-
-        }
+      openPDFInLeftWindow(
+        pdfFile,
+        index
       );
 
     }
+  );
 
-
+}
     /* =====================================
        COMPANY VIDEO
        ===================================== */
