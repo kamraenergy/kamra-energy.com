@@ -3070,7 +3070,7 @@ if (window.innerWidth <= 700) {
       return;
     }
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", async function() {
 
       if (!mobileSliderWindow || !mobileCards[index]) {
         return;
@@ -3078,39 +3078,107 @@ if (window.innerWidth <= 700) {
 
       const card = mobileCards[index];
 
-      /* move to selected card */
+      /* MOVE TO SELECTED CARD */
       mobileSliderWindow.scrollTo({
         left: card.offsetLeft,
         behavior: "smooth"
       });
 
-      /* open PDF inside the selected card */
-      const pdfFile = card.getAttribute("data-pdf");
+      /* GET PDF */
+      const pdfFile =
+        card.getAttribute("data-pdf");
 
-      if (pdfFile) {
+      if (!pdfFile) {
+        return;
+      }
 
-        let pdfFrame =
-          card.querySelector(".mobile-card-pdf");
+      /* WAIT FOR SLIDER TO REACH THE CARD */
+      setTimeout(async function() {
 
-        if (!pdfFrame) {
+        card.innerHTML = "";
 
-          pdfFrame = document.createElement("iframe");
+        const pdfContainer =
+          document.createElement("div");
 
-          pdfFrame.className = "mobile-card-pdf";
+        pdfContainer.className =
+          "mobile-card-pdf";
 
-          pdfFrame.style.width = "100%";
-          pdfFrame.style.height = "100%";
-          pdfFrame.style.border = "0";
-          pdfFrame.style.borderRadius = "12px";
-          pdfFrame.style.background = "#fff";
+        pdfContainer.style.width =
+          "100%";
 
-          card.innerHTML = "";
+        pdfContainer.style.height =
+          "100%";
 
-          card.appendChild(pdfFrame);
+        pdfContainer.style.overflow =
+          "auto";
+
+        pdfContainer.style.background =
+          "#fff";
+
+        pdfContainer.style.borderRadius =
+          "12px";
+
+        pdfContainer.style.boxSizing =
+          "border-box";
+
+        pdfContainer.style.padding =
+          "8px";
+
+        card.appendChild(pdfContainer);
+
+        if(typeof pdfjsLib === "undefined") {
+
+          pdfContainer.textContent =
+            "PDF viewer library could not be loaded.";
+
+          return;
+
         }
 
-        pdfFrame.src = pdfFile;
-      }
+        try {
+
+          const loadingTask =
+            pdfjsLib.getDocument({
+              url: pdfFile
+            });
+
+          const pdf =
+            await loadingTask.promise;
+
+          const availableWidth =
+            Math.max(
+              100,
+              pdfContainer.clientWidth - 16
+            );
+
+          for(
+            let pageNumber = 1;
+            pageNumber <= pdf.numPages;
+            pageNumber++
+          ){
+
+            await renderPDFPage(
+              pdf,
+              pageNumber,
+              pdfContainer,
+              availableWidth
+            );
+
+          }
+
+        } catch(error) {
+
+          console.error(
+            "Mobile card PDF error:",
+            error
+          );
+
+          pdfContainer.textContent =
+            "Unable to display this PDF.";
+
+        }
+
+      }, 350);
 
     });
 
