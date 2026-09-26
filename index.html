@@ -3049,6 +3049,43 @@ aboutNavButtons.forEach(function(button, index) {
   });
 
 });
+  /* =========================================
+   MOBILE ABOUT BUTTONS → SLIDER CARDS
+   ========================================= */
+
+if (window.innerWidth <= 700) {
+
+  const mobileAboutButtons =
+    document.querySelectorAll(".about-nav button");
+
+  const mobileSliderWindow =
+    document.getElementById("sliderWindow");
+
+  const mobileCards =
+    document.querySelectorAll("#companyTrack .company-card");
+
+  mobileAboutButtons.forEach(function(button, index) {
+
+    if (index > 10) {
+      return;
+    }
+
+    button.addEventListener("click", function() {
+
+      if (!mobileSliderWindow || !mobileCards[index]) {
+        return;
+      }
+
+      mobileSliderWindow.scrollTo({
+        left: mobileCards[index].offsetLeft,
+        behavior: "smooth"
+      });
+
+    });
+
+  });
+
+}
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
