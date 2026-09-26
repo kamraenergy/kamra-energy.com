@@ -3076,10 +3076,41 @@ if (window.innerWidth <= 700) {
         return;
       }
 
+      const card = mobileCards[index];
+
+      /* move to selected card */
       mobileSliderWindow.scrollTo({
-        left: mobileCards[index].offsetLeft,
+        left: card.offsetLeft,
         behavior: "smooth"
       });
+
+      /* open PDF inside the selected card */
+      const pdfFile = card.getAttribute("data-pdf");
+
+      if (pdfFile) {
+
+        let pdfFrame =
+          card.querySelector(".mobile-card-pdf");
+
+        if (!pdfFrame) {
+
+          pdfFrame = document.createElement("iframe");
+
+          pdfFrame.className = "mobile-card-pdf";
+
+          pdfFrame.style.width = "100%";
+          pdfFrame.style.height = "100%";
+          pdfFrame.style.border = "0";
+          pdfFrame.style.borderRadius = "12px";
+          pdfFrame.style.background = "#fff";
+
+          card.innerHTML = "";
+
+          card.appendChild(pdfFrame);
+        }
+
+        pdfFrame.src = pdfFile;
+      }
 
     });
 
