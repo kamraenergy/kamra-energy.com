@@ -4145,34 +4145,52 @@ SERVICES BACKGROUND SLIDER
 ========================================= */
 const servicesSection =
 document.querySelector(".services");
+
+const foundationBottomBg =
+document.querySelector(".foundation-bottom-bg");
+
 const servicesBackgrounds = [
-"url('kamra-3d-background.png.png')",
-"url('kamra-new-background.png.png')"
+  "url('kamra-3d-background.png.png')",
+  "url('kamra-new-background.png.png')"
 ];
+
 /* تحميل الصورتين مسبقًا */
 const img1 = new Image();
 img1.src = "kamra-3d-background.png.png";
+
 const img2 = new Image();
 img2.src = "kamra-new-background.png.png";
+
 let servicesBackgroundIndex = 0;
-if(servicesSection){
-servicesSection.style.setProperty(
-"--services-bg",
-servicesBackgrounds[0]
-);
-setInterval(
-function(){
-servicesBackgroundIndex =
-(servicesBackgroundIndex + 1) %
-servicesBackgrounds.length;
-servicesSection.style.setProperty(
-"--services-bg",
-servicesBackgrounds[servicesBackgroundIndex]
-);
-},
-55000
-);
+
+function updateServicesBackground(){
+  const background =
+    servicesBackgrounds[servicesBackgroundIndex];
+
+  if(servicesSection){
+    servicesSection.style.setProperty(
+      "--services-bg",
+      background
+    );
+  }
+
+  if(foundationBottomBg){
+    foundationBottomBg.style.setProperty(
+      "--services-bg",
+      background
+    );
+  }
 }
+
+updateServicesBackground();
+
+setInterval(function(){
+  servicesBackgroundIndex =
+    (servicesBackgroundIndex + 1) %
+    servicesBackgrounds.length;
+
+  updateServicesBackground();
+}, 55000);
 /* =========================================
 SERVICES ORBIT — CLICK TO PAUSE
 ========================================= */
