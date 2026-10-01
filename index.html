@@ -176,6 +176,14 @@ to{transform:rotate(360deg)}
 50%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y) - 10px))}
 75%{transform:translate(calc(-50% + var(--x) - 8px),calc(-50% + var(--y) - 6px))}
 }
+  @media (min-width:701px){
+.card:nth-child(1){--x:-450px;}
+.card:nth-child(2){--x:-270px;}
+.card:nth-child(3){--x:-90px;}
+.card:nth-child(4){--x:90px;}
+.card:nth-child(5){--x:270px;}
+.card:nth-child(6){--x:450px;}
+}
 @keyframes kamraServicesFloat{
 0%{transform:scale(1) translate3d(-1.6%, -1.2%, 0)}
 50%{transform:scale(1) translate3d(1.4%, 1%, 0)}
