@@ -1140,6 +1140,29 @@ body.rtl .energy-card-brand{
   z-index:20;
   transform:none !important;
 }
+
+/* SERVICE NAME INSIDE COLLAPSED CARD */
+.energy-service-card:not(.service-fixed) .energy-card-brand{
+  margin:0;
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
+.energy-service-card:not(.service-fixed) .energy-card-brand img{
+  display:none;
+}
+
+.energy-service-card:not(.service-fixed) .energy-card-brand span{
+  font-size:12px;
+  line-height:1.2;
+  color:#ffffff;
+}
+
+.energy-service-card:not(.service-fixed) .en,
+.energy-service-card:not(.service-fixed) .ar{
+  display:none;
+}
   .energy-service-card:nth-child(n+7) p{
   font-size:11px;
   line-height:1.35;
