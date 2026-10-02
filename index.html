@@ -4647,29 +4647,50 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
     track.querySelectorAll('.energy-service-card')
   );
 
+  const originalCards = cards.slice();
+
   cards.forEach(card => {
     track.appendChild(card.cloneNode(true));
   });
+
+  const allCards = Array.from(
+    track.querySelectorAll('.energy-service-card')
+  );
 
   let activeCard = null;
 
   buttons.forEach((button, index) => {
     button.addEventListener('click', function () {
 
+      const currentCards = [
+        allCards[index],
+        allCards[index + originalCards.length]
+      ];
+
       if (activeCard === index) {
+        currentCards.forEach(card => {
+          card.classList.remove('service-active');
+        });
+
         showcase.classList.remove('service-open');
-        cards[index].classList.remove('service-active');
         activeCard = null;
         return;
       }
 
       if (activeCard !== null) {
-        cards[activeCard].classList.remove('service-active');
+        [
+          allCards[activeCard],
+          allCards[activeCard + originalCards.length]
+        ].forEach(card => {
+          card.classList.remove('service-active');
+        });
       }
 
-      cards[index].classList.add('service-active');
-      showcase.classList.add('service-open');
+      currentCards.forEach(card => {
+        card.classList.add('service-active');
+      });
 
+      showcase.classList.add('service-open');
       activeCard = index;
     });
   });
