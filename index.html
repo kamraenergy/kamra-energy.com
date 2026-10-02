@@ -1153,8 +1153,9 @@ body.rtl .energy-card-brand{
   display:none;
 }
 
-.energy-service-card:not(.service-fixed) .energy-card-brand span{
-  font-size:1px;
+.energy-service-card:not(.service-fixed) .energy-card-brand span::after{
+  content:attr(data-service-name);
+  font-size:12px;
   line-height:1.2;
   color:#ffffff;
 }
@@ -4690,6 +4691,18 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
   const allCards = Array.from(
     track.querySelectorAll('.energy-service-card')
   );
+
+  allCards.forEach(function (card) {
+    const title = card.querySelector('.en h3');
+    const brandName = card.querySelector('.energy-card-brand span');
+
+    if (title && brandName) {
+      brandName.setAttribute(
+        'data-service-name',
+        title.textContent.trim()
+      );
+    }
+  });
 
   let activeCard = null;
   let fixedCard = null;
