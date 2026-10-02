@@ -1149,12 +1149,15 @@ body.rtl .energy-card-brand{
   align-items:center;
 }
 
-.energy-service-card:not(.service-fixed) .energy-card-brand img{
-  display:none;
+.energy-service-card:not(.service-fixed) .energy-card-brand span{
+  font-size:0;
+  line-height:0;
+  color:transparent;
 }
 
 .energy-service-card:not(.service-fixed) .energy-card-brand span::after{
   content:attr(data-service-name);
+  display:block;
   font-size:12px;
   line-height:1.2;
   color:#ffffff;
