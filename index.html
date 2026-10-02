@@ -4691,6 +4691,18 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
     track.querySelectorAll('.energy-service-card')
   );
 
+  allCards.forEach(function (card) {
+    const title = card.querySelector('.en h3');
+    const brandName = card.querySelector('.energy-card-brand span');
+
+    if (title && brandName) {
+      brandName.setAttribute(
+        'data-service-name',
+        title.textContent.trim()
+      );
+    }
+  });
+
   let activeCard = null;
   let fixedCard = null;
 
