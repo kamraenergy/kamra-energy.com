@@ -1110,10 +1110,22 @@ body.rtl .energy-card-brand{
 }
   /* Final card height */
 .energy-service-card{
+  height:55px !important;
+  min-height:55px !important;
+  max-height:55px !important;
+  box-sizing:border-box;
+  transition:
+    height .35s ease,
+    min-height .35s ease,
+    max-height .35s ease,
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.energy-service-card.service-active{
   height:430px !important;
   min-height:430px !important;
   max-height:430px !important;
-  box-sizing:border-box;
 }
   .energy-service-card:nth-child(n+7) p{
   font-size:11px;
