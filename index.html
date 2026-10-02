@@ -4627,21 +4627,41 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
 (function () {
   const showcase = document.getElementById('services-showcase');
   const track = showcase?.querySelector('.services-showcase-track');
-  if (!showcase || !track) return;
+  const buttons = showcase?.querySelectorAll('.services-nav button');
+
+  if (!showcase || !track || !buttons?.length) return;
+
   const cards = Array.from(
     track.querySelectorAll('.energy-service-card')
   );
+
   cards.forEach(card => {
     track.appendChild(card.cloneNode(true));
   });
-  let isPaused = false;
-  track.addEventListener('click', function (e) {
-    const card = e.target.closest('.energy-service-card');
-    if (!card) return;
-    isPaused = !isPaused;
-    track.style.animationPlayState =
-      isPaused ? 'paused' : 'running';
+
+  let activeCard = null;
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', function () {
+
+      if (activeCard === index) {
+        showcase.classList.remove('service-open');
+        cards[index].classList.remove('service-active');
+        activeCard = null;
+        return;
+      }
+
+      if (activeCard !== null) {
+        cards[activeCard].classList.remove('service-active');
+      }
+
+      cards[index].classList.add('service-active');
+      showcase.classList.add('service-open');
+
+      activeCard = index;
+    });
   });
+
 })();
 </script>
 </body>
