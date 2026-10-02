@@ -1123,9 +1123,22 @@ body.rtl .energy-card-brand{
     box-shadow .35s ease;
 }
 .energy-service-card.service-active{
+  height:55px !important;
+  min-height:55px !important;
+  max-height:55px !important;
+}
+
+.energy-service-card.service-fixed{
+  position:absolute;
+  left:5%;
+  top:105px;
+  width:280px !important;
+  max-width:280px !important;
   height:430px !important;
   min-height:430px !important;
   max-height:430px !important;
+  z-index:20;
+  transform:none !important;
 }
   .energy-service-card:nth-child(n+7) p{
   font-size:11px;
@@ -4633,7 +4646,7 @@ newContactSubmit.disabled = false;
 newContactSubmit.textContent = "SEND ENQUIRY →";
 }
 });
-}</script>
+  </script>
 <script>
 (function () {
   const showcase = document.getElementById('services-showcase');
@@ -4642,13 +4655,11 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
 
   if (!showcase || !track || !buttons?.length) return;
 
-  const cards = Array.from(
+  const originalCards = Array.from(
     track.querySelectorAll('.energy-service-card')
   );
 
-  const originalCards = cards.slice();
-
-  cards.forEach(card => {
+  originalCards.forEach(card => {
     track.appendChild(card.cloneNode(true));
   });
 
@@ -4657,45 +4668,72 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
   );
 
   let activeCard = null;
+  let fixedCard = null;
 
   buttons.forEach((button, index) => {
+
     button.addEventListener('click', function () {
 
+      /* CLOSE CURRENT CARD */
       if (activeCard === index) {
-        [
-          allCards[index],
-          allCards[index + originalCards.length]
-        ].forEach(card => {
-          card.classList.remove('service-active');
-        });
+
+        allCards[index].classList.remove('service-active');
+
+        allCards[index + originalCards.length]
+          .classList.remove('service-active');
+
+        if (fixedCard) {
+          fixedCard.remove();
+          fixedCard = null;
+        }
+
+        track.style.marginTop = '';
 
         showcase.classList.remove('service-open');
+
         activeCard = null;
+
         return;
       }
 
+      /* REMOVE PREVIOUS */
       if (activeCard !== null) {
-        [
-          allCards[activeCard],
-          allCards[activeCard + originalCards.length]
-        ].forEach(card => {
-          card.classList.remove('service-active');
-        });
+
+        allCards[activeCard].classList.remove('service-active');
+
+        allCards[activeCard + originalCards.length]
+          .classList.remove('service-active');
+
+        if (fixedCard) {
+          fixedCard.remove();
+          fixedCard = null;
+        }
       }
 
-      const selectedCards = [
-        allCards[index],
-        allCards[index + originalCards.length]
-      ];
+      /* ACTIVATE ORIGINAL + CLONE */
+      allCards[index].classList.add('service-active');
 
-      selectedCards.forEach(card => {
-        card.classList.add('service-active');
-      });
+      allCards[index + originalCards.length]
+        .classList.add('service-active');
+
+      /* CREATE FIXED DISPLAY CARD */
+      fixedCard = allCards[index].cloneNode(true);
+
+      fixedCard.classList.add(
+        'service-active',
+        'service-fixed'
+      );
+
+      showcase.insertBefore(fixedCard, track);
+
+      /* MOVE MARQUEE DOWN */
+      track.style.marginTop = '455px';
 
       showcase.classList.add('service-open');
 
       activeCard = index;
     });
+
   });
 
 })();
