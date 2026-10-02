@@ -4633,8 +4633,7 @@ newContactSubmit.disabled = false;
 newContactSubmit.textContent = "SEND ENQUIRY →";
 }
 });
-}
-  </script>
+}</script>
 <script>
 (function () {
   const showcase = document.getElementById('services-showcase');
@@ -4662,13 +4661,11 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
   buttons.forEach((button, index) => {
     button.addEventListener('click', function () {
 
-      const currentCards = [
-        allCards[index],
-        allCards[index + originalCards.length]
-      ];
-
       if (activeCard === index) {
-        currentCards.forEach(card => {
+        [
+          allCards[index],
+          allCards[index + originalCards.length]
+        ].forEach(card => {
           card.classList.remove('service-active');
         });
 
@@ -4686,11 +4683,17 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
         });
       }
 
-      currentCards.forEach(card => {
+      const selectedCards = [
+        allCards[index],
+        allCards[index + originalCards.length]
+      ];
+
+      selectedCards.forEach(card => {
         card.classList.add('service-active');
       });
 
       showcase.classList.add('service-open');
+
       activeCard = index;
     });
   });
