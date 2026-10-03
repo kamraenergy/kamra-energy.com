@@ -679,14 +679,9 @@ nav a{font-size:11px;margin:0 3px}
 .cards{width:100%;height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px;padding:12px;}
 .cards::before{width:92%;height:380px;bottom:48px;}
 .cards::after{width:94%;height:85px;bottom:24px;}
-.card{width:min(28vw, 125px);min-height:72px;padding:8px 6px;border-radius:16px;}
+.card{position:relative;left:auto;top:auto;width:auto;min-height:72px;padding:8px 6px;border-radius:16px;transform:none;}
 .card.paused{width:min(84vw, 360px);min-height:220px;padding:18px 20px;z-index:50;}
-.card:nth-child(1){--x:-24vw;--y:190px}
-.card:nth-child(2){--x:-25vw;--y:55px}
-.card:nth-child(3){--x:-15vw;--y:-75px}
-.card:nth-child(4){--x:15vw;--y:-75px}
-.card:nth-child(5){--x:25vw;--y:55px}
-.card:nth-child(6){--x:24vw;--y:190px}
+
 
 .card h3{font-size:11px;margin-bottom:4px}
 .card p{font-size:8px;line-height:1.25}
