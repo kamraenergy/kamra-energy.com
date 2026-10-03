@@ -4796,9 +4796,9 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
       .classList.add('service-active');
 
     /* إنشاء البطاقة الثابتة */
-    fixedCard = allCards[index].cloneNode(true);
+   fixedCard = allCards[index].cloneNode(true);
 
-  fixedCard.classList.add(
+fixedCard.classList.add(
   'service-active',
   'service-fixed'
 );
@@ -4807,12 +4807,11 @@ if (index === 3) {
   fixedCard.querySelector('.energy-card-brand')?.remove();
 }
 
-    showcase.insertBefore(fixedCard, track);
+ showcase.insertBefore(fixedCard, track);
 
     /* إنزال الشريط المتحرك */
-    track.style.marginTop = '455px';
-
-    showcase.classList.add('service-open');
+ track.style.marginTop = '455px';
+ showcase.classList.add('service-open');
 
     activeCard = index;
   }
