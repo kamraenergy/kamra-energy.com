@@ -676,7 +676,7 @@ nav a{font-size:11px;margin:0 3px}
 @media(max-width:700px){
 .services{height:auto;}
 .services::before{inset:0;background-size:130% auto;background-position:center center;background-repeat:no-repeat;transform:none;animation:none;}
-.cards{width:100%;height:600px;}
+.cards{width:100%;height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px;padding:12px;}
 .cards::before{width:92%;height:380px;bottom:48px;}
 .cards::after{width:94%;height:85px;bottom:24px;}
 .card{width:min(28vw, 125px);min-height:72px;padding:8px 6px;border-radius:16px;}
