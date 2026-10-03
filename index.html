@@ -4571,20 +4571,7 @@ setInterval(function(){
 
   updateServicesBackground();
 }, 55000);
-/* =========================================
-SERVICES ORBIT — CLICK TO PAUSE
-========================================= */
-document.querySelectorAll(".service-orbit .card").forEach(function(card){
-card.addEventListener("click",function(){
-const wasPaused = card.classList.contains("paused");
-document.querySelectorAll(".service-orbit .card").forEach(function(item){
-item.classList.remove("paused");
-});
-if(!wasPaused){
-card.classList.add("paused");
-}
-});
-});
+
 /* =========================================
 NEW CONTACT → OPERATION REPORTS
 ========================================= */
