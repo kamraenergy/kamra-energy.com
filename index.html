@@ -4798,10 +4798,14 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
     /* إنشاء البطاقة الثابتة */
     fixedCard = allCards[index].cloneNode(true);
 
-    fixedCard.classList.add(
-      'service-active',
-      'service-fixed'
-    );
+  fixedCard.classList.add(
+  'service-active',
+  'service-fixed'
+);
+
+if (index === 3) {
+  fixedCard.querySelector('.energy-card-brand')?.remove();
+}
 
     showcase.insertBefore(fixedCard, track);
 
