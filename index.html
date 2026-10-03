@@ -4902,4 +4902,32 @@ fixedCard.querySelector('.energy-card-brand')?.remove();
   });
 
 })();
+  /* =========================================
+FOUNDATION CARDS — MOBILE TAP TO ENLARGE
+========================================= */
+if (window.innerWidth <= 700) {
+  document
+    .querySelectorAll(".services#services .card")
+    .forEach(function(card) {
+
+      card.addEventListener("click", function() {
+
+        const wasPaused =
+          card.classList.contains("paused");
+
+        document
+          .querySelectorAll(".services#services .card")
+          .forEach(function(item) {
+            item.classList.remove("paused");
+          });
+
+        if (!wasPaused) {
+          card.classList.add("paused");
+        }
+
+      });
+
+    });
+}
+
 </script>
