@@ -697,9 +697,11 @@ nav a{font-size:11px;margin:0 3px}
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   grid-template-rows:repeat(3,minmax(0,1fr));
-  gap:2px;
-  padding:12px;
-  transform:translateX(-10px);
+  column-gap:0;
+  row-gap:0;
+  padding:4px;
+  transform:none;
+  justify-items:center;
 }
 
 .card{
@@ -725,7 +727,7 @@ nav a{font-size:11px;margin:0 3px}
 }
 
 .card h3{
-  margin:0 0 7px;
+  margin:0 0 4px;
   color:#123f68!important;
   font-family:Georgia,"Times New Roman",serif;
   font-size:18px;
@@ -749,7 +751,7 @@ nav a{font-size:11px;margin:0 3px}
 .foundation-icon{
   width:36px;
   height:36px;
-  margin-bottom:7px;
+  margin-bottom:4px;
   display:flex;
   align-items:center;
   justify-content:flex-start;
