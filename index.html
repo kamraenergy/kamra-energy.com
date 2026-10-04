@@ -1446,11 +1446,13 @@ body.rtl .energy-card-brand{
   /* الصور الخاصة فقط */
 @media (min-width:701px){
 
-  .services-image-panel:has(
-    img.special-service-image
-  ){
-    height:auto;
-  }
+ .services-image-panel:has(
+  img.special-service-image
+){
+  width:auto;
+  height:auto;
+  aspect-ratio:auto;
+}
 
   .services-image-panel img.special-service-image{
     height:auto;
