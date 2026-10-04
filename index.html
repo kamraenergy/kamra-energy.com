@@ -5084,6 +5084,12 @@ function startImageRotation(images) {
   rotatingImageIndex = 0;
 
   rotatingServiceImage.src = images[0];
+
+rotatingServiceImage.classList.toggle(
+  'special-service-image',
+  images !== serviceImages
+);
+
   rotatingServiceImage.style.opacity = '1';
 
   if (images.length === 1) return;
