@@ -1443,6 +1443,22 @@ body.rtl .energy-card-brand{
     max-width:100%;
   }
 }
+  /* الصور الخاصة فقط */
+@media (min-width:701px){
+
+  .services-image-panel:has(
+    img.special-service-image
+  ){
+    height:auto;
+  }
+
+  .services-image-panel img.special-service-image{
+    height:auto;
+    max-height:430px;
+    object-fit:contain;
+  }
+
+}
  /* SERVICES TITLE + HORIZONTAL NAV */
 
 .services-showcase-title{
