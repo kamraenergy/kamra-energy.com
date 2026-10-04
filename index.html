@@ -5037,7 +5037,7 @@ const rotatingServiceImage =
   document.getElementById('servicesRotatingImage');
 
 const serviceImages = [
- '/images/service-02.jpg.jpeg',
+  '/images/service-02.jpg.jpeg',
   '/images/service-02.jpg.jpeg',
   '/images/service-03.jpg.jpg',
   '/images/service-04.jpg.jpg',
@@ -5050,26 +5050,133 @@ const serviceImages = [
   '/images/service-11.jpg.jpg'
 ];
 
+const specialServiceImages = {
+  0: [
+    '/images/service-15.jpg.jpeg',
+    '/images/service-16.jpg.jpeg',
+    '/images/service-17.jpg.jpeg',
+    '/images/service-18.jpg.jpg'
+  ],
+
+  1: [
+    '/images/service-12.jpg.jpg',
+    '/images/service-18.jpg.jpg'
+  ],
+
+  3: [
+    '/images/service-13.jpg.jpeg',
+    '/images/service-14.jpg.jpeg'
+  ]
+};
+
 let rotatingImageIndex = 0;
+let rotatingTimer = null;
+let rotatingFadeTimer = null;
+let selectedService = null;
 
-if (rotatingServiceImage) {
+function startImageRotation(images) {
 
-  setInterval(function () {
+  if (!rotatingServiceImage || !images?.length) return;
+
+  clearInterval(rotatingTimer);
+  clearTimeout(rotatingFadeTimer);
+
+  rotatingImageIndex = 0;
+
+  rotatingServiceImage.src = images[0];
+  rotatingServiceImage.style.opacity = '1';
+
+  if (images.length === 1) return;
+
+  rotatingTimer = setInterval(function () {
 
     rotatingServiceImage.style.opacity = '0';
 
-    setTimeout(function () {
+    rotatingFadeTimer = setTimeout(function () {
 
       rotatingImageIndex =
-        (rotatingImageIndex + 1) % serviceImages.length;
+        (rotatingImageIndex + 1) % images.length;
 
       rotatingServiceImage.src =
-        serviceImages[rotatingImageIndex];
+        images[rotatingImageIndex];
 
       rotatingServiceImage.style.opacity = '1';
 
     }, 800);
 
   }, 60000);
+}
+
+function setSelectedService(index) {
+
+  if (selectedService === index) {
+    selectedService = null;
+    startImageRotation(serviceImages);
+    return;
+  }
+
+  selectedService = index;
+
+  if (specialServiceImages[index]) {
+    startImageRotation(specialServiceImages[index]);
+  } else {
+    startImageRotation(serviceImages);
+  }
+}
+
+if (rotatingServiceImage) {
+
+  startImageRotation(serviceImages);
+
+  const serviceButtons =
+    document.querySelectorAll(
+      '#services-showcase .services-nav button'
+    );
+
+  serviceButtons.forEach(function (button, index) {
+
+    button.addEventListener('click', function () {
+      setSelectedService(index);
+    });
+
+  });
+
+  const serviceTrack =
+    document.querySelector(
+      '#services-showcase .services-showcase-track'
+    );
+
+  if (serviceTrack) {
+
+    serviceTrack.addEventListener('click', function (event) {
+
+      const card =
+        event.target.closest('.energy-service-card');
+
+      if (!card) return;
+
+      const cards =
+        Array.from(
+          serviceTrack.querySelectorAll('.energy-service-card')
+        );
+
+      const firstSix =
+        cards.slice(0, serviceButtons.length);
+
+      const title =
+        card.querySelector('.en h3')?.textContent.trim();
+
+      const index =
+        firstSix.findIndex(function (item) {
+          return item.querySelector('.en h3')?.textContent.trim() === title;
+        });
+
+      if (index !== -1) {
+        setSelectedService(index);
+      }
+
+    });
+
+  }
 }
 </script>
