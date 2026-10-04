@@ -4972,5 +4972,48 @@ if (window.innerWidth <= 700) {
 
     });
 }
+/* =========================================
+   SERVICES ROTATING IMAGE
+   ========================================= */
 
+const rotatingServiceImage =
+  document.getElementById('servicesRotatingImage');
+
+const serviceImages = [
+  '/images/service-01.jpg.jpeg',
+  '/images/service-02.jpg.jpeg',
+  '/images/service-03.jpg.jpg',
+  '/images/service-04.jpg.jpg',
+  '/images/service-05.jpg.jpg',
+  '/images/service-06.jpg.jpeg',
+  '/images/service-07.jpg.jpg',
+  '/images/service-08.jpg.jpeg',
+  '/images/service-09.jpg.jpeg',
+  '/images/service-10.jpg.jpg',
+  '/images/service-11.jpg.jpg'
+];
+
+let rotatingImageIndex = 0;
+
+if (rotatingServiceImage) {
+
+  setInterval(function () {
+
+    rotatingServiceImage.style.opacity = '0';
+
+    setTimeout(function () {
+
+      rotatingImageIndex =
+        (rotatingImageIndex + 1) % serviceImages.length;
+
+      rotatingServiceImage.src =
+        serviceImages[rotatingImageIndex];
+
+      rotatingServiceImage.style.opacity = '1';
+
+    }, 800);
+
+  }, 60000);
+
+}
 </script>
