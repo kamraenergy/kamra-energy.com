@@ -4896,9 +4896,13 @@ newContactSubmit.textContent = "SEND ENQUIRY →";
   let activeCard = null;
   let fixedCard = null;
 
-  function showService(index) {
+ function showService(index) {
 
-    /* إذا ضغطنا على نفس الخدمة مرة ثانية */
+  if (!showcase.classList.contains('initialized')) {
+    showcase.classList.add('initialized');
+  }
+
+  /* إذا ضغطنا على نفس الخدمة مرة ثانية */
     if (activeCard === index) {
 
       allCards[index].classList.remove('service-active');
@@ -4981,7 +4985,7 @@ fixedCard.querySelector('.energy-card-brand')?.remove();
     });
 
   });
-showService(0);
+
 })();
   /* =========================================
 FOUNDATION CARDS — MOBILE TAP TO ENLARGE
