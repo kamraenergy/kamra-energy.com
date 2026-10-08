@@ -3475,18 +3475,31 @@ content.innerHTML=
 '" style="width:100%;height:100%;border:0;"></iframe>';
 }
  /* ========================================= COMPANY PDF CARDS ========================================= */
-document.getElementById("companyTrack").addEventListener("click",function(event){
-  const card = event.target.closest(".company-card[data-pdf]");
-  if(!card) return;
+const companyTrackForPDF = document.getElementById("companyTrack");
 
-  event.preventDefault();
-  event.stopPropagation();
+if (companyTrackForPDF) {
+  companyTrackForPDF.addEventListener("click", function(event) {
+    const card = event.target.closest(".company-card[data-pdf]");
 
-  const file = card.getAttribute("data-pdf");
-  if(!file) return;
+    if (!card || !companyTrackForPDF.contains(card)) {
+      return;
+    }
 
-  openPDFInAboutLeft(file,0);
-});
+    event.preventDefault();
+    event.stopPropagation();
+
+    const cards = Array.from(
+      companyTrackForPDF.querySelectorAll(".company-card")
+    );
+
+    const index = cards.indexOf(card);
+    const aboutButtons = document.querySelectorAll(".about-nav button");
+
+    if (index >= 0 && aboutButtons[index]) {
+      aboutButtons[index].click();
+    }
+  }, true);
+}
   /* ========================================= COMPANY VIDEO ========================================= */
 const videoCards = document.querySelectorAll("#videoCard");
 videoCards.forEach(function(videoCard){
