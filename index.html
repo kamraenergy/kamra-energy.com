@@ -1423,39 +1423,65 @@ body.rtl .energy-card-brand{
     align-items:center;
     box-shadow:0 7px 22px rgba(11,31,58,.14);
   }
-  /* RIGHT */
-  .about > .company-slider > .company-slider{
-    width:100%;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .about > .company-slider
-  > .company-slider
-  .company-slider-window{
-    width:100%;
-    overflow:hidden;
-  }
-  .about > .company-slider
-  > .company-slider
-  .company-track{
-    gap:12px;
-  }
-  .about > .company-slider
-  > .company-slider
-  .company-card{
-    flex:0 0 calc((100% - 12px) / 2);
-    min-height:190px;
-    padding:15px 10px;
-  }
-  .about > .company-slider
-  > .company-slider
-  .slider-btn{
-    flex:0 0 34px;
-    width:34px;
-    height:34px;
-    font-size:22px;
-  }
+ /* BOTTOM COMPANY CARDS STRIP */
+.about > .company-slider > .company-slider{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.about > .company-slider
+> .company-slider
+.company-slider-window{
+  width:100%;
+  overflow:hidden;
+}
+
+.about > .company-slider
+> .company-slider
+.company-track{
+  display:flex;
+  gap:12px;
+}
+
+.about > .company-slider
+> .company-slider
+.company-card{
+  flex:0 0 150px;
+  min-height:70px;
+  height:70px;
+  padding:8px;
+  box-sizing:border-box;
+}
+
+.about > .company-slider
+> .company-slider
+.company-card .card-logo,
+.about > .company-slider
+> .company-slider
+.company-card .card-number,
+.about > .company-slider
+> .company-slider
+.company-card p{
+  display:none;
+}
+
+.about > .company-slider
+> .company-slider
+.company-card h3{
+  margin:0;
+  font-size:14px;
+}
+
+.about > .company-slider
+> .company-slider
+.slider-btn{
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  font-size:22px;
+}
   /* PDF INSIDE LEFT */
   .about-left-pdf{
     width:100%;
