@@ -3089,11 +3089,14 @@ if(track && prevBtn && nextBtn && sliderWindow){
     const maxScroll =
       sliderWindow.scrollWidth -
       sliderWindow.clientWidth;
+
     prevBtn.disabled =
       sliderWindow.scrollLeft <= 1;
+
     nextBtn.disabled =
       sliderWindow.scrollLeft >= maxScroll - 1;
   }
+
   nextBtn.addEventListener(
     "click",
     function(){
@@ -3103,6 +3106,7 @@ if(track && prevBtn && nextBtn && sliderWindow){
       });
     }
   );
+
   prevBtn.addEventListener(
     "click",
     function(){
@@ -3112,15 +3116,37 @@ if(track && prevBtn && nextBtn && sliderWindow){
       });
     }
   );
+
   sliderWindow.addEventListener(
     "scroll",
     updateSlider
   );
+
   window.addEventListener(
     "resize",
     updateSlider
   );
+
   updateSlider();
+
+  /* AUTO MOVEMENT */
+  setInterval(function(){
+    const maxScroll =
+      sliderWindow.scrollWidth -
+      sliderWindow.clientWidth;
+
+    if(maxScroll <= 0){
+      return;
+    }
+
+    if(sliderWindow.scrollLeft >= maxScroll - 1){
+      sliderWindow.scrollLeft = 0;
+    }else{
+      sliderWindow.scrollLeft += 1;
+    }
+
+    updateSlider();
+  },30);
 }
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
