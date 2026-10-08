@@ -3476,32 +3476,21 @@ content.innerHTML=
 }
   /* ========================================= COMPANY PDF CARDS ========================================= */
 document.querySelectorAll(".company-card[data-pdf]").forEach(function(card){
-  card.addEventListener(
-    "click",
-    function(event){
-      event.preventDefault();
-      event.stopPropagation();
+  card.addEventListener("click",function(event){
+    event.preventDefault();
+    event.stopPropagation();
 
-      const pdf =
-        card.getAttribute("data-pdf");
+    const file = card.getAttribute("data-pdf");
+    if(!file) return;
 
-      if(!pdf){
-        return;
-      }
+    const cards = Array.from(
+      document.querySelectorAll("#companyTrack .company-card")
+    );
+    const index = cards.indexOf(card);
 
-      const cards =
-        Array.from(
-          document.querySelectorAll(".company-card")
-        );
-
-      const index =
-        cards.indexOf(card);
-
-      openPDFInAboutLeft(pdf,index);
-    }
-  );
+    openPDFInAboutLeft(file,index);
+  });
 });
-
   /* ========================================= COMPANY VIDEO ========================================= */
 const videoCards = document.querySelectorAll("#videoCard");
 videoCards.forEach(function(videoCard){
