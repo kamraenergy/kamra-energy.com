@@ -3482,6 +3482,13 @@ document.querySelectorAll(".company-card[data-pdf]").forEach(function(card){
       event.preventDefault();
       event.stopPropagation();
 
+      const pdf =
+        card.getAttribute("data-pdf");
+
+      if(!pdf){
+        return;
+      }
+
       const cards =
         Array.from(
           document.querySelectorAll(".company-card")
@@ -3490,19 +3497,12 @@ document.querySelectorAll(".company-card[data-pdf]").forEach(function(card){
       const index =
         cards.indexOf(card);
 
-      if(index >= 0){
-        showAboutLeftCard(index);
-
-        const pdf =
-          card.getAttribute("data-pdf");
-
-        if(pdf){
-          openPDFInAboutLeft(pdf,index);
-        }
-      }
+      openPDFInAboutLeft(pdf,index);
     }
   );
-}); /* ========================================= COMPANY VIDEO ========================================= */
+});
+
+  /* ========================================= COMPANY VIDEO ========================================= */
 const videoCards = document.querySelectorAll("#videoCard");
 videoCards.forEach(function(videoCard){
   videoCard.addEventListener(
