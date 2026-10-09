@@ -3903,6 +3903,25 @@ setInterval(
 changeQuranVerse,
 7000
 );
+  /* MOBILE: TOP VIDEO BUTTON TO SLIDER CARD */
+(function () {
+  const button = document.getElementById("mobileVideoButton");
+  const card = document.querySelector("#companyTrack #videoCard");
+  const slider = document.getElementById("sliderWindow");
+
+  if (!button || !card || !slider) return;
+
+  button.addEventListener("click", function (event) {
+    if (window.innerWidth > 700) return;
+
+    event.preventDefault();
+
+    slider.scrollTo({
+      left: card.offsetLeft,
+      behavior: "smooth"
+    });
+  });
+})();
 /* =========================================
 EMPLOYEE LOGIN
 ========================================= */
