@@ -3689,81 +3689,74 @@ aboutNavButtons.forEach(function(button, index) {
 if (window.innerWidth <= 700) {
   const mobileAboutButtons =
     document.querySelectorAll(".about-nav button");
-
   const mobileSliderWindow =
     document.getElementById("sliderWindow");
-
   const mobileCards =
     document.querySelectorAll("#companyTrack .company-card");
-
   mobileAboutButtons.forEach(function(button, index) {
     if (index > 10) {
       return;
     }
-
-    /* فصل زر الفيديو عن منطق السلايدر */
-    if (button.id === "videoCard") {
-      return;
-    }
-
     button.addEventListener("click", async function() {
       if (!mobileSliderWindow || !mobileCards[index]) {
         return;
       }
-
       const card = mobileCards[index];
-
-      /* الانتقال إلى البطاقة المحددة */
+      /* MOVE TO SELECTED CARD */
       mobileSliderWindow.scrollTo({
         left: card.offsetLeft,
         behavior: "smooth"
       });
-
-      /* عرض ملفات PDF */
-      const pdfFile = card.getAttribute("data-pdf");
-
+      /* GET PDF */
+      const pdfFile =
+        card.getAttribute("data-pdf");
       if (!pdfFile) {
         return;
       }
-
+      /* WAIT FOR SLIDER TO REACH THE CARD */
       setTimeout(async function() {
         card.innerHTML = "";
-
-        const pdfContainer = document.createElement("div");
-        pdfContainer.className = "mobile-card-pdf";
-        pdfContainer.style.width = "100%";
-        pdfContainer.style.height = "100%";
-        pdfContainer.style.overflow = "auto";
-        pdfContainer.style.background = "#fff";
-        pdfContainer.style.borderRadius = "12px";
-        pdfContainer.style.boxSizing = "border-box";
-        pdfContainer.style.padding = "8px";
-
+        const pdfContainer =
+          document.createElement("div");
+        pdfContainer.className =
+          "mobile-card-pdf";
+        pdfContainer.style.width =
+          "100%";
+        pdfContainer.style.height =
+          "100%";
+        pdfContainer.style.overflow =
+          "auto";
+        pdfContainer.style.background =
+          "#fff";
+        pdfContainer.style.borderRadius =
+          "12px";
+        pdfContainer.style.boxSizing =
+          "border-box";
+        pdfContainer.style.padding =
+          "8px";
         card.appendChild(pdfContainer);
-
-        if (typeof pdfjsLib === "undefined") {
+        if(typeof pdfjsLib === "undefined") {
           pdfContainer.textContent =
             "PDF viewer library could not be loaded.";
           return;
         }
-
         try {
-          const loadingTask = pdfjsLib.getDocument({
-            url: pdfFile
-          });
-
-          const pdf = await loadingTask.promise;
-
-          const availableWidth = Math.max(
-            100,
-            pdfContainer.clientWidth - 16
-          );
-
-          for (
+          const loadingTask =
+            pdfjsLib.getDocument({
+              url: pdfFile
+            });
+          const pdf =
+            await loadingTask.promise;
+          const availableWidth =
+            Math.max(
+              100,
+              pdfContainer.clientWidth - 16
+            );
+          for(
             let pageNumber = 1;
             pageNumber <= pdf.numPages;
             pageNumber++
-          ) {
+          ){
             await renderPDFPage(
               pdf,
               pageNumber,
@@ -3771,9 +3764,11 @@ if (window.innerWidth <= 700) {
               availableWidth
             );
           }
-        } catch (error) {
-          console.error("Mobile card PDF error:", error);
-
+        } catch(error) {
+          console.error(
+            "Mobile card PDF error:",
+            error
+          );
           pdfContainer.textContent =
             "Unable to display this PDF.";
         }
@@ -3781,6 +3776,7 @@ if (window.innerWidth <= 700) {
     });
   });
 }
+
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
