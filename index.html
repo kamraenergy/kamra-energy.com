@@ -3776,20 +3776,7 @@ if (window.innerWidth <= 700) {
     });
   });
 }
-/* MOBILE: CLOSE OPEN TEXTS WHEN COMPANY VIDEO IS CLICKED */
-if (window.innerWidth <= 700) {
-  const videoButton = document.querySelectorAll(".about-nav button")[9];
 
-  if (videoButton) {
-    videoButton.addEventListener("click", function () {
-      aboutContents.forEach(function (item) {
-        if (item) {
-          item.style.display = "none";
-        }
-      });
-    });
-  }
-}
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
