@@ -3094,6 +3094,8 @@ let mobileSliderPaused = false;
 
 if (track && prevBtn && nextBtn && sliderWindow) {
 
+  /* UPDATE SLIDER BUTTONS */
+
   function updateSlider() {
 
     const maxScroll =
@@ -3108,6 +3110,7 @@ if (track && prevBtn && nextBtn && sliderWindow) {
   }
 
   /* NEXT BUTTON */
+
   nextBtn.addEventListener("click", function() {
 
     sliderWindow.scrollBy({
@@ -3118,6 +3121,7 @@ if (track && prevBtn && nextBtn && sliderWindow) {
   });
 
   /* PREVIOUS BUTTON */
+
   prevBtn.addEventListener("click", function() {
 
     sliderWindow.scrollBy({
@@ -3127,7 +3131,8 @@ if (track && prevBtn && nextBtn && sliderWindow) {
 
   });
 
-  /* UPDATE BUTTONS */
+  /* UPDATE ON SCROLL AND RESIZE */
+
   sliderWindow.addEventListener(
     "scroll",
     updateSlider
@@ -3142,6 +3147,8 @@ if (track && prevBtn && nextBtn && sliderWindow) {
 
   /* =========================================
      MOBILE ONLY - TAP TO PAUSE / RESUME
+     Capture phase handles clicks before
+     the COMPANY PDF CARDS click handler.
   ========================================= */
 
   track.addEventListener("click", function(event) {
@@ -3159,7 +3166,7 @@ if (track && prevBtn && nextBtn && sliderWindow) {
 
     mobileSliderPaused = !mobileSliderPaused;
 
-  });
+  }, true);
 
   /* =========================================
      AUTO MOVEMENT
@@ -3167,7 +3174,8 @@ if (track && prevBtn && nextBtn && sliderWindow) {
 
   setInterval(function() {
 
-    /* Pause movement only on mobile */
+    /* Pause only on mobile */
+
     if (
       window.innerWidth <= 700 &&
       mobileSliderPaused
@@ -3183,10 +3191,16 @@ if (track && prevBtn && nextBtn && sliderWindow) {
       return;
     }
 
-    if (sliderWindow.scrollLeft >= maxScroll - 1) {
+    if (
+      sliderWindow.scrollLeft >= maxScroll - 1
+    ) {
+
       sliderWindow.scrollLeft = 0;
+
     } else {
+
       sliderWindow.scrollLeft += 1;
+
     }
 
     updateSlider();
