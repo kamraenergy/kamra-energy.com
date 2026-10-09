@@ -3074,20 +3074,25 @@ document.body.classList.toggle("rtl");
 updateLanguage();
 });
 /* =========================================
-COMPANY SLIDER
+   COMPANY SLIDER
 ========================================= */
+
 const track =
 document.getElementById("companyTrack");
+
 const prevBtn =
 document.getElementById("prevBtn");
+
 const nextBtn =
 document.getElementById("nextBtn");
+
 const sliderWindow =
 document.getElementById("sliderWindow");
 
 if(track && prevBtn && nextBtn && sliderWindow){
 
   function updateSlider(){
+
     const maxScroll =
       sliderWindow.scrollWidth -
       sliderWindow.clientWidth;
@@ -3099,89 +3104,68 @@ if(track && prevBtn && nextBtn && sliderWindow){
       sliderWindow.scrollLeft >= maxScroll - 1;
   }
 
-  nextBtn.addEventListener("click",function(){
-    sliderWindow.scrollBy({
-      left: sliderWindow.clientWidth,
-      behavior:"smooth"
-    });
-  });
+  nextBtn.addEventListener(
+    "click",
+    function(){
 
-  prevBtn.addEventListener("click",function(){
-    sliderWindow.scrollBy({
-      left: -sliderWindow.clientWidth,
-      behavior:"smooth"
-    });
-  });
+      sliderWindow.scrollBy({
+        left: sliderWindow.clientWidth,
+        behavior:"smooth"
+      });
 
-  sliderWindow.addEventListener("scroll",updateSlider);
-  window.addEventListener("resize",updateSlider);
+    }
+  );
+
+  prevBtn.addEventListener(
+    "click",
+    function(){
+
+      sliderWindow.scrollBy({
+        left: -sliderWindow.clientWidth,
+        behavior:"smooth"
+      });
+
+    }
+  );
+
+  sliderWindow.addEventListener(
+    "scroll",
+    updateSlider
+  );
+
+  window.addEventListener(
+    "resize",
+    updateSlider
+  );
 
   updateSlider();
 
   /* AUTO MOVEMENT */
-  let autoMovement = null;
-  let selectedCard = null;
 
-  function startAutoMovement(){
-    if(autoMovement !== null) return;
+  setInterval(function(){
 
-    autoMovement = setInterval(function(){
-      if(window.innerWidth > 700) return;
+    const maxScroll =
+      sliderWindow.scrollWidth -
+      sliderWindow.clientWidth;
 
-      const maxScroll =
-        sliderWindow.scrollWidth -
-        sliderWindow.clientWidth;
-
-      if(maxScroll <= 0) return;
-
-      if(sliderWindow.scrollLeft >= maxScroll - 1){
-        sliderWindow.scrollLeft = 0;
-      }else{
-        sliderWindow.scrollLeft += 1;
-      }
-
-      updateSlider();
-    },30);
-  }
-
-  function stopAutoMovement(){
-    if(autoMovement !== null){
-      clearInterval(autoMovement);
-      autoMovement = null;
-    }
-  }
-
-  /* MOBILE CARD CLICK */
-  track.addEventListener("click",function(event){
-    if(window.innerWidth > 700) return;
-
-    const card = event.target.closest(".company-card");
-    if(!card || !track.contains(card)) return;
-
-    if(selectedCard === card){
-      selectedCard = null;
-      startAutoMovement();
+    if(maxScroll <= 0){
       return;
     }
 
-    selectedCard = card;
-    stopAutoMovement();
+    if(sliderWindow.scrollLeft >= maxScroll - 1){
 
-    const cards = Array.from(
-      track.querySelectorAll(".company-card")
-    );
+      sliderWindow.scrollLeft = 0;
 
-    const index = cards.indexOf(card);
-    const aboutButtons = document.querySelectorAll(
-      ".about-nav button"
-    );
+    }else{
 
-    if(index >= 0 && aboutButtons[index]){
-      aboutButtons[index].click();
+      sliderWindow.scrollLeft += 1;
+
     }
-  });
 
-  startAutoMovement();
+    updateSlider();
+
+  },30);
+
 }
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
