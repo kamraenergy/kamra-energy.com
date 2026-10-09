@@ -3140,33 +3140,41 @@ if(track && prevBtn && nextBtn && sliderWindow){
 
   updateSlider();
 
-  /* AUTO MOVEMENT */
+ /* AUTO MOVEMENT */
+let companySliderPaused = false;
 
-  setInterval(function(){
+track.addEventListener("click", function(event) {
+  if (window.innerWidth > 700) return;
 
-    const maxScroll =
-      sliderWindow.scrollWidth -
-      sliderWindow.clientWidth;
+  const card = event.target.closest(".company-card");
+  if (!card || !track.contains(card)) return;
 
-    if(maxScroll <= 0){
-      return;
-    }
+  companySliderPaused = !companySliderPaused;
+});
 
-    if(sliderWindow.scrollLeft >= maxScroll - 1){
+setInterval(function(){
 
-      sliderWindow.scrollLeft = 0;
+  if (window.innerWidth <= 700 && companySliderPaused) {
+    return;
+  }
 
-    }else{
+  const maxScroll =
+    sliderWindow.scrollWidth -
+    sliderWindow.clientWidth;
 
-      sliderWindow.scrollLeft += 1;
+  if (maxScroll <= 0) {
+    return;
+  }
 
-    }
+  if (sliderWindow.scrollLeft >= maxScroll - 1) {
+    sliderWindow.scrollLeft = 0;
+  } else {
+    sliderWindow.scrollLeft += 1;
+  }
 
-    updateSlider();
+  updateSlider();
 
-  },30);
-
-}
+}, 30);
 
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
