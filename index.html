@@ -3140,27 +3140,7 @@ if(track && prevBtn && nextBtn && sliderWindow){
 
   updateSlider();
 
-/* AUTO MOVEMENT */
-
-  setInterval(function(){
-
-    const maxScroll =
-      sliderWindow.scrollWidth -
-      sliderWindow.clientWidth;
-
-    if(maxScroll <= 0){
-      return;
-    }
-
-    if(sliderWindow.scrollLeft >= maxScroll - 1){
-      sliderWindow.scrollLeft = 0;
-    }else{
-      sliderWindow.scrollLeft += 1;
-    }
-
-    updateSlider();
-
-  },30);
+/* AUTO MOVEMENT */ setInterval(function(){ const maxScroll = sliderWindow.scrollWidth - sliderWindow.clientWidth; if(maxScroll <= 0){ return; } if(sliderWindow.scrollLeft >= maxScroll - 1){ sliderWindow.scrollLeft = 0; }else{ sliderWindow.scrollLeft += 1; } updateSlider(); },30); }
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
    ========================================= */
