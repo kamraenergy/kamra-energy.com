@@ -3084,7 +3084,9 @@ const nextBtn =
 document.getElementById("nextBtn");
 const sliderWindow =
 document.getElementById("sliderWindow");
+
 if(track && prevBtn && nextBtn && sliderWindow){
+
   function updateSlider(){
     const maxScroll =
       sliderWindow.scrollWidth -
@@ -3097,56 +3099,89 @@ if(track && prevBtn && nextBtn && sliderWindow){
       sliderWindow.scrollLeft >= maxScroll - 1;
   }
 
-  nextBtn.addEventListener(
-    "click",
-    function(){
-      sliderWindow.scrollBy({
-        left: sliderWindow.clientWidth,
-        behavior:"smooth"
-      });
-    }
-  );
+  nextBtn.addEventListener("click",function(){
+    sliderWindow.scrollBy({
+      left: sliderWindow.clientWidth,
+      behavior:"smooth"
+    });
+  });
 
-  prevBtn.addEventListener(
-    "click",
-    function(){
-      sliderWindow.scrollBy({
-        left: -sliderWindow.clientWidth,
-        behavior:"smooth"
-      });
-    }
-  );
+  prevBtn.addEventListener("click",function(){
+    sliderWindow.scrollBy({
+      left: -sliderWindow.clientWidth,
+      behavior:"smooth"
+    });
+  });
 
-  sliderWindow.addEventListener(
-    "scroll",
-    updateSlider
-  );
-
-  window.addEventListener(
-    "resize",
-    updateSlider
-  );
+  sliderWindow.addEventListener("scroll",updateSlider);
+  window.addEventListener("resize",updateSlider);
 
   updateSlider();
 
   /* AUTO MOVEMENT */
-  setInterval(function(){
-    const maxScroll =
-      sliderWindow.scrollWidth -
-      sliderWindow.clientWidth;
+  let autoMovement = null;
+  let selectedCard = null;
 
-    if(maxScroll <= 0){
+  function startAutoMovement(){
+    if(autoMovement !== null) return;
+
+    autoMovement = setInterval(function(){
+      if(window.innerWidth > 700) return;
+
+      const maxScroll =
+        sliderWindow.scrollWidth -
+        sliderWindow.clientWidth;
+
+      if(maxScroll <= 0) return;
+
+      if(sliderWindow.scrollLeft >= maxScroll - 1){
+        sliderWindow.scrollLeft = 0;
+      }else{
+        sliderWindow.scrollLeft += 1;
+      }
+
+      updateSlider();
+    },30);
+  }
+
+  function stopAutoMovement(){
+    if(autoMovement !== null){
+      clearInterval(autoMovement);
+      autoMovement = null;
+    }
+  }
+
+  /* MOBILE CARD CLICK */
+  track.addEventListener("click",function(event){
+    if(window.innerWidth > 700) return;
+
+    const card = event.target.closest(".company-card");
+    if(!card || !track.contains(card)) return;
+
+    if(selectedCard === card){
+      selectedCard = null;
+      startAutoMovement();
       return;
     }
 
-    if(sliderWindow.scrollLeft >= maxScroll - 1){
-      sliderWindow.scrollLeft = 0;
-    }else{
-      sliderWindow.scrollLeft += 1;
-    }
+    selectedCard = card;
+    stopAutoMovement();
 
-    updateSlider();
-  },30);
+    const cards = Array.from(
+      track.querySelectorAll(".company-card")
+    );
+
+    const index = cards.indexOf(card);
+    const aboutButtons = document.querySelectorAll(
+      ".about-nav button"
+    );
+
+    if(index >= 0 && aboutButtons[index]){
+      aboutButtons[index].click();
+    }
+  });
+
+  startAutoMovement();
 }
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
