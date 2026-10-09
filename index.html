@@ -3776,16 +3776,32 @@ if (window.innerWidth <= 700) {
     });
   });
 }
-  /* MOBILE: CLOSE OPEN TEXTS WHEN COMPANY VIDEO IS CLICKED */
+ /* MOBILE: COMPANY VIDEO NAVIGATION */
 if (window.innerWidth <= 700) {
-  const videoButton = document.querySelectorAll(".about-nav button")[9];
+  const videoButton =
+    document.querySelectorAll(".about-nav button")[9];
 
-  if (videoButton) {
-    videoButton.addEventListener("click", function () {
+  const videoCard =
+    document.querySelector("#companyTrack #videoCard");
+
+  const mobileSliderWindow =
+    document.getElementById("sliderWindow");
+
+  if (videoButton && videoCard && mobileSliderWindow) {
+    videoButton.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Close open text sections
       aboutContents.forEach(function (item) {
         if (item) {
           item.style.display = "none";
         }
+      });
+
+      // Move to the video card
+      mobileSliderWindow.scrollTo({
+        left: videoCard.offsetLeft,
+        behavior: "smooth"
       });
     });
   }
