@@ -3560,164 +3560,24 @@ if (companyTrackForPDF) {
     }
   }, true);
 }
-  /* =========================================
-   COMPANY VIDEO
-   MOBILE: VIDEO INSIDE THE SAME CARD
-   DESKTOP: ORIGINAL BEHAVIOR
-========================================= */
-
+/* ========================================= COMPANY VIDEO ========================================= */
 const videoCards = document.querySelectorAll("#videoCard");
-
-videoCards.forEach(function(videoCard) {
-
-  videoCard.addEventListener("click", function(event) {
-
-    if (window.innerWidth <= 700) {
-
-      /* If the close button was pressed */
-      if (event.target.closest(".mobile-video-close")) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        const originalHTML = videoCard.dataset.originalHTML;
-        const originalStyle = videoCard.dataset.originalStyle;
-
-        if (originalHTML !== undefined) {
-          videoCard.innerHTML = originalHTML;
-          videoCard.setAttribute("style", originalStyle || "");
-          videoCard.classList.remove("mobile-video-open");
-
-          delete videoCard.dataset.originalHTML;
-          delete videoCard.dataset.originalStyle;
-        }
-
-        return;
-      }
-
-      /* Ignore clicks on video controls */
-      if (event.target.closest("video")) {
-        return;
-      }
-
+videoCards.forEach(function(videoCard){
+  videoCard.addEventListener(
+    "click",
+    function(event){
       event.preventDefault();
       event.stopPropagation();
-
-      openVideo(videoCard);
-      return;
+      openVideo();
     }
-
-    /* DESKTOP: ORIGINAL BEHAVIOR */
-    event.preventDefault();
-    event.stopPropagation();
-    openVideo();
-
-  });
-
+  );
 });
 
-
-function openVideo(videoCard) {
-
-  /* =====================================
-     MOBILE: OPEN INSIDE THE SAME CARD
-  ===================================== */
-
-  if (window.innerWidth <= 700) {
-
-    if (!videoCard || videoCard.classList.contains("mobile-video-open")) {
-      return;
-    }
-
-    /* Save the original card */
-    videoCard.dataset.originalHTML = videoCard.innerHTML;
-    videoCard.dataset.originalStyle =
-      videoCard.getAttribute("style") || "";
-
-    videoCard.classList.add("mobile-video-open");
-
-    videoCard.style.position = "relative";
-    videoCard.style.overflow = "hidden";
-
-    videoCard.innerHTML = `
-      <div style="
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        background:#071426;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        box-sizing:border-box;
-        padding:8px;
-      ">
-
-        <button
-          type="button"
-          class="mobile-video-close"
-          aria-label="Close video"
-          style="
-            position:absolute;
-            top:8px;
-            right:8px;
-            z-index:20;
-            width:36px;
-            height:36px;
-            border:0;
-            border-radius:50%;
-            background:rgba(0,0,0,.8);
-            color:#fff;
-            font-size:26px;
-            cursor:pointer;
-          "
-        >×</button>
-
-        <video
-          controls
-          autoplay
-          playsinline
-          webkit-playsinline
-          preload="metadata"
-          style="
-            display:block;
-            width:100%;
-            height:100%;
-            max-width:100%;
-            max-height:100%;
-            object-fit:contain;
-            background:#000;
-          "
-        >
-          <source
-            src="https://vwzzyrptevjuxkasglmv.supabase.co/storage/v1/object/public/employee-library/kamraEnergy.mp4"
-            type="video/mp4"
-          >
-          Your browser does not support HTML video.
-        </video>
-
-      </div>
-    `;
-
-    const video = videoCard.querySelector("video");
-
-    if (video) {
-      video.play().catch(function(error) {
-        console.log("Press Play to start the video.", error);
-      });
-    }
-
-    return;
-  }
-
-
-  /* =====================================
-     DESKTOP: ORIGINAL CODE
-  ===================================== */
-
+function openVideo(){
   const leftWindow =
     document.querySelector(".about-left-window");
 
-  if (!leftWindow) {
+  if(!leftWindow){
     return;
   }
 
@@ -3774,23 +3634,6 @@ function openVideo(videoCard) {
     </div>
   `;
 
-  document
-    .getElementById("videoCloseButton")
-    .addEventListener("click", function(event) {
-
-      event.preventDefault();
-      event.stopPropagation();
-
-      const firstAboutButton =
-        document.querySelector(".about-nav button");
-
-      if (firstAboutButton) {
-        firstAboutButton.click();
-      }
-
-    });
-
-}
   document
     .getElementById("videoCloseButton")
     .addEventListener(
