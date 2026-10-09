@@ -3140,9 +3140,16 @@ if(track && prevBtn && nextBtn && sliderWindow){
 
   updateSlider();
 
-  /* AUTO MOVEMENT */
+ /* AUTO MOVEMENT - KEEP LAPTOP BEHAVIOR */
+
+  let mobileSliderPaused = false;
 
   setInterval(function(){
+
+    // Mobile: pause only when requested
+    if(window.innerWidth <= 700 && mobileSliderPaused){
+      return;
+    }
 
     const maxScroll =
       sliderWindow.scrollWidth -
@@ -3162,7 +3169,23 @@ if(track && prevBtn && nextBtn && sliderWindow){
 
   },30);
 
-}
+  /* MOBILE: TAP TO PAUSE / RESUME */
+
+  track.addEventListener("click", function(event){
+
+    if(window.innerWidth > 700){
+      return;
+    }
+
+    const card = event.target.closest(".company-card");
+
+    if(!card || !track.contains(card)){
+      return;
+    }
+
+    mobileSliderPaused = !mobileSliderPaused;
+
+  });
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
    ========================================= */
