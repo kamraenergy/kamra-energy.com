@@ -3168,6 +3168,58 @@ if(track && prevBtn && nextBtn && sliderWindow){
 
 }
   /* =========================================
+   MOBILE COMPANY CARD TAP
+   ========================================= */
+(function(){
+
+  const mobileTrack =
+    document.getElementById("companyTrack");
+
+  if(!mobileTrack) return;
+
+  let selectedMobileCard = null;
+  let mobilePaused = false;
+
+  mobileTrack.addEventListener("click",function(event){
+
+    if(window.innerWidth > 700) return;
+
+    const card = event.target.closest(".company-card");
+
+    if(!card || !mobileTrack.contains(card)) return;
+
+    const cards = Array.from(
+      mobileTrack.querySelectorAll(".company-card")
+    );
+
+    const index = cards.indexOf(card);
+
+    if(index < 0) return;
+
+    /* الضغط على البطاقة نفسها مرة ثانية */
+    if(selectedMobileCard === card && mobilePaused){
+
+      mobilePaused = false;
+      selectedMobileCard = null;
+      return;
+    }
+
+    /* اختيار بطاقة جديدة وإيقاف الحركة */
+    selectedMobileCard = card;
+    mobilePaused = true;
+
+    const buttons = document.querySelectorAll(
+      ".about-nav button"
+    );
+
+    if(buttons[index]){
+      buttons[index].click();
+    }
+
+  },true);
+
+})();
+  /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
    ========================================= */
 const aboutSection =
