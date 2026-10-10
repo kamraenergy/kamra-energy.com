@@ -3701,11 +3701,10 @@ const aboutContents = [
   null,                                             // 10. Company Video
   document.getElementById("updateContent"),        // 11. UPDATE
   document.getElementById("updateContent2")        // 12. UPDATE
-];
 aboutNavButtons.forEach(function(button, index) {
 
-  // استثناء الأزرار التي لا تستخدم نظام المحتوى هذا
-  if (index === 9 || index === 10) {
+  // تخطي زر الفيديو
+  if (index === 9) {
     return;
   }
 
@@ -3719,16 +3718,27 @@ aboutNavButtons.forEach(function(button, index) {
 
     const isOpen = content.style.display === "block";
 
-    // إخفاء جميع المحتويات أولاً
+    // إخفاء جميع المحتويات
     aboutContents.forEach(function(item) {
       if (item) {
         item.style.display = "none";
       }
     });
 
-    // إظهار محتوى الزر المضغوط فقط
+    // إظهار محتوى الزر المختار فقط
     if (!isOpen) {
       content.style.display = "block";
+    }
+
+    // عرض البطاقة المختارة في النافذة الكبيرة
+    if (window.innerWidth > 700 && index >= 10) {
+      const cards = Array.from(
+        aboutTrack.querySelectorAll(".company-card")
+      );
+
+      if (cards[index]) {
+        showAboutLeftCard(index);
+      }
     }
 
   });
