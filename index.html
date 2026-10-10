@@ -3643,7 +3643,14 @@ function openVideo(videoCard) {
 
     // منع إعادة إنشاء الفيديو إذا كان مفتوحاً بالفعل
     if (videoCard.querySelector("video")) return;
+mobileCompanyVideoPlaying = true;
 
+if (typeof mobileSliderPaused !== "undefined") {
+  mobileSliderPaused = true;
+}
+    if (!mobileCompanyVideoOriginalHTML) {
+  mobileCompanyVideoOriginalHTML = videoCard.innerHTML;
+}
     videoCard.innerHTML = `
       <div style="
         position:absolute;
