@@ -3700,9 +3700,10 @@ const aboutContents = [
   document.querySelector(".hse-content"),          // 9. HSE Management
   null,                                             // 10. Company Video
   document.getElementById("updateContent"),        // 11. UPDATE
-  document.getElementById("updateContent2")        // 12. UPDATE
-aboutNavButtons.forEach(function(button, index) {
+   document.getElementById("updateContent2")        // 12. UPDATE
+];
 
+aboutNavButtons.forEach(function(button, index) {
   // تخطي زر الفيديو
   if (index === 9) {
     return;
