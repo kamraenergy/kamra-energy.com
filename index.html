@@ -3617,26 +3617,139 @@ if (companyTrackForPDF) {
     }
   }, true);
 }
-/* ========================================= COMPANY VIDEO ========================================= */
+/* =========================================
+   COMPANY VIDEO — DESKTOP + MOBILE
+   ========================================= */
+
 const videoCards = document.querySelectorAll("#videoCard");
-videoCards.forEach(function(videoCard){
-  videoCard.addEventListener(
-    "click",
-    function(event){
-      event.preventDefault();
-      event.stopPropagation();
-      openVideo();
-    }
-  );
+
+videoCards.forEach(function(videoCard) {
+  videoCard.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    openVideo(videoCard);
+  });
 });
 
-function openVideo(){
-  const leftWindow =
-    document.querySelector(".about-left-window");
+function openVideo(videoCard) {
 
-  if(!leftWindow){
+  // MOBILE: عرض الفيديو داخل بطاقة السلايدر نفسها
+  if (window.innerWidth <= 700) {
+
+    if (!videoCard) return;
+
+    // منع إعادة إنشاء الفيديو إذا كان مفتوحاً بالفعل
+    if (videoCard.querySelector("video")) return;
+
+    videoCard.innerHTML = `
+      <div style="
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        background:#071426;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-sizing:border-box;
+        padding:10px;
+        z-index:10;
+      ">
+
+        <button
+          type="button"
+          id="videoCloseButton"
+          aria-label="Close video"
+          style="
+            position:absolute;
+            top:8px;
+            right:8px;
+            z-index:20;
+            width:38px;
+            height:38px;
+            border:0;
+            border-radius:50%;
+            background:#fff;
+            color:#071426;
+            font-size:28px;
+            cursor:pointer;
+          "
+        >×</button>
+
+        <video
+          controls
+          autoplay
+          playsinline
+          preload="metadata"
+          style="
+            display:block;
+            width:100%;
+            max-height:100%;
+            object-fit:contain;
+            background:#000;
+            border-radius:8px;
+          "
+        >
+          <source
+            src="https://vwzzyrptevjuxkasglmv.supabase.co/storage/v1/object/public/employee-library/kamraEnergy.mp4"
+            type="video/mp4"
+          >
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+
+      </div>
+    `;
+
+    const video = videoCard.querySelector("video");
+
+    // بعض متصفحات الموبايل تمنع التشغيل التلقائي
+    const playPromise = video.play();
+
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(function(error) {
+        console.log("اضغط تشغيل الفيديو يدوياً:", error);
+      });
+    }
+
+    document.getElementById("videoCloseButton")
+      .addEventListener("click", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // إيقاف الفيديو وإرجاع محتوى البطاقة الأصلي
+        video.pause();
+
+        videoCard.innerHTML = `
+          <img src="kamra-energy.svg"
+               class="card-logo"
+               alt="KAMRA ENERGY">
+
+          <div class="card-company-name">
+            KAMRA FOR ENERGY CONTRACTING L.L.C.
+          </div>
+
+          <div class="card-number">10</div>
+          <div class="video-icon">▶</div>
+
+          <div class="en">
+            <h3>Company Video</h3>
+            <p>Watch Company Video</p>
+          </div>
+
+          <div class="ar">
+            <h3>فيديو الشركة</h3>
+            <p>مشاهدة فيديو الشركة</p>
+          </div>
+        `;
+      });
+
     return;
   }
+
+  // DESKTOP: الإبقاء على طريقة العرض الحالية
+  const leftWindow = document.querySelector(".about-left-window");
+
+  if (!leftWindow) return;
 
   leftWindow.innerHTML = `
     <div style="
@@ -3648,6 +3761,7 @@ function openVideo(){
       align-items:center;
       justify-content:center;
     ">
+
       <button
         type="button"
         class="viewer-close"
@@ -3669,6 +3783,7 @@ function openVideo(){
         overflow:hidden;
         box-shadow:0 15px 50px rgba(0,0,0,.5);
       ">
+
         <video
           controls
           autoplay
@@ -3687,26 +3802,23 @@ function openVideo(){
             type="video/mp4"
           >
         </video>
+
       </div>
     </div>
   `;
 
-  document
-    .getElementById("videoCloseButton")
-    .addEventListener(
-      "click",
-      function(event){
-        event.preventDefault();
-        event.stopPropagation();
+  document.getElementById("videoCloseButton")
+    .addEventListener("click", function(event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-        const firstAboutButton =
-          document.querySelector(".about-nav button");
+      const firstAboutButton =
+        document.querySelector(".about-nav button");
 
-        if(firstAboutButton){
-          firstAboutButton.click();
-        }
+      if (firstAboutButton) {
+        firstAboutButton.click();
       }
-    );
+    });
 }
   const aboutNavButtons = document.querySelectorAll(".about-nav button");
 
