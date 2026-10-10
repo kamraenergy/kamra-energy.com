@@ -3689,17 +3689,19 @@ function openVideo(){
   const aboutNavButtons = document.querySelectorAll(".about-nav button");
 
 const aboutContents = [
-  document.getElementById("logoContent"),       // 1. Company Logo
-  document.getElementById("aboutContent"),      // 2. About Us
-  document.querySelector(".vision-content"),    // 3. Vision
-  document.querySelector(".mission-content"),   // 4. Mission
-  document.querySelector(".safety-content"),    // 5. Comprehensive Safety
-  document.querySelector(".core-values-content"), // 6. Core Values
-  document.querySelector(".efficiency-content"),  // 7. Operational Efficiency
-  document.querySelector(".innovation-content"),  // 8. Continuous Innovation
-  document.querySelector(".hse-content")          // 9. HSE Management
+  document.getElementById("logoContent"),          // 1. Company Logo
+  document.getElementById("aboutContent"),         // 2. About Us
+  document.querySelector(".vision-content"),       // 3. Vision
+  document.querySelector(".mission-content"),      // 4. Mission
+  document.querySelector(".safety-content"),       // 5. Comprehensive Safety
+  document.querySelector(".core-values-content"),  // 6. Core Values
+  document.querySelector(".efficiency-content"),   // 7. Operational Efficiency
+  document.querySelector(".innovation-content"),   // 8. Continuous Innovation
+  document.querySelector(".hse-content"),          // 9. HSE Management
+  null,                                             // 10. Company Video
+  document.getElementById("updateContent"),        // 11. UPDATE
+  document.getElementById("updateContent2")        // 12. UPDATE
 ];
-
 aboutNavButtons.forEach(function(button, index) {
 
   // استثناء الأزرار التي لا تستخدم نظام المحتوى هذا
