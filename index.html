@@ -3695,36 +3695,50 @@ function openVideo(){
     );
 }
   const aboutNavButtons = document.querySelectorAll(".about-nav button");
+
 const aboutContents = [
-  null,
-  document.getElementById("aboutContent"),
-  document.querySelector(".vision-content"),
-  document.querySelector(".mission-content"),
-  document.querySelector(".safety-content"),
-  document.querySelector(".core-values-content"),
-  document.querySelector(".efficiency-content"),
-  document.querySelector(".innovation-content"),
-  document.querySelector(".hse-content")
+  document.getElementById("logoContent"),       // 1. Company Logo
+  document.getElementById("aboutContent"),      // 2. About Us
+  document.querySelector(".vision-content"),    // 3. Vision
+  document.querySelector(".mission-content"),   // 4. Mission
+  document.querySelector(".safety-content"),    // 5. Comprehensive Safety
+  document.querySelector(".core-values-content"), // 6. Core Values
+  document.querySelector(".efficiency-content"),  // 7. Operational Efficiency
+  document.querySelector(".innovation-content"),  // 8. Continuous Innovation
+  document.querySelector(".hse-content")          // 9. HSE Management
 ];
+
 aboutNavButtons.forEach(function(button, index) {
-  if (index === 0 || index === 9 || index === 10) {
+
+  // استثناء الأزرار التي لا تستخدم نظام المحتوى هذا
+  if (index === 9 || index === 10) {
     return;
   }
+
   const content = aboutContents[index];
+
   if (!content) {
     return;
   }
+
   button.addEventListener("click", function() {
+
     const isOpen = content.style.display === "block";
+
+    // إخفاء جميع المحتويات أولاً
     aboutContents.forEach(function(item) {
       if (item) {
         item.style.display = "none";
       }
     });
+
+    // إظهار محتوى الزر المضغوط فقط
     if (!isOpen) {
       content.style.display = "block";
     }
+
   });
+
 });
 /* =========================================
    MOBILE ABOUT BUTTONS → SLIDER CARDS
