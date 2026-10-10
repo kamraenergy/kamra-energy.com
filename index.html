@@ -3233,12 +3233,15 @@ if (track && prevBtn && nextBtn && sliderWindow) {
 
     /* Pause only on mobile */
 
-    if (
-      window.innerWidth <= 700 &&
-      mobileSliderPaused
-    ) {
-      return;
-    }
+   if (
+  window.innerWidth <= 700 &&
+  (
+    mobileSliderPaused ||
+    mobileCompanyVideoPlaying
+  )
+) {
+  return;
+}
 
     const maxScroll =
       sliderWindow.scrollWidth -
