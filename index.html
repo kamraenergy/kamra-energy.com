@@ -3713,7 +3713,7 @@ function openVideo(){
 const aboutContents = [
   document.getElementById("logoContent"),          // 1. Company Logo
   document.getElementById("aboutContent"),         // 2. About Us
-  document.querySelector(".vision-content"),       // 3. Vision
+  document.getElementById("visionContent"),        // 3. Vision
   document.querySelector(".mission-content"),      // 4. Mission
   document.querySelector(".safety-content"),       // 5. Comprehensive Safety
   document.querySelector(".core-values-content"),  // 6. Core Values
@@ -3767,6 +3767,17 @@ aboutNavButtons.forEach(function(button, index) {
   });
 
 });
+  aboutContents.forEach(function(item) {
+  if (item) {
+    item.style.display = "none";
+  }
+});
+
+const visionContent = document.getElementById("visionContent");
+
+if (visionContent) {
+  visionContent.style.display = "block";
+}
 /* =========================================
    MOBILE ABOUT BUTTONS → SLIDER CARDS
    ========================================= */
