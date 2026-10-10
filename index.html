@@ -3208,23 +3208,51 @@ if (track && prevBtn && nextBtn && sliderWindow) {
      the COMPANY PDF CARDS click handler.
   ========================================= */
 
-  track.addEventListener("click", function(event) {
+track.addEventListener("click", function(event) {
 
-    if (window.innerWidth > 700) {
-      return;
+  if (window.innerWidth > 700) return;
+
+  const card = event.target.closest(".company-card");
+
+  if (!card || !track.contains(card)) return;
+
+  const videoCard = document.getElementById("videoCard");
+
+  // إذا الفيديو يعمل وضغط المستخدم بطاقة ثانية
+  if (
+    mobileCompanyVideoPlaying &&
+    videoCard &&
+    card !== videoCard
+  ) {
+    mobileCompanyVideoPlaying = false;
+
+    if (mobileCompanyVideoElement) {
+      mobileCompanyVideoElement.pause();
     }
 
-    const card =
-      event.target.closest(".company-card");
+    videoCard.innerHTML = mobileCompanyVideoOriginalHTML;
 
-    if (!card || !track.contains(card)) {
-      return;
+    videoCard.style.flex = "";
+    videoCard.style.width = "";
+    videoCard.style.minWidth = "";
+    videoCard.style.maxWidth = "";
+    videoCard.style.transform = "";
+
+    mobileCompanyVideoElement = null;
+
+    if (typeof mobileSliderPaused !== "undefined") {
+      mobileSliderPaused = false;
     }
 
-    mobileSliderPaused = !mobileSliderPaused;
+    return;
+  }
 
-  }, true);
+  // لا تبدّل حالة الإيقاف عند الضغط على بطاقة الفيديو
+  if (card.id === "videoCard") return;
 
+  mobileSliderPaused = !mobileSliderPaused;
+
+}, true);
   /* =========================================
      AUTO MOVEMENT
   ========================================= */
