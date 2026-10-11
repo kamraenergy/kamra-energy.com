@@ -4058,7 +4058,30 @@ if (window.innerWidth <= 700) {
     });
   });
 }
+/* STOP COMPANY VIDEO WHEN ANOTHER NAV BUTTON IS CLICKED */
+document.querySelectorAll(".about-nav button").forEach(function(button, index) {
+  if (index === 9) return; // لا توقف الفيديو عند الضغط على زر الفيديو نفسه
 
+  button.addEventListener("click", function() {
+    if (window.innerWidth > 700) return;
+    if (!mobileCompanyVideoElement) return;
+
+    // إيقاف الفيديو
+    mobileCompanyVideoElement.pause();
+    mobileCompanyVideoElement = null;
+
+    // استعادة بطاقة الفيديو الأصلية
+    const videoCard = document.querySelector("#companyTrack #videoCard");
+
+    if (videoCard && mobileCompanyVideoOriginalHTML) {
+      videoCard.innerHTML = mobileCompanyVideoOriginalHTML;
+    }
+
+    // إعادة ضبط حالة السلايدر
+    mobileCompanyVideoPlaying = false;
+    mobileSliderPaused = false;
+  });
+});
 /* =========================================
 MOBILE PDF VIEWER
 ========================================= */
