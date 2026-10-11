@@ -3675,6 +3675,11 @@ function openVideo(videoCard) {
 
     // منع إعادة إنشاء الفيديو إذا كان مفتوحاً بالفعل
     if (videoCard.querySelector("video")) return;
+    videoCard.scrollIntoView({
+  behavior: "smooth",
+  block: "nearest",
+  inline: "center"
+});
 mobileCompanyVideoPlaying = true;
 
 if (typeof mobileSliderPaused !== "undefined") {
