@@ -3298,6 +3298,23 @@ track.addEventListener("click", function(event) {
   }, 30);
 
 }
+  // MOBILE TOP VIDEO BUTTON
+const mobileVideoButton =
+  document.getElementById("mobileVideoButton");
+
+const companyVideoCard =
+  document.querySelector("#companyTrack #videoCard");
+
+if (mobileVideoButton && companyVideoCard) {
+  mobileVideoButton.addEventListener("click", function(event) {
+    if (window.innerWidth > 700) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    openVideo(companyVideoCard);
+  });
+}
   /* =========================================
    ABOUT US - LAPTOP SELECTED CARD
    ========================================= */
