@@ -3462,28 +3462,30 @@ showAboutLeftCard(2);
   /* =========================================
      TOP ABOUT BUTTONS
      ========================================= */
-  const aboutButtons =
-    aboutSection.querySelectorAll(
-      ".about-nav button"
-    );
- aboutButtons.forEach(
-  function(button,index){
-    button.addEventListener(
-      "click",
-      function(){
-      if(index <= 10){
-  showAboutLeftCard(index);
-  const pdf =
-    aboutCards[index].getAttribute("data-pdf");
-  if(pdf){
-    openPDFInAboutLeft(pdf,index);
-  }
-}
+ const aboutButtons =
+  aboutSection.querySelectorAll(
+    ".about-nav button"
+  );
+
+aboutButtons.forEach(function(button, index) {
+  button.addEventListener("click", function() {
+
+    // تخطي زر Company Video
+    if (index === 9) return;
+
+    if (index <= 10) {
+      showAboutLeftCard(index);
+
+      const pdf =
+        aboutCards[index].getAttribute("data-pdf");
+
+      if (pdf) {
+        openPDFInAboutLeft(pdf, index);
       }
-    );
-  }
-);
-  }
+    }
+  });
+});
+}
 /* =========================================
 PDF VIEWER
 ========================================= */
