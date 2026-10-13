@@ -3657,6 +3657,119 @@ content.innerHTML=
 '<iframe src="'+fileUrl+
 '" style="width:100%;height:100%;border:0;"></iframe>';
 }
+  /* =========================================
+   HSE LIBRARY — GITHUB FILES
+========================================= */
+
+const hseLibraryCard = document.getElementById("hseLibraryCard");
+
+if (hseLibraryCard) {
+  hseLibraryCard.addEventListener("click", async function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    document.body.style.overflow = "hidden";
+    viewer.classList.add("active");
+    viewer.setAttribute("aria-hidden", "false");
+
+    viewerContent.innerHTML = `
+      <div style="height:100%;display:flex;flex-direction:column;background:#f3f6fa;">
+        <div style="min-height:55px;background:#0b1f3a;color:white;
+                    display:flex;align-items:center;justify-content:space-between;
+                    padding:0 18px;">
+          <strong>HSE — Health, Safety & Environment</strong>
+          <button id="hseFilesClose" type="button"
+            style="font-size:28px;background:none;border:0;color:white;cursor:pointer;">
+            ×
+          </button>
+        </div>
+
+        <div id="hseFilesList"
+          style="padding:18px;overflow:auto;flex:1;">
+          Loading files from GitHub...
+        </div>
+      </div>
+    `;
+
+    document.getElementById("hseFilesClose").addEventListener("click", closeViewer);
+
+    const list = document.getElementById("hseFilesList");
+
+    try {
+      const response = await fetch(
+        "https://api.github.com/repos/kamraenergy/kamra-energy.com/git/trees/main?recursive=1"
+      );
+
+      if (!response.ok) {
+        throw new Error("GitHub returned HTTP " + response.status);
+      }
+
+      const data = await response.json();
+
+      const files = (data.tree || [])
+        .filter(item => item.type === "blob")
+        .sort((a, b) => a.path.localeCompare(b.path));
+
+      if (!files.length) {
+        list.textContent = "No files were found.";
+        return;
+      }
+
+      list.innerHTML = "";
+
+      files.forEach(file => {
+        const fileName = file.path.split("/").pop();
+        const fileUrl =
+          "https://raw.githubusercontent.com/kamraenergy/kamra-energy.com/main/" +
+          file.path.split("/").map(encodeURIComponent).join("/");
+
+        const row = document.createElement("div");
+
+        row.style.cssText =
+          "display:flex;gap:12px;align-items:center;justify-content:space-between;" +
+          "padding:12px;margin-bottom:8px;background:white;border-radius:8px;" +
+          "border:1px solid #dce3ec;";
+
+        const name = document.createElement("span");
+        name.textContent = file.path;
+        name.style.cssText = "overflow-wrap:anywhere;flex:1;";
+
+        const openButton = document.createElement("button");
+        openButton.type = "button";
+        openButton.textContent = "Open";
+        openButton.style.cssText =
+          "padding:8px 14px;background:#0b1f3a;color:white;" +
+          "border:0;border-radius:5px;cursor:pointer;";
+
+        openButton.addEventListener("click", function () {
+          const extension = getFileExtension(fileName).toLowerCase();
+
+          if (["pdf", "jpg", "jpeg", "png", "gif", "webp", "svg", "docx"].includes(extension)) {
+            openEmployeeLibraryFile(fileUrl, fileName);
+          } else {
+            window.open(fileUrl, "_blank", "noopener");
+          }
+        });
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = fileUrl;
+        downloadLink.download = fileName;
+        downloadLink.textContent = "Download";
+        downloadLink.style.cssText = "font-size:13px;white-space:nowrap;";
+
+        row.appendChild(name);
+        row.appendChild(openButton);
+        row.appendChild(downloadLink);
+        list.appendChild(row);
+      });
+
+    } catch (error) {
+      console.error("HSE GitHub files error:", error);
+      list.textContent =
+        "Unable to load files from GitHub. Please try again later.";
+    }
+  });
+}
  /* ========================================= COMPANY PDF CARDS ========================================= */
 const companyTrackForPDF = document.getElementById("companyTrack");
 
