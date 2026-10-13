@@ -5190,7 +5190,7 @@ async function loadEmployeeLibraryFolder(folderName,container){
       }
       if(!fileName)return;
       const fileUrl=SUPABASE_URL+"/storage/v1/object/public/"+SUPABASE_BUCKET+"/"+encodeStoragePath(folderName+"/"+fileName);
-      const extension=getFileExtension(fileName);
+      const extension = getFileExtension(fileName).toLowerCase();
       const fileCard=document.createElement("div");
       fileCard.className="operations-file-card";
       const icon=document.createElement("div");
