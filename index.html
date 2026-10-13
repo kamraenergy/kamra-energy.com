@@ -3594,10 +3594,17 @@ window.innerWidth <= 700; let availableWidth = scrollArea.clientWidth - (isMobil
 scale = 2;
 if(window.innerWidth <= 700){ scale = Math.min( scale, availableWidth / originalViewport.width ); } const viewport = page.getViewport({ scale }); const canvas = document.createElement("canvas"); canvas.className = "pdf-page"; const context = canvas.getContext("2d"); const devicePixelRatio = window.devicePixelRatio || 1; canvas.width = Math.floor( viewport.width * devicePixelRatio ); canvas.height = Math.floor( viewport.height * devicePixelRatio ); const finalWidth = Math.min( viewport.width, availableWidth ); canvas.style.width = finalWidth + "px"; canvas.style.height = "auto"; canvas.style.maxWidth = "100%"; context.setTransform( devicePixelRatio, 0, 0, devicePixelRatio, 0, 0 ); container.appendChild(canvas); await page.render({ canvasContext:context, viewport:viewport }).promise; } function showPDFError( container, message ){ container.innerHTML = ""; const error = document.createElement("div"); error.className = "pdf-error"; error.textContent = message; const small = document.createElement("small"); small.textContent = "Please check that the PDF file exists on the server."; error.appendChild(small); container.appendChild(error); }
   async function openEmployeeLibraryFile(fileUrl,fileName){
-const extension=getFileExtension(fileName).toLowerCase();
-if(extension==="pdf"){
-openPDF(fileUrl);
-return;
+const extension = getFileExtension(fileName).toLowerCase();
+
+console.log("Opening library file:", {
+  fileName: fileName,
+  extension: extension,
+  fileUrl: fileUrl
+});
+
+if (extension === "pdf") {
+  openPDF(fileUrl);
+  return;
 }
 document.body.style.overflow="hidden";
 viewer.classList.add("active");
