@@ -1684,14 +1684,24 @@ body.rtl .energy-card-brand{
 
 }
   /* =========================================
-   ABOUT US: UPDATES CARD HEIGHT ONLY
+   ABOUT US: REDUCE UPDATES WINDOW HEIGHT ONLY
    ========================================= */
 
 @media (min-width:701px){
 
-  .about-left-window:has(.about-left-card.updates){
-    height:180px !important;
-    min-height:180px !important;
+  .about-left-window:has(.update-text){
+    height:120px !important;
+    min-height:120px !important;
+  }
+
+  .about-left-window:has(.update-text) .about-left-card{
+    height:100% !important;
+    min-height:0 !important;
+  }
+
+  .about-left-window:has(.update-text) .about-left-pdf{
+    height:100% !important;
+    min-height:0 !important;
   }
 
 }
