@@ -1607,7 +1607,81 @@ body.rtl .energy-card-brand{
   }
 }
 
-/* ========================================= ABOUT US: BALANCED SELECTED-CARD WINDOW HIDE ONLY THE CAROUSEL STRIP ON DESKTOP ========================================= */ @media (min-width:701px){ .about > .company-slider{ display:grid !important; grid-template-columns:minmax(0,1fr) !important; gap:0 !important; align-items:stretch !important; } .about > .company-slider > .company-slider{ display:none !important; } .about-left-window{ display:block !important; width:65% !important; max-width:760px !important; height:350px !important; min-height:350px !important; margin:0 auto !important; overflow:auto !important; box-sizing:border-box !important; border-radius:15px; } .about-left-card{ width:100% !important; height:100% !important; min-height:100% !important; box-sizing:border-box !important; overflow:auto !important; } .about-left-pdf{ width:100% !important; height:100% !important; min-height:100% !important; box-sizing:border-box !important; overflow:auto !important; } }
+/* =========================================
+   ABOUT US: HALF-SIZE SELECTED-CARD WINDOW
+   HIDE CAROUSEL STRIP ON DESKTOP
+   ========================================= */
+
+@media (min-width:701px){
+
+  /* Main About Us container */
+  .about > .company-slider{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:0 !important;
+    align-items:stretch !important;
+  }
+
+  /* Hide the original carousel strip */
+  .about > .company-slider > .company-slider{
+    display:none !important;
+  }
+
+  /* Selected-card window */
+  .about-left-window{
+    display:block !important;
+    width:50% !important;
+    max-width:380px !important;
+    height:225px !important;
+    min-height:225px !important;
+    margin:0 auto !important;
+    overflow:auto !important;
+    box-sizing:border-box !important;
+    border-radius:15px;
+  }
+
+  /* Selected card */
+  .about-left-card{
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    margin:0 !important;
+    box-sizing:border-box !important;
+    overflow:auto !important;
+  }
+
+  /* PDF display area */
+  .about-left-pdf{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    margin:0 !important;
+    box-sizing:border-box !important;
+    overflow:auto !important;
+  }
+
+  /* Images inside the selected card */
+  .about-left-card img,
+  .about-left-pdf img{
+    max-width:100% !important;
+    max-height:100% !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit:contain !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Embedded PDF or video */
+  .about-left-card iframe,
+  .about-left-pdf iframe,
+  .about-left-card video{
+    max-width:100% !important;
+    max-height:100% !important;
+    box-sizing:border-box !important;
+  }
+
+}
 </style>
 </head>
 <body>
