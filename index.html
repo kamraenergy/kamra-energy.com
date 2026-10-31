@@ -3166,7 +3166,13 @@ track.addEventListener("click", function(event) {
   /* =========================================
      AUTO MOVEMENT
   ========================================= */
-  setInterval(function() {
+ setInterval(function() {
+
+    /* STOP AUTO MOVEMENT ON DESKTOP */
+    if (window.innerWidth > 700) {
+        return;
+    }
+
     /* Pause only on mobile */
    if (
   window.innerWidth <= 700 &&
